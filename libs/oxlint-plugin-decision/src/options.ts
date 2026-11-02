@@ -254,7 +254,6 @@ const REPORT_LOC = {
 export type { Decode, Sources };
 export {
   checkRules,
-  NAMED_PARENTS,
   OptionsError,
   PREFIX,
   REPORT_LOC,

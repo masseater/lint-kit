@@ -127,10 +127,10 @@ const probabilitiesIn = (answer: Answer): Option.Option<Readonly<Record<string, 
   if (answer.type === "noul") {
     return Option.some({ yes: answer.noul });
   }
-  if (answer.type === "UNKNOWN") {
-    return Option.none();
+  if (answer.type === "choice") {
+    return Option.fromUndefinedOr(answer.probabilities);
   }
-  return Option.fromUndefinedOr(answer.probabilities);
+  return Option.none();
 };
 
 const probabilitiesOf = (answer: Answer | undefined): Readonly<Record<string, number>> =>
@@ -286,5 +286,5 @@ const explainerFor = (pass: ExplainPass): Explainer =>
     Match.orElse((mode) => explaining(pass, mode)),
   );
 
-export { EXPLAIN_ENV, explainerFor };
+export { explainerFor };
 export type { Explainer, ExplainPass, Outcome, Placed };

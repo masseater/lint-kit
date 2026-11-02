@@ -4,37 +4,32 @@ packages:
 catalogMode: prefer
 
 catalog:
-  "@ast-grep/cli": 0.45.3
-  "@commitlint/cli": 21.2.3
-  "@commitlint/config-conventional": 21.2.3
+  "@ast-grep/cli": 0.51.0
+  "@commitlint/cli": 21.2.4
+  "@commitlint/config-conventional": 21.2.4
   "@oxlint/plugins": 1.90.0
-  "@types/node": 26.6.5
-  "@effect/platform-node": 4.0.2
-  "@effect/vitest": 4.0.2
-  "@openrouter/sdk": 1.4.25
-  "@tanstack/intent": 0.5.5
+  "@types/node": 26.6.6
+  "@effect/platform-node": 4.1.1
+  "@effect/vitest": 4.1.1
+  "@openrouter/sdk": 1.5.33
+  "@tanstack/intent": 0.5.6
   eslint-plugin-no-comments: 1.2.1
   oxlint: 1.90.0
-  synckit: 0.12.1
+  synckit: 0.12.3
 catalogs:
   stack:
     "@effect/tsgo": 0.63.0
     "@vitest/coverage-v8": 5.0.5
-    effect: 4.0.2
-    fallow: 3.34.0
+    effect: 4.1.1
+    fallow: 3.38.1
     typescript: 7.0.2
-    vite-plus: 1.3.0
+    vite-plus: 1.4.0
 overrides:
   effect: "catalog:stack"
-  "@effect/platform-node-shared": 4.0.2
+  "@effect/platform-node-shared": 4.1.1
   "@effect/vitest": "catalog:"
-  vite@*: npm:@voidzero-dev/vite-plus-core@1.3.0
-  "@vitest/browser@>=5.0.0-beta.6 <5.0.5": ^5.0.5
-  "@vitest/ui@>=5.0.0-beta.6 <5.0.5": ^5.0.5
-  "fast-uri@>=3.0.0 <3.1.9": ^3.1.9
-  "minimatch@<11.0.1": ^11.0.1
-  "undici@>=8.0.0 <8.12.2": ^8.12.2
-  "zod@<4.6.6": ^4.6.6
+  vite@*: npm:@voidzero-dev/vite-plus-core@1.4.0
+  minimatch@<11.0.1: ^11.0.1
 peerDependencyRules:
   allowAny:
     - vite
