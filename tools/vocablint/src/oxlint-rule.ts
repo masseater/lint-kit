@@ -24,10 +24,10 @@ const vocabularyRule = (load: ProblemLoader): Rule => ({
   }),
 });
 
-const vocablintPlugin = (load: ProblemLoader): Plugin => ({
+const vocablintPlugin = (load: ProblemLoader): Plugin & { rules: { vocabulary: Rule } } => ({
   meta: { name: "vocablint" },
   rules: { vocabulary: vocabularyRule(load) },
 });
 
-export { vocablintPlugin, vocabularyRule };
+export { vocablintPlugin };
 export type { ProblemLoader };
