@@ -3,7 +3,6 @@ import { layer } from "@effect/vitest";
 import { assertInclude, deepStrictEqual, strictEqual } from "@effect/vitest/utils";
 import { Array as Arr, Effect, Option, Order, Schema } from "effect";
 
-import { EXPLAIN_ENV } from "#src/explain.ts";
 import type { DecisionPluginSetup } from "#src/types.ts";
 
 import { RESPAN, TIMEOUT, callRule, lintProject, outputOf, withMock } from "./fixtures.ts";
@@ -83,7 +82,7 @@ const jsonFromEnv = Effect.gen(function* test() {
   const run = yield* lintProject({
     files: { "log.js": SOURCE },
     options: { model: RESPAN, rules: [{ ...callRule, answer: LEAKS }] },
-    env: { ...env, [EXPLAIN_ENV]: "json" },
+    env: { ...env, OXLINT_DECISION_EXPLAIN: "json" },
   });
   const records = recordsOf(run.stderr);
   const { questions, state, durationMs, ...leaks } = recordAt(records, LEAKS_LINE);

@@ -114,7 +114,10 @@ export default defineConfig({
         },
       ],
       "eslint/no-duplicate-imports": ["error", { allowSeparateTypeImports: true }],
-      "eslint/new-cap": ["error", { capIsNewExceptionPattern: "^(Config|Context|Data|Schema)\\." }],
+      "eslint/new-cap": [
+        "error",
+        { capIsNewExceptionPattern: String.raw`^(Config|Context|Data|Schema)\.` },
+      ],
       "vitest/require-hook": ["error", { allowedFunctionCalls: ["runAsWorker", "layer"] }],
       "typescript/no-empty-interface": ["error", { allowSingleExtends: true }],
       "typescript/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
