@@ -39,6 +39,17 @@ export default defineConfig({
     ],
   },
   test: {
+    coverage: {
+      provider: "v8",
+      include: ["src/**", "dist/**/*.mjs"],
+      excludeAfterRemap: true,
+      autoAttachSubprocess: true,
+      reporter: ["text-summary", "json"],
+    },
+    reporters: ["default", "blob"],
+    outputFile: {
+      blob: new URL("../../.vitest-reports/oxlint-typed-rules.json", import.meta.url).pathname,
+    },
     server: { deps: { inline: ["@tanstack/eslint-plugin-start"] } },
     include: ["src/**/*.test.ts", "upstream/src/__tests__/*.test.ts"],
   },

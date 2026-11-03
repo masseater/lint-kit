@@ -1,9 +1,11 @@
 packages:
   - libs/*
+  - tools/*
 
 catalogMode: prefer
 
 catalog:
+  "@arethetypeswrong/core": 0.18.5
   "@ast-grep/cli": 0.51.0
   "@commitlint/cli": 21.2.4
   "@commitlint/config-conventional": 21.2.4
@@ -12,11 +14,21 @@ catalog:
   "@effect/platform-node": 4.1.1
   "@effect/vitest": 4.1.1
   "@openrouter/sdk": 1.5.33
+  "@size-limit/file": 14.3.0
+  "@tanstack/eslint-plugin-start": 0.1.0
   "@tanstack/intent": 0.5.6
+  "@typescript-eslint/utils": ^8.72.1
   eslint-plugin-no-comments: 1.2.1
   oxlint: 1.90.0
+  publint: 0.3.25
+  size-limit: 14.3.0
   synckit: 0.12.3
+  typescript-6: npm:typescript@6.0.3
+  vitest: 5.0.5
 catalogs:
+  typescript-api:
+    typescript: 6.0.3
+    typescript-7: npm:typescript@7.1.0-beta
   stack:
     "@effect/tsgo": 0.63.0
     "@vitest/coverage-v8": 5.0.5
@@ -29,6 +41,7 @@ overrides:
   "@effect/platform-node-shared": 4.1.1
   "@effect/vitest": "catalog:"
   vite@*: npm:@voidzero-dev/vite-plus-core@1.4.0
+  "@tanstack/eslint-plugin-start>globals": 16.4.0
   minimatch@<11.0.1: ^11.0.1
 peerDependencyRules:
   allowAny:
@@ -38,6 +51,8 @@ peerDependencyRules:
 allowBuilds:
   "@ast-grep/cli": true
   "@openrouter/sdk": false
+patchedDependencies:
+  "@tanstack/eslint-plugin-start@0.1.0": patches/@tanstack__eslint-plugin-start@0.1.0.patch
 audit:
   ignorePrune: true
   ignore: []

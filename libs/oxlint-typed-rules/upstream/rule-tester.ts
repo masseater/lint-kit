@@ -32,10 +32,6 @@ const asTestCase = (testCase: TestCase | string): TestCase =>
     onSome: (code) => ({ code }),
   });
 
-const ignoredHook: Hook = () => {
-  Option.none();
-};
-
 class RuleTester {
   public static get describe(): OxlintRuleTester.DescribeFn {
     return OxlintRuleTester.describe;
@@ -61,13 +57,7 @@ class RuleTester {
     OxlintRuleTester.itOnly = value;
   }
 
-  public static get afterAll(): Hook {
-    return ignoredHook;
-  }
-
-  public static set afterAll(_value: Hook) {
-    Option.none();
-  }
+  public static afterAll?: Hook;
 
   readonly #rootDirectory: string;
 

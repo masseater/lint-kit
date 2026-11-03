@@ -27,6 +27,11 @@ export default defineConfig({
       autoAttachSubprocess: true,
       reporter: ["text-summary", "json"],
     },
+    reporters: ["default", "blob"],
+    outputFile: {
+      blob: new URL("../../.vitest-reports/oxlint-plugin-decision-presets.json", import.meta.url)
+        .pathname,
+    },
     projects: [
       {
         extends: true,

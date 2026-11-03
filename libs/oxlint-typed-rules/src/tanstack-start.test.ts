@@ -1,8 +1,8 @@
 import { NodeServices } from "@effect/platform-node";
-import { Effect, FileSystem, ManagedRuntime, Option, Record, pipe } from "effect";
+import { layer } from "@effect/vitest";
+import { Effect, FileSystem, Option, Record, pipe } from "effect";
 import type { Rule } from "vite-plus/lint/plugins";
 import { RuleTester } from "vite-plus/lint/plugins-dev";
-import { beforeAll, describe, it } from "vite-plus/test";
 
 import plugin from "./tanstack-start.ts";
 
@@ -43,8 +43,6 @@ type FixtureName = Exclude<keyof typeof FIXTURES, "tsconfig.json">;
 
 const FIXTURE_DIRECTORY = new URL("../.fixtures/", import.meta.url).pathname;
 
-const runtime = ManagedRuntime.make(NodeServices.layer);
-
 const writeFixtures = Effect.gen(function* writeFixtures() {
   const fs = yield* FileSystem.FileSystem;
   yield* fs.makeDirectory(FIXTURE_DIRECTORY, { recursive: true });
@@ -52,8 +50,6 @@ const writeFixtures = Effect.gen(function* writeFixtures() {
     fs.writeFileString(`${FIXTURE_DIRECTORY}${name}`, code),
   );
 });
-
-beforeAll(() => runtime.runPromise(writeFixtures));
 
 const fixture = (name: FixtureName): Readonly<{ filename: string; code: string }> => ({
   filename: `${FIXTURE_DIRECTORY}${name}`,
@@ -66,38 +62,61 @@ const rule = (name: string): Rule =>
     Option.getOrThrowWith(() => new Error(`rule ${name} is missing`)),
   );
 
-RuleTester.describe = (text, fn): void => {
-  describe(text, fn);
-};
-RuleTester.it = (text, fn): void => {
-  it(text, fn);
+const runImmediately = (_name: string, body: () => void): void => {
+  body();
 };
 
-const tester = new RuleTester({ languageOptions: { parserOptions: { lang: "tsx" } } });
+const runRuleTests = (
+  run: (tester: Readonly<RuleTester>) => void,
+): Effect.Effect<void, Effect.Error<typeof writeFixtures>, Effect.Services<typeof writeFixtures>> =>
+  writeFixtures.pipe(
+    Effect.andThen(
+      Effect.sync(() => {
+        RuleTester.describe = runImmediately;
+        RuleTester.it = runImmediately;
+        run(new RuleTester({ languageOptions: { parserOptions: { lang: "tsx" } } }));
+      }),
+    ),
+  );
 
-tester.run("no-client-code-in-server-component", rule("no-client-code-in-server-component"), {
-  valid: [fixture("render-plain.tsx"), fixture("plain-widget.tsx")],
-  invalid: [
-    {
-      ...fixture("render-stateful.tsx"),
-      errors: [
-        { messageId: "hookInServerComponent", line: 4, column: 28 },
-        { messageId: "eventHandlerInServerComponent", line: 4, column: 28 },
-      ],
-    },
-  ],
+const flagsClientCodeInServerComponents = runRuleTests((tester) => {
+  tester.run("no-client-code-in-server-component", rule("no-client-code-in-server-component"), {
+    valid: [fixture("render-plain.tsx"), fixture("plain-widget.tsx")],
+    invalid: [
+      {
+        ...fixture("render-stateful.tsx"),
+        errors: [
+          { messageId: "hookInServerComponent", line: 4, column: 28 },
+          { messageId: "eventHandlerInServerComponent", line: 4, column: 28 },
+        ],
+      },
+    ],
+  });
 });
 
-tester.run("no-async-client-component", rule("no-async-client-component"), {
-  valid: [fixture("plain-widget.tsx")],
-  invalid: [
-    {
-      ...fixture("client-page.tsx"),
-      errors: [{ messageId: "asyncClientComponentUsage", line: 4, column: 15 }],
-    },
-    {
-      ...fixture("async-note.tsx"),
-      errors: [{ messageId: "asyncClientComponentDefinition", line: 1, column: 13 }],
-    },
-  ],
+const flagsAsyncClientComponents = runRuleTests((tester) => {
+  tester.run("no-async-client-component", rule("no-async-client-component"), {
+    valid: [fixture("plain-widget.tsx")],
+    invalid: [
+      {
+        ...fixture("client-page.tsx"),
+        errors: [{ messageId: "asyncClientComponentUsage", line: 4, column: 15 }],
+      },
+      {
+        ...fixture("async-note.tsx"),
+        errors: [{ messageId: "asyncClientComponentDefinition", line: 1, column: 13 }],
+      },
+    ],
+  });
+});
+
+layer(NodeServices.layer)("tanstack-start rules with type information", (it) => {
+  it.effect(
+    "no-client-code-in-server-component flags hooks and handlers",
+    () => flagsClientCodeInServerComponents,
+  );
+  it.effect(
+    "no-async-client-component flags async components rendered on the client",
+    () => flagsAsyncClientComponents,
+  );
 });

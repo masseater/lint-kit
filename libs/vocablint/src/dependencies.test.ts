@@ -1,6 +1,6 @@
 import { layer } from "@effect/vitest";
+import { deepStrictEqual } from "@effect/vitest/utils";
 import { Effect, Array as Arr, String as Str, pipe } from "effect";
-import { expect } from "vite-plus/test";
 
 import { dependencyEntries } from "./dependencies.ts";
 import type { RepositoryFiles } from "./repository-files.ts";
@@ -39,7 +39,7 @@ const readsTheRootTypesConditionOfAnExportMap = Effect.gen(
       }),
       "node_modules/oxlint/dist/index.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/dist/index.d.ts" },
     ]);
   },
@@ -52,7 +52,7 @@ const readsAnExportMapSpelledAsOnePathAsTheRoo = Effect.gen(
       "node_modules/oxlint/package.json": manifest({ exports: "./dist/index.js" }),
       "node_modules/oxlint/dist/index.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/dist/index.d.ts" },
     ]);
   },
@@ -67,7 +67,7 @@ const readsConditionsWrittenWithoutASubpathAsT = Effect.gen(
       }),
       "node_modules/oxlint/dist/index.d.mts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/dist/index.d.mts" },
     ]);
   },
@@ -88,7 +88,7 @@ const readsEveryPublishedSubpathAndLeavesWildc = Effect.gen(
       "node_modules/effect/dist/index.d.ts": EMPTY_DECLARATIONS,
       "node_modules/effect/dist/encoding.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "effect", declarationsPath: "node_modules/effect/dist/index.d.ts" },
       {
         specifier: "effect/encoding",
@@ -109,7 +109,7 @@ const letsTheTypesFieldNameTheRootWhenTheExpor = Effect.gen(
       "node_modules/oxlint/index.d.ts": EMPTY_DECLARATIONS,
       "node_modules/oxlint/plugins.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/index.d.ts" },
       { specifier: "oxlint/plugins", declarationsPath: "node_modules/oxlint/plugins.d.ts" },
     ]);
@@ -128,7 +128,7 @@ const letsTheTypesFieldDecideWhenTheExportMapN = Effect.gen(
       }),
       "node_modules/vite/types.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/index.d.ts" },
       { specifier: "vite", declarationsPath: "node_modules/vite/types.d.ts" },
     ]);
@@ -146,7 +146,7 @@ const findsATypesConditionNestedUnderAnotherCo = Effect.gen(
       }),
       "node_modules/oxlint/dist/index.d.mts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/dist/index.d.mts" },
     ]);
   },
@@ -159,7 +159,7 @@ const pointsARuntimeOnlyMainEntryAtTheDeclarat = Effect.gen(
       "node_modules/nested/package.json": manifest({ main: "./lib/main.cjs" }),
       "node_modules/nested/lib/main.d.cts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "nested", declarationsPath: "node_modules/nested/lib/main.d.cts" },
     ]);
   },
@@ -177,7 +177,7 @@ const readsDevelopmentAndPeerDependenciesTheSa = Effect.gen(
       "node_modules/vite/package.json": manifest({ types: "./index.d.ts" }),
       "node_modules/vite/index.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "oxlint", declarationsPath: "node_modules/oxlint/index.d.ts" },
       { specifier: "vite", declarationsPath: "node_modules/vite/index.d.ts" },
     ]);
@@ -191,7 +191,7 @@ const leavesWorkspaceDependenciesToTheReposito = Effect.gen(
       "node_modules/@repo/shared/package.json": manifest({ types: "./index.d.ts" }),
       "node_modules/@repo/shared/index.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([]);
+    deepStrictEqual(yield* relativeEntries(packageDirectory), []);
   },
 );
 
@@ -205,7 +205,7 @@ const skipsPackagesThatShipNoDeclarationsOrAre = Effect.gen(
       "node_modules/rootonly/package.json": manifest({ types: "./index.d.ts" }),
       "node_modules/rootonly/index.d.ts": EMPTY_DECLARATIONS,
     });
-    expect(yield* relativeEntries(packageDirectory)).toStrictEqual([
+    deepStrictEqual(yield* relativeEntries(packageDirectory), [
       { specifier: "rootonly", declarationsPath: "node_modules/rootonly/index.d.ts" },
     ]);
   },
@@ -221,20 +221,21 @@ const sortsEntriesByPackageName = Effect.gen(function* sortsEntriesByPackageName
     "node_modules/mid/package.json": manifest({ types: "./index.d.ts" }),
     "node_modules/mid/index.d.ts": EMPTY_DECLARATIONS,
   });
-  expect(
+  deepStrictEqual(
     pipe(
       yield* relativeEntries(packageDirectory),
       Arr.map((entry) => entry.specifier),
     ),
-  ).toStrictEqual(["alpha", "mid", "zod"]);
+    ["alpha", "mid", "zod"],
+  );
 });
 
 const hasNothingToOfferWithoutDependenciesOrWi = Effect.gen(
   function* hasNothingToOfferWithoutDependenciesOrWi() {
     const withoutDependencies = yield* directoryWith({ "package.json": manifest({ name: "x" }) });
     const withoutManifest = yield* directoryWith({ "README.md": "" });
-    expect(yield* dependencyEntries(withoutDependencies)).toStrictEqual([]);
-    expect(yield* dependencyEntries(withoutManifest)).toStrictEqual([]);
+    deepStrictEqual(yield* dependencyEntries(withoutDependencies), []);
+    deepStrictEqual(yield* dependencyEntries(withoutManifest), []);
   },
 );
 

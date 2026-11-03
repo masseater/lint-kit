@@ -29,9 +29,7 @@ const typedContext = (context: Context, parserServices: ParserServices): TypedCo
   cwd: context.cwd,
   options: context.options,
   languageOptions: context.languageOptions,
-  report: (diagnostic) => {
-    context.report(diagnostic);
-  },
+  report: context.report,
   sourceCode: { parserServices },
 });
 

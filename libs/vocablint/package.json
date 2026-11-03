@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "test": "vp test run"
+    "test": "vp test run --coverage"
   },
   "dependencies": {
     "@effect/platform-node": "catalog:",

@@ -1,6 +1,6 @@
 import { layer } from "@effect/vitest";
+import { deepStrictEqual } from "@effect/vitest/utils";
 import { Effect, Array as Arr, pipe } from "effect";
-import { expect } from "vite-plus/test";
 
 import { findingsIn, fixtureLayer } from "./repository.test.support.ts";
 
@@ -23,7 +23,7 @@ const readsLiteralSetsFromSchemaLiteralsAndUni = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([
+    deepStrictEqual(findings, [
       "src/a.ts:4 owner-value-set",
       "src/a.ts:5 duplicate-value-set",
       "src/a.ts:6 duplicate-value-set",
@@ -47,7 +47,7 @@ const acceptsSchemasBuiltFromTheOwner = Effect.gen(function* acceptsSchemasBuilt
       Arr.join("\n"),
     ),
   });
-  expect(findings).toStrictEqual([]);
+  deepStrictEqual(findings, []);
 });
 
 layer(fixtureLayer)("Effect Schema", (it) => {

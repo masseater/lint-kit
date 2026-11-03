@@ -46,7 +46,7 @@ jobs:
 
   release:
     needs: verify
-    if: github.repository == 'masseater/oxlint-plugin-decision'
+    if: github.repository == 'masseater/lint-kit'
     runs-on: ubuntu-latest
     permissions:
       contents: write

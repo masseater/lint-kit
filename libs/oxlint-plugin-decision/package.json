@@ -10,14 +10,14 @@
     "oxlint-plugin",
     "tanstack-intent"
   ],
-  "homepage": "https://github.com/masseater/oxlint-plugin-decision#readme",
+  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/oxlint-plugin-decision#readme",
   "bugs": {
-    "url": "https://github.com/masseater/oxlint-plugin-decision/issues"
+    "url": "https://github.com/masseater/lint-kit/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masseater/oxlint-plugin-decision.git",
+    "url": "git+https://github.com/masseater/lint-kit.git",
     "directory": "libs/oxlint-plugin-decision"
   },
   "files": [

@@ -1,6 +1,7 @@
 {
   "name": "@r_masseater/vocablint",
   "version": "0.0.0",
+  "private": true,
   "description": "Point every finite value set and object shape at the one place that already owns it: a registered owner in the repository or a dependency type.",
   "keywords": [
     "effect",
@@ -8,14 +9,14 @@
     "typescript",
     "vocabulary"
   ],
-  "homepage": "https://github.com/masseater/vocablint#readme",
+  "homepage": "https://github.com/masseater/lint-kit/tree/main/tools/vocablint#readme",
   "bugs": {
-    "url": "https://github.com/masseater/vocablint/issues"
+    "url": "https://github.com/masseater/lint-kit/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masseater/vocablint.git",
+    "url": "git+https://github.com/masseater/lint-kit.git",
     "directory": "tools/vocablint"
   },
   "bin": {
@@ -38,7 +39,7 @@
   },
   "scripts": {
     "build": "vp pack",
-    "test": "vp test run",
+    "test": "vp test run --coverage",
     "prepublishOnly": "vp run build"
   },
   "dependencies": {
@@ -47,10 +48,12 @@
     "typescript-6": "catalog:"
   },
   "devDependencies": {
+    "@effect/vitest": "catalog:",
     "@types/node": "catalog:",
     "@vocablint/core": "workspace:*",
     "typescript": "catalog:stack",
-    "vite-plus": "catalog:stack"
+    "vite-plus": "catalog:stack",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": ">=26"

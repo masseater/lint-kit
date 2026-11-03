@@ -7,8 +7,14 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": true,
       "changelog-sections": [
-        { "type": "feat", "section": "Features" },
-        { "type": "fix", "section": "Bug Fixes" }
+        {
+          "type": "feat",
+          "section": "Features"
+        },
+        {
+          "type": "fix",
+          "section": "Bug Fixes"
+        }
       ],
       "extra-files": [
         {
@@ -19,6 +25,11 @@
         {
           "type": "json",
           "path": "libs/oxlint-plugin-decision-presets/package.json",
+          "jsonpath": "$.version"
+        },
+        {
+          "type": "json",
+          "path": "libs/oxlint-typed-rules/package.json",
           "jsonpath": "$.version"
         }
       ]

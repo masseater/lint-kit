@@ -3,6 +3,7 @@ import { SyntaxKind } from "typescript-7/ast";
 import type { Node, SourceFile } from "typescript-7/ast";
 import type { Context, Location, Range } from "vite-plus/lint/plugins";
 
+import { memoizeByKey } from "./memo.ts";
 import type { CompatProgram } from "./program.ts";
 
 interface RangedNode {
@@ -66,32 +67,22 @@ const toMappedNode = ({ context }: FileProgram, node: Node): MappedNode => {
   };
 };
 
-const createParserServices = (file: FileProgram): ParserServices => {
-  const toTs = new WeakMap<RangedNode, Node>();
-  return {
-    program: file.program,
-    esTreeNodeToTSNodeMap: {
-      get: (node) =>
-        Option.fromNullishOr(toTs.get(node)).pipe(
-          Option.getOrElse(() => {
-            const found = innermostSpanning(file.sourceFile, node.range);
-            toTs.set(node, found);
-            return found;
-          }),
-        ),
-    },
-    tsNodeToESTreeNodeMap: {
-      get: (node) =>
-        Option.liftPredicate(
-          node,
-          (candidate) => candidate.getSourceFile().fileName === file.sourceFile.fileName,
-        ).pipe(
-          Option.map((candidate) => toMappedNode(file, candidate)),
-          Option.getOrUndefined,
-        ),
-    },
-  };
-};
+const createParserServices = (file: FileProgram): ParserServices => ({
+  program: file.program,
+  esTreeNodeToTSNodeMap: {
+    get: memoizeByKey((node: RangedNode) => innermostSpanning(file.sourceFile, node.range)),
+  },
+  tsNodeToESTreeNodeMap: {
+    get: (node) =>
+      Option.liftPredicate(
+        node,
+        (candidate) => candidate.getSourceFile().fileName === file.sourceFile.fileName,
+      ).pipe(
+        Option.map((candidate) => toMappedNode(file, candidate)),
+        Option.getOrUndefined,
+      ),
+  },
+});
 
 export { createParserServices };
 export type { FileProgram, MappedNode, ParserServices, RangedNode };

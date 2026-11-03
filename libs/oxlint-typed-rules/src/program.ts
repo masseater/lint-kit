@@ -23,6 +23,8 @@ import type {
   SymbolFlags,
 } from "typescript-7/sync";
 
+import { memoizeByKey } from "./memo.ts";
+
 const tracing = OtlpTracer.layerFromConfig({
   resource: { serviceName: "oxlint-typed-rules" },
 }).pipe(Layer.provide(OtlpSerialization.layerJson), Layer.provide(FetchHttpClient.layer));
@@ -54,7 +56,16 @@ interface CompatProgram {
   readonly getTypeChecker: () => CompatChecker;
 }
 
-const api = new API();
+const startApi = (): API => {
+  const started = new API();
+  process.once("beforeExit", () => {
+    started.close();
+    Effect.runFork(runtime.disposeEffect);
+  });
+  return started;
+};
+
+const api = startApi();
 
 const snapshots = new Map<API, Snapshot>([[api, api.createSnapshot()]]);
 
@@ -67,17 +78,12 @@ const currentSnapshot = (): Snapshot =>
     }),
   );
 
-process.once("beforeExit", () => {
-  api.close();
-  Effect.runFork(runtime.disposeEffect);
-});
-
 const isOwnSourceFile = (fileName: string): boolean =>
   !Str.includes("/node_modules/")(fileName) && !Str.endsWith(".d.ts")(fileName);
 
 const compatSymbols = new WeakMap<NativeSymbol, CompatSymbol>();
 
-const toCompatSymbol = (project: Project, native: NativeSymbol): CompatSymbol =>
+const internCompatSymbol = (project: Project, native: NativeSymbol): CompatSymbol =>
   Option.fromNullishOr(compatSymbols.get(native)).pipe(
     Option.getOrElse(() => {
       const created: CompatSymbol = {
@@ -102,10 +108,11 @@ const toCompatSymbol = (project: Project, native: NativeSymbol): CompatSymbol =>
 const compatChecker = (project: Project, checker: Checker): CompatChecker => ({
   getSymbolAtLocation: (node) =>
     Option.fromNullishOr(checker.getSymbolAtLocation(node)).pipe(
-      Option.map((native) => toCompatSymbol(project, native)),
+      Option.map((native) => internCompatSymbol(project, native)),
       Option.getOrUndefined,
     ),
-  getAliasedSymbol: (symbol) => toCompatSymbol(project, checker.getAliasedSymbol(symbol.native)),
+  getAliasedSymbol: (symbol) =>
+    internCompatSymbol(project, checker.getAliasedSymbol(symbol.native)),
 });
 
 const ownSourceFiles = (program: NativeProgram): readonly SourceFile[] =>
@@ -117,24 +124,18 @@ const ownSourceFiles = (program: NativeProgram): readonly SourceFile[] =>
     ),
   );
 
+const cachedOwnSourceFiles = memoizeByKey(ownSourceFiles);
+
 const compatPrograms = new WeakMap<NativeProgram, CompatProgram>();
 
-const toCompatProgram = (project: Project): CompatProgram =>
+const internCompatProgram = (project: Project): CompatProgram =>
   Option.fromNullishOr(compatPrograms.get(project.program)).pipe(
     Option.getOrElse(() => {
       const { program } = project;
       const checker = compatChecker(project, project.checker);
-      const ownFiles: (readonly SourceFile[])[] = [];
       const created: CompatProgram = {
-        getSourceFile: (fileName) => program.getSourceFile(fileName),
-        getSourceFiles: () =>
-          Arr.head(ownFiles).pipe(
-            Option.getOrElse(() => {
-              const files = ownSourceFiles(program);
-              ownFiles.push(files);
-              return files;
-            }),
-          ),
+        getSourceFile: program.getSourceFile.bind(program),
+        getSourceFiles: () => cachedOwnSourceFiles(program),
         getTypeChecker: () => checker,
       };
       compatPrograms.set(program, created);
@@ -147,18 +148,11 @@ const matchesText = (project: Project, overlay: Overlay): boolean =>
     Option.exists((sourceFile) => sourceFile.text === overlay.text),
   );
 
-const projectsByDirectory = new WeakMap<Snapshot, Map<string, Project>>();
-
 const directoryOf = (fileName: string): string => Str.replace(/[\\/][^\\/]*$/u, "")(fileName);
 
-const directoryProjects = (snapshot: Snapshot): Map<string, Project> =>
-  Option.fromNullishOr(projectsByDirectory.get(snapshot)).pipe(
-    Option.getOrElse(() => {
-      const created = new Map<string, Project>();
-      projectsByDirectory.set(snapshot, created);
-      return created;
-    }),
-  );
+const directoryProjects = memoizeByKey(
+  (_snapshot: Snapshot): Map<string, Project> => new Map<string, Project>(),
+);
 
 const defaultProject = (snapshot: Snapshot, fileName: string): Option.Option<Project> =>
   Option.fromNullishOr(snapshot.getDefaultProjectForFile(fileName)).pipe(
@@ -204,7 +198,7 @@ const projectOfFile = (overlay: Overlay): Effect.Effect<Option.Option<Project>> 
 
 const programFor = (overlay: Overlay): Option.Option<CompatProgram> =>
   Exit.match(runtime.runSyncExit(projectOfFile(overlay)), {
-    onSuccess: Option.map(toCompatProgram),
+    onSuccess: Option.map(internCompatProgram),
     onFailure: (cause) => {
       throw Cause.squash(cause);
     },

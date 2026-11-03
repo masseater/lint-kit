@@ -1,6 +1,6 @@
 import { layer } from "@effect/vitest";
+import { deepStrictEqual } from "@effect/vitest/utils";
 import { Effect, Array as Arr, Record as Rec, pipe } from "effect";
-import { expect } from "vite-plus/test";
 
 import { findingsIn, fixtureLayer } from "./repository.test.support.ts";
 
@@ -63,10 +63,7 @@ const reportsSetsThatRestateAnExportedLibraryT = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([
-      "src/a.ts:1 library-value-set",
-      "src/a.ts:2 library-value-set",
-    ]);
+    deepStrictEqual(findings, ["src/a.ts:1 library-value-set", "src/a.ts:2 library-value-set"]);
   },
 );
 
@@ -85,7 +82,7 @@ const namesTheLibrarySlotASetFlowsIntoEvenAnIn = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual(["src/a.ts:2 library-value-set"]);
+    deepStrictEqual(findings, ["src/a.ts:2 library-value-set"]);
   },
 );
 
@@ -104,7 +101,7 @@ const acceptsSetsDerivedFromTheLibraryTypeAndL = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([]);
+    deepStrictEqual(findings, []);
   },
 );
 
@@ -125,7 +122,7 @@ const reportsObjectShapesCopiedFromALibraryTyp = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual(["src/a.ts:2 library-shape", "src/a.ts:3 library-shape"]);
+    deepStrictEqual(findings, ["src/a.ts:2 library-shape", "src/a.ts:3 library-shape"]);
   },
 );
 
@@ -155,7 +152,7 @@ const acceptsKeySelectionsAndLooseLibraryContr = Effect.gen(
       ),
       "src/c.ts": "export interface Entry { slug: string; category: string; title: string }\n",
     });
-    expect(findings).toStrictEqual([]);
+    deepStrictEqual(findings, []);
   },
 );
 
@@ -184,7 +181,7 @@ const ignoresGenericSlotsNumericCoincidencesA = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([]);
+    deepStrictEqual(findings, []);
   },
 );
 

@@ -1,6 +1,6 @@
 import { layer } from "@effect/vitest";
+import { deepStrictEqual } from "@effect/vitest/utils";
 import { Effect, Array as Arr, pipe } from "effect";
-import { expect } from "vite-plus/test";
 
 import { findingsIn, fixtureLayer } from "./repository.test.support.ts";
 
@@ -30,7 +30,7 @@ const reportsSetsThatRestateExtendOrSpellOutAn = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([
+    deepStrictEqual(findings, [
       "src/use.ts:2 owner-value-set",
       "src/use.ts:3 owner-extension",
       "src/use.ts:5 owned-literal",
@@ -52,7 +52,7 @@ const acceptsSetsDerivedFromTheOwner = Effect.gen(function* acceptsSetsDerivedFr
       Arr.join("\n"),
     ),
   });
-  expect(findings).toStrictEqual([]);
+  deepStrictEqual(findings, []);
 });
 
 const reportsAnnotationsThatCannotRegisterAnOw = Effect.gen(
@@ -77,7 +77,7 @@ const reportsAnnotationsThatCannotRegisterAnOw = Effect.gen(
         Arr.join("\n"),
       ),
     });
-    expect(findings).toStrictEqual([
+    deepStrictEqual(findings, [
       "src/owners.ts:2 owner-annotation",
       "src/owners.ts:2 duplicate-value-set",
       "src/owners.ts:4 owner-annotation",
@@ -95,10 +95,32 @@ const reportsTheSameUnregisteredSetDeclaredTwi = Effect.gen(
       "src/a.ts": 'export type Mode = "light" | "dark";\n',
       "src/b.ts": 'export const MODES = ["dark", "light"] as const;\n',
     });
-    expect(findings).toStrictEqual([
-      "src/a.ts:1 duplicate-value-set",
-      "src/b.ts:1 duplicate-value-set",
-    ]);
+    deepStrictEqual(findings, ["src/a.ts:1 duplicate-value-set", "src/b.ts:1 duplicate-value-set"]);
+  },
+);
+
+const PACKAGE_TSCONFIG = JSON.stringify({
+  extends: "../../tsconfig.json",
+  include: ["src"],
+});
+
+const reachesOwnersOfWorkspaceDependenciesOnly = Effect.gen(
+  function* reachesOwnersOfWorkspaceDependenciesOnly() {
+    const findings = yield* findingsIn({
+      "libs/status/package.json": JSON.stringify({ name: "@repo/status" }),
+      "libs/status/tsconfig.json": PACKAGE_TSCONFIG,
+      "libs/status/src/status.ts": STATUS_OWNER,
+      "apps/web/package.json": JSON.stringify({
+        name: "web",
+        dependencies: { "@repo/status": "workspace:*" },
+      }),
+      "apps/web/tsconfig.json": PACKAGE_TSCONFIG,
+      "apps/web/src/use.ts": 'export type Local = "draft" | "published";\n',
+      "apps/other/package.json": JSON.stringify({ name: "other" }),
+      "apps/other/tsconfig.json": PACKAGE_TSCONFIG,
+      "apps/other/src/use.ts": 'export type Local = "draft" | "published" | "archived";\n',
+    });
+    deepStrictEqual(findings, ["apps/web/src/use.ts:1 owner-value-set"]);
   },
 );
 
@@ -115,5 +137,9 @@ layer(fixtureLayer)("repository owners", (it) => {
   it.effect(
     "reports the same unregistered set declared twice",
     () => reportsTheSameUnregisteredSetDeclaredTwi,
+  );
+  it.effect(
+    "reaches the owners of workspace dependencies only",
+    () => reachesOwnersOfWorkspaceDependenciesOnly,
   );
 });

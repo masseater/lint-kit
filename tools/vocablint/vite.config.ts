@@ -9,4 +9,15 @@ export default defineConfig({
       generator: "tsgo",
     },
   },
+  test: {
+    coverage: {
+      provider: "v8",
+      include: ["src/**", "dist/**/*.mjs"],
+      excludeAfterRemap: true,
+      autoAttachSubprocess: true,
+      reporter: ["text-summary", "json"],
+    },
+    reporters: ["default", "blob"],
+    outputFile: { blob: new URL("../../.vitest-reports/vocablint.json", import.meta.url).pathname },
+  },
 });

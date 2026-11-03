@@ -21,7 +21,7 @@ const runCli = (cwd: string): readonly Problem[] =>
     }),
   );
 
-const loadProblems = (cwd: string): readonly Problem[] =>
+const runCliOnce = (cwd: string): readonly Problem[] =>
   Option.fromUndefinedOr(loaded.get(cwd)).pipe(
     Option.getOrElse(() => {
       const problems = runCli(cwd);
@@ -30,4 +30,4 @@ const loadProblems = (cwd: string): readonly Problem[] =>
     }),
   );
 
-export default vocablintPlugin(loadProblems);
+export default vocablintPlugin(runCliOnce);
