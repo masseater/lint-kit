@@ -3,9 +3,9 @@
   "baseline": "57a674a2d3ff7174b2c7de2390f3cfbccde0a50d",
   "items": {
     "skill:libs/oxlint-plugin-decision/skills/write-decision-rules/SKILL.md": {
-      "fingerprint": "6a7532d24626ddfbad72206b300c292615e3cb6faeec0795bb7d02b99429ce74",
+      "fingerprint": "0610cb81950c41ec35e255a504b8913e296027c1a8dbbe5b1b46fd36d018701e",
       "snapshot": {
-        "libs/oxlint-plugin-decision/README.md": "f29b144160e513bddcc10be6b6ccc22cba36146dc8c713a5781dd6f526038a39",
+        "libs/oxlint-plugin-decision/README.md": "b4392a5f97be73b5b7de739173ac11565e0e929c47333565b7aaf00feebb32d2",
         "libs/oxlint-plugin-decision/example/fail.js": "6910d18929369823ec98c8ec67aa8b9a94b7e67415beea3b32fc8028535ec69a",
         "libs/oxlint-plugin-decision/example/oxlint.config.ts": "0e3274a3e1b23100a00b6a5c973fbec1088758c15312a71859225fcac2ee35e9",
         "libs/oxlint-plugin-decision/example/pass.js": "b5970e8765445185aed18f3e9780ab9b799de7fe925d003015d695ef47f2298a",
@@ -15,7 +15,7 @@
         "libs/oxlint-plugin-decision/skills/write-decision-rules/references/tuning.md": "6f25c80128bb1c62ae786820e5b02595218c0d588674bd26ecf1d5975b94568d",
         "libs/oxlint-plugin-decision/src/answer.ts": "62298676453143b2885e412cd5d618cdfa9111690914c9365559475d3d835c2e",
         "libs/oxlint-plugin-decision/src/cache.ts": "817e97a4343cc38019c3c147916db3f6a28011058b126eadd0a076f119d256e9",
-        "libs/oxlint-plugin-decision/src/client.ts": "5790e98133dd9e028218f1b31b96d89d252531114484e3a21a7887352617c2e1",
+        "libs/oxlint-plugin-decision/src/client.ts": "8c7cbfe690637537bc5ff5ae138093ca779b9c3c7fdbec327bf28c8667d3a234",
         "libs/oxlint-plugin-decision/src/context.ts": "50e6dfce04ffba4bbeade8307b691070490f78758be8f8e51de4ddc4afe5c1ba",
         "libs/oxlint-plugin-decision/src/define.ts": "55d06ec57d1599324215b5a229879b900442eb49343636e28531cf0903556d8a",
         "libs/oxlint-plugin-decision/src/explain.ts": "11767d0c64196df0e4bf3c0843287f1062a7245abb6a675c492c7f8165be0c7d",
@@ -38,20 +38,20 @@
         "libs/oxlint-plugin-decision/tests/skill-write-decision-rules.test.ts": "e4695a9376af5f5481c9b59c53a5032c8557f62363b9cad6776a1852c40ad2c8",
         "libs/oxlint-plugin-decision/tests/skills/write-decision-rules/task.md": "4a3bb7b8f94d6238c152769995fbd40a1df302f9258ef085512ee37296779e44"
       },
-      "head": "4f798cdb5bc4f1cde6c68a0802c3bafdf263abd6",
+      "head": "c1e0aea7d21b0a2c2b6b161937ef5c89b0a7f674",
       "outcome": "no-change",
-      "reason": "依存更新と effect 4.1 の Digest への移行、テスト専用 export の削除だけで、skill が説明する公開 API とルールの書き方は変わらない",
+      "reason": "リポ名の帰属先を変えただけで、skill の書き方に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-plugin-decision/src/cache.ts, libs/oxlint-plugin-decision/src/explain.ts, libs/oxlint-plugin-decision/src/openrouter-worker.ts, libs/oxlint-plugin-decision/src/options.ts, libs/oxlint-plugin-decision/src/services.ts at 4f798cdb5bc4f1cde6c68a0802c3bafdf263abd6"
+        "Changed: libs/oxlint-plugin-decision/README.md, libs/oxlint-plugin-decision/src/client.ts at c1e0aea7d21b0a2c2b6b161937ef5c89b0a7f674"
       ]
     },
     "planning:_artifacts": {
-      "fingerprint": "dcf08a73822f9ff66a1f6e144a020f43fb0210452a1f8467921f402568ab7ef2",
+      "fingerprint": "901f1db5653d2739b2c4e9e4d9fc4b14c63003106b9e9dd43d394f8475fee1e2",
       "snapshot": {
         "_artifacts/domain_map.yaml": "63b9b1ccb8275ebc2a7b3c2f8a8f35aefd408dd8b4efc8e3ddf1c6c2088ee9b2",
         "_artifacts/skill_spec.md": "2885e03eee5f2d42425186ccf1e364151c4408c850d99ae63bd94f0b9c184868",
         "_artifacts/skill_tree.yaml": "4a1470aedc38cd8095845676b0072c9983c28d95fecd57e930ca6e9fefa1f72a",
-        "libs/oxlint-plugin-decision/README.md": "f29b144160e513bddcc10be6b6ccc22cba36146dc8c713a5781dd6f526038a39",
+        "libs/oxlint-plugin-decision/README.md": "b4392a5f97be73b5b7de739173ac11565e0e929c47333565b7aaf00feebb32d2",
         "libs/oxlint-plugin-decision/example/fail.js": "6910d18929369823ec98c8ec67aa8b9a94b7e67415beea3b32fc8028535ec69a",
         "libs/oxlint-plugin-decision/example/oxlint.config.ts": "0e3274a3e1b23100a00b6a5c973fbec1088758c15312a71859225fcac2ee35e9",
         "libs/oxlint-plugin-decision/example/pass.js": "b5970e8765445185aed18f3e9780ab9b799de7fe925d003015d695ef47f2298a",
@@ -61,7 +61,7 @@
         "libs/oxlint-plugin-decision/skills/write-decision-rules/references/tuning.md": "6f25c80128bb1c62ae786820e5b02595218c0d588674bd26ecf1d5975b94568d",
         "libs/oxlint-plugin-decision/src/answer.ts": "62298676453143b2885e412cd5d618cdfa9111690914c9365559475d3d835c2e",
         "libs/oxlint-plugin-decision/src/cache.ts": "817e97a4343cc38019c3c147916db3f6a28011058b126eadd0a076f119d256e9",
-        "libs/oxlint-plugin-decision/src/client.ts": "5790e98133dd9e028218f1b31b96d89d252531114484e3a21a7887352617c2e1",
+        "libs/oxlint-plugin-decision/src/client.ts": "8c7cbfe690637537bc5ff5ae138093ca779b9c3c7fdbec327bf28c8667d3a234",
         "libs/oxlint-plugin-decision/src/context.ts": "50e6dfce04ffba4bbeade8307b691070490f78758be8f8e51de4ddc4afe5c1ba",
         "libs/oxlint-plugin-decision/src/define.ts": "55d06ec57d1599324215b5a229879b900442eb49343636e28531cf0903556d8a",
         "libs/oxlint-plugin-decision/src/explain.ts": "11767d0c64196df0e4bf3c0843287f1062a7245abb6a675c492c7f8165be0c7d",
@@ -84,11 +84,11 @@
         "libs/oxlint-plugin-decision/tests/skill-write-decision-rules.test.ts": "e4695a9376af5f5481c9b59c53a5032c8557f62363b9cad6776a1852c40ad2c8",
         "libs/oxlint-plugin-decision/tests/skills/write-decision-rules/task.md": "4a3bb7b8f94d6238c152769995fbd40a1df302f9258ef085512ee37296779e44"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "c1e0aea7d21b0a2c2b6b161937ef5c89b0a7f674",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "リポ名の帰属先を変えただけで、skill の書き方に影響しない",
       "evidence": [
-        "Changed: _artifacts/domain_map.yaml at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-plugin-decision/README.md, libs/oxlint-plugin-decision/src/client.ts at c1e0aea7d21b0a2c2b6b161937ef5c89b0a7f674"
       ]
     },
     "source:CHANGELOG.md": {
