@@ -46,9 +46,9 @@
       ]
     },
     "planning:_artifacts": {
-      "fingerprint": "4f85dceb861c1b9044b12eecba417d86ecc8e0aac1cae960d17ecd8abca40dc1",
+      "fingerprint": "dcf08a73822f9ff66a1f6e144a020f43fb0210452a1f8467921f402568ab7ef2",
       "snapshot": {
-        "_artifacts/domain_map.yaml": "807339acae733333cc8365b6d289f3a072659669e6c4030d9bc50005bc06657e",
+        "_artifacts/domain_map.yaml": "63b9b1ccb8275ebc2a7b3c2f8a8f35aefd408dd8b4efc8e3ddf1c6c2088ee9b2",
         "_artifacts/skill_spec.md": "2885e03eee5f2d42425186ccf1e364151c4408c850d99ae63bd94f0b9c184868",
         "_artifacts/skill_tree.yaml": "4a1470aedc38cd8095845676b0072c9983c28d95fecd57e930ca6e9fefa1f72a",
         "libs/oxlint-plugin-decision/README.md": "f29b144160e513bddcc10be6b6ccc22cba36146dc8c713a5781dd6f526038a39",
@@ -84,11 +84,11 @@
         "libs/oxlint-plugin-decision/tests/skill-write-decision-rules.test.ts": "e4695a9376af5f5481c9b59c53a5032c8557f62363b9cad6776a1852c40ad2c8",
         "libs/oxlint-plugin-decision/tests/skills/write-decision-rules/task.md": "4a3bb7b8f94d6238c152769995fbd40a1df302f9258ef085512ee37296779e44"
       },
-      "head": "4f798cdb5bc4f1cde6c68a0802c3bafdf263abd6",
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
       "outcome": "no-change",
-      "reason": "依存更新と effect 4.1 の Digest への移行、テスト専用 export の削除だけで、skill が説明する公開 API とルールの書き方は変わらない",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-plugin-decision/src/cache.ts, libs/oxlint-plugin-decision/src/explain.ts, libs/oxlint-plugin-decision/src/openrouter-worker.ts, libs/oxlint-plugin-decision/src/options.ts, libs/oxlint-plugin-decision/src/services.ts at 4f798cdb5bc4f1cde6c68a0802c3bafdf263abd6"
+        "Changed: _artifacts/domain_map.yaml at 58dfb6cb5eb674399c36bebaf10a99299275f621"
       ]
     },
     "source:CHANGELOG.md": {
@@ -99,7 +99,9 @@
       "head": "75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18",
       "outcome": "updated",
       "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
-      "evidence": ["Changed: CHANGELOG.md at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"]
+      "evidence": [
+        "Changed: CHANGELOG.md at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"
+      ]
     },
     "source:NOTICE": {
       "fingerprint": "f5de80f2de62efe1295527803aa77a72bb63fa84e175c23cad57ac63ef26a4ef",
@@ -109,7 +111,9 @@
       "head": "75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18",
       "outcome": "updated",
       "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
-      "evidence": ["Changed: NOTICE at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"]
+      "evidence": [
+        "Changed: NOTICE at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"
+      ]
     },
     "source:libs/oxlint-plugin-decision/NOTICE": {
       "fingerprint": "5694b4ddc129acdd0fb5a0e9b79b26b917830f997034f6ccd436425581cd3b14",
@@ -121,6 +125,666 @@
       "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
       "evidence": [
         "Changed: libs/oxlint-plugin-decision/NOTICE at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/.gitignore": {
+      "fingerprint": "27c4ea01c66d09c2202fd27d6e7a8982e5dcc4160f9b999121ed97b055518ce3",
+      "snapshot": {
+        "libs/oxlint-typed-rules/.gitignore": "60f07771058f6c2b70d4847eaaf59884e6f4936c632c6ab5cd63baa2aa9d7a4f"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/.gitignore at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/LICENSE": {
+      "fingerprint": "54dcbdaabaa2909de80b70d0c5981243ae6e475b0aa65ea67e4ca62a14857b17",
+      "snapshot": {
+        "libs/oxlint-typed-rules/LICENSE": "a7c76e4d37af3c197e39626286badab1bab9234cb170f3400827b9462275fb6c"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/LICENSE at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/README.md": {
+      "fingerprint": "8034b80351f1f68757201c956e9217b932128523ea8512fb5dd61120aee2f1ce",
+      "snapshot": {
+        "libs/oxlint-typed-rules/README.md": "086becaf3455bfd45fc40a41cc96d98931f0b426d055a55518c24be651dc47d6"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/index.ts": {
+      "fingerprint": "d2a0aa2d2da6420862d68ecf32ca4ac73d2ef34a00175f4df5fc619992b28feb",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/index.ts": "2456d42130f2529fc5b9b10f2b1b6b84e01ae30499a7ebc3d915ed358d491a41"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/index.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/memo.ts": {
+      "fingerprint": "49750dc2fb3aadf84c8d8afe4608b7432771bb5b84738f7b67e43635e306f766",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/memo.ts": "bcebf31a5db530841ccb58a08f14a1a5a20c708864b07f2a73ff01c8f4fb76c2"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/memo.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/parser-services.ts": {
+      "fingerprint": "6aa209690d42778ad9bcced677c27e79dddcd861396e4a27aa5116a679bd0128",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/parser-services.ts": "91a96dbf1a5fad4d3282acb7a3587e1d23b94f07658d9d115820de294511aa43"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/parser-services.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/program.ts": {
+      "fingerprint": "d409cda07e0877e93ff60d939fc1153e5e1e5b9205e6b0224545f24f8d6dfffd",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/program.ts": "84ce4ad7b5d4902a816e8093fb2f396b958e723bda8e40ea784b2d95f5d9862a"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/program.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/tanstack-start.test.ts": {
+      "fingerprint": "4939e43a8360a5d26fb3ee673f15e764bcae7099fc296cfcd0ac28f0b5a6d7ab",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/tanstack-start.test.ts": "30b801a6db80723637f09767e9e5813ad4ef995f5f033c91f1307fbb09911369"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/tanstack-start.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/tanstack-start.ts": {
+      "fingerprint": "4545cad953c5dfa6a9522609b95b69b644e06967e5b5747e7c2ed098b7cb5698",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/tanstack-start.ts": "317809b4ac43b0e880354cb357e4ffdef766c09d7461fd1f907f2fff5b46a71f"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/tanstack-start.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/ts-compat.ts": {
+      "fingerprint": "1c5d2e9533e87944954ff4c78ef7e8b87888de1a27d4df2ae2ffe9cda57dbd09",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/ts-compat.ts": "38bbf09325be36a3e41d332673a50c1ab512a54e22e8aaea760235b9ed30ae80"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/ts-compat.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/typed-rule.ts": {
+      "fingerprint": "c9594feb13a1431780297a59c7fbefbbf25b2ab566b098e385e3f753a5cbcb3d",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/typed-rule.ts": "634a2326d2b2a24d96373bed9a60d80bc4b130ce1b0afdd5a6659213e9a3cf8d"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/typed-rule.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/typescript-eslint-utils.ts": {
+      "fingerprint": "330f68fc01418592b7b111e028e02d6d2e1c27ecf9972ad49a87d8bc638fa6ee",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/typescript-eslint-utils.ts": "8285ef88ab878cd607ca93aaa8a4c0bfbce6e9efa809ce9674bf3596e93716d5"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/typescript-eslint-utils.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/tsconfig.json": {
+      "fingerprint": "c4366ebc058d71e2ed5471ca7626642a8d751926a15e3376ac004210f91366b2",
+      "snapshot": {
+        "libs/oxlint-typed-rules/tsconfig.json": "a66a572dcba947f8066a7c0a61ad3652a6982ea1a8c99d608ab7e2e126ada85c"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/rule-tester.ts": {
+      "fingerprint": "32818c10bfc647e061d0dea0b8666d05ab33ae53af21ccb85f9b4ff54c131f3c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/rule-tester.ts": "040a8f75e04dc84625654f44edcf1397944261ead4719a636265a4e2f076a789"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/rule-tester.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/rules/no-async-client-component.ts": {
+      "fingerprint": "540ca52d6fd52156f59cb0bb94935e09e0efa5b0970470cae0364c932b44f8e1",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/rules/no-async-client-component.ts": "2b4f5074d970aafed8d8cee952145415161b28908aae17d082d1e547fdab3b4c"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/rules/no-async-client-component.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/rules/no-client-code-in-server-component.ts": {
+      "fingerprint": "43484030c7abb61567ec482626891db1f658bd5c74891772aad400ca4ff6630f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/rules/no-client-code-in-server-component.ts": "a165f7a2e0d767f66aa73d1d10968f42f04c1ee9d94851195d25498451a5000f"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/rules/no-client-code-in-server-component.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/src/__tests__/no-async-client-component.rule.test.ts": {
+      "fingerprint": "d869fca01e1e9d45f6552bd10d931e5420cb42dddd836096b9b2d8c834ade121",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/src/__tests__/no-async-client-component.rule.test.ts": "318ce67b450aa12607bc485c874b910a75163d35bd893a80373a398d74edfc69"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/src/__tests__/no-async-client-component.rule.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/src/__tests__/no-client-code-in-server-component.rule.test.ts": {
+      "fingerprint": "d67483d76a508f3cf6d5722c0d971f22fd54e6c366e2f11c5f67b61ea5e36ab6",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/src/__tests__/no-client-code-in-server-component.rule.test.ts": "f60c2c8e985754dc4018cb60b90e7adb92920e0ef9733cdaa118ae8cedd5305e"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/src/__tests__/no-client-code-in-server-component.rule.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/src/__tests__/tsconfig.json": {
+      "fingerprint": "184dad9fe209f8d57ccb201949d34688c27f43b536c79b5fcc63be992817dcb3",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/src/__tests__/tsconfig.json": "06d6a84b0ab11a106335adab1ad66d3540184ceafd289f98bc1cc66178dfa865"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/src/__tests__/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/vite.config.ts": {
+      "fingerprint": "a508fc942119200ba67c4548b359b80cf05511890a766728fe83dd61d9166a26",
+      "snapshot": {
+        "libs/oxlint-typed-rules/vite.config.ts": "51962ad0a9975b086167ad79dd89904027a9eca69c760e2bcf278f33fd5502b6"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/analysis.ts": {
+      "fingerprint": "3a15c35dde71fc870a0c3fa3c6087fa4ce3884c6e7a813a688c2ecb144369f0f",
+      "snapshot": {
+        "libs/vocablint/src/analysis.ts": "f62653644bd72ac2b8ad7e581d24ae3862bb008f7aa4678f86d4e600d5452cf8"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/analysis.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/check.ts": {
+      "fingerprint": "27bb5189c6144ab8c6a33c1ff3d6a74e1e44776e17f20ee46d2dfaf8e67a0e00",
+      "snapshot": {
+        "libs/vocablint/src/check.ts": "416d2add3a93567216a0e832db8654054449ff2505affbc536623e1807d16756"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/check.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/dependencies.test.ts": {
+      "fingerprint": "75161b522b9aaa6e1e7a4a1c01ded1e73b0e2647780df37bd06a8a8fe84a01f3",
+      "snapshot": {
+        "libs/vocablint/src/dependencies.test.ts": "5a096dc8da8ba825343049b8b846250530c9de511b0628a99a1109b9d0d80846"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/dependencies.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/dependencies.ts": {
+      "fingerprint": "bc7e7e6da3bd8b55e05dcd9d792efc69bb3b8e2436b3761a87bdc461f0bd361e",
+      "snapshot": {
+        "libs/vocablint/src/dependencies.ts": "9235d1d1e911a9689baab1f2a33695f076f681c77ce532aa84004419300a1cc4"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/dependencies.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/duplicates.ts": {
+      "fingerprint": "f78145406effe281b276386e4d3f632e134b5b38e1e165a5962eb35e7d482389",
+      "snapshot": {
+        "libs/vocablint/src/duplicates.ts": "142aedc4a909558081dabdd01910f8c716aa3ade0365536c6b8eea5312de67f2"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/duplicates.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/effect-schema.test.ts": {
+      "fingerprint": "944e5c09673772b2dd88ffd8fa691af2cca91a04d5b4fc8b9fe907a5d4a7664b",
+      "snapshot": {
+        "libs/vocablint/src/effect-schema.test.ts": "a32b559f4885f111d2db2928249b6e79299c3c06b12037915c94b3b41194d395"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/effect-schema.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/flows.ts": {
+      "fingerprint": "b88edae322bc16e5117af817852ccf800ff6df6fe47ee3cdbcc19193d52c83cc",
+      "snapshot": {
+        "libs/vocablint/src/flows.ts": "dab07b5de29c05e5310302d7b4eef2ed3acbb8868cabe0c301a55df3f9e01761"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/flows.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/index.ts": {
+      "fingerprint": "3e2a6952759c5d19c16ef564bf95b8b4e6ba488c38f14b03e9ef8177c0d55f65",
+      "snapshot": {
+        "libs/vocablint/src/index.ts": "af8b949a1bae2c0a7a0d5cbccd792b9df27b1544324aabef5248d92986e69bb9"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/index.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/library.test.ts": {
+      "fingerprint": "f121a05a64d52f23b7c6eff3da09761d6f1a2296add8a4da7f20904d8cb824cb",
+      "snapshot": {
+        "libs/vocablint/src/library.test.ts": "04a1d7b1b8f4a1adf5b76e0871ac0e2cdf77a19b6816812a8454900811009e46"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/library.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/library.ts": {
+      "fingerprint": "cd4f3a4c0e51c1168d2de2e66b437f9baa84df0374eb2486a0f4e828a08421f0",
+      "snapshot": {
+        "libs/vocablint/src/library.ts": "8b17309b68fd88b93f475b524156a5cec688480e3593c983f6215b5e930c8aa4"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/library.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/owners.test.ts": {
+      "fingerprint": "6f9840feba9bc79ff1e16e281a89c7d2940dfe108b3b26d7bc41eef48f8e85e9",
+      "snapshot": {
+        "libs/vocablint/src/owners.test.ts": "669379e501fdbbd508d3b4cf1284a70c049975a949f5864fbb6c59efa27b8345"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/owners.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/owners.ts": {
+      "fingerprint": "45428469ea00913d1b193f641ab6cc8c1d956d70e3813beb5dba73e2ef6c2e93",
+      "snapshot": {
+        "libs/vocablint/src/owners.ts": "0f97e0edb40098f11da9bb1283716e73290e24c38b601f053612440c57e57c4b"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/owners.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/problem.ts": {
+      "fingerprint": "f8a49b665aac5067b150879533a8ddde6af4bb1f5119c9d8acb498f1e7f673d8",
+      "snapshot": {
+        "libs/vocablint/src/problem.ts": "25dd1524d00b85754b6a5004cedbed4011fda6f554ba85ee6a0abdd8b1f7fe8a"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/problem.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/project.ts": {
+      "fingerprint": "4b89aa8734761371b86527a41d02f8cd134c1eb659795ff9852461c03fa7d5ab",
+      "snapshot": {
+        "libs/vocablint/src/project.ts": "2d35e4625d800b62035f1e711a30a8c4c41d14f979117ac5745d0abe63a634be"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/project.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/repository-files.ts": {
+      "fingerprint": "919a9d5790402ea990d03325d99b8cf6125d1c45be1551a2240eff21911474f8",
+      "snapshot": {
+        "libs/vocablint/src/repository-files.ts": "b0215f49f7424ead147b4f2b32df88fed0cbaa02a4336be7452b5ce6ad64e009"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/repository-files.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/repository.test.support.ts": {
+      "fingerprint": "a82d5bb61d6fceff094748c3c665ae46787c0690cbd40d427486e31a787bb4f8",
+      "snapshot": {
+        "libs/vocablint/src/repository.test.support.ts": "6a5984f3395c6f00ff34bfde4015a51596647ae8dcf8abe0358246102b8f29f9"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/repository.test.support.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/shapes.ts": {
+      "fingerprint": "c95df0b85b5d0b67925b4691d3664b6fdb57914d168abd7181f242dd66a1ff2d",
+      "snapshot": {
+        "libs/vocablint/src/shapes.ts": "098b7962e340369497c40947a373e996b438a455b8a2c6a78ea2027cc68c4350"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/shapes.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/sites.ts": {
+      "fingerprint": "c25298ffc33c0202c30b6ffdebb4a48745e6eae6de10a89f339d3d3091e8964d",
+      "snapshot": {
+        "libs/vocablint/src/sites.ts": "cc37c29ea80701c20a3368d449485d643adfb70da86642e17be54ace863c8191"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/sites.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/slots.ts": {
+      "fingerprint": "40839b42e9779d8740b480ccab110750613a8ce0cd6a821c9275e95a3d535f13",
+      "snapshot": {
+        "libs/vocablint/src/slots.ts": "e11a8a5af6863e028c7a3399ac31f60ac4d2123085f9a5f0290d7c6727f11728"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/slots.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/syntax.ts": {
+      "fingerprint": "11115626ee34261b629d13148d5ee3cc127e7058edcaa735e9365dc1f0d5be3c",
+      "snapshot": {
+        "libs/vocablint/src/syntax.ts": "fa1acac35a8c599f81e4aad09838c29ba6422b007cfa0d9a2f462748078ce475"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/syntax.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/types-packages.test.ts": {
+      "fingerprint": "a63acdd4c9e7c706a7a0aaf3caccd3a6fe7080ac5f1f26405ac7fba3c4ef7869",
+      "snapshot": {
+        "libs/vocablint/src/types-packages.test.ts": "87066200a572344ed24cc05308c0d7fd77d50d9f23fbca0ee5a05214afc3c85f"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/types-packages.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/value-checks.ts": {
+      "fingerprint": "4d6262e163d1adf3da4cdecb65660f17f24887655473c1f1bd959fce3a0705e7",
+      "snapshot": {
+        "libs/vocablint/src/value-checks.ts": "27e9205ba8103504fae11fd935786470a5bb81ed1968d6c4372ee1e9bfff8c2a"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/value-checks.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/src/values.ts": {
+      "fingerprint": "d5d9236bb6841d8ba433e5242e74807ca2031928bf8adadcf09378cb005df107",
+      "snapshot": {
+        "libs/vocablint/src/values.ts": "9fb67e13dd90d204641261072423d390d70b44bd3129ea8317208056a7245ab8"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/src/values.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/tsconfig.json": {
+      "fingerprint": "fec09db03260adb1e9a2303f1999bcc84f412674c29b532637aaceff2ada9ca3",
+      "snapshot": {
+        "libs/vocablint/tsconfig.json": "846d26e3118051fe7a5c3fc38ca5d6ccb1502400777cafbd0253f817d73c837c"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:libs/vocablint/vite.config.ts": {
+      "fingerprint": "43c78466077bbb77c1ed8dc6f0176f59fc1d015cfe8605324928c7b0201ebe3d",
+      "snapshot": {
+        "libs/vocablint/vite.config.ts": "55cd8ac1d1674c5668c5aa1e97db56bc3bd9f5ec7875a0c0786312103d5644df"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: libs/vocablint/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:patches/@tanstack__eslint-plugin-start@0.1.0.patch": {
+      "fingerprint": "2ad22e6dd0ca5c681107e8602c2949254a3ecc26a87758fa2352463922dfdcc7",
+      "snapshot": {
+        "patches/@tanstack__eslint-plugin-start@0.1.0.patch": "364cc40b73326fe59c5d685ac247690de2302e3e731b7b7d37583701f9370644"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: patches/@tanstack__eslint-plugin-start@0.1.0.patch at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/README.md": {
+      "fingerprint": "2d73bdb1b4618a6d87c716b940ab7cbc8c6f69bde96c566049051ad03daf221e",
+      "snapshot": {
+        "tools/vocablint/README.md": "c21142ef8d2e6f1fd5dc75b7389f588f1773850abfb5d6ceb2cd495d866fc950"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/cli-contract.ts": {
+      "fingerprint": "b0ce9a57460797e0b52eb321d6fe0931866494217cdc4161597f756eb9668461",
+      "snapshot": {
+        "tools/vocablint/src/cli-contract.ts": "c2d8d2ad1ea847d35a619f40d0203227ad3362db1ec49e8dbbcd7ad909ddf9c1"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/cli-contract.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/cli.test.ts": {
+      "fingerprint": "7de6e49209f2df3a800525062c4a03b9000df9b074d32f5b86390bee0784ac53",
+      "snapshot": {
+        "tools/vocablint/src/cli.test.ts": "4946504ab8f43533244b6f85dae724114ae63ec46484087c9ca8fbbbd54d2db9"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/cli.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/cli.ts": {
+      "fingerprint": "c29bf96bac4df2ff312400d1a528f26a852455e6d66560da20a349c53b3cf4b2",
+      "snapshot": {
+        "tools/vocablint/src/cli.ts": "5dadf3ef9c2f550198fe49effc42c5d47a81aa6b6ada3b53c6771eb49657c19b"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/cli.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/oxlint-rule.test.ts": {
+      "fingerprint": "0c1494fbf74813eb2c5e92cd68184a97a0bcb25ef5f956550ab17faf4cc260bf",
+      "snapshot": {
+        "tools/vocablint/src/oxlint-rule.test.ts": "8eb20bba89d67cbf7d35f870ebf4e84f5b7941d6f3e46ba487f15fb9ae2b13c8"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/oxlint-rule.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/oxlint-rule.ts": {
+      "fingerprint": "e8110a0e1a5310c0d6435b32ab20cf2f21d05ba52721d8c4e14e80730e0c398e",
+      "snapshot": {
+        "tools/vocablint/src/oxlint-rule.ts": "4ba364ce904665a3e94b4e0d699b0f711a5fb44c891e521cb5449b5fa1024e72"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/oxlint-rule.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/src/oxlint.ts": {
+      "fingerprint": "f6c437c6c457390f54a338bc900a42015dd0a5cfacb03ad81645f06e31f78818",
+      "snapshot": {
+        "tools/vocablint/src/oxlint.ts": "33e8b9e8333888d775bb86c74b1bc2f0cf75c95b2c650aa34530d22717732b5c"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/src/oxlint.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/tsconfig.json": {
+      "fingerprint": "5209c78f49baa08c844a261894d03506e4ee3e35e626db80efbafe4221cd4d3f",
+      "snapshot": {
+        "tools/vocablint/tsconfig.json": "aa772a4f8d81dddd2dccf284ede1bbc6825ba0bb8a2cbb18cddd1958a281d589"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+      ]
+    },
+    "source:tools/vocablint/vite.config.ts": {
+      "fingerprint": "c3261455e9a4970543e335e49801a5589f83a6fa2414be4e6c846816def1426d",
+      "snapshot": {
+        "tools/vocablint/vite.config.ts": "6fecc53ad0b29c5b8c6fe8b0eef4dc21f9a75243ad6e1806aa1fe60e4cd9d060"
+      },
+      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "outcome": "no-change",
+      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "evidence": [
+        "Changed: tools/vocablint/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
       ]
     }
   }
