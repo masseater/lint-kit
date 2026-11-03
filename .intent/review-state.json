@@ -99,9 +99,7 @@
       "head": "75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18",
       "outcome": "updated",
       "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
-      "evidence": [
-        "Changed: CHANGELOG.md at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"
-      ]
+      "evidence": ["Changed: CHANGELOG.md at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"]
     },
     "source:NOTICE": {
       "fingerprint": "f5de80f2de62efe1295527803aa77a72bb63fa84e175c23cad57ac63ef26a4ef",
@@ -111,9 +109,7 @@
       "head": "75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18",
       "outcome": "updated",
       "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
-      "evidence": [
-        "Changed: NOTICE at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"
-      ]
+      "evidence": ["Changed: NOTICE at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"]
     },
     "source:libs/oxlint-plugin-decision/NOTICE": {
       "fingerprint": "5694b4ddc129acdd0fb5a0e9b79b26b917830f997034f6ccd436425581cd3b14",
@@ -687,9 +683,7 @@
       "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
       "outcome": "no-change",
       "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
-      "evidence": [
-        "Changed: tools/vocablint/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"
-      ]
+      "evidence": ["Changed: tools/vocablint/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"]
     },
     "source:tools/vocablint/src/cli-contract.ts": {
       "fingerprint": "b0ce9a57460797e0b52eb321d6fe0931866494217cdc4161597f756eb9668461",
