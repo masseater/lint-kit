@@ -38,3 +38,6 @@ peerDependencyRules:
 allowBuilds:
   "@ast-grep/cli": true
   "@openrouter/sdk": false
+audit:
+  ignorePrune: true
+  ignore: []
