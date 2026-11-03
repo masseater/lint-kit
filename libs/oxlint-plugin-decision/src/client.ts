@@ -4,7 +4,7 @@ import { Array as Arr, Config, Effect, FileSystem, Option, Path, String as Str }
 
 const TOOL = "oxlint-plugin-decision";
 const GITHUB = "https://github.com";
-const SELF = "masseater/oxlint-plugin-decision";
+const SELF = "masseater/lint-kit";
 const GIT_SUFFIX = /\.git\/?$/u;
 const SEPARATORS = /[/:]/u;
 const SLUG_PARTS = 2;
