@@ -100,6 +100,20 @@ jobs:
           node-version: 26
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
+      - if: steps.version.outputs.packages != ''
+        name: Get the npm token from the credential broker
+        run: |
+          oidc="$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=masseater-dev-credential-broker" | jq -er .value)"
+          echo "::add-mask::$oidc"
+          response="$(curl -fsS --retry 3 -X POST -H "Authorization: Bearer $oidc" "https://credentials.masseater.dev/" || echo "{}")"
+          token="$(jq -r '.npmToken // empty' <<<"$response")"
+          if [ -z "$token" ]; then
+            echo "::warning::The credential broker returned no npm token; npm falls back to Trusted Publishing"
+            exit 0
+          fi
+          echo "::add-mask::$token"
+          echo "NODE_AUTH_TOKEN=$token" >> "$GITHUB_ENV"
       - name: Check the release tag is free
         if: github.event_name == 'workflow_dispatch' && steps.version.outputs.packages != ''
         env:
