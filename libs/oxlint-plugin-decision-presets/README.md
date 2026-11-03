@@ -237,9 +237,9 @@ export default defineConfig({
 });
 ```
 
-Each model is asked only about the rules that use it. See [Rule options](https://github.com/masseater/oxlint-plugin-decision/tree/main/libs/oxlint-plugin-decision#rule-options) in the plugin README.
+Each model is asked only about the rules that use it. See [Rule options](https://github.com/masseater/lint-kit/tree/main/libs/oxlint-plugin-decision#rule-options) in the plugin README.
 
-Every match is a paid request unless its answer is cached. See [Cost and caching](https://github.com/masseater/oxlint-plugin-decision#cost-and-caching).
+Every match is a paid request unless its answer is cached. See [Cost and caching](https://github.com/masseater/lint-kit#cost-and-caching).
 
 ## Mix presets with your own rules
 

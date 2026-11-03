@@ -17,11 +17,12 @@
   },
   "typeAware": { "enabled": true, "require": "complete" },
   "failOnParseError": true,
+  "ignoreDependencies": ["publint", "@arethetypeswrong/core"],
   "ignorePatterns": [".claude/**", "libs/*/example/**"],
   "dynamicallyLoaded": ["libs/oxlint-plugin-decision/src/openrouter-worker.ts"],
   "audit": { "gate": "all" },
   "health": {
-    "coverage": "libs/oxlint-plugin-decision/coverage/coverage-final.json",
+    "coverage": "coverage/coverage-final.json",
     "maxCrap": 5,
   },
   "security": {

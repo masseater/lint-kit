@@ -1,7 +1,7 @@
 library:
   name: oxlint-plugin-decision-workspace
   version: 0.0.0
-  repository: https://github.com/masseater/oxlint-plugin-decision
+  repository: https://github.com/masseater/lint-kit
   description: Oxlint JS plugin that lints code with plain-English rules answered by decision models on OpenRouter.
   primary_framework: framework-agnostic
 

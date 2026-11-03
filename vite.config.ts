@@ -49,12 +49,12 @@ export default defineConfig({
     "*": "vp check --fix",
   },
   fmt: {
-    ignorePatterns: ["CHANGELOG.md"],
+    ignorePatterns: ["CHANGELOG.md", "libs/oxlint-typed-rules/upstream/src/__tests__/**"],
     sortImports: true,
     sortPackageJson: true,
   },
   lint: {
-    ignorePatterns: ["libs/*/example/**"],
+    ignorePatterns: ["libs/*/example/**", "libs/oxlint-typed-rules/upstream/src/__tests__/**"],
     plugins: [
       "eslint",
       "typescript",
@@ -103,7 +103,48 @@ export default defineConfig({
             {
               from: "package",
               package: "@oxlint/plugins",
-              name: ["Context", "Location", "Node", "Range", "SourceCode", "VisitorWithHooks"],
+              name: [
+                "Context",
+                "Location",
+                "Node",
+                "Range",
+                "Rule",
+                "RuleMeta",
+                "SourceCode",
+                "VisitorWithHooks",
+              ],
+            },
+            {
+              from: "package",
+              package: "oxlint",
+              name: ["InvalidTestCase", "Rule", "TestCases", "ValidTestCase"],
+            },
+            {
+              from: "package",
+              package: "typescript",
+              name: [
+                "Checker",
+                "CompilerHost",
+                "CompilerOptions",
+                "Declaration",
+                "Expression",
+                "Node",
+                "NumericLiteral",
+                "ParsedCommandLine",
+                "Program",
+                "Project",
+                "Signature",
+                "Snapshot",
+                "SourceFile",
+                "StringLiteral",
+                "Symbol",
+                "Type",
+                "TypeChecker",
+                "TypeNode",
+                "UnionTypeNode",
+                "VariableDeclaration",
+                "VariableDeclarationList",
+              ],
             },
             {
               from: "package",
@@ -118,7 +159,10 @@ export default defineConfig({
         "error",
         { capIsNewExceptionPattern: String.raw`^(Config|Context|Data|Schema)\.` },
       ],
-      "vitest/require-hook": ["error", { allowedFunctionCalls: ["runAsWorker", "layer"] }],
+      "vitest/require-hook": [
+        "error",
+        { allowedFunctionCalls: ["runAsWorker", "layer", "runCli"] },
+      ],
       "typescript/no-empty-interface": ["error", { allowSingleExtends: true }],
       "typescript/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
     },
@@ -128,11 +172,22 @@ export default defineConfig({
           "**/*.config.ts",
           "libs/oxlint-plugin-decision/src/index.ts",
           "libs/oxlint-plugin-decision-presets/src/*.ts",
+          "libs/oxlint-typed-rules/src/tanstack-start.ts",
         ],
         rules: { "import/no-default-export": "off" },
       },
       {
-        files: ["libs/*/tests/**"],
+        files: ["tools/vocablint/src/oxlint.ts"],
+        rules: {
+          "import/no-default-export": "off",
+          "import/no-nodejs-modules": "off",
+          "node/no-sync": "off",
+          "effecttsgo/node-builtin-import": "off",
+          "effecttsgo/schema-sync": "off",
+        },
+      },
+      {
+        files: ["libs/*/tests/**", "**/*.test.ts"],
         rules: Object.fromEntries(Object.keys(decisionPresetRules).map((name) => [name, "off"])),
       },
     ],
@@ -147,12 +202,20 @@ export default defineConfig({
       reportUnusedDisableDirectives: "error",
     },
   },
+  test: {
+    coverage: {
+      provider: "v8",
+      include: ["{libs,tools}/*/src/**", "{libs,tools}/*/dist/**/*.mjs"],
+      excludeAfterRemap: true,
+      reporter: ["json"],
+    },
+  },
   run: {
     cache: true,
     tasks: {
       verify: {
         command:
-          "vp run -r build && vp check && vp run -r test && vp run actions-lint && vp run fallow && vp run audit",
+          "vp run -r build && vp check && vp run -r test && vp test --merge-reports=.vitest-reports --coverage && vp run -r size && vp run actions-lint && vp run fallow && vp run audit",
         cache: false,
       },
       audit: {

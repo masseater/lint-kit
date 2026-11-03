@@ -1,4 +1,18 @@
-# oxlint-plugin-decision
+# lint-kit
+
+Lint tools for TypeScript repositories, kept in one workspace.
+
+- [oxlint-plugin-decision](#oxlint-plugin-decision): Oxlint rules written as questions that decision models answer
+- [oxlint-typed-rules](libs/oxlint-typed-rules/README.md): ESLint rules that need type information, run as Oxlint JS plugins
+- [vocablint](tools/vocablint/README.md): finds value sets and object shapes that restate one already owned elsewhere
+
+## Published packages
+
+- npm: [`@r_masseater/oxlint-plugin-decision`](https://www.npmjs.com/package/@r_masseater/oxlint-plugin-decision)
+- npm: [`@r_masseater/oxlint-plugin-decision-presets`](https://www.npmjs.com/package/@r_masseater/oxlint-plugin-decision-presets)
+- npm: [`@r_masseater/oxlint-typed-rules`](https://www.npmjs.com/package/@r_masseater/oxlint-typed-rules)
+
+## oxlint-plugin-decision
 
 Write [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) rules as plain-English questions, such as "Does this call write personal data to a log?", and let decision models on [OpenRouter](https://openrouter.ai) answer them for every matching function, call, JSX element or file.
 
@@ -13,7 +27,7 @@ Use it for problems a pattern-based linter can't express: a `getUser` that also 
 > [!CAUTION]
 > Every match that is not cached is a model request, billed unless you use a free model. Keep the answer cache, lint only changed files, and exclude files you don't need, such as `node_modules` and `dist`. The authors take no responsibility for any cost incurred by running it as is over every file of a codebase. See [Keep the cost down](#keep-the-cost-down).
 
-## Start with a preset
+### Start with a preset
 
 You need Node.js 26 or later and an [OpenRouter API key](https://openrouter.ai/settings/keys).
 
@@ -51,7 +65,7 @@ oxlint reports `no-pii-in-logs` on the call, and `OXLINT_DECISION_EXPLAIN=1` pri
 
 The [presets README](libs/oxlint-plugin-decision-presets/README.md) lists every preset and rule.
 
-## Write your own rules
+### Write your own rules
 
 ```sh
 npm i -D oxlint @r_masseater/oxlint-plugin-decision
@@ -94,7 +108,7 @@ export default defineConfig({
 
 The [plugin README](libs/oxlint-plugin-decision/README.md) covers targets, answer kinds, context, models and settings.
 
-## Keep the cost down
+### Keep the cost down
 
 Before running the plugin on a real codebase, put these three in place.
 
@@ -119,4 +133,4 @@ To try rules without paying for requests, set a rule's model to the free `openro
 
 ## License
 
-[MIT](LICENSE). This is a fork of [oxlint-plugin-jev](https://github.com/wobsoriano/oxlint-plugin-jev) by [Robert Soriano](https://github.com/wobsoriano).
+[MIT](LICENSE). oxlint-plugin-decision is a fork of [oxlint-plugin-jev](https://github.com/wobsoriano/oxlint-plugin-jev) by [Robert Soriano](https://github.com/wobsoriano).
