@@ -92,14 +92,14 @@
       ]
     },
     "source:CHANGELOG.md": {
-      "fingerprint": "c3c47914472e3cf28dcac6c90b0120d0fd0f989262081ead2d1d0c973e98182a",
+      "fingerprint": "d632783999cf2c95c3dd5806bb8d53c99dc2913aef181a9e5fcbe5de5342e176",
       "snapshot": {
-        "CHANGELOG.md": "dbf5ef26dc5a0402f54c24a9ef21072f04540aa12241f1135eb8dd5b25d31a63"
+        "CHANGELOG.md": "b3dbf10fc109a6bb39f0abebcd975222b28c7a8a89881a7a05f3ce73d6242074"
       },
-      "head": "75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18",
-      "outcome": "updated",
-      "reason": "SKILL.md, tuning.md and the README state the 0.8 minimum cutoff; the other pending files are earlier changes the skill already reflects (example rules compile, no API surface the skill documents changed)",
-      "evidence": ["Changed: CHANGELOG.md at 75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18"]
+      "head": "44d98cebf7d4f0f32230950a80e85f6423e2eaa9",
+      "outcome": "no-change",
+      "reason": "公開する型を狭めただけで、skill の内容に影響しない",
+      "evidence": ["Changed: CHANGELOG.md at 44d98cebf7d4f0f32230950a80e85f6423e2eaa9"]
     },
     "source:NOTICE": {
       "fingerprint": "f5de80f2de62efe1295527803aa77a72bb63fa84e175c23cad57ac63ef26a4ef",
@@ -220,15 +220,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/tanstack-start.ts": {
-      "fingerprint": "4545cad953c5dfa6a9522609b95b69b644e06967e5b5747e7c2ed098b7cb5698",
+      "fingerprint": "37673fe2bb6d11785080746442dec11822c49f542c09365291c1f088dc77caf8",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/tanstack-start.ts": "317809b4ac43b0e880354cb357e4ffdef766c09d7461fd1f907f2fff5b46a71f"
+        "libs/oxlint-typed-rules/src/tanstack-start.ts": "a0dde7e8326c6a5b56c22c408d363a54f446796d5eabf7be3a0a46ff7f75dc8e"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "f4fe980cf77cbed95deb3d711f5cebed0b570498",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "公開する型を狭めただけで、skill の内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/tanstack-start.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/tanstack-start.ts at f4fe980cf77cbed95deb3d711f5cebed0b570498"
       ]
     },
     "source:libs/oxlint-typed-rules/src/ts-compat.ts": {
