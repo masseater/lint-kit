@@ -11,8 +11,8 @@ catalog:
   "@commitlint/config-conventional": 21.2.4
   "@oxlint/plugins": 1.90.0
   "@types/node": 26.6.6
-  "@effect/platform-node": 4.1.1
-  "@effect/vitest": 4.1.1
+  "@effect/platform-node": 4.1.2
+  "@effect/vitest": 4.1.2
   "@openrouter/sdk": 1.5.33
   "@size-limit/file": 14.3.0
   "@tanstack/eslint-plugin-start": 0.1.0
@@ -32,13 +32,13 @@ catalogs:
   stack:
     "@effect/tsgo": 0.63.0
     "@vitest/coverage-v8": 5.0.5
-    effect: 4.1.1
+    effect: 4.1.2
     fallow: 3.38.1
     typescript: 7.0.2
     vite-plus: 1.4.0
 overrides:
   effect: "catalog:stack"
-  "@effect/platform-node-shared": 4.1.1
+  "@effect/platform-node-shared": 4.1.2
   "@effect/vitest": "catalog:"
   vite@*: npm:@voidzero-dev/vite-plus-core@1.4.0
   "@tanstack/eslint-plugin-start>globals": 16.4.0
