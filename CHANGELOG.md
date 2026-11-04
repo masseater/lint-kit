@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.1.0](https://github.com/masseater/lint-kit/compare/v0.0.4...v0.1.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* a rule or location cutoff below 0.8 is a configuration error.
+* **core:** checkRepository (and the internal dependencyEntries, readManifest, listConfigFiles and loadProjects) now require the RepositoryFiles service from @vocablint/core instead of FileSystem.FileSystem and Path.Path. Provide nodeRepositoryFiles (Layer<RepositoryFiles>, Node implementation backed by NodeServices) instead of NodeServices.layer. The change is needed because effect 4.0.2 marks FileSystem and Path as unstable APIs that exported signatures must not leak.
+* 持ち主のタグを @canonical-values から @vocablint に改名する ([#22](https://github.com/masseater/lint-kit/issues/22))
+
+### Features
+
+* **audit:** 不要になった audit.ignore を verify で自動的に消す ([#72](https://github.com/masseater/lint-kit/issues/72)) ([3d2f63f](https://github.com/masseater/lint-kit/commit/3d2f63fd53fa30fb0797c0c903cc4ac8c12672d6))
+* **core:** read the repository through a RepositoryFiles service for effect 4.0.2 ([#34](https://github.com/masseater/lint-kit/issues/34)) ([7b92d75](https://github.com/masseater/lint-kit/commit/7b92d75d3c439ba1338b99e493e0c9b5758b89e1))
+* oxlint で型情報を要る ESLint ルールを動かすパッケージを切り出す ([#4](https://github.com/masseater/lint-kit/issues/4)) ([cbc9239](https://github.com/masseater/lint-kit/commit/cbc9239954dd2d3674749c56f79c2537c96044b1))
+* oxlint-typed-rules と vocablint を取り込み lint-kit にまとめる ([1a1a218](https://github.com/masseater/lint-kit/commit/1a1a218d19e4d48c3d68f60167d9b4059149ae4b))
+* refuse rule and location cutoffs below 0.8 ([75192dd](https://github.com/masseater/lint-kit/commit/75192dd49bb05b0a76e11d1dc4ccd19b5e63ca18))
+* **skills:** install shared skills from masseater/skills and philtzjp/skills ([#28](https://github.com/masseater/lint-kit/issues/28)) ([a022c36](https://github.com/masseater/lint-kit/commit/a022c36e0d266621b31b8b7962442645cf285976))
+* **verify:** fail verify on known dependency vulnerabilities ([#60](https://github.com/masseater/lint-kit/issues/60)) ([be9ab91](https://github.com/masseater/lint-kit/commit/be9ab91a72422d32ad38e82871c6ac8f1b877b4b))
+* 型検査器を TypeScript 7（tsgo）の API で作る ([#15](https://github.com/masseater/lint-kit/issues/15)) ([0ff8960](https://github.com/masseater/lint-kit/commit/0ff8960b6bb574b3118414894129ec3c44bc5fe2))
+* 持ち主のタグを [@canonical-values](https://github.com/canonical-values) から [@vocablint](https://github.com/vocablint) に改名する ([#22](https://github.com/masseater/lint-kit/issues/22)) ([b6f942c](https://github.com/masseater/lint-kit/commit/b6f942ce7f0f65a2505f4028b81d442579e12404))
+
+
+### Bug Fixes
+
+* audit の脆弱性を解消し、@effect/tsgo 0.55 の診断に合わせる ([#45](https://github.com/masseater/lint-kit/issues/45)) ([29d1af8](https://github.com/masseater/lint-kit/commit/29d1af8ae65c2de9714514d9f602dcb37a85a2a1))
+* **ci:** switch zizmor offline audits on CLAUDE_CODE_REMOTE like the template ([4f96a2f](https://github.com/masseater/lint-kit/commit/4f96a2fd120ab076f898c0c997bb7c196f819170))
+* **ci:** zizmor offline audits on CLAUDE_CODE_REMOTE (ZIZMOR_NO_ONLINE_AUDITS 廃止) ([2abcfa1](https://github.com/masseater/lint-kit/commit/2abcfa1bd5c4c08a52cdb98ccd55644ae205cc52))
+* **decision:** リポ名が取れないときの帰属先を lint-kit にする ([#74](https://github.com/masseater/lint-kit/issues/74)) ([40f5a41](https://github.com/masseater/lint-kit/commit/40f5a41d37be500070ef3ed17a31742171c5904e))
+* npm から入れても読み込めるようにし、性能の比較を README に書く ([#10](https://github.com/masseater/lint-kit/issues/10)) ([4336c02](https://github.com/masseater/lint-kit/commit/4336c02a2dcd8255beb5dfd3d8575ddbeb165bb6))
+* **skills:** follow the setup-github rename to setup-template ([3b7aba8](https://github.com/masseater/lint-kit/commit/3b7aba82abff8a01740770d91d0d140cb6054b75))
+* **skills:** follow the setup-github rename to setup-template ([ac68b76](https://github.com/masseater/lint-kit/commit/ac68b76692b9f6439d9ca00a1964fb1bd0eece67))
+* 依存の TypeScript 6 を typescript-6 の別名で入れる ([#7](https://github.com/masseater/lint-kit/issues/7)) ([f2b6475](https://github.com/masseater/lint-kit/commit/f2b6475bf6803ce99b444e9b71d87be219affc08))
+
 ## [0.0.4](https://github.com/masseater/oxlint-plugin-decision/compare/v0.0.3...v0.0.4) (2026-10-12)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@r_masseater/oxlint-typed-rules",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Run ESLint rules that need type information as oxlint JS plugins, starting with TanStack Start's React Server Component rules.",
   "keywords": [
     "eslint",
