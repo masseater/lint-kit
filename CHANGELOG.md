@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/masseater/lint-kit/compare/v0.1.0...v0.1.1) (2026-11-04)
+
+
+### Bug Fixes
+
+* **deps:** effect 4.1.2 で出し直し、renovate を設定する ([#78](https://github.com/masseater/lint-kit/issues/78)) ([384727e](https://github.com/masseater/lint-kit/commit/384727e7179e72403ee49cf361f7672139e78a12))
+* **typed-rules:** tanstack-start の plugin に meta.name の型を残す ([#80](https://github.com/masseater/lint-kit/issues/80)) ([74d4db0](https://github.com/masseater/lint-kit/commit/74d4db088b7e5f74d999a7e1448a880dec53e1a6))
+
 ## [0.1.0](https://github.com/masseater/lint-kit/compare/v0.0.4...v0.1.0) (2026-11-04)
 
 
