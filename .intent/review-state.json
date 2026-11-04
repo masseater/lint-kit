@@ -780,6 +780,16 @@
       "evidence": [
         "Changed: tools/vocablint/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
       ]
+    },
+    "source:renovate.json": {
+      "fingerprint": "2fd638b59954ce13dbb945d199122c826b5d5b5daef3eecbe83ad252e9342903",
+      "snapshot": {
+        "renovate.json": "5dd29cf04596bc414a05110f2eccb70fb1cc36e25fa38a98bc93b12e98b72213"
+      },
+      "head": "592ed02897f2cbbc1b15d2e846d047e2d0258fd1",
+      "outcome": "no-change",
+      "reason": "renovate の設定と依存の版だけで、skill の内容に影響しない",
+      "evidence": ["Changed: renovate.json at 592ed02897f2cbbc1b15d2e846d047e2d0258fd1"]
     }
   }
 }
