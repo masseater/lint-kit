@@ -3,7 +3,9 @@ import type { Plugin } from "vite-plus/lint/plugins";
 
 import { typedRules } from "./typed-rule.ts";
 
-const plugin: Plugin = {
+type NamedPlugin = Plugin & { readonly meta: { readonly name: string } };
+
+const plugin: NamedPlugin = {
   meta: { name: "tanstack-start" },
   rules: typedRules(tanstackStart.rules),
 };
