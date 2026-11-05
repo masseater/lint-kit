@@ -1,3 +1,5 @@
+作業を始める前に masseater/skills の `repo-conventions` と `vite-plus` の skill を読み、従う。
+
 <!-- intent-maintainer:start -->
 
 ## Library Skill Maintenance
@@ -10,11 +12,6 @@ Create and incrementally maintain domain_map.yaml, skill_spec.md, and skill_tree
 Keep maintainer decisions and changes in the repository; do not require the user to repeat the procedure in later sessions.
 Use intent maintainer setup to initialize missing records, maintainer add to register skills, maintainer status to identify work, and maintainer sync to update generated metadata. Finish with intent maintainer check.
 <!-- intent-maintainer:end -->
-
-## 配置
-
-- ワークスペースは apps・libs・tools・infra に分ける。
-- 定数・設定値・スキーマ・ルールの ID は一か所で定義し、ほかはそこから参照する。
 
 ## 構成
 
@@ -30,25 +27,5 @@ Use intent maintainer setup to initialize missing records, maintainer add to reg
 
 ## 計測
 
-- 推測せず計測する。実装や修正の前に事実を確かめ、その結果だけで判断する。
-- 機能開発の前に、AI が自分でデバッグできる仕組み（再現手段、ログやスパン、それを読む経路）を作る。
-- 時間かお金を使う処理はすべてスパンにし、`OtlpTracer.layerFromConfig` で出す。計測のためだけにコマンドやプロセスを包まない。
 - 判定と所要時間は `OXLINT_DECISION_EXPLAIN=json`、oxlint のルールごとの時間は `--debug=timings` で読む。
 - 判断の根拠にする計測は、実際のモデルに問い合わせる lint で行う。モックのテストは計る仕組みの確認だけに使う。
-
-## 判定
-
-- decision lint は確信できるものだけを違反にする。取りこぼしは許容し、閾値を下げて拾いにいかない。
-
-## 脆弱性
-
-- `audit` は `vp pm audit --fix` で直す。修正版の無い勧告だけを `audit.ignore` に載せ、理由をコミットメッセージに書く。
-
-## マージ
-
-- マージ前に base を取り込み、手元の `vp run verify` を通してから自分でマージする。マージしてよいかは聞かない。ルールセットのバイパスや `--admin` は使わない。
-- release-please のリリース PR は `verify` を手動実行して作り直す。`up-to-date` が承認待ちで取り込むものも無ければ、ユーザーに承認を頼む。
-
-## 公開先
-
-- デプロイ先や外部公開しているもの（サイト、API、npm パッケージなど）があれば、その URL を README に一覧で載せる。
