@@ -3,6 +3,13 @@ import { defineConfig } from "vite-plus";
 const local = (path: string): string => new URL(path, import.meta.url).pathname;
 
 export default defineConfig({
+  run: {
+    tasks: {
+      build: { command: "vp pack", cache: false },
+      test: "vp test run --coverage",
+      size: { command: "size-limit", dependsOn: ["build"], cache: false },
+    },
+  },
   pack: {
     entry: ["src/index.ts", "src/tanstack-start.ts"],
     platform: "node",

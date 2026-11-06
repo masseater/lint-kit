@@ -13,36 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      DECISION_CACHE_DIR: node_modules/.cache/oxlint-plugin-decision
-      DECISION_CACHE_KEY: oxlint-plugin-decision-${{ github.sha }}
+      id-token: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: voidzero-dev/setup-vp@3754dd7dbdb32bd8f6d28b6043de13ad3a75f21f # v1.21.1
+      - uses: $/.github/actions/setup
+      - uses: masseater/typescript-template/.github/actions/verify@0c9f2c316a486637e22878aea5e0a4a1a7f630c4
         with:
-          cache: true
-          run-install: |
-            - args: ['--frozen-lockfile']
-      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
-        with:
-          enable-cache: false
-      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ${{ env.DECISION_CACHE_DIR }}
-          key: ${{ env.DECISION_CACHE_KEY }}
-          restore-keys: oxlint-plugin-decision-
-      - id: verify
-        run: vp run verify
-        env:
-          GH_TOKEN: ${{ github.token }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      - if: always() && steps.verify.outcome != 'skipped'
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ${{ env.DECISION_CACHE_DIR }}
-          key: ${{ env.DECISION_CACHE_KEY }}
+          github-token: ${{ github.token }}
 
   release:
     needs: verify

@@ -38,8 +38,6 @@
     "provenance": true
   },
   "scripts": {
-    "build": "vp pack",
-    "test": "vp test run --coverage",
     "prepublishOnly": "vp run build"
   },
   "dependencies": {

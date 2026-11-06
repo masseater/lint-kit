@@ -52,11 +52,9 @@ export default defineConfig({
   },
   run: {
     tasks: {
-      "test:live": {
-        command: "vp test --project=live",
-        dependsOn: ["build"],
-        cache: false,
-      },
+      build: { command: "vp pack", cache: false },
+      test: "vp test --project=mock --coverage",
+      "test:live": { command: "vp test --project=live", dependsOn: ["build"], cache: false },
     },
   },
 });
