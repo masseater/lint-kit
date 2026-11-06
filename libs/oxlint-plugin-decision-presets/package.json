@@ -56,10 +56,6 @@
     "provenance": true
   },
   "scripts": {
-    "build": "vp pack",
-    "dev": "vp pack --watch",
-    "test": "vp test --project=mock --coverage",
-    "example": "vp run build && ./node_modules/oxlint/bin/oxlint -c example/oxlint.config.ts example/",
     "prepublishOnly": "vp run build"
   },
   "devDependencies": {

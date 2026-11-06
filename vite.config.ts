@@ -213,6 +213,17 @@ export default defineConfig({
   run: {
     cache: true,
     tasks: {
+      fallow: [
+        "fallow --production --fail-on-issues --quiet --format compact",
+        "fallow dead-code --no-production --fail-on-issues --quiet --format compact",
+        "fallow dead-code --no-production --quiet --format json | jq -e '[.prop_drilling_chains, .thin_wrappers, .duplicate_prop_shapes] | all(length == 0)' > /dev/null",
+        "fallow dupes --fail-on-issues --quiet --format compact",
+        "fallow security --fail-on-issues --quiet",
+      ],
+      "skills:check": [
+        "intent validate libs/oxlint-plugin-decision/skills",
+        "intent maintainer check",
+      ],
       verify: {
         command:
           "vp run -r build && vp check && vp run -r test && vp test --merge-reports=.vitest-reports --coverage && vp run -r size && vp run actions-lint && vp run fallow && vp run audit",

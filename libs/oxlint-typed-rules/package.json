@@ -45,10 +45,7 @@
     "provenance": true
   },
   "scripts": {
-    "build": "vp pack",
-    "test": "vp test run --coverage",
-    "prepublishOnly": "vp run build",
-    "size": "vp run build && size-limit"
+    "prepublishOnly": "vp run build"
   },
   "dependencies": {
     "effect": "catalog:stack",

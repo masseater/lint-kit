@@ -1,6 +1,12 @@
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
+  run: {
+    tasks: {
+      build: { command: "vp pack", cache: false },
+      test: "vp test run --coverage",
+    },
+  },
   pack: {
     entry: ["src/cli.ts", "src/oxlint.ts"],
     platform: "node",
