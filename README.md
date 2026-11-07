@@ -5,12 +5,14 @@ Lint tools for TypeScript repositories, kept in one workspace.
 - [oxlint-plugin-decision](#oxlint-plugin-decision): Oxlint rules written as questions that decision models answer
 - [oxlint-typed-rules](libs/oxlint-typed-rules/README.md): ESLint rules that need type information, run as Oxlint JS plugins
 - [vocablint](tools/vocablint/README.md): finds value sets and object shapes that restate one already owned elsewhere
+- [vp-tools](libs/vp-tools/README.md): runs gitleaks, commitlint, textlint, Steiger and dependency checks from the settings in `vite.config.ts`
 
 ## Published packages
 
 - npm: [`@r_masseater/oxlint-plugin-decision`](https://www.npmjs.com/package/@r_masseater/oxlint-plugin-decision)
 - npm: [`@r_masseater/oxlint-plugin-decision-presets`](https://www.npmjs.com/package/@r_masseater/oxlint-plugin-decision-presets)
 - npm: [`@r_masseater/oxlint-typed-rules`](https://www.npmjs.com/package/@r_masseater/oxlint-typed-rules)
+- npm: [`@r_masseater/vp-tools`](https://www.npmjs.com/package/@r_masseater/vp-tools)
 
 ## oxlint-plugin-decision
 

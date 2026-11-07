@@ -151,6 +151,22 @@ export default defineConfig({
               package: "effect",
               name: ["Cause", "Context", "Effect", "Exit", "Layer", "Option", "Ref", "Stream"],
             },
+            { from: "package", package: "@commitlint/types", name: ["QualifiedConfig"] },
+            {
+              from: "package",
+              package: "@textlint/config-loader",
+              name: ["TextlintLoadPackagesFromRawConfigResult"],
+            },
+            {
+              from: "file",
+              path: "src/types.ts",
+              name: ["CommitlintConfig", "TextlintConfig", "ToolSections"],
+            },
+            {
+              from: "package",
+              package: "steiger",
+              name: ["ConfigObject", "GlobalIgnore", "Plugin"],
+            },
           ],
         },
       ],
