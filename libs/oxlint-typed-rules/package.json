@@ -1,11 +1,13 @@
 {
   "name": "@r_masseater/oxlint-typed-rules",
   "version": "0.1.1",
-  "description": "Run ESLint rules that need type information as oxlint JS plugins, starting with TanStack Start's React Server Component rules.",
+  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules and ESLint React.",
   "keywords": [
     "eslint",
+    "eslint-react",
     "oxlint",
     "oxlint-plugin",
+    "react",
     "tanstack-start",
     "typescript"
   ],
@@ -26,6 +28,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./react": "./src/react.ts",
     "./tanstack-start": "./src/tanstack-start.ts",
     "./package.json": "./package.json"
   },
@@ -34,6 +37,10 @@
       ".": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
+      },
+      "./react": {
+        "types": "./dist/react.d.mts",
+        "default": "./dist/react.mjs"
       },
       "./tanstack-start": {
         "types": "./dist/tanstack-start.d.mts",
@@ -48,26 +55,43 @@
     "prepublishOnly": "vp run build"
   },
   "dependencies": {
-    "effect": "catalog:stack",
-    "typescript-7": "catalog:typescript-api"
+    "effect": "catalog:stack"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "catalog:",
     "@effect/platform-node": "catalog:",
     "@effect/vitest": "catalog:",
+    "@eslint-react/eslint-plugin": "catalog:",
     "@size-limit/file": "catalog:",
     "@tanstack/eslint-plugin-start": "catalog:",
+    "@tsconfig/strictest": "catalog:",
     "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@typescript-eslint/types": "catalog:",
+    "@typescript-eslint/typescript-estree": "catalog:",
     "@typescript-eslint/utils": "catalog:",
+    "dedent": "catalog:",
     "publint": "catalog:",
     "size-limit": "catalog:",
-    "typescript": "catalog:typescript-api",
+    "typescript": "catalog:stack",
     "vite-plus": "catalog:stack"
+  },
+  "peerDependencies": {
+    "typescript": ">=7.1.0-beta"
   },
   "size-limit": [
     {
-      "path": "dist/*.mjs",
-      "limit": "23995 B"
+      "name": "react",
+      "path": "dist/react.mjs",
+      "limit": "170642 B"
+    },
+    {
+      "name": "core",
+      "path": [
+        "dist/*.mjs",
+        "!dist/react.mjs"
+      ],
+      "limit": "26452 B"
     }
   ],
   "engines": {

@@ -1,18 +1,16 @@
 import { Option, Predicate, Record, pipe } from "effect";
 import type { Context, CreateRule, RuleMeta, Visitor } from "vite-plus/lint/plugins";
 
+import { lazily } from "./memo.ts";
 import { createParserServices } from "./parser-services.ts";
 import type { ParserServices } from "./parser-services.ts";
 import { programFor } from "./program.ts";
 
-interface TypedContext {
-  readonly filename: string;
-  readonly cwd: string;
-  readonly options: readonly unknown[];
-  readonly languageOptions: Readonly<Context["languageOptions"]>;
-  readonly report: Context["report"];
-  readonly sourceCode: { readonly parserServices: ParserServices };
-}
+type TypedSourceCode = Context["sourceCode"] & {
+  readonly parserServices: ParserServices | undefined;
+};
+
+type TypedContext = Omit<Context, "sourceCode"> & { readonly sourceCode: TypedSourceCode };
 
 interface TypedRule {
   readonly meta: RuleMeta;
@@ -24,29 +22,56 @@ const isTypedRule = <Rule>(rule: Rule): rule is Rule & TypedRule =>
   Predicate.hasProperty(rule, "create") &&
   Predicate.isFunction(rule.create);
 
-const typedContext = (context: Context, parserServices: ParserServices): TypedContext => ({
-  filename: context.filename,
-  cwd: context.cwd,
-  options: context.options,
-  languageOptions: context.languageOptions,
-  report: context.report,
-  sourceCode: { parserServices },
-});
+const isTypedContext = (value: unknown): value is TypedContext =>
+  Predicate.hasProperty(value, "report") &&
+  Predicate.hasProperty(value, "sourceCode") &&
+  Predicate.hasProperty(value.sourceCode, "parserServices");
+
+const inheriting = (
+  prototype: object,
+  name: string,
+  descriptor: Readonly<PropertyDescriptor>,
+): unknown => Object.create(prototype, { [name]: { ...descriptor, enumerable: true } });
+
+const parserServicesOf = (context: Context): Option.Option<ParserServices> =>
+  programFor({ fileName: context.filename, text: context.sourceCode.text }).pipe(
+    Option.flatMap((program) =>
+      Option.fromNullishOr(program.getSourceFile(context.filename)).pipe(
+        Option.map((sourceFile) => createParserServices({ context, program, sourceFile })),
+      ),
+    ),
+  );
+
+const withParserServices = (
+  context: Context,
+  parserServices: () => ParserServices | undefined,
+): TypedContext => {
+  const sourceCode = inheriting(context.sourceCode, "parserServices", { get: parserServices });
+  return Option.liftPredicate(
+    inheriting(context, "sourceCode", { value: sourceCode }),
+    isTypedContext,
+  ).pipe(Option.getOrThrowWith(() => new TypeError("The rule context has no source code.")));
+};
 
 const withTypeInformation = (rule: TypedRule): CreateRule => ({
   meta: rule.meta,
   create: (context) =>
-    programFor({ fileName: context.filename, text: context.sourceCode.text }).pipe(
-      Option.flatMap((program) =>
-        Option.fromNullishOr(program.getSourceFile(context.filename)).pipe(
-          Option.map((sourceFile) =>
-            rule.create(
-              typedContext(context, createParserServices({ context, program, sourceFile })),
-            ),
-          ),
-        ),
+    parserServicesOf(context).pipe(
+      Option.map((parserServices) =>
+        rule.create(withParserServices(context, () => parserServices)),
       ),
       Option.getOrElse(() => ({})),
+    ),
+});
+
+const withOptionalTypeInformation = (rule: TypedRule): CreateRule => ({
+  meta: rule.meta,
+  create: (context) =>
+    rule.create(
+      withParserServices(
+        context,
+        lazily(() => Option.getOrUndefined(parserServicesOf(context))),
+      ),
     ),
 });
 
@@ -55,5 +80,5 @@ const typedRules = (
 ): Record.ReadonlyRecord<string, CreateRule> =>
   pipe(rules, Record.filter(isTypedRule), Record.map(withTypeInformation));
 
-export type { TypedContext, TypedRule };
-export { typedRules, withTypeInformation };
+export type { TypedContext, TypedRule, TypedSourceCode };
+export { isTypedRule, typedRules, withOptionalTypeInformation, withTypeInformation };

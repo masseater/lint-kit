@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "baseline": "57a674a2d3ff7174b2c7de2390f3cfbccde0a50d",
+  "baseline": "3b79ea236ac76fb4543c646320b5d423a9dc4e90",
   "items": {
     "skill:libs/oxlint-plugin-decision/skills/write-decision-rules/SKILL.md": {
       "fingerprint": "0610cb81950c41ec35e255a504b8913e296027c1a8dbbe5b1b46fd36d018701e",
@@ -148,15 +148,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/README.md": {
-      "fingerprint": "8034b80351f1f68757201c956e9217b932128523ea8512fb5dd61120aee2f1ce",
+      "fingerprint": "73150ebc8d0b480a015bece2a05f5c2c599262d22ba04f2bd7978bb69808ee37",
       "snapshot": {
-        "libs/oxlint-typed-rules/README.md": "086becaf3455bfd45fc40a41cc96d98931f0b426d055a55518c24be651dc47d6"
+        "libs/oxlint-typed-rules/README.md": "2aa2b0a60cd7408993afb7fee8e02c9460f2aff368a0a06666af0125885cb167"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/README.md at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/index.ts": {
@@ -172,39 +172,39 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/memo.ts": {
-      "fingerprint": "49750dc2fb3aadf84c8d8afe4608b7432771bb5b84738f7b67e43635e306f766",
+      "fingerprint": "433196e2710097d652f674f78b637d4252bb84a89169fbfa37fbc7f0c6f926df",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/memo.ts": "bcebf31a5db530841ccb58a08f14a1a5a20c708864b07f2a73ff01c8f4fb76c2"
+        "libs/oxlint-typed-rules/src/memo.ts": "a0522d67c7e54fd198178587fcacfb4f52dde26225e80efae715cb40c66b31a2"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/memo.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/memo.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/parser-services.ts": {
-      "fingerprint": "6aa209690d42778ad9bcced677c27e79dddcd861396e4a27aa5116a679bd0128",
+      "fingerprint": "f34c46d3638e0abd2a3c3c0c31f3d6f5ad9042e2fb6c334d5a41e3bd2f1a059a",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/parser-services.ts": "91a96dbf1a5fad4d3282acb7a3587e1d23b94f07658d9d115820de294511aa43"
+        "libs/oxlint-typed-rules/src/parser-services.ts": "75b96e7f30b750f84cacad3d9e2cb2c080a15f06bcead466544163e9c283abfb"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/parser-services.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/parser-services.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/program.ts": {
-      "fingerprint": "d409cda07e0877e93ff60d939fc1153e5e1e5b9205e6b0224545f24f8d6dfffd",
+      "fingerprint": "e9685569383c3e5def90658d475cba5f5c396f1e88c74b82a9e2098384526197",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/program.ts": "84ce4ad7b5d4902a816e8093fb2f396b958e723bda8e40ea784b2d95f5d9862a"
+        "libs/oxlint-typed-rules/src/program.ts": "3c3a11830eeb1eadff74a9c277530f21a57ec91261dad48a210c783b4f485de7"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/program.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/program.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/tanstack-start.test.ts": {
@@ -232,27 +232,27 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/ts-compat.ts": {
-      "fingerprint": "1c5d2e9533e87944954ff4c78ef7e8b87888de1a27d4df2ae2ffe9cda57dbd09",
+      "fingerprint": "412c4490b80c2988b1660111b00a6693ef94b17c80042d36a23767417aa498a4",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/ts-compat.ts": "38bbf09325be36a3e41d332673a50c1ab512a54e22e8aaea760235b9ed30ae80"
+        "libs/oxlint-typed-rules/src/ts-compat.ts": "4929ad249dbf1fd5b96d6493881ad4256170dbd667e5ccdfe6ceadae4bd2b14c"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/ts-compat.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/ts-compat.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/typed-rule.ts": {
-      "fingerprint": "c9594feb13a1431780297a59c7fbefbbf25b2ab566b098e385e3f753a5cbcb3d",
+      "fingerprint": "1210731651c988bc0275cdb16717f7fffb1c184ec7e53cb73d0f4be47d7f2063",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/typed-rule.ts": "634a2326d2b2a24d96373bed9a60d80bc4b130ce1b0afdd5a6659213e9a3cf8d"
+        "libs/oxlint-typed-rules/src/typed-rule.ts": "e0adf667d341718c1bbd9a3d0eed751207ed041216251e696bba47cd8018f95d"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/typed-rule.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/src/typed-rule.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/oxlint-typed-rules/src/typescript-eslint-utils.ts": {
@@ -352,15 +352,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/vite.config.ts": {
-      "fingerprint": "a508fc942119200ba67c4548b359b80cf05511890a766728fe83dd61d9166a26",
+      "fingerprint": "9470dcf09b9bf9f70f97d1cc839c5a5162bc1883609dfe66357fd8f028900f68",
       "snapshot": {
-        "libs/oxlint-typed-rules/vite.config.ts": "51962ad0a9975b086167ad79dd89904027a9eca69c760e2bcf278f33fd5502b6"
+        "libs/oxlint-typed-rules/vite.config.ts": "823de1737319e4a7989fd171b2b617ef6ab96bf1773c067d3ea347c4301db8d3"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
@@ -790,6 +790,1398 @@
       "outcome": "no-change",
       "reason": "renovate の設定と依存の版だけで、skill の内容に影響しない",
       "evidence": ["Changed: renovate.json at 592ed02897f2cbbc1b15d2e846d047e2d0258fd1"]
+    },
+    "source:libs/oxlint-typed-rules/src/compat-symbol.ts": {
+      "fingerprint": "33d12c08dc3429beff9609a30fef119c226cbf811a9f4af03a8be4f9c91839fc",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/compat-symbol.ts": "9ff74805f2131d672d561b5d28ca0374d41c693ce0bffd9f9afd196c428f88b4"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/compat-symbol.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/compat-type.ts": {
+      "fingerprint": "1ef2bc5abe9db5aaf53883c0bd8ce47f6242e45a0721eed970240a68e8c05cd9",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/compat-type.ts": "64bb3a4cd44020693049b185f2abf29c2525f1729d671931a92d557cd387e655"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/compat-type.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/compat.ts": {
+      "fingerprint": "7aba908a7eac5e42914b9d00699b2c82ee9016349d5913ae1c55415df537475f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/compat.ts": "c54267d233dbed743b4eb69c37b72011cc9566c2f9d2682e536e96e0282198dd"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/compat.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/react.ts": {
+      "fingerprint": "8653e00b7371ffd41f7b66bea1ba308c34cc0a52804d3daa0b15c4b467c5d4d6",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/react.ts": "03344a42816aa4ff3befdc8dbf63aaff8f63297842149a2dcfc45bd53dad9eb2"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/react.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/ts-api-utils.ts": {
+      "fingerprint": "839ee2f570ade38e5f77ecd45189f5b8b09360a3deb1213a9c741c30408e4fbf",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/ts-api-utils.ts": "8b68120ee8167e2022198083f089704ec076dfa85f91da9af0fd4f05500b7d93"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/ts-api-utils.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react-testkit.ts": {
+      "fingerprint": "1096c49b54fea1029d120b44285446940b21b11a5d1d94d5c2e14325349d8f85",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react-testkit.ts": "ac22706aeb94506ebf6c2f653bbbb16472f35226e4ee8f66605a0e1b65880cbd"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react-testkit.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/LICENSE": {
+      "fingerprint": "bcdfff27e67d2030c6499f5b0174180aaac16e5792ea9c3810d0c3b1f00080c5",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/LICENSE": "6c14a3c5849044919ea7d33855071ab0c31ce5fef220c8be7a55e471a2e20a2a"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/LICENSE at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml-with-children/no-dangerously-set-innerhtml-with-children.spec.ts": {
+      "fingerprint": "1152c3d6284ac730f2f2aba76fc56dd788b45381ab028124575e88b60e0a83cc",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml-with-children/no-dangerously-set-innerhtml-with-children.spec.ts": "13d701c4c0e77b46a60447becc9e4a32f167ee9f80b95675eb165d18d2c0c867"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml-with-children/no-dangerously-set-innerhtml-with-children.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml/no-dangerously-set-innerhtml.spec.ts": {
+      "fingerprint": "3427356a029cba24a195efcb94377f3f34f37fe89e80602f28d1eb0829450fe8",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml/no-dangerously-set-innerhtml.spec.ts": "d5d72e81fa3e4f44b05fa49dd78948425976d0c6496596a5b273d47ac6543451"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-dangerously-set-innerhtml/no-dangerously-set-innerhtml.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-find-dom-node/no-find-dom-node.spec.ts": {
+      "fingerprint": "c5bfd2801e46445650f995f45f994993d1777a47f3ace1db18967ea18340a951",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-find-dom-node/no-find-dom-node.spec.ts": "321826d9fd02613b82b5eca3ea2f870be39a367c65d6b8fc0835668174ff0dc2"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-find-dom-node/no-find-dom-node.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-flush-sync/no-flush-sync.spec.ts": {
+      "fingerprint": "66ff2850e43f05d7cb89033c8cf3c6b768c83394ee8138aa6344c4e8dc2f14fa",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-flush-sync/no-flush-sync.spec.ts": "16ff9eeb9b633658d18082f05d5d1d7780f9084cbdfc67e5ecb931cd6f2ad36e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-flush-sync/no-flush-sync.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-hydrate/no-hydrate.spec.ts": {
+      "fingerprint": "1d6763fe86fb1fddb86c4cc89d0ffd6a7b5114f092a013d30b6df31c1452d056",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-hydrate/no-hydrate.spec.ts": "14bfd8239d03248366ee649fe0d6765234e3e4a4671b46eb02ee0350ec52a63a"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-hydrate/no-hydrate.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-button-type/no-missing-button-type.spec.ts": {
+      "fingerprint": "f19e609c7b833052d1b67a5a0efb35a58208da6abaee1244a18daf51ad1d795e",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-button-type/no-missing-button-type.spec.ts": "cb42613d787357534e0f5702435dc6e45286ef0c37d8ad08cce9f69835400e92"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-button-type/no-missing-button-type.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-iframe-sandbox/no-missing-iframe-sandbox.spec.ts": {
+      "fingerprint": "f71a08bda34d2ae5188ae5260240bf9699d7b3a0bc7437eb9abe0a683e55ad00",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-iframe-sandbox/no-missing-iframe-sandbox.spec.ts": "cf1bf13cbec9bce2623524343bb01a36800283ff608b6605c4744a634b2e2b03"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-missing-iframe-sandbox/no-missing-iframe-sandbox.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render-return-value/no-render-return-value.spec.ts": {
+      "fingerprint": "3f124622c7b3c3117abdec1070c9a644dea19b5cba1c9e6c189ea41cb6c38c9c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render-return-value/no-render-return-value.spec.ts": "5774a985fecac141999860563d32d37904e2c9efb8a4f576a06810c0d08b2e2f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render-return-value/no-render-return-value.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render/no-render.spec.ts": {
+      "fingerprint": "d37ed2b8831e2b9d7612ae4949b57bcf9cae0533c51f20b85ac3c75156839994",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render/no-render.spec.ts": "afce799cf04542880c85dffd8004400515ab90da968040553f6fa6517a2efbbb"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-render/no-render.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-script-url/no-script-url.spec.ts": {
+      "fingerprint": "d601d0250df6c357bed8939ae22b9eda4f587bc6ebbae3480378c78d6f0bf8ef",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-script-url/no-script-url.spec.ts": "f3e69f34954e019c5116282b0891cbf32400b9ad42d13076df7137257b07da2f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-script-url/no-script-url.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-string-style-prop/no-string-style-prop.spec.ts": {
+      "fingerprint": "07574874f86f6429b35d65cf646caf953b10c516062122a010ef7cd4fb1d0a37",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-string-style-prop/no-string-style-prop.spec.ts": "679739e4c07a332143f3ac259555a5fc3e5c989dc73c16ad2c21d536c802a252"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-string-style-prop/no-string-style-prop.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unknown-property/no-unknown-property.spec.ts": {
+      "fingerprint": "2c733980400d1ca0f8ed45b6147287baf067cb2322dcf10c903552ef9f390851",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unknown-property/no-unknown-property.spec.ts": "7871576eeda36365e563921aa0eb340c9576f170eff13d22be45a57854783505"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unknown-property/no-unknown-property.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-iframe-sandbox/no-unsafe-iframe-sandbox.spec.ts": {
+      "fingerprint": "85e8a430e60367e643bcd6b256d8c999b8a66fa4f79768622bed72247074ba52",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-iframe-sandbox/no-unsafe-iframe-sandbox.spec.ts": "adfb278af023b0449165dbb3321074226ab1ef3a21105b4b1da341a4a845e181"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-iframe-sandbox/no-unsafe-iframe-sandbox.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-target-blank/no-unsafe-target-blank.spec.ts": {
+      "fingerprint": "302866112305280106486a10bcb1e4a4163a695643824222881d08921c73c807",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-target-blank/no-unsafe-target-blank.spec.ts": "bb47e313bc44d863d000cff380e6e3c5c3652ea1c60ee2556070a7df1dc6713b"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-unsafe-target-blank/no-unsafe-target-blank.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-use-form-state/no-use-form-state.spec.ts": {
+      "fingerprint": "664df8555e3d5f3c75c05ba3d083a733346de1585d7c0f7acde086e0a33ceb3f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-use-form-state/no-use-form-state.spec.ts": "13e27c56758081eccdca8b4605221ded0dafd2c39ac4f8441e2cec69d434dfcd"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-use-form-state/no-use-form-state.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-void-elements-with-children/no-void-elements-with-children.spec.ts": {
+      "fingerprint": "1214f87a7cdd98061105a873e2eba85dc7776eefe596f6aa0b4026546674fc67",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-void-elements-with-children/no-void-elements-with-children.spec.ts": "1bd480262ba0acdbcf8128b551071a0d6ba47e57387a68bc4f0212fb23f57d05"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-dom/src/rules/no-void-elements-with-children/no-void-elements-with-children.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop-with-children/no-children-prop-with-children.spec.ts": {
+      "fingerprint": "df978dd003662891950d77a66be87a5c26809ea803d057950744dcb4d35021b5",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop-with-children/no-children-prop-with-children.spec.ts": "e2d4b69f3f1ae066c62e0ad520fd592e734bcc17d2223285879bc912221f4e21"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop-with-children/no-children-prop-with-children.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop/no-children-prop.spec.ts": {
+      "fingerprint": "a58fa76e757bce353a3063332560d39fe4f0b35a0667047f67175dc0d409dad6",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop/no-children-prop.spec.ts": "492e5d71c4b03502e12756422e3d610b2c64ab4e3e3e08a7dda16417bc12bf06"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-children-prop/no-children-prop.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-comment-textnodes/no-comment-textnodes.spec.ts": {
+      "fingerprint": "daa7a9db3aba334026a70f0448de1fd1e201c5c4f3dbddf2df12d6903b2c35f8",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-comment-textnodes/no-comment-textnodes.spec.ts": "c56293c22a5d841be3554575571853a9a09f80ff3e110c590e09d6ebbede6ae1"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-comment-textnodes/no-comment-textnodes.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-key-after-spread/no-key-after-spread.spec.ts": {
+      "fingerprint": "badbf7afda9c87cf182241f3e16b1e82fe475145a0d0e5ba6b4e076d5aec2547",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-key-after-spread/no-key-after-spread.spec.ts": "05736c8022d4e661179f407535c481e8dedc6ed7868f87b5396cd932dc34bee1"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-key-after-spread/no-key-after-spread.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-dollar/no-leaked-dollar.spec.ts": {
+      "fingerprint": "242995149031d4cca212db451f468c0b244655e85739c6158b9bb9f06b5aef21",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-dollar/no-leaked-dollar.spec.ts": "4f840fdfcec0247ee37d32aad075939f0116e53cac09e2dfce523af063659276"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-dollar/no-leaked-dollar.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-semicolon/no-leaked-semicolon.spec.ts": {
+      "fingerprint": "9a8c37ebe2215ee16a642a2c309b1ec39332d4808ba0a7538b9576d975a18a54",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-semicolon/no-leaked-semicolon.spec.ts": "c49f418bca650e791adb8f2b766c8592404b1f326ab14327aef22030198b015f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-leaked-semicolon/no-leaked-semicolon.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-namespace/no-namespace.spec.ts": {
+      "fingerprint": "110a6b9a21686aaf4e1c72eb71da2efa4c8e08fda034ff761516810f6217de0f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-namespace/no-namespace.spec.ts": "f5381b0b033f595da6854c5ac87c99cc9540d7a12f3d714995cad62a0cc98635"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-namespace/no-namespace.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-useless-fragment/no-useless-fragment.spec.ts": {
+      "fingerprint": "fcfd446f43b9bb8f8364a34141c842a11443854d712aad9bae7f6a8d5e5432d9",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-useless-fragment/no-useless-fragment.spec.ts": "f1f93695626763e310d8c6eafcc298874905074fb9e516124d5ab9d000cc93fa"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-jsx/src/rules/no-useless-fragment/no-useless-fragment.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/context-name/context-name.spec.ts": {
+      "fingerprint": "90d23af7885dd5b7f7db71424bd9bd10e2437fd484cba41d323679c8066587a2",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/context-name/context-name.spec.ts": "b6617122c0f759211cebf3dead7a997e614a2b66f404b46a15976664dc899a27"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/context-name/context-name.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/id-name/id-name.spec.ts": {
+      "fingerprint": "cced9262905f32325dc97423f9d54e5a064bbd993fbc94f02d6178092f2b7df0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/id-name/id-name.spec.ts": "cef6db60fc24a5c1f5f0efb0da1a14bf61b0e4b7cdf323cca4c38940a8efbd73"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/id-name/id-name.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/ref-name/ref-name.spec.ts": {
+      "fingerprint": "f820c3998fd9d38bb23e04242cf6864f756bb0da259f1dc3ae01cc3e7dbf2bee",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/ref-name/ref-name.spec.ts": "893df93178a5eb8938a504c8ba7afaa70b28f5584f5929d77614973969c843d7"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-naming-convention/src/rules/ref-name/ref-name.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-rsc/src/rules/function-definition/function-definition.spec.ts": {
+      "fingerprint": "93170ee589435e198332ad7a2389cf8a6edb82894c5c5066c5d1ef526dbc3253",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-rsc/src/rules/function-definition/function-definition.spec.ts": "92c483210f1de11c878c9568265120422c697bcbffd4cf5715cea830fbf64784"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-rsc/src/rules/function-definition/function-definition.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-event-listener/no-leaked-event-listener.spec.ts": {
+      "fingerprint": "0f9a18c8d7a9bf0af110977f54f71f08dbe7b65a5586338a1712efa6e1d663e2",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-event-listener/no-leaked-event-listener.spec.ts": "f08053657918b794c76473e07a5832e6cf4695555e21b132eac3f6882ad29154"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-event-listener/no-leaked-event-listener.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-fetch/no-leaked-fetch.spec.ts": {
+      "fingerprint": "5337a7e473f47727eed0ebdaa3bdaba63dface3a5ac7f8d5f375737f0aebb7c2",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-fetch/no-leaked-fetch.spec.ts": "2c02333c534d33cca8ca19aec040b87f83d9d3a624c8ae90c66caf69b82aee65"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-fetch/no-leaked-fetch.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-intersection-observer/no-leaked-intersection-observer.spec.ts": {
+      "fingerprint": "7bddaa6e576cf0016ffc1dec6d0daf181e423eef751da9aefa5195cb570bd02f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-intersection-observer/no-leaked-intersection-observer.spec.ts": "18cb0a9bcd94fba0f3feae1c2450fb2a2324ebb76346f8c9d5940662d818f170"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-intersection-observer/no-leaked-intersection-observer.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-interval/no-leaked-interval.spec.ts": {
+      "fingerprint": "1f81b44bf01b7f91f2afdb31d685901a951a7615d81e74eca6cbf960de57ae26",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-interval/no-leaked-interval.spec.ts": "6b650ce14c42d6bdd9aa637c0016c641f306472527093b337b5931c8fba3321e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-interval/no-leaked-interval.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-resize-observer/no-leaked-resize-observer.spec.ts": {
+      "fingerprint": "2b8bce3b6bad8565ff01045442f61c8164f31e029581a40ed2431c56de9bef86",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-resize-observer/no-leaked-resize-observer.spec.ts": "98a191dcd3e331d4108c49447a85ed8ca8e2f0c08761211af65ffac48be07beb"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-resize-observer/no-leaked-resize-observer.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-timeout/no-leaked-timeout.spec.ts": {
+      "fingerprint": "cafda184e6d335dee30894fdfe6a49fce492cc7be66f680a00b937f7715db4e4",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-timeout/no-leaked-timeout.spec.ts": "f96e7c1a0291d798f8737b9213881870267b3a21fb1c3ee70691184453589ad5"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-web-api/src/rules/no-leaked-timeout/no-leaked-timeout.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/error-boundaries/error-boundaries.spec.ts": {
+      "fingerprint": "3b498fade824050e9600d619b593873614e8282a1e3769caa7f8789a2b2b8d34",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/error-boundaries/error-boundaries.spec.ts": "b621dc7bf7a743e87c6848601c3345d133da2752921bf2866809870a575c4e16"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/error-boundaries/error-boundaries.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/exhaustive-deps/exhaustive-deps.spec.ts": {
+      "fingerprint": "086c0615ce0677b143d142a1992bf2e85b8f08813b82ea646350c90ed60ed94c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/exhaustive-deps/exhaustive-deps.spec.ts": "5bba515e80b18aea8ee4118e92bbf07c933f07788d779b07dbc8ddf427c65834"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/exhaustive-deps/exhaustive-deps.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/globals/globals.spec.ts": {
+      "fingerprint": "5a8680eb15079494f12c5cfba7021702566b21536a889b79f55e9d0ea6bd9a04",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/globals/globals.spec.ts": "3c645fa2ebed80b31aefe7a8d525ade1a322c2baaae35711dc5c541d675b8cfc"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/globals/globals.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/immutability/immutability.spec.ts": {
+      "fingerprint": "aa48aac1f60eeaf8286144fe1411b8eca4d8e3a443d8b314b93c94f8cd458839",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/immutability/immutability.spec.ts": "62c471a039262747215a917f72598a19978a6b221d1e8f110b31462f17ab8335"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/immutability/immutability.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-access-state-in-setstate/no-access-state-in-setstate.spec.ts": {
+      "fingerprint": "d2f2ef1e0e180972564db7881e507ca0434f2125fa01d368d1c9a411e1f1266a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-access-state-in-setstate/no-access-state-in-setstate.spec.ts": "e6fb860de7766959ac8baa5d8d85b114ba17b11448f94b3564f0a2f3b3e9339e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-access-state-in-setstate/no-access-state-in-setstate.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-array-index-key/no-array-index-key.spec.ts": {
+      "fingerprint": "b5714965afff3af50598b51f5f93a4f47fa6096ed858fa516d141c72dcdbf184",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-array-index-key/no-array-index-key.spec.ts": "2c2ae2abf57fc8e95c87c6921a8a9d2fbab0f9aecd042fa48722deeca14e8e18"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-array-index-key/no-array-index-key.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-count/no-children-count.spec.ts": {
+      "fingerprint": "ebfb03030985050fac6df3391acfa61dcb6874351a1bca7dd3ae91d2d5bb2e41",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-count/no-children-count.spec.ts": "0a91093fe92faa43c10c56a4c8e10851586cd86da73d4757abcf958ae509bf97"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-count/no-children-count.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-for-each/no-children-for-each.spec.ts": {
+      "fingerprint": "a8e9ff5c23bcedddfdfa8770f1b6f23444195fcf8940bd36961987a9135078cf",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-for-each/no-children-for-each.spec.ts": "7ebb83a07f62cf723470c7def517e3b000b0fd80aeb7cfe7230219e4a1839344"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-for-each/no-children-for-each.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-map/no-children-map.spec.ts": {
+      "fingerprint": "07db1735fd3c71fa1700d356c3a05ddede0469adce3c53d0f4b5c3256b621133",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-map/no-children-map.spec.ts": "6e9e407b8471f2b0e55e5383068d2144ed91e9e82fbac6cb5d7ad2e662f7f1ce"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-map/no-children-map.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-only/no-children-only.spec.ts": {
+      "fingerprint": "ca4237b4c32190f77af3328e92c682d5634afe204eec3848a7ccda42481c9ec0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-only/no-children-only.spec.ts": "6a89870151f82349b52707e7a92c4a4895112aea24629ed6ba02fa9709947d39"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-only/no-children-only.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-to-array/no-children-to-array.spec.ts": {
+      "fingerprint": "0c58f91c252dd9fa880a9550a12976ac64232e21ec856c8a9091c7ca9e5d363e",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-to-array/no-children-to-array.spec.ts": "0126f002a1d7e1c6dc44aee529257bf5444b8236287c72d0a858d8692a4cf6ca"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-children-to-array/no-children-to-array.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-class-component/no-class-component.spec.ts": {
+      "fingerprint": "3c8c6d2817ccc7ff90bce53851780b61c155ac1717b96f845fe64173c7ca74e6",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-class-component/no-class-component.spec.ts": "a0cb511cae7ed2fe279fa458f7b2a56b2a917194d8eae1b206192b539f3ab753"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-class-component/no-class-component.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-clone-element/no-clone-element.spec.ts": {
+      "fingerprint": "acdbf32f2bb7c0aa4fe35625a97dd96ec39c414e8e12698a97956aee01700efb",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-clone-element/no-clone-element.spec.ts": "fc3d82db5c1f34c1c17f85a5809014d42c18a80200064bb184b20aa3dece6e61"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-clone-element/no-clone-element.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-mount/no-component-will-mount.spec.ts": {
+      "fingerprint": "b8781fad88ba514df7e81f71958d1a761924def10e5a8a79beab353af193d26c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-mount/no-component-will-mount.spec.ts": "49b9d370ee111132867c72a1127bb8b57bd1278a2823ea55ae05696e1af9f914"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-mount/no-component-will-mount.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-receive-props/no-component-will-receive-props.spec.ts": {
+      "fingerprint": "b5c7124572c0bb7c876857ae9d2e5f12bb4cd420a41e71cbeb5cbfad2ecce982",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-receive-props/no-component-will-receive-props.spec.ts": "a23df920249d41338ffa2542fb03d2fa223df940ee533566269649c2b76dcc3d"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-receive-props/no-component-will-receive-props.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-update/no-component-will-update.spec.ts": {
+      "fingerprint": "f5b6c02c44e4ae712ecfdd3df4fe2f3fb762e76983c0dab2301a51c71779523a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-update/no-component-will-update.spec.ts": "79493f616f219624fc1faa8375f8a22a7f1271db4a7c9a239f2faeed681ec3bd"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-component-will-update/no-component-will-update.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-context-provider/no-context-provider.spec.ts": {
+      "fingerprint": "363e82a85a43f1a508f2068e7bc0fe7e6fe446181a5e9723b458560a7d982240",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-context-provider/no-context-provider.spec.ts": "293a1c620ae7a4eaf139798cc81e9dadd196c2c53a75ffd356eb89ea8baa5d0c"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-context-provider/no-context-provider.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-create-ref/no-create-ref.spec.ts": {
+      "fingerprint": "a9e5a178d1183f960fa2493069ca8d71bcd3ed3c69fb0ee8e7322226326bb56a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-create-ref/no-create-ref.spec.ts": "4973ba991580fd31e981b0e5c3ee2af5a7ef43669d2393acf23554d972e8009f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-create-ref/no-create-ref.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-direct-mutation-state/no-direct-mutation-state.spec.ts": {
+      "fingerprint": "6415555ef84e0139e7cca5ff31b4ea761ed412c2e678b75baac4f2ae72b83bd7",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-direct-mutation-state/no-direct-mutation-state.spec.ts": "cce55c44d0ba124f89075627a894fdb88ee20fcf91d84f50ea211d4245f3a0b6"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-direct-mutation-state/no-direct-mutation-state.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-duplicate-key/no-duplicate-key.spec.ts": {
+      "fingerprint": "764ba3873e29f23f3f229004bbc7e970f71f495f99eecd938f8ba3a1e5335943",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-duplicate-key/no-duplicate-key.spec.ts": "94f22d49fd193ea4784fa4de99e80814f826eb13837fda3bc5a0baaacb8a5bd1"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-duplicate-key/no-duplicate-key.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-forward-ref/no-forward-ref.spec.ts": {
+      "fingerprint": "73f4aa462dbbbffeca117b696a3782a9d8df40653a86d01af41a716353616588",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-forward-ref/no-forward-ref.spec.ts": "4a1defb1892eb5f1300904277b840fdcc25942486c88b8c769f37e18fcf6394e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-forward-ref/no-forward-ref.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-children/no-implicit-children.spec.ts": {
+      "fingerprint": "3c6fae292c6a21ac4d00e93c13717ec34f97e27f723481dd1e3af595b84f95c5",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-children/no-implicit-children.spec.ts": "645ffd25d0d77fec020b0009c5a0b02f84d0eb2e1d37e86d4478939b3eb91201"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-children/no-implicit-children.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-key/no-implicit-key.spec.ts": {
+      "fingerprint": "dcc778e4b8fbb074ba4dbf984ad92691c3153ee007c9391a919f66ebeeedfc96",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-key/no-implicit-key.spec.ts": "c6f8e6e5418ec0fe8755e7df1c9210e413f157757dfdf0d40eeacc6410aa5848"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-key/no-implicit-key.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-ref/no-implicit-ref.spec.ts": {
+      "fingerprint": "dbd5beaab7e17d5bd7f3abc244804b26ff39bf0578ba93e452443e76650b4a9d",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-ref/no-implicit-ref.spec.ts": "599c5d217625d33c1cff91090ab4fe2817167fbd051d1465e7692524341321c6"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-implicit-ref/no-implicit-ref.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-leaked-conditional-rendering/no-leaked-conditional-rendering.spec.ts": {
+      "fingerprint": "cbede4bc3832a22a886be5e8f08fdeb4838637ab930b5d940ee8139b8f7753bc",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-leaked-conditional-rendering/no-leaked-conditional-rendering.spec.ts": "e64469226e00b828fee12cf6352cb26f501bcac2c04fd91a03057ad6bf42e550"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-leaked-conditional-rendering/no-leaked-conditional-rendering.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-component-display-name/no-missing-component-display-name.spec.ts": {
+      "fingerprint": "f1317c1eff7fab9c44d53b462f2b6fe4f02dd8fc5b4ed836ea80b07093f6a98d",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-component-display-name/no-missing-component-display-name.spec.ts": "0a22c7df470d257c0eb6890b05153b527ed8c72485b7987dec2b695520cb0eff"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-component-display-name/no-missing-component-display-name.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-context-display-name/no-missing-context-display-name.spec.ts": {
+      "fingerprint": "1c6b4beb656fdc2d0997118a6daa4050686b6dc40e0f66167033569fbf2b870a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-context-display-name/no-missing-context-display-name.spec.ts": "52865fdb585363ace8264fdf023edc6b78485787402076330c802ccb47a46736"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-context-display-name/no-missing-context-display-name.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-key/no-missing-key.spec.ts": {
+      "fingerprint": "e22de92f03c584f9ba7c08bb8f7251fd1890b146b12bdb5d4d5f9cf803529f33",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-key/no-missing-key.spec.ts": "f325c359dd12914866748605e5f03baee29ad5342776a00b1f27c812cf952f3d"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-missing-key/no-missing-key.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-misused-capture-owner-stack/no-misused-capture-owner-stack.spec.ts": {
+      "fingerprint": "2d8a0e059ca304b150fcbbd7bf2ae8e4b86d5cd96870741eccec471cadc05f3a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-misused-capture-owner-stack/no-misused-capture-owner-stack.spec.ts": "338c55b7788d7e3cd5f3fdc7c23859819cec0cea2fe55a6a743b69534a97df3d"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-misused-capture-owner-stack/no-misused-capture-owner-stack.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-component-definitions/no-nested-component-definitions.spec.ts": {
+      "fingerprint": "d2be1f65d1b3e4c5f01a539d00060730e8fc7a8a969763c962db274e0000b72b",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-component-definitions/no-nested-component-definitions.spec.ts": "d1db760c37467e0f234675f6582227371b7a2f25d2d6a1c335a975f9e18b4e81"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-component-definitions/no-nested-component-definitions.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-lazy-component-declarations/no-nested-lazy-component-declarations.spec.ts": {
+      "fingerprint": "e81dd3abf5e0c1089d407757f67e469a5cf124ce65afcbbf1bfb839dad15eada",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-lazy-component-declarations/no-nested-lazy-component-declarations.spec.ts": "233edebb2affdc3d080709ea00a59e03667f5b467fcaed17cb179456f6d6c1c1"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-nested-lazy-component-declarations/no-nested-lazy-component-declarations.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-mount/no-set-state-in-component-did-mount.spec.ts": {
+      "fingerprint": "c99b59895b5e5f2103d787c0468eedf49412cc60c24c2c238ef2f51253fdd3e1",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-mount/no-set-state-in-component-did-mount.spec.ts": "9b76ba6dc326d52a2e6a4a3a79d72b57cb42238768c35d163736a492147e89f5"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-mount/no-set-state-in-component-did-mount.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-update/no-set-state-in-component-did-update.spec.ts": {
+      "fingerprint": "459e45a3e787aab1bf7485661741fbd162474a2583f5a83ae356b428924cfdc8",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-update/no-set-state-in-component-did-update.spec.ts": "7d42f952e37edb017a9055c441f58dedaa8c2397870bb443d6036dbda279ce13"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-did-update/no-set-state-in-component-did-update.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-will-update/no-set-state-in-component-will-update.spec.ts": {
+      "fingerprint": "35c40053ca49af1c5345a889217a8eb074395546d82b3d05e786b4eac93dc7e5",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-will-update/no-set-state-in-component-will-update.spec.ts": "fa78507f110f7313180a2f1c4d4ab8d855aa439dc6cd35f6ca4930586d26b0fe"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-set-state-in-component-will-update/no-set-state-in-component-will-update.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unnecessary-use-prefix/no-unnecessary-use-prefix.spec.ts": {
+      "fingerprint": "359c58e5ef96c2ce3399395dd56711d9e3e8638da3aecea240e8644bfff394d8",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unnecessary-use-prefix/no-unnecessary-use-prefix.spec.ts": "72479e464f486954d929c5ac1f38be73735b41033b6e44900581153df8f25d34"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unnecessary-use-prefix/no-unnecessary-use-prefix.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-mount/no-unsafe-component-will-mount.spec.ts": {
+      "fingerprint": "5a21bd073209fb249658f07778b2a17f8e4f4f4569ad455642eb7b61f8e9c864",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-mount/no-unsafe-component-will-mount.spec.ts": "1f2cf06a8feb6e75ac615eda6e14fc599283419988fb27ff155c7f995b917590"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-mount/no-unsafe-component-will-mount.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-receive-props/no-unsafe-component-will-receive-props.spec.ts": {
+      "fingerprint": "7104ab407c1df5a97b404a344fd8936c9aad34e27eab97a2eed0b283615378d3",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-receive-props/no-unsafe-component-will-receive-props.spec.ts": "3787b4619287f568c39e49dea7ff39ee78583944efc7ceedb56dbb09ab93f273"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-receive-props/no-unsafe-component-will-receive-props.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-update/no-unsafe-component-will-update.spec.ts": {
+      "fingerprint": "338fd2cbbf6d31d649e748cac093bf443dd74368481e71de902888f3e9650ab0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-update/no-unsafe-component-will-update.spec.ts": "3ffcfc1fc3c555b7a05e5ba45501097b8e94058010398e8b5e0bf037c7c43049"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unsafe-component-will-update/no-unsafe-component-will-update.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-context-value/no-unstable-context-value.spec.ts": {
+      "fingerprint": "a98625fcd5b4abce443513f3e5566b7d47856bacbbe103b8b65fb1190c11e421",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-context-value/no-unstable-context-value.spec.ts": "28829d3fab31676e56d4534b3ae7b8ed41eb7af3510ec349fcbb7da0edb09a5e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-context-value/no-unstable-context-value.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-default-props/no-unstable-default-props.spec.ts": {
+      "fingerprint": "2fc7ada05690a06e0fad265b1845e5ca519c5632c09d68ee27ba8937b8a7bfd0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-default-props/no-unstable-default-props.spec.ts": "e2947fc4c3b024d2ba887ed341bb9d6c58ccdb5b1f2b2beae66b367a9d166198"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unstable-default-props/no-unstable-default-props.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-class-component-members/no-unused-class-component-members.spec.ts": {
+      "fingerprint": "b7906ffa7d05421650b47c08bf3d18bcc11b6579b1d5f00c71a8315d45192d6e",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-class-component-members/no-unused-class-component-members.spec.ts": "22245dd2f6291ce0146350ae8deb2251aef326a8b855c933568e8b283759fa3b"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-class-component-members/no-unused-class-component-members.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-props/no-unused-props.spec.ts": {
+      "fingerprint": "94bfdb7a3b661be846dd71fe9140a5b1f4aed7897ca1ac917d1f0da7019629b4",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-props/no-unused-props.spec.ts": "ace46fe9a5cfd678c76db6551a942121952b7eace5c03579e92c34117de4b6c3"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-props/no-unused-props.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-state/no-unused-state.spec.ts": {
+      "fingerprint": "1e7db10b7fa5f50908242472a0987abd10fdb873f9a252a54bbaba5afcbd6a67",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-state/no-unused-state.spec.ts": "a8c760eabcbee45d68be52666a56536f245808ed47a984bfb2de120a147ab2b2"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-unused-state/no-unused-state.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-use-context/no-use-context.spec.ts": {
+      "fingerprint": "fec129079458db97fb6bc1ae91c7996a762ecb94695c09ba584388d9e6928957",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-use-context/no-use-context.spec.ts": "32babe521ec480bb216015d31071184726f51c4db1767030284e3d092cde3a24"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/no-use-context/no-use-context.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/purity/purity.spec.ts": {
+      "fingerprint": "7e8ac4676f643a2fc8cd9131bbf3ef58dc4275af05886d676721369f7b8056ba",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/purity/purity.spec.ts": "5983d5ec4b98214a3323e5a5d766921238936d9bc9fe39362d4dd4b8a8045882"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/purity/purity.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/refs/refs.spec.ts": {
+      "fingerprint": "503c3a3b30fd5b854e557641d0cf7a9654aec3a454a55b1ae3e34c69819811aa",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/refs/refs.spec.ts": "9640e070c3cb66085379bb002cbb45574831413002a0c5888d7302079e8d3448"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/refs/refs.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/rules-of-hooks/rules-of-hooks.spec.ts": {
+      "fingerprint": "0f595903f016251eaaf1c18b44bfb031908cc1a5cd6b6ad3e08fe64b6d958e96",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/rules-of-hooks/rules-of-hooks.spec.ts": "ab07d88d27cf016b38a8bf187370018b42774dc7ee672fcc41b6b1c9297e2340"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/rules-of-hooks/rules-of-hooks.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-effect/set-state-in-effect.spec.ts": {
+      "fingerprint": "f83d62ce156bb96f34dc7cc2934d544da809b997cedd20c1d0145d8407b7e4ab",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-effect/set-state-in-effect.spec.ts": "a388c8f3b302942bf3d9d1aff3cc71197fb238e58adce2823f8016b4122f2733"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-effect/set-state-in-effect.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-render/set-state-in-render.spec.ts": {
+      "fingerprint": "45a0f1fae7219c17a3e5a896bfdd8afff26fd702a8ca0690cb300db0ace84799",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-render/set-state-in-render.spec.ts": "bcc5556e2c412efe647d39d89cf3cb994d9b5e4da85d3819f03a55a55133b6aa"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/set-state-in-render/set-state-in-render.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/static-components/static-components.spec.ts": {
+      "fingerprint": "2437512b9f0974e720d7b456633dcee60c576e8b400bdb9f9653a8e6da6b6830",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/static-components/static-components.spec.ts": "08ff666cffc6e91f61aba4f5fcb668c40f9722cbce84e0fd3efd615a7128328b"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/static-components/static-components.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/unsupported-syntax/unsupported-syntax.spec.ts": {
+      "fingerprint": "4f2e7a4430d321f47dbeca4350828181dd3899936516539702e1ceb73cfd0cb5",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/unsupported-syntax/unsupported-syntax.spec.ts": "547f2dcb6d14483bf51b401feb4f6a044ce269cbd1bd63b10f712a0bd6d9088f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/unsupported-syntax/unsupported-syntax.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-memo/use-memo.spec.ts": {
+      "fingerprint": "ad69a532c10c52c196c6941e2702e6fc6c19606b8c7506c299ca2eaad56fbb39",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-memo/use-memo.spec.ts": "2798c2fd3989fd770cd34927ee5605e8bf7ff87083388bc9859a92744ed9cd02"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-memo/use-memo.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-state/use-state.spec.ts": {
+      "fingerprint": "54b0e969487e475c5a60b49627e14459501a408fb9281b2f4875966eec2b7c52",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-state/use-state.spec.ts": "e98b4312c45e25c49b76e001fce9e66badf03550a5feff9cba1b485ca908708d"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/plugins/eslint-plugin-react-x/src/rules/use-state/use-state.spec.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/react.tsx": {
+      "fingerprint": "f38ce2a68644d660726e622f3bb5a3af38abd4f35abb93fe93d50bebc96c3f03",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/react.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/react.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/tsconfig.json": {
+      "fingerprint": "7225d47b576b4735b7988359a333cefc9871bd8961fd6700c779ac2e84f87041",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/tsconfig.json": "c46e52eeb430f5aaca2c9d28f8533f4e9b70edebf0c08bb71736242657c26eb9"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-preserve/tsconfig.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/react.tsx": {
+      "fingerprint": "c3e43b27230fa0897dc84de8eaaedad3cb1fb01bfcbcaddbf0988be951fdb9e4",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/react.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/react.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/tsconfig.json": {
+      "fingerprint": "3c36f9b787b1f57bcb9cb0720fc69879c421978df54e5fd5d3e4e65a22ee7baa",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/tsconfig.json": "0971162dce40121f718077949a355cb8f0cae097f90d74612f7016675fde801f"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-react-native/tsconfig.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-react/react.tsx": {
+      "fingerprint": "b0b666e1e678f42f55baa2ff19f2d55067df5b14abf8995e527563b98e6ef640",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-react/react.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-react/react.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/jsx-react/tsconfig.json": {
+      "fingerprint": "bd7ce1278fc77db0b01688c5b6b86b108f0604273da1fc95ce0daae7a48f7a98",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/jsx-react/tsconfig.json": "b56295590dc6e07ac14f80f34e62ce38830946103a87b47f8abbf946dcff5a52"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/jsx-react/tsconfig.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/PascalCase.tsx": {
+      "fingerprint": "a10a7ceb32163abcbeec5c69297c405ef7a7ba0c13b6961dc0810a8f8151d42c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/PascalCase.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/PascalCase.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/camelCase.tsx": {
+      "fingerprint": "c1f3a1b5017d89983321030aa24b1e74be45c4962f138e66b7e4fd5e221d30a0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/camelCase.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/camelCase.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/component.tsx": {
+      "fingerprint": "07afa0d7d7ebb8060d6760d231f40d03e43f74f027a8103413f849b3789ed437",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/component.tsx": "fba51aa13160251eadf3e448579c53ac88f2443a088c4ce64824fad0dfcb3c69"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/component.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/estree.tsx": {
+      "fingerprint": "821b8a75cb6bbd16461bde780ac2d6f0cbecc7318e73aed3e16238a2d42aa21a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/estree.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/estree.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/file.ts": {
+      "fingerprint": "1d08f199defe2667121d2cfd46120d5fbad023c002e3639de9eeac6cb9b7c3da",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/file.ts": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/file.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/kebab-case.tsx": {
+      "fingerprint": "c4b1f176b1ed63626864568eb611899c2da2d0d5fa8c9fb66fd8cb4e2ca624f7",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/kebab-case.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/kebab-case.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/react.tsx": {
+      "fingerprint": "4d7af36271f73b2f8348c2e64068b785ddc13cb2b1171afb21b00ba7eeb198c3",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/react.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/react.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/sample-component-button.tsx": {
+      "fingerprint": "de65ef6a7a0020ea0ea5294598cb5699fe05d5967a299c6bc1da3d951434a2dd",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/sample-component-button.tsx": "e91bbfc43ca5d5577e034a1a653423a804d2b21e1c9ec8657a9e7b3271c57f25"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/sample-component-button.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/snake_case.tsx": {
+      "fingerprint": "a9270a05893df9aaf11c331943f81b6490ebcd52ea7ac0be2af703cdcef8ef4f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/snake_case.tsx": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/snake_case.tsx at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.json": {
+      "fingerprint": "e691b704f7e60ef9e739167364ec9b94fbb544719ea08c5bb2622c63571c8662",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.json": "be0ab67f596ace8ad1d4b6e8a042eb2c64d677f8d1b5dca0a2c6bd77e0d8f25c"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preact.json": {
+      "fingerprint": "fdc38a5d7f50a1b8d3e819a65266c6383f85314a8b520cd1bd5e8a09d20c1f35",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preact.json": "829f7784adeeceb5eced7e03122b6809fc390c8870e07eeb4d11184b0afb352d"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preact.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preserve.json": {
+      "fingerprint": "da983fcf764576d134d60fae5ff2eeedb04a10652ab65d2aee874c61b8421f18",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preserve.json": "638d1c828f377c6c859b6ed827465355b3657b9c3c41d164b6d12f033d56a04e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-preserve.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react-native.json": {
+      "fingerprint": "d797dc4268634cacd49d357e9fa6f6877264ced15efa056de11bea4946cadf14",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react-native.json": "9a8152f12d1a9dbc5ae365398e10b9fd600e83217dbec564eadf3d85660030a1"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react-native.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react.json": {
+      "fingerprint": "818e13deaa2c9a2424e1c7a88cd3fc484640204d380463638916c92567827924",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react.json": "c142e7d6a4f8a3e2141874766149972862667fdc1dece7866f539a352f4b952e"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/react/testing/samples/tsconfig.jsx-react.json at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:patches/@voidzero-dev__vite-plus-core@1.5.0.patch": {
+      "fingerprint": "3ef7e5c2b7d955688b30ca54e2314ad57b4d3c25961f6ed9bc612e2403e0dc93",
+      "snapshot": {
+        "patches/@voidzero-dev__vite-plus-core@1.5.0.patch": "82cfaaf2112615214dd0a454eea2b16eeb87f596b6812498cb400c6df4ba6322"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: patches/@voidzero-dev__vite-plus-core@1.5.0.patch at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
+    },
+    "source:patches/eslint-plugin-react-jsx@5.28.8.patch": {
+      "fingerprint": "ef1ae06eef8404190a4fcc700108321c94ffed95a3fd5cc359eac892925249cc",
+      "snapshot": {
+        "patches/eslint-plugin-react-jsx@5.28.8.patch": "8c682d713b84607e9fe4c62288d9aa0a763608f913cc326e1e1f3ac6a5738df8"
+      },
+      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: patches/eslint-plugin-react-jsx@5.28.8.patch at 968f7d31f42851427a332aace7926b404371dc4a"
+      ]
     }
   }
 }

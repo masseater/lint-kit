@@ -9,15 +9,21 @@ catalog:
   "@ast-grep/cli": 0.51.0
   "@commitlint/cli": 21.2.4
   "@commitlint/config-conventional": 21.2.4
+  "@eslint-react/eslint-plugin": 5.28.8
   "@oxlint/plugins": 1.90.0
   "@types/node": 26.6.6
+  "@types/react": 19.3.0
   "@effect/platform-node": 4.1.2
   "@effect/vitest": 4.1.2
   "@openrouter/sdk": 1.5.33
   "@size-limit/file": 14.3.0
   "@tanstack/eslint-plugin-start": 0.1.0
   "@tanstack/intent": 0.5.6
+  "@tsconfig/strictest": 2.0.8
+  "@typescript-eslint/types": 8.72.1
+  "@typescript-eslint/typescript-estree": 8.72.1
   "@typescript-eslint/utils": ^8.72.1
+  dedent: 1.7.2
   eslint-plugin-no-comments: 1.2.1
   oxlint: 1.90.0
   publint: 0.3.25
@@ -26,15 +32,12 @@ catalog:
   typescript-6: npm:typescript@6.0.3
   vitest: 5.1.0
 catalogs:
-  typescript-api:
-    typescript: 6.0.3
-    typescript-7: npm:typescript@7.1.0-beta
   stack:
     "@effect/tsgo": 0.67.4
     "@vitest/coverage-v8": 5.1.0
     effect: 4.1.2
     fallow: 3.38.1
-    typescript: 7.0.2
+    typescript: 7.1.0-beta
     vite: npm:@voidzero-dev/vite-plus-core@1.5.0
     vite-plus: 1.5.0
 overrides:
@@ -53,8 +56,14 @@ peerDependencyRules:
 allowBuilds:
   "@ast-grep/cli": true
   "@openrouter/sdk": false
+packageExtensions:
+  eslint-plugin-react-jsx@5.28.8:
+    dependencies:
+      entities: 9.0.0
 patchedDependencies:
   "@tanstack/eslint-plugin-start@0.1.0": patches/@tanstack__eslint-plugin-start@0.1.0.patch
+  "@voidzero-dev/vite-plus-core@1.5.0": patches/@voidzero-dev__vite-plus-core@1.5.0.patch
+  eslint-plugin-react-jsx@5.28.8: patches/eslint-plugin-react-jsx@5.28.8.patch
 audit:
   ignorePrune: true
   ignore: []

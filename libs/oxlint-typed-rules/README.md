@@ -13,11 +13,20 @@ ESLint を入れずに、型情報を使うルールを oxlint だけで回せ�
 
 - `@r_masseater/oxlint-typed-rules/tanstack-start`
   - [@tanstack/eslint-plugin-start][tanstack] の 2 ルール
+- `@r_masseater/oxlint-typed-rules/react`
+  - [@eslint-react/eslint-plugin][eslint-react] 5.28.8 の全ルールと configs
 
 [tanstack]: https://github.com/TanStack/router/tree/main/packages/eslint-plugin-start
+[eslint-react]: https://github.com/Rel1cx/eslint-react
 
 元のリポのテストを手を入れずに移植し、すべて同じ結果になることを確かめている。
 TanStack Start の 2 ルールは、ファイルをまたぐと違反を取りこぼす点を直してある。
+@eslint-react はルールの ID と configs を元のプラグインと同じにしてあるので、
+jsPlugins の `specifier` を差し替えるだけで乗り換えられる。
+oxc の構文木は JSX の属性の文字参照を復号しないので（[oxc#9667][oxc-9667]）、
+`jsx-no-children-prop` は属性の元の文字列から復号するよう直してある。
+
+[oxc-9667]: https://github.com/oxc-project/oxc/issues/9667
 
 ## 使い方
 
@@ -49,9 +58,10 @@ export default defineConfig({
 
 ## TypeScript 7 との変換層
 
-同梱したルールは TypeScript 6 の `ts` 名前空間と `Program`・`TypeChecker` を読む。
+同梱したルールは TypeScript 6 までの `ts` 名前空間と `Program`・`TypeChecker` を読む。
 TypeScript 7.1 の `typescript/sync` は形が違う。
-そこで、2 ルールが使う分だけを TypeScript 6 の形に見せる層を持つ。
+そこで、同梱したルールが使う分だけを `typescript/sync` と `typescript/ast` で組み立てる層を持つ。
+ビルドでルールの `typescript` の import をこの層に向けるので、TypeScript 6 以前は入らない。
 この層は暫定である。
 typescript-eslint の [#12803][tse-12803] が同じ層を持つので、
 それが公開されたら乗り換える（[#13][issue-13]）。

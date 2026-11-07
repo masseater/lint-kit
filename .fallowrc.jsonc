@@ -17,9 +17,33 @@
   },
   "typeAware": { "enabled": true, "require": "complete" },
   "failOnParseError": true,
-  "ignoreDependencies": ["publint", "@arethetypeswrong/core"],
-  "ignorePatterns": [".claude/**", "libs/*/example/**"],
-  "dynamicallyLoaded": ["libs/oxlint-plugin-decision/src/openrouter-worker.ts"],
+  "ignoreDependencies": [
+    "publint",
+    "@arethetypeswrong/core",
+    "@typescript-eslint/typescript-estree",
+    "@tsconfig/strictest",
+    "@types/react",
+    "@typescript-eslint/types",
+    "dedent",
+  ],
+  "ignorePatterns": [
+    ".claude/**",
+    "libs/*/example/**",
+    "libs/oxlint-typed-rules/upstream/react/**",
+  ],
+  "dynamicallyLoaded": [
+    "libs/oxlint-plugin-decision/src/openrouter-worker.ts",
+    "libs/oxlint-typed-rules/src/ts-api-utils.ts",
+    "libs/oxlint-typed-rules/src/ts-compat.ts",
+    "libs/oxlint-typed-rules/src/typescript-eslint-utils.ts",
+  ],
+  "usedClassMembers": [
+    { "implements": "LegacySymbol", "members": ["getName", "getDeclarations"] },
+    {
+      "implements": "LegacyType",
+      "members": ["symbol", "aliasSymbol", "types", "getProperty", "getProperties"],
+    },
+  ],
   "audit": { "gate": "all" },
   "health": {
     "coverage": "coverage/coverage-final.json",

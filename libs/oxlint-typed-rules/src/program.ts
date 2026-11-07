@@ -1,28 +1,12 @@
-import {
-  Array as Arr,
-  Cause,
-  Effect,
-  Exit,
-  Layer,
-  ManagedRuntime,
-  Option,
-  String as Str,
-  pipe,
-} from "effect";
+import { Cause, Effect, Exit, Layer, ManagedRuntime, Option, String as Str } from "effect";
 import { FetchHttpClient } from "effect/http";
 import { OtlpSerialization, OtlpTracer } from "effect/observability";
-import type { Node, SourceFile } from "typescript-7/ast";
-import { createFileSystemLayer } from "typescript-7/fs";
-import { API } from "typescript-7/sync";
-import type {
-  Checker,
-  Program as NativeProgram,
-  Project,
-  Snapshot,
-  Symbol as NativeSymbol,
-  SymbolFlags,
-} from "typescript-7/sync";
+import { createFileSystemLayer } from "typescript/fs";
+import { API } from "typescript/sync";
+import type { Project, Snapshot } from "typescript/sync";
 
+import { internProgram } from "./compat.ts";
+import type { CompatProgram } from "./compat.ts";
 import { memoizeByKey } from "./memo.ts";
 
 const tracing = OtlpTracer.layerFromConfig({
@@ -34,26 +18,6 @@ const runtime = ManagedRuntime.make(tracing);
 interface Overlay {
   readonly fileName: string;
   readonly text: string;
-}
-
-interface CompatSymbol {
-  readonly native: NativeSymbol;
-  readonly flags: SymbolFlags;
-  readonly name: string;
-  readonly getName: () => string;
-  readonly getFlags: () => SymbolFlags;
-  readonly getDeclarations: () => readonly Node[];
-}
-
-interface CompatChecker {
-  readonly getSymbolAtLocation: (node: Node) => CompatSymbol | undefined;
-  readonly getAliasedSymbol: (symbol: CompatSymbol) => CompatSymbol;
-}
-
-interface CompatProgram {
-  readonly getSourceFile: (fileName: string) => SourceFile | undefined;
-  readonly getSourceFiles: () => readonly SourceFile[];
-  readonly getTypeChecker: () => CompatChecker;
 }
 
 const startApi = (): API => {
@@ -74,71 +38,6 @@ const currentSnapshot = (): Snapshot =>
     Option.getOrElse(() => {
       const created = api.createSnapshot();
       snapshots.set(api, created);
-      return created;
-    }),
-  );
-
-const isOwnSourceFile = (fileName: string): boolean =>
-  !Str.includes("/node_modules/")(fileName) && !Str.endsWith(".d.ts")(fileName);
-
-const compatSymbols = new WeakMap<NativeSymbol, CompatSymbol>();
-
-const internCompatSymbol = (project: Project, native: NativeSymbol): CompatSymbol =>
-  Option.fromNullishOr(compatSymbols.get(native)).pipe(
-    Option.getOrElse(() => {
-      const created: CompatSymbol = {
-        native,
-        flags: native.flags,
-        name: native.name,
-        getName: () => native.name,
-        getFlags: () => native.flags,
-        getDeclarations: () =>
-          pipe(
-            native.declarations,
-            Arr.flatMap((handle) =>
-              Option.fromNullishOr(handle.resolve(project)).pipe(Option.toArray),
-            ),
-          ),
-      };
-      compatSymbols.set(native, created);
-      return created;
-    }),
-  );
-
-const compatChecker = (project: Project, checker: Checker): CompatChecker => ({
-  getSymbolAtLocation: (node) =>
-    Option.fromNullishOr(checker.getSymbolAtLocation(node)).pipe(
-      Option.map((native) => internCompatSymbol(project, native)),
-      Option.getOrUndefined,
-    ),
-  getAliasedSymbol: (symbol) =>
-    internCompatSymbol(project, checker.getAliasedSymbol(symbol.native)),
-});
-
-const ownSourceFiles = (program: NativeProgram): readonly SourceFile[] =>
-  pipe(
-    program.getSourceFileNames(),
-    Arr.filter(isOwnSourceFile),
-    Arr.flatMap((fileName) =>
-      Option.fromNullishOr(program.getSourceFile(fileName)).pipe(Option.toArray),
-    ),
-  );
-
-const cachedOwnSourceFiles = memoizeByKey(ownSourceFiles);
-
-const compatPrograms = new WeakMap<NativeProgram, CompatProgram>();
-
-const internCompatProgram = (project: Project): CompatProgram =>
-  Option.fromNullishOr(compatPrograms.get(project.program)).pipe(
-    Option.getOrElse(() => {
-      const { program } = project;
-      const checker = compatChecker(project, project.checker);
-      const created: CompatProgram = {
-        getSourceFile: program.getSourceFile.bind(program),
-        getSourceFiles: () => cachedOwnSourceFiles(program),
-        getTypeChecker: () => checker,
-      };
-      compatPrograms.set(program, created);
       return created;
     }),
   );
@@ -198,11 +97,11 @@ const projectOfFile = (overlay: Overlay): Effect.Effect<Option.Option<Project>> 
 
 const programFor = (overlay: Overlay): Option.Option<CompatProgram> =>
   Exit.match(runtime.runSyncExit(projectOfFile(overlay)), {
-    onSuccess: Option.map(internCompatProgram),
+    onSuccess: Option.map(internProgram),
     onFailure: (cause) => {
       throw Cause.squash(cause);
     },
   });
 
-export type { CompatChecker, CompatProgram, CompatSymbol, Overlay };
+export type { Overlay };
 export { programFor };
