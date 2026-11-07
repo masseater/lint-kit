@@ -20,9 +20,9 @@ import { writeTo } from "./output.ts";
 const USAGE = pipe(
   [
     "Usage: vp-tools <command> [args]",
+    "  betterleaks <betterleaks command...>",
     "  commitlint <message-file>",
     "  dependencies",
-    "  gitleaks <gitleaks command...>",
     "  steiger <dir...>",
     "  textlint [--print-files] <pathspec...>",
   ],

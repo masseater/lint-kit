@@ -1,9 +1,9 @@
 export { loadViteConfig } from "./config.ts";
 export type {
+  BetterleaksConfig,
+  BetterleaksRule,
   CommitlintConfig,
   DependencyRules,
-  GitleaksAllowlist,
-  GitleaksConfig,
   SteigerConfig,
   TextlintConfig,
   ToolSections,
