@@ -1,0 +1,83 @@
+{
+  "name": "@r_masseater/vp-tools",
+  "version": "0.1.1",
+  "description": "Run gitleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts.",
+  "keywords": [
+    "commitlint",
+    "gitleaks",
+    "steiger",
+    "textlint",
+    "vite-plus"
+  ],
+  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/vp-tools#readme",
+  "bugs": {
+    "url": "https://github.com/masseater/lint-kit/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masseater/lint-kit.git",
+    "directory": "libs/vp-tools"
+  },
+  "bin": {
+    "vp-tools": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "prepublishOnly": "vp run build"
+  },
+  "dependencies": {
+    "@commitlint/format": "21.2.3",
+    "@commitlint/lint": "21.2.4",
+    "@commitlint/load": "21.2.4",
+    "@commitlint/types": "21.2.3",
+    "@effect/platform-node": "catalog:",
+    "@textlint/config-loader": "15.8.0",
+    "@textlint/kernel": "15.8.0",
+    "effect": "catalog:stack",
+    "minimatch": "11.0.3",
+    "semver": "7.8.6",
+    "smol-toml": "1.9.1",
+    "steiger": "0.9.0",
+    "textlint": "15.8.0",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@effect/vitest": "catalog:",
+    "@size-limit/file": "catalog:",
+    "@types/node": "catalog:",
+    "@types/semver": "7.8.0",
+    "@vitest/coverage-v8": "catalog:stack",
+    "size-limit": "catalog:",
+    "typescript": "catalog:stack",
+    "vite": "catalog:stack",
+    "vite-plus": "catalog:stack"
+  },
+  "peerDependencies": {
+    "vite": "*",
+    "vite-plus": ">=1.5.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/*.mjs",
+      "limit": "4601 B"
+    }
+  ],
+  "engines": {
+    "node": ">=26"
+  }
+}

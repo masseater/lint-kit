@@ -24,25 +24,27 @@ catalog:
   size-limit: 14.3.0
   synckit: 0.12.3
   typescript-6: npm:typescript@6.0.3
-  vitest: 5.0.5
+  vitest: 5.1.0
 catalogs:
   typescript-api:
     typescript: 6.0.3
     typescript-7: npm:typescript@7.1.0-beta
   stack:
-    "@effect/tsgo": 0.63.0
-    "@vitest/coverage-v8": 5.0.5
+    "@effect/tsgo": 0.67.4
+    "@vitest/coverage-v8": 5.1.0
     effect: 4.1.2
     fallow: 3.38.1
     typescript: 7.0.2
-    vite-plus: 1.4.0
+    vite: npm:@voidzero-dev/vite-plus-core@1.5.0
+    vite-plus: 1.5.0
 overrides:
   effect: "catalog:stack"
   "@effect/platform-node-shared": 4.1.2
   "@effect/vitest": "catalog:"
-  vite@*: npm:@voidzero-dev/vite-plus-core@1.4.0
+  vite@*: npm:@voidzero-dev/vite-plus-core@1.5.0
   "@tanstack/eslint-plugin-start>globals": 16.4.0
   minimatch@<11.0.1: ^11.0.1
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
 peerDependencyRules:
   allowAny:
     - vite
