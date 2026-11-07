@@ -124,8 +124,10 @@ const passesTheConfigToBetterleaks = Effect.gen(function* passesTheConfigToBette
 
 const lintsTheCommitMessageFile = Effect.gen(function* lintsTheCommitMessageFile() {
   const root = yield* directoryWith({ ...REPOSITORY, COMMIT_EDITMSG: "feat: add\n" });
-  const { exit } = yield* run("commitlint", root, [`${root}/COMMIT_EDITMSG`]);
-  assertTrue(Exit.isSuccess(exit));
+  const linted = yield* run("commitlint", root, [`${root}/COMMIT_EDITMSG`]);
+  const missing = yield* run("commitlint", root, []);
+  assertTrue(Exit.isSuccess(linted.exit));
+  assertTrue(Exit.isFailure(missing.exit));
 });
 
 const checksSlices = Effect.gen(function* checksSlices() {
@@ -144,6 +146,6 @@ layer(fixtureLayer)("vp-tools commands", (it) => {
     "hands the betterleaks section and ignore file to the command and reports its exit code",
     () => passesTheConfigToBetterleaks,
   );
-  it.effect("lints the commit message file", () => lintsTheCommitMessageFile);
+  it.effect("lints the commit message file and needs one", () => lintsTheCommitMessageFile);
   it.effect("checks slices with the steiger section", () => checksSlices);
 });
