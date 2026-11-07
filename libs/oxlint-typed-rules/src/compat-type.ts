@@ -1,6 +1,7 @@
 import { Array as Arr, BigInt as BigInt_, Match, Option, Predicate, pipe } from "effect";
 import type {
   Project,
+  Signature as NativeSignature,
   Type as NativeType,
   TypeFlags,
   UnionOrIntersectionType,
@@ -41,12 +42,19 @@ const constituentsOf = (native: NativeType): readonly NativeType[] =>
     Option.getOrElse((): readonly NativeType[] => []),
   );
 
+interface CompatSignature {
+  readonly native: NativeSignature;
+  readonly getReturnType: () => CompatType;
+}
+
 interface LegacyType {
   readonly symbol: CompatSymbol | undefined;
   readonly aliasSymbol: CompatSymbol | undefined;
   readonly types: readonly CompatType[];
+  readonly getSymbol: () => CompatSymbol | undefined;
   readonly getProperty: (name: string) => CompatSymbol | undefined;
   readonly getProperties: () => readonly CompatSymbol[];
+  readonly getCallSignatures: () => readonly CompatSignature[];
 }
 
 class CompatType implements LegacyType {
@@ -101,6 +109,13 @@ class CompatType implements LegacyType {
     );
   }
 
+  public static optional(project: Project, native: NativeType | undefined): CompatType | undefined {
+    return Option.fromNullishOr(native).pipe(
+      Option.map((type) => CompatType.intern(project, type)),
+      Option.getOrUndefined,
+    );
+  }
+
   public get symbol(): CompatSymbol | undefined {
     const { native } = this;
     const project = this.#project;
@@ -128,6 +143,10 @@ class CompatType implements LegacyType {
     return this.#types;
   }
 
+  public getSymbol(): CompatSymbol | undefined {
+    return this.symbol;
+  }
+
   public getProperty(name: string): CompatSymbol | undefined {
     return CompatSymbol.optional(this.#project, this.native.getProperty(name));
   }
@@ -139,7 +158,18 @@ class CompatType implements LegacyType {
       Arr.map((property) => CompatSymbol.intern(project, property)),
     );
   }
+
+  public getCallSignatures(): readonly CompatSignature[] {
+    const project = this.#project;
+    return pipe(
+      this.native.getCallSignatures(),
+      Arr.map((signature): CompatSignature => ({
+        native: signature,
+        getReturnType: () => CompatType.intern(project, signature.getReturnType()),
+      })),
+    );
+  }
 }
 
-export type { LegacyType, LiteralValue, PseudoBigInt };
+export type { CompatSignature, LegacyType, LiteralValue, PseudoBigInt };
 export { CompatType };

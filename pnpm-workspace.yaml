@@ -17,13 +17,18 @@ catalog:
   "@effect/vitest": 4.1.2
   "@openrouter/sdk": 1.5.33
   "@size-limit/file": 14.3.0
+  "@tanstack/eslint-plugin-query": 5.105.3
+  "@tanstack/eslint-plugin-router": 1.162.0
   "@tanstack/eslint-plugin-start": 0.1.0
   "@tanstack/intent": 0.5.6
   "@tsconfig/strictest": 2.0.8
+  "@typescript-eslint/parser": 8.72.1
   "@typescript-eslint/types": 8.72.1
   "@typescript-eslint/typescript-estree": 8.72.1
   "@typescript-eslint/utils": ^8.72.1
+  combinate: 1.1.11
   dedent: 1.7.2
+  eslint-plugin-drizzle: 0.2.3
   eslint-plugin-no-comments: 1.2.1
   oxlint: 1.90.0
   publint: 0.3.25
@@ -64,6 +69,7 @@ packageExtensions:
 patchedDependencies:
   "@tanstack/eslint-plugin-start@0.1.0": patches/@tanstack__eslint-plugin-start@0.1.0.patch
   "@voidzero-dev/vite-plus-core@1.5.0": patches/@voidzero-dev__vite-plus-core@1.5.0.patch
+  eslint-plugin-drizzle@0.2.3: patches/eslint-plugin-drizzle@0.2.3.patch
   eslint-plugin-react-jsx@5.28.8: patches/eslint-plugin-react-jsx@5.28.8.patch
 audit:
   ignorePrune: true

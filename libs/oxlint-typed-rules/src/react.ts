@@ -1,7 +1,8 @@
 import eslintReact from "@eslint-react/eslint-plugin";
-import { Array as Arr, Option, Predicate, Record, String as Str, pipe } from "effect";
+import { Array as Arr, Option, Record, String as Str, pipe } from "effect";
 import type { CreateRule, Plugin } from "vite-plus/lint/plugins";
 
+import { rulesOf } from "./config-rules.ts";
 import { isTypedRule, withOptionalTypeInformation, withTypeInformation } from "./typed-rule.ts";
 import type { TypedRule } from "./typed-rule.ts";
 
@@ -9,20 +10,44 @@ interface Config {
   readonly rules?: Readonly<Record<string, unknown>> | undefined;
 }
 
+type ConfigName =
+  | "all"
+  | "disable-conflict-eslint-plugin-react"
+  | "disable-conflict-eslint-plugin-react-hooks"
+  | "disable-dom"
+  | "disable-experimental"
+  | "disable-jsx"
+  | "disable-naming-convention"
+  | "disable-rsc"
+  | "disable-type-checked"
+  | "disable-web-api"
+  | "dom"
+  | "jsx"
+  | "naming-convention"
+  | "off"
+  | "recommended"
+  | "recommended-type-checked"
+  | "recommended-typescript"
+  | "rsc"
+  | "strict"
+  | "strict-type-checked"
+  | "strict-typescript"
+  | "web-api"
+  | "x";
+
+type Configs = Readonly<Record<ConfigName, Config>>;
+
 type ReactPlugin = Plugin & {
   readonly meta: { readonly name: string };
-  readonly configs: Readonly<Record<string, Config>>;
+  readonly configs: Configs;
 };
 
 const PREFIX = "@eslint-react/";
 
-const rulesOf = (config: unknown): Option.Option<Readonly<Record<string, unknown>>> =>
-  Option.liftPredicate(config, Predicate.hasProperty("rules")).pipe(
-    Option.flatMap(({ rules }) => Option.liftPredicate(rules, Predicate.isReadonlyObject)),
-  );
+const upstreamConfigs: Readonly<Record<ConfigName, unknown>> = eslintReact.configs;
 
-const configs: Readonly<Record<string, Config>> = pipe(
-  eslintReact.configs,
+const configs: Configs = pipe(
+  upstreamConfigs,
   Record.map((config) => ({ rules: Option.getOrUndefined(rulesOf(config)) })),
 );
 
@@ -30,8 +55,8 @@ const upstreamRules: Readonly<Record<string, unknown>> = Option.fromNullishOr(
   eslintReact.rules,
 ).pipe(Option.getOrElse(() => ({})));
 
-const typeCheckedIds = Record.get(configs, "disable-type-checked").pipe(
-  Option.map(({ rules }) => Record.keys(Option.getOrElse(Option.fromNullishOr(rules), () => ({})))),
+const typeCheckedIds = Option.fromNullishOr(configs["disable-type-checked"].rules).pipe(
+  Option.map(Record.keys),
   Option.getOrElse((): readonly string[] => []),
   Arr.map(Str.replace(PREFIX, "")),
 );
@@ -54,5 +79,5 @@ const plugin: ReactPlugin = {
   rules: pipe(upstreamRules, Record.filter(isTypedRule), Record.map(withTypes)),
 };
 
-export type { Config, ReactPlugin };
+export type { Config, ConfigName, Configs, ReactPlugin };
 export default plugin;
