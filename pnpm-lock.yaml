@@ -233,9 +233,6 @@ catalogs:
     synckit:
       specifier: 0.12.3
       version: 0.12.3
-    typescript-6:
-      specifier: npm:typescript@6.0.3
-      version: 6.0.3
     vitest:
       specifier: 5.1.0
       version: 5.1.0
@@ -257,6 +254,8 @@ catalogs:
       version: 1.5.0
 
 overrides:
+  '@feature-sliced/filesystem>typescript': 7.1.0-beta
+  steiger>@feature-sliced/steiger-plugin: '-'
   effect: 4.1.2
   '@effect/platform-node-shared': 4.1.2
   '@effect/vitest': 4.1.2
@@ -443,9 +442,6 @@ importers:
       effect:
         specifier: 4.1.2
         version: 4.1.2
-      typescript-6:
-        specifier: 'catalog:'
-        version: typescript@6.0.3
     devDependencies:
       '@effect/vitest':
         specifier: 4.1.2
@@ -489,9 +485,15 @@ importers:
       effect:
         specifier: 4.1.2
         version: 4.1.2
+      fastest-levenshtein:
+        specifier: 1.0.16
+        version: 1.0.16
       minimatch:
         specifier: 11.0.3
         version: 11.0.3
+      pluralize:
+        specifier: 8.0.0
+        version: 8.0.0
       semver:
         specifier: 7.8.6
         version: 7.8.6
@@ -500,13 +502,19 @@ importers:
         version: 1.9.1
       steiger:
         specifier: 0.9.0
-        version: 0.9.0(typescript@7.1.0-beta)
+        version: 0.9.0
       textlint:
         specifier: 15.8.0
         version: 15.8.0(supports-color@7.2.0)
+      tsconfck:
+        specifier: 3.1.6
+        version: 3.1.6(typescript@7.1.0-beta)
       vite:
         specifier: npm:@voidzero-dev/vite-plus-core@1.5.0
         version: '@voidzero-dev/vite-plus-core@1.5.0(patch_hash=82cfaaf2112615214dd0a454eea2b16eeb87f596b6812498cb400c6df4ba6322)(@arethetypeswrong/core@0.18.5)(@types/node@26.6.6)(jiti@2.6.1)(publint@0.3.25)(typescript@7.1.0-beta)(yaml@2.9.1)'
+      web-tree-sitter:
+        specifier: 0.26.13
+        version: 0.26.13
       yaml:
         specifier: 2.9.1
         version: 2.9.1
@@ -514,6 +522,12 @@ importers:
       '@effect/vitest':
         specifier: 4.1.2
         version: 4.1.2(effect@4.1.2)(vitest@5.1.0)
+      '@feature-sliced/filesystem':
+        specifier: 3.1.1
+        version: 3.1.1
+      '@feature-sliced/steiger-plugin':
+        specifier: 0.8.2
+        version: 0.8.2(typescript@7.1.0-beta)
       '@size-limit/file':
         specifier: 'catalog:'
         version: 14.3.0(size-limit@14.3.0)
@@ -544,9 +558,6 @@ importers:
       effect:
         specifier: 4.1.2
         version: 4.1.2
-      typescript-6:
-        specifier: 'catalog:'
-        version: typescript@6.0.3
     devDependencies:
       '@effect/vitest':
         specifier: 4.1.2
@@ -3484,16 +3495,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
-  typescript@6.0.3:
-    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@7.0.2:
     resolution: {integrity: sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==}
     engines: {node: '>=16.20.0'}
@@ -4163,7 +4164,7 @@ snapshots:
 
   '@feature-sliced/filesystem@3.1.1':
     dependencies:
-      typescript: 5.9.3
+      typescript: 7.1.0-beta
 
   '@feature-sliced/steiger-plugin@0.8.2(typescript@7.1.0-beta)':
     dependencies:
@@ -6320,10 +6321,9 @@ snapshots:
 
   std-env@4.3.0: {}
 
-  steiger@0.9.0(typescript@7.1.0-beta):
+  steiger@0.9.0:
     dependencies:
       '@clack/prompts': 0.9.1
-      '@feature-sliced/steiger-plugin': 0.8.2(typescript@7.1.0-beta)
       chokidar: 4.0.3
       cosmiconfig: 10.0.1
       effector: 23.4.4
@@ -6338,8 +6338,6 @@ snapshots:
       yargs: 17.7.3
       zod: 4.6.7
       zod-validation-error: 5.0.0(zod@4.6.7)
-    transitivePeerDependencies:
-      - typescript
 
   string-ts@2.4.0: {}
 
@@ -6459,10 +6457,6 @@ snapshots:
   type-fest@4.41.0: {}
 
   typescript@5.6.1-rc: {}
-
-  typescript@5.9.3: {}
-
-  typescript@6.0.3: {}
 
   typescript@7.0.2:
     optionalDependencies:

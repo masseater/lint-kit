@@ -29,7 +29,6 @@ catalog:
   publint: 0.3.25
   size-limit: 14.3.0
   synckit: 0.12.3
-  typescript-6: npm:typescript@6.0.3
   vitest: 5.1.0
 catalogs:
   stack:
@@ -41,6 +40,8 @@ catalogs:
     vite: npm:@voidzero-dev/vite-plus-core@1.5.0
     vite-plus: 1.5.0
 overrides:
+  "@feature-sliced/filesystem>typescript": "catalog:stack"
+  "steiger>@feature-sliced/steiger-plugin": "-"
   effect: "catalog:stack"
   "@effect/platform-node-shared": 4.1.2
   "@effect/vitest": "catalog:"

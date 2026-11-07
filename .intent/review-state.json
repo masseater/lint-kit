@@ -364,27 +364,27 @@
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
-      "fingerprint": "3a15c35dde71fc870a0c3fa3c6087fa4ce3884c6e7a813a688c2ecb144369f0f",
+      "fingerprint": "c150530e021b9fac48524796e7d89265813721819c2f8c17888f44499f8b59c0",
       "snapshot": {
-        "libs/vocablint/src/analysis.ts": "f62653644bd72ac2b8ad7e581d24ae3862bb008f7aa4678f86d4e600d5452cf8"
+        "libs/vocablint/src/analysis.ts": "464429af14bace8ce430d47699532fcdfbc2b55b99f0d69f374bc80fbc09a993"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/analysis.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/analysis.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/check.ts": {
-      "fingerprint": "27bb5189c6144ab8c6a33c1ff3d6a74e1e44776e17f20ee46d2dfaf8e67a0e00",
+      "fingerprint": "94c9c8f68e700b7cdc42ca52f770b42d43b15bb44edda23565e0746c40eb4592",
       "snapshot": {
-        "libs/vocablint/src/check.ts": "416d2add3a93567216a0e832db8654054449ff2505affbc536623e1807d16756"
+        "libs/vocablint/src/check.ts": "95a51ecb89e1d39a319138cbe0ba1d5951dd7d4862e70bfbd3af801cbcb7bd9b"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/check.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/check.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/dependencies.test.ts": {
@@ -436,15 +436,15 @@
       ]
     },
     "source:libs/vocablint/src/flows.ts": {
-      "fingerprint": "b88edae322bc16e5117af817852ccf800ff6df6fe47ee3cdbcc19193d52c83cc",
+      "fingerprint": "78d6ed4b4d473557f6e7115bd698c9810e81cc29aa633af3ab27cdcbd7316554",
       "snapshot": {
-        "libs/vocablint/src/flows.ts": "dab07b5de29c05e5310302d7b4eef2ed3acbb8868cabe0c301a55df3f9e01761"
+        "libs/vocablint/src/flows.ts": "990691c3949d1438a1ecbdef8bbd7bd856fc09699352a224a8b8665fcc15e857"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/flows.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/flows.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/index.ts": {
@@ -472,15 +472,15 @@
       ]
     },
     "source:libs/vocablint/src/library.ts": {
-      "fingerprint": "cd4f3a4c0e51c1168d2de2e66b437f9baa84df0374eb2486a0f4e828a08421f0",
+      "fingerprint": "986f774c4cc286e02ff2a5318cceb8f7eed169b2e98155e340b3b8f6ae9a83b6",
       "snapshot": {
-        "libs/vocablint/src/library.ts": "8b17309b68fd88b93f475b524156a5cec688480e3593c983f6215b5e930c8aa4"
+        "libs/vocablint/src/library.ts": "0032d82e2b7f4cddee102f1501ffe469d4a4fb03e26ebe8478a89756a04f3b41"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/library.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/library.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/owners.test.ts": {
@@ -496,39 +496,39 @@
       ]
     },
     "source:libs/vocablint/src/owners.ts": {
-      "fingerprint": "45428469ea00913d1b193f641ab6cc8c1d956d70e3813beb5dba73e2ef6c2e93",
+      "fingerprint": "e77103e23e336db962a9dfe7a5f297565fc371ac39c2a778a9f2dbe3354bf8df",
       "snapshot": {
-        "libs/vocablint/src/owners.ts": "0f97e0edb40098f11da9bb1283716e73290e24c38b601f053612440c57e57c4b"
+        "libs/vocablint/src/owners.ts": "116389fa29224a7f8a703586bf153f2c1cd248e730e2ad4a1a258d5c2a9dd91e"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/owners.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/owners.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/problem.ts": {
-      "fingerprint": "f8a49b665aac5067b150879533a8ddde6af4bb1f5119c9d8acb498f1e7f673d8",
+      "fingerprint": "2f50abd9e5944bc11f4bb2cb09b7e8ab835f19e3d5df2994b1bd740ac3c47625",
       "snapshot": {
-        "libs/vocablint/src/problem.ts": "25dd1524d00b85754b6a5004cedbed4011fda6f554ba85ee6a0abdd8b1f7fe8a"
+        "libs/vocablint/src/problem.ts": "9d69cfc75331d44e6cdc1a48ed7e3b906c72b7c0d230743d4430ac2667c87b86"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/problem.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/problem.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/project.ts": {
-      "fingerprint": "4b89aa8734761371b86527a41d02f8cd134c1eb659795ff9852461c03fa7d5ab",
+      "fingerprint": "3d9af20dfd24e49a679706acc3ba12e1dc7fe05148acd3c151690446372d3c21",
       "snapshot": {
-        "libs/vocablint/src/project.ts": "2d35e4625d800b62035f1e711a30a8c4c41d14f979117ac5745d0abe63a634be"
+        "libs/vocablint/src/project.ts": "b79a93698fb9904063d9440da7f00ef9faddc1077db407e6bb049bf621e3b395"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/project.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/project.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/repository-files.ts": {
@@ -556,51 +556,51 @@
       ]
     },
     "source:libs/vocablint/src/shapes.ts": {
-      "fingerprint": "c95df0b85b5d0b67925b4691d3664b6fdb57914d168abd7181f242dd66a1ff2d",
+      "fingerprint": "2fca1b4bd903b4d9a74293fdaf5ee741c8c3d5211297cfce85a87fa7953a06a1",
       "snapshot": {
-        "libs/vocablint/src/shapes.ts": "098b7962e340369497c40947a373e996b438a455b8a2c6a78ea2027cc68c4350"
+        "libs/vocablint/src/shapes.ts": "6417163537a81e6bdfd4eeaf8c2bdc438ec08035f21e3b97b13f8dd0d6b53d91"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/shapes.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/shapes.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/sites.ts": {
-      "fingerprint": "c25298ffc33c0202c30b6ffdebb4a48745e6eae6de10a89f339d3d3091e8964d",
+      "fingerprint": "edd7355f2a57576777f3657da7abfd95d5ba233b008b387f7edcf941bc12e7ac",
       "snapshot": {
-        "libs/vocablint/src/sites.ts": "cc37c29ea80701c20a3368d449485d643adfb70da86642e17be54ace863c8191"
+        "libs/vocablint/src/sites.ts": "04e2b776218695c2b6ab71766907dc8fb95dccc50530c291471ce9b61d87422c"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/sites.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/sites.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/slots.ts": {
-      "fingerprint": "40839b42e9779d8740b480ccab110750613a8ce0cd6a821c9275e95a3d535f13",
+      "fingerprint": "ec2e0970158feabf7bde1d535df5e65e9baed9cf24a00d468dac35faf462ed6b",
       "snapshot": {
-        "libs/vocablint/src/slots.ts": "e11a8a5af6863e028c7a3399ac31f60ac4d2123085f9a5f0290d7c6727f11728"
+        "libs/vocablint/src/slots.ts": "69922020288576b4b90e711eb0805bc28363d1a647dd7493d16b89cdbbee5aee"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/slots.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/slots.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/syntax.ts": {
-      "fingerprint": "11115626ee34261b629d13148d5ee3cc127e7058edcaa735e9365dc1f0d5be3c",
+      "fingerprint": "b0b450c043cec6d344d4f4d7d23088ca62af5e455c4abad9a58a4897b7d48560",
       "snapshot": {
-        "libs/vocablint/src/syntax.ts": "fa1acac35a8c599f81e4aad09838c29ba6422b007cfa0d9a2f462748078ce475"
+        "libs/vocablint/src/syntax.ts": "2b9cec90f2c0fbf84efd0b1f0f59a2d83eb31d7dcf7617bdf911e3addac1213b"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/syntax.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/syntax.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/types-packages.test.ts": {
@@ -616,27 +616,27 @@
       ]
     },
     "source:libs/vocablint/src/value-checks.ts": {
-      "fingerprint": "4d6262e163d1adf3da4cdecb65660f17f24887655473c1f1bd959fce3a0705e7",
+      "fingerprint": "eeb37ba69252ec3b28f371b4d9e5f9f1d7019d60cfbc9ed6a5919b0693925079",
       "snapshot": {
-        "libs/vocablint/src/value-checks.ts": "27e9205ba8103504fae11fd935786470a5bb81ed1968d6c4372ee1e9bfff8c2a"
+        "libs/vocablint/src/value-checks.ts": "266f50eeb7e2a60f7e35793740f5ff01b4415e3e679a3a4324326b8c02859a54"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/value-checks.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/value-checks.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/src/values.ts": {
-      "fingerprint": "d5d9236bb6841d8ba433e5242e74807ca2031928bf8adadcf09378cb005df107",
+      "fingerprint": "f1b127a2101db8fe2e73424d7638684058af22af305209f65528a51fd8ccd914",
       "snapshot": {
-        "libs/vocablint/src/values.ts": "9fb67e13dd90d204641261072423d390d70b44bd3129ea8317208056a7245ab8"
+        "libs/vocablint/src/values.ts": "31e3a3eeb9cae08dd6dc47351dc511343e5313c8865bb88a5b3c01ccaf7bada7"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: libs/vocablint/src/values.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/values.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:libs/vocablint/tsconfig.json": {
@@ -746,15 +746,15 @@
       ]
     },
     "source:tools/vocablint/src/oxlint.ts": {
-      "fingerprint": "f6c437c6c457390f54a338bc900a42015dd0a5cfacb03ad81645f06e31f78818",
+      "fingerprint": "f440d099aa22a6802fce617992a9a6db97ae00519a2770125312245096f84a7b",
       "snapshot": {
-        "tools/vocablint/src/oxlint.ts": "33e8b9e8333888d775bb86c74b1bc2f0cf75c95b2c650aa34530d22717732b5c"
+        "tools/vocablint/src/oxlint.ts": "4fe3d29af72201af53767b1e064d99d9881aa8a429b7ee31974a5c392c53af0f"
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
-        "Changed: tools/vocablint/src/oxlint.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/oxlint.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
       ]
     },
     "source:tools/vocablint/tsconfig.json": {
@@ -782,14 +782,14 @@
       ]
     },
     "source:renovate.json": {
-      "fingerprint": "9c1b5868f3096d5cefae42aec299718061bf1b9e550c342ec2b52fe96d35b0fd",
+      "fingerprint": "8f3b6c228afdf4f22da6045aa8c6d428bba7208f628af8f03f2f2451f37ecdd8",
       "snapshot": {
-        "renovate.json": "0fc0655d7aa2764a27de9c9dc87c0abb16a51958dcda426a4edbf007bb1c7dd7"
+        "renovate.json": "b1f79e8bd1961eb14b5f9f1f4d6241d97702b5cc3f22256df511b4ee9d94d000"
       },
-      "head": "85da14043d1a33beca33ef4463ad7e5268957979",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
-      "evidence": ["Changed: renovate.json at 85da14043d1a33beca33ef4463ad7e5268957979"]
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": ["Changed: renovate.json at 49fbdece6256c698eb7fda473b1d081a88759730"]
     },
     "source:libs/oxlint-typed-rules/src/compat-symbol.ts": {
       "fingerprint": "33d12c08dc3429beff9609a30fef119c226cbf811a9f4af03a8be4f9c91839fc",
@@ -2184,14 +2184,14 @@
       ]
     },
     "source:.betterleaks.toml": {
-      "fingerprint": "465c7afbff1da3b4a3ed29d886cae0ce6d96d4eeec668f9ff8e3d7aab6c0ddc6",
+      "fingerprint": "4aca9d8c169f9ed9085b24910f9014237ada04544ada2bef1ed39ff6e32cf812",
       "snapshot": {
-        ".betterleaks.toml": "46d5e55f9b230d29640357d3a7784243d184d35b2b22c81df23b423f0c1af26d"
+        ".betterleaks.toml": "b6f60d263cc91384ef30ee48b5468e0af6c859b8e36a0a7e702d116bb5973960"
       },
-      "head": "85da14043d1a33beca33ef4463ad7e5268957979",
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
       "outcome": "no-change",
-      "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
-      "evidence": ["Changed: .betterleaks.toml at 85da14043d1a33beca33ef4463ad7e5268957979"]
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": ["Changed: .betterleaks.toml at 49fbdece6256c698eb7fda473b1d081a88759730"]
     },
     "source:.betterleaksignore": {
       "fingerprint": "850b3f21eeebec6771e6750d9b72431932e7c3d8e4a76bb134d9f07ce1d64052",
@@ -2202,6 +2202,122 @@
       "outcome": "no-change",
       "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
       "evidence": ["Changed: .betterleaksignore at 85da14043d1a33beca33ef4463ad7e5268957979"]
+    },
+    "source:libs/vocablint/src/compiler.ts": {
+      "fingerprint": "fba742836e881fde514bdff60082a534b074065d31e881eedcd50b4fe9cc2ad1",
+      "snapshot": {
+        "libs/vocablint/src/compiler.ts": "666d6307631d82425b5c2bb8017efb5cb1690be0117d663e962af6430065470d"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vocablint/src/compiler.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/README.md": {
+      "fingerprint": "d3e090f3a494e59be13cfd2493410fd0e984bb8a92ff64758646ef1ddef49fbe",
+      "snapshot": {
+        "libs/vp-tools/README.md": "0b0df1ef8bbfa52c8ecfa7b923c94cae9b7a3db6d5367f8886be62a9cbd4087e"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": ["Changed: libs/vp-tools/README.md at 49fbdece6256c698eb7fda473b1d081a88759730"]
+    },
+    "source:libs/vp-tools/THIRD-PARTY-NOTICES": {
+      "fingerprint": "e80cd748d201b5bf0bdddbfc238189a270a5004bf9ad2ef2f88e13755f7f1617",
+      "snapshot": {
+        "libs/vp-tools/THIRD-PARTY-NOTICES": "e39718154d373267d62c6aad99b22115687fdc045565186fed0d8f6050be09be"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/THIRD-PARTY-NOTICES at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/src/fsd-typescript.ts": {
+      "fingerprint": "abe0fdae5be644ea1909838a48de40a8c6a8a56ca6576ae1c1c8523a7e4f6e55",
+      "snapshot": {
+        "libs/vp-tools/src/fsd-typescript.ts": "2ba07502b9a0d9ebfe06f5f73487c408c4d17b3d8381e86833d23d4a3ec0c1cc"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/fsd-typescript.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/src/fsd.ts": {
+      "fingerprint": "2be02db01a429e66f259943ce8d33a8a04dd18356bd86577906beac5bd11d941",
+      "snapshot": {
+        "libs/vp-tools/src/fsd.ts": "9f9f555dd889e5116437bed09472e7b46735b289361619c2313c14d0ef040ce5"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": ["Changed: libs/vp-tools/src/fsd.ts at 49fbdece6256c698eb7fda473b1d081a88759730"]
+    },
+    "source:libs/vp-tools/upstream/filesystem/LICENSE": {
+      "fingerprint": "0dfbc5af37cc52b52ac8bf4d79de25a4875b08674bdcb61e5eeb249a5f143590",
+      "snapshot": {
+        "libs/vp-tools/upstream/filesystem/LICENSE": "915ffbcd6eae8dc05ffd690be19c18fc1c4d027a86918616184de2ec9eb4b280"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/upstream/filesystem/LICENSE at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/upstream/filesystem/specs/fsd-aware-traverse.spec.ts": {
+      "fingerprint": "ba5cca3d8ff0c7510b9e48d86e7956b5f998f104ea1acb93fa8276ddf97fd2a0",
+      "snapshot": {
+        "libs/vp-tools/upstream/filesystem/specs/fsd-aware-traverse.spec.ts": "d7bdf33aeed57d9e50d5d1391c37d989364935956b2f00568cece4bfa1952c24"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/upstream/filesystem/specs/fsd-aware-traverse.spec.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/upstream/filesystem/specs/prepare-test.ts": {
+      "fingerprint": "bfcc07318d53b5b92e172520d5ba76f0e5cc8576422a01cccc2c98cf2f1215ae",
+      "snapshot": {
+        "libs/vp-tools/upstream/filesystem/specs/prepare-test.ts": "64627ea62259201c4bb64b7ff14b885eda3b67dd9d282afa74522ca5d1189dd2"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/upstream/filesystem/specs/prepare-test.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/upstream/filesystem/specs/resolve-import.spec.ts": {
+      "fingerprint": "9cfdc1aa3134f3e353378797dec44635fc0a4f48cb826464471d0b7d66af8db2",
+      "snapshot": {
+        "libs/vp-tools/upstream/filesystem/specs/resolve-import.spec.ts": "6d4ea8f5c849f6961732a2aba708ff7dda30624916d44ae452469c875cd65964"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/upstream/filesystem/specs/resolve-import.spec.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
+    },
+    "source:libs/vp-tools/vite.config.ts": {
+      "fingerprint": "4f131a0f175ba092fd81935a4f4c70253366d88bc6fe9914eaa634ad4e5bbb61",
+      "snapshot": {
+        "libs/vp-tools/vite.config.ts": "c8d9123aebe33df25748b9089434deda06d7b21b45d7a73ab29b8a634795c85f"
+      },
+      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "outcome": "no-change",
+      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "evidence": [
+        "Changed: libs/vp-tools/vite.config.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+      ]
     }
   }
 }

@@ -15,8 +15,8 @@ vp add -D @r_masseater/vp-tools
 ```
 
 ```ts
-import fsd from "@feature-sliced/steiger-plugin";
 import type {} from "@r_masseater/vp-tools";
+import fsd from "@r_masseater/vp-tools/fsd";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
@@ -48,6 +48,24 @@ export default defineConfig({
 
 `import type {} from "@r_masseater/vp-tools"` で、`defineConfig` に上の 5 つのキーの型が付く。
 
+## Feature-Sliced Design のプラグイン
+
+`@r_masseater/vp-tools/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
+元のプラグインが使う [@feature-sliced/filesystem][fsd-filesystem] は、import の解決に TypeScript 5 の `ts.resolveModuleName` を使い、TypeScript 7 だけの環境では読み込めない。
+同梱した版では、その解決を TypeScript 7.1 の `typescript/sync` の `createModuleResolver` で行う。
+そのため `typescript` 7.1 以降を peer dependency に持つ。
+
+steiger 本体も `@feature-sliced/steiger-plugin` に依存し、それが TypeScript 5 を引き込む。
+vp-tools は steiger の CLI を使わないので、`pnpm-workspace.yaml` の `overrides` で外せる。
+
+```yaml
+overrides:
+  "steiger>@feature-sliced/steiger-plugin": "-"
+```
+
+[fsd-plugin]: https://github.com/feature-sliced/steiger/tree/master/packages/steiger-plugin-fsd
+[fsd-filesystem]: https://github.com/feature-sliced/filesystem
+
 ## コマンド
 
 | コマンド                                          | 動き                                                                                                                                                                                                                                                                                 |
@@ -64,3 +82,7 @@ export default defineConfig({
 - `dependencyRules.banned` は、理由ごとに禁止する依存名の glob を並べる。`*` は任意の文字列に合う。
 - `dependencyRules.peerRanges` を `"intersect"` にすると、`peerDependencies` の範囲は重なれば通る。省くと、ほかの依存と同じく指定の一致を求める。`workspace:` の指定は比べない。
 - `textlint.ignores` は git の glob で、それ以外のキーは `.textlintrc` と同じである。規則のパッケージは、リポのルートの `node_modules` から読む。
+
+## ライセンス
+
+MIT。`dist/fsd.mjs` と `dist/parsers` に同梱した元のパッケージのライセンスは `THIRD-PARTY-NOTICES` にある。
