@@ -42,7 +42,7 @@ const CONFIG = lines(
   "export default {",
   '  commitlint: { rules: { "type-empty": [2, "never"] } },',
   '  dependencyRules: { banned: { "use the stack": ["left-pad"] } },',
-  "  gitleaks: { extend: { useDefault: true } },",
+  '  betterleaks: { extend: { useDefault: true }, ignoredSecrets: ["0".repeat(64)] },',
   "  steiger: [",
   '    { meta: { name: "none", version: "0.0.0" }, ruleDefinitions: [{ name: "none/ok", check: () => ({ diagnostics: [] }) }] },',
   '    { rules: { "none/ok": "error" } },',
@@ -105,12 +105,14 @@ const failsBannedDependencies = Effect.gen(function* failsBannedDependencies() {
   assertTrue(Exit.isFailure(exit));
 });
 
-const passesTheConfigToGitleaks = Effect.gen(function* passesTheConfigToGitleaks() {
+const IGNORE_FILE_CHECK = String.raw`test "$1" = --ignore-file && grep -qx "$(printf '0%.0s' $(seq 64))" "$2"`;
+
+const passesTheConfigToBetterleaks = Effect.gen(function* passesTheConfigToBetterleaks() {
   const root = yield* directoryWith(REPOSITORY);
-  const script = 'printf %s "$GITLEAKS_CONFIG_TOML" | grep -q "useDefault = true"';
-  const passed = yield* run("gitleaks", root, ["sh", "-c", script]);
-  const failed = yield* run("gitleaks", root, ["sh", "-c", "exit 1"]);
-  const empty = yield* run("gitleaks", root, []);
+  const script = `printf %s "$BETTERLEAKS_CONFIG_TOML" | grep -q "useDefault = true" && ${IGNORE_FILE_CHECK}`;
+  const passed = yield* run("betterleaks", root, ["sh", "-c", script, "sh"]);
+  const failed = yield* run("betterleaks", root, ["sh", "-c", "exit 1"]);
+  const empty = yield* run("betterleaks", root, []);
   deepStrictEqual(
     pipe(
       [passed, failed, empty],
@@ -139,8 +141,8 @@ layer(fixtureLayer)("vp-tools commands", (it) => {
   it.effect("passes workspace manifests that agree", () => passesConsistentDependencies);
   it.effect("fails on a banned dependency in a workspace manifest", () => failsBannedDependencies);
   it.effect(
-    "hands the gitleaks section to the command and reports its exit code",
-    () => passesTheConfigToGitleaks,
+    "hands the betterleaks section and ignore file to the command and reports its exit code",
+    () => passesTheConfigToBetterleaks,
   );
   it.effect("lints the commit message file", () => lintsTheCommitMessageFile);
   it.effect("checks slices with the steiger section", () => checksSlices);

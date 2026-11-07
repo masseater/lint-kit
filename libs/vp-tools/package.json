@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "description": "Run gitleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts.",
   "keywords": [
+    "betterleaks",
     "commitlint",
-    "gitleaks",
     "steiger",
     "textlint",
     "vite-plus"
