@@ -1,6 +1,6 @@
 {
   "name": "@r_masseater/vp-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin for TypeScript 7.",
   "keywords": [
     "betterleaks",
@@ -96,7 +96,7 @@
         "dist/*.mjs",
         "!dist/fsd.mjs"
       ],
-      "limit": "4635 B"
+      "limit": "4820 B"
     },
     {
       "name": "fsd",

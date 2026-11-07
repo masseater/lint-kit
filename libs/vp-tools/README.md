@@ -81,6 +81,7 @@ overrides:
 
 - `betterleaks.ignoredSecrets` は `.betterleaksignore` と同じく秘密の SHA-256 を並べる。それ以外のキーは `.betterleaks.toml` と同じで、通す指摘は `filter` と `prefilter` の式で書く。
 - `dependencyRules.banned` は、理由ごとに禁止する依存名の glob を並べる。`*` は任意の文字列に合う。
+- `dependencyRules.exactDependencies` は、理由ごとにワークスペースのディレクトリの glob を並べる。合うワークスペースの `dependencies` は正確な版でなければならず、ほかのワークスペースとの指定の一致は求めない。git の依存として読まれるパッケージのように、カタログを使えないものに使う。
 - `dependencyRules.peerRanges` を `"intersect"` にすると、`peerDependencies` の範囲は重なれば通る。省くと、ほかの依存と同じく指定の一致を求める。`workspace:` の指定は比べない。
 - `textlint.ignores` は git の glob で、それ以外のキーは `.textlintrc` と同じである。規則のパッケージは、リポのルートの `node_modules` から読む。
 

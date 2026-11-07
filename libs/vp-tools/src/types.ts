@@ -44,6 +44,7 @@ interface TextlintConfig extends TextlintRcConfig {
 
 interface DependencyRules {
   readonly banned?: Readonly<Record<string, readonly string[]>>;
+  readonly exactDependencies?: Readonly<Record<string, readonly string[]>>;
   readonly peerRanges?: "identical" | "intersect";
 }
 
