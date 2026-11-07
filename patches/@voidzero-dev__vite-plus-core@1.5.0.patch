@@ -1,0 +1,12 @@
+diff --git a/dist/tsdown/dist-BImdOfKl.js b/dist/tsdown/dist-BImdOfKl.js
+--- a/dist/tsdown/dist-BImdOfKl.js
++++ b/dist/tsdown/dist-BImdOfKl.js
+@@ -55,7 +55,7 @@ function tryResolve(id) {
+ }
+ let _ts;
+ function isTS70Installed() {
+-	return tryRequire("typescript/package.json")?.version.slice(0, 3) === "7.0";
++	return tryRequire("typescript/package.json")?.version.split(".")[0] === "7";
+ }
+ function requireTSApi(mode = "tsc", message = ".") {
+ 	if (_ts) return _ts;

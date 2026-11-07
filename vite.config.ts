@@ -49,12 +49,20 @@ export default defineConfig({
     "*": "vp check --fix",
   },
   fmt: {
-    ignorePatterns: ["CHANGELOG.md", "libs/oxlint-typed-rules/upstream/src/__tests__/**"],
+    ignorePatterns: [
+      "CHANGELOG.md",
+      "libs/oxlint-typed-rules/upstream/src/__tests__/**",
+      "libs/oxlint-typed-rules/upstream/react/**",
+    ],
     sortImports: true,
     sortPackageJson: true,
   },
   lint: {
-    ignorePatterns: ["libs/*/example/**", "libs/oxlint-typed-rules/upstream/src/__tests__/**"],
+    ignorePatterns: [
+      "libs/*/example/**",
+      "libs/oxlint-typed-rules/upstream/src/__tests__/**",
+      "libs/oxlint-typed-rules/upstream/react/**",
+    ],
     plugins: [
       "eslint",
       "typescript",
@@ -129,6 +137,7 @@ export default defineConfig({
                 "Declaration",
                 "Expression",
                 "Node",
+                "NodeHandle",
                 "NumericLiteral",
                 "ParsedCommandLine",
                 "Program",
@@ -167,6 +176,7 @@ export default defineConfig({
               package: "steiger",
               name: ["ConfigObject", "GlobalIgnore", "Plugin"],
             },
+            { from: "file", name: ["CompatSymbol", "CompatType", "TypedContext"] },
           ],
         },
       ],
@@ -188,7 +198,9 @@ export default defineConfig({
           "**/*.config.ts",
           "libs/oxlint-plugin-decision/src/index.ts",
           "libs/oxlint-plugin-decision-presets/src/*.ts",
+          "libs/oxlint-typed-rules/src/react.ts",
           "libs/oxlint-typed-rules/src/tanstack-start.ts",
+          "libs/oxlint-typed-rules/src/ts-compat.ts",
         ],
         rules: { "import/no-default-export": "off" },
       },
