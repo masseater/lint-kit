@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.1.2](https://github.com/masseater/lint-kit/compare/v0.1.1...v0.1.2) (2026-11-07)
+
+
+### Features
+
+* **oxlint-typed-rules:** [@eslint-react](https://github.com/eslint-react) を TypeScript 7 で動かす react エントリーを足す ([#92](https://github.com/masseater/lint-kit/issues/92)) ([292e751](https://github.com/masseater/lint-kit/commit/292e75179ceec4b3bf18e7eaef50e4ad7c858f78))
+* vocablint と Steiger の FSD プラグインを TypeScript 7 だけで動かす ([#95](https://github.com/masseater/lint-kit/issues/95)) ([663344b](https://github.com/masseater/lint-kit/commit/663344bdc361e4a7d4e5e24855e84ad3a2794e65))
+* **vp-tools:** gitleaks コマンドを betterleaks に置き換える ([#90](https://github.com/masseater/lint-kit/issues/90)) ([b7783ed](https://github.com/masseater/lint-kit/commit/b7783ede74b0e2332c7d65031488abf45da37423))
+* **vp-tools:** lint the first-parent commits of a revision range ([#94](https://github.com/masseater/lint-kit/issues/94)) ([45b3621](https://github.com/masseater/lint-kit/commit/45b3621fa5cc7db10c165824d60cef7b4c77d898))
+* **vp-tools:** vite.config.ts の設定で各種検査を動かす CLI を足す ([#89](https://github.com/masseater/lint-kit/issues/89)) ([1dc2f7c](https://github.com/masseater/lint-kit/commit/1dc2f7cb448c5ea64589a37377b0e367ea7bb6a3))
+
+
+### Bug Fixes
+
+* gitleaks タスクを足し、template の action を上げる ([#87](https://github.com/masseater/lint-kit/issues/87)) ([74b760a](https://github.com/masseater/lint-kit/commit/74b760a3175c874c81128d1651f55a84613fb2e0))
+* template の credentials action を直した版に上げる ([#86](https://github.com/masseater/lint-kit/issues/86)) ([c48cf36](https://github.com/masseater/lint-kit/commit/c48cf363eeac66138610bd006bb36487e2d2cab9))
+* **vp-tools:** メッセージのファイルが無い commitlint を使い方の誤りで落とす ([#91](https://github.com/masseater/lint-kit/issues/91)) ([3b79ea2](https://github.com/masseater/lint-kit/commit/3b79ea236ac76fb4543c646320b5d423a9dc4e90))
+
 ## [0.1.1](https://github.com/masseater/lint-kit/compare/v0.1.0...v0.1.1) (2026-11-04)
 
 
