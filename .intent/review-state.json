@@ -782,14 +782,14 @@
       ]
     },
     "source:renovate.json": {
-      "fingerprint": "2fd638b59954ce13dbb945d199122c826b5d5b5daef3eecbe83ad252e9342903",
+      "fingerprint": "9c1b5868f3096d5cefae42aec299718061bf1b9e550c342ec2b52fe96d35b0fd",
       "snapshot": {
-        "renovate.json": "5dd29cf04596bc414a05110f2eccb70fb1cc36e25fa38a98bc93b12e98b72213"
+        "renovate.json": "0fc0655d7aa2764a27de9c9dc87c0abb16a51958dcda426a4edbf007bb1c7dd7"
       },
-      "head": "592ed02897f2cbbc1b15d2e846d047e2d0258fd1",
+      "head": "85da14043d1a33beca33ef4463ad7e5268957979",
       "outcome": "no-change",
-      "reason": "renovate の設定と依存の版だけで、skill の内容に影響しない",
-      "evidence": ["Changed: renovate.json at 592ed02897f2cbbc1b15d2e846d047e2d0258fd1"]
+      "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
+      "evidence": ["Changed: renovate.json at 85da14043d1a33beca33ef4463ad7e5268957979"]
     },
     "source:libs/oxlint-typed-rules/src/compat-symbol.ts": {
       "fingerprint": "33d12c08dc3429beff9609a30fef119c226cbf811a9f4af03a8be4f9c91839fc",
@@ -2182,6 +2182,26 @@
       "evidence": [
         "Changed: patches/eslint-plugin-react-jsx@5.28.8.patch at 968f7d31f42851427a332aace7926b404371dc4a"
       ]
+    },
+    "source:.betterleaks.toml": {
+      "fingerprint": "465c7afbff1da3b4a3ed29d886cae0ce6d96d4eeec668f9ff8e3d7aab6c0ddc6",
+      "snapshot": {
+        ".betterleaks.toml": "46d5e55f9b230d29640357d3a7784243d184d35b2b22c81df23b423f0c1af26d"
+      },
+      "head": "85da14043d1a33beca33ef4463ad7e5268957979",
+      "outcome": "no-change",
+      "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
+      "evidence": ["Changed: .betterleaks.toml at 85da14043d1a33beca33ef4463ad7e5268957979"]
+    },
+    "source:.betterleaksignore": {
+      "fingerprint": "850b3f21eeebec6771e6750d9b72431932e7c3d8e4a76bb134d9f07ce1d64052",
+      "snapshot": {
+        ".betterleaksignore": "05c2241ce2b490fb64e97059db8f4e455caa5616868f6cb4ba624e5fedf4a328"
+      },
+      "head": "85da14043d1a33beca33ef4463ad7e5268957979",
+      "outcome": "no-change",
+      "reason": "シークレット検査を gitleaks から Betterleaks v2 に移しただけで、スキルが扱う lint ルールや API に影響しない",
+      "evidence": ["Changed: .betterleaksignore at 85da14043d1a33beca33ef4463ad7e5268957979"]
     }
   }
 }
