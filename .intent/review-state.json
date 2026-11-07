@@ -2216,14 +2216,14 @@
       ]
     },
     "source:libs/vp-tools/README.md": {
-      "fingerprint": "d3e090f3a494e59be13cfd2493410fd0e984bb8a92ff64758646ef1ddef49fbe",
+      "fingerprint": "98cc3ff4a6650fbf275d1247d28efc677c4a899621243224522d0282e289bd90",
       "snapshot": {
-        "libs/vp-tools/README.md": "0b0df1ef8bbfa52c8ecfa7b923c94cae9b7a3db6d5367f8886be62a9cbd4087e"
+        "libs/vp-tools/README.md": "bb57c4fba3e74d65e50511cd783943502f93f12a9ec6ee81eb44d13c685baee6"
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "d44530dadd9f510aa496295bdaf7678203775237",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
-      "evidence": ["Changed: libs/vp-tools/README.md at 49fbdece6256c698eb7fda473b1d081a88759730"]
+      "reason": "vp-tools の README の FSD の説明で、write-decision-rules スキルの内容に影響しない",
+      "evidence": ["Changed: libs/vp-tools/README.md at d44530dadd9f510aa496295bdaf7678203775237"]
     },
     "source:libs/vp-tools/THIRD-PARTY-NOTICES": {
       "fingerprint": "e80cd748d201b5bf0bdddbfc238189a270a5004bf9ad2ef2f88e13755f7f1617",
