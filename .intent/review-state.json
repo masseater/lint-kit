@@ -136,27 +136,27 @@
       ]
     },
     "source:libs/oxlint-typed-rules/LICENSE": {
-      "fingerprint": "7c6b8468bc997be3e009a0be7ef634a99f2721f0151a7be4f5001fb1692863dc",
+      "fingerprint": "8c471222944497d7263aff43278f10c5994424f704d3643fde338bae48e756fc",
       "snapshot": {
-        "libs/oxlint-typed-rules/LICENSE": "a9080bad34a1149caa15799113b0d967f8c7b51dad4594baf5cdfce52fa1d12d"
+        "libs/oxlint-typed-rules/LICENSE": "5c69fa786cdd132e9d7610420f399d48518a92b4cefc5e7d5d2e14ece9442dfe"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/LICENSE at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/LICENSE at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/README.md": {
-      "fingerprint": "1ceeeb5a17bfc6fa24dd1a241d3f24e14a0c36fa5f6c6afd12622605ea0c94f8",
+      "fingerprint": "7ecb88ce529efa2000d377a3badd4fcbbcad3b8ecbe95fae1c04ccd45ef45f18",
       "snapshot": {
-        "libs/oxlint-typed-rules/README.md": "99da0424d2faa9a523379c98b318ae4fd265c4fe062af704b38fd480ad195b7c"
+        "libs/oxlint-typed-rules/README.md": "2192ed0e2f5431f7cc94d5d5d906e8610174c3a940c41c8879d89ebd270a2947"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/README.md at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/README.md at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/src/index.ts": {
@@ -268,27 +268,27 @@
       ]
     },
     "source:libs/oxlint-typed-rules/tsconfig.json": {
-      "fingerprint": "4642465f578b782e3c3d0849a78f76fff59c0e640eb587e2cb46e292fdb0efa3",
+      "fingerprint": "b9af9ec50738a6b7be7ea8bfd4753ce6b2655bf4e9b62412bc454531e59bfced",
       "snapshot": {
-        "libs/oxlint-typed-rules/tsconfig.json": "fca8c13a721eeeb29bfd7270e993eb4f6193e18001adb1090d573c7204ecbd18"
+        "libs/oxlint-typed-rules/tsconfig.json": "320f38ca847c439907855d17440eea3fae68e33467113a51359fb7df0badd209"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/tsconfig.json at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/tsconfig.json at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/rule-tester.ts": {
-      "fingerprint": "d6a94383a5847094fa3af0862758fb198ef77b3a78c01801c4fa594428e6537a",
+      "fingerprint": "bbc2c9cb3a92e5ab92fbb44b515a908dc0b889d4595c7a5e93d6b76c372dd207",
       "snapshot": {
-        "libs/oxlint-typed-rules/upstream/rule-tester.ts": "f137c46d3e74f57bd7d22cc2b5497ae4830a3d06dcae8f1bd3611c6e629aa46e"
+        "libs/oxlint-typed-rules/upstream/rule-tester.ts": "88594e5f8b4260c4e833c09e3b7169d4409cffb996b7d426b3bfb5c122e23fb7"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/upstream/rule-tester.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/upstream/rule-tester.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/rules/no-async-client-component.ts": {
@@ -352,15 +352,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/vite.config.ts": {
-      "fingerprint": "8f75956a1c833a2795214d71650104e07f558d998f3b7ba3e69f0140cabca5ef",
+      "fingerprint": "2968d31b32d07c3ac8165d0d12ac40dfcd176333ec76dc6e29275e9ffa189086",
       "snapshot": {
-        "libs/oxlint-typed-rules/vite.config.ts": "d71652e230a943d8e4a026b9703fe39d6ad93920acb5e1c1d6e6d3c8b687268b"
+        "libs/oxlint-typed-rules/vite.config.ts": "347e6f5bb3c9510993c6ae65122c004ebfd365c3bda6ddebc73a059ab1ea2c7b"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/vite.config.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
@@ -828,15 +828,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/react.ts": {
-      "fingerprint": "f0f18ee04b132c2e675321d4a226849ed15067f77fc4d0532dbdb1609abff329",
+      "fingerprint": "55d84b62e7d27288b9f03381a5da312623e557818c384866e19ac6e59be795b4",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/react.ts": "ce518eaf64f4650e29c3447857127b454a4b0118fcc307979f2e3c232e8ba386"
+        "libs/oxlint-typed-rules/src/react.ts": "97c2536270c1f9638d7e554827c8289c24a60116197bce887c58aaf8aeeb074e"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/react.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/src/react.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/src/ts-api-utils.ts": {
@@ -852,15 +852,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/react-testkit.ts": {
-      "fingerprint": "1096c49b54fea1029d120b44285446940b21b11a5d1d94d5c2e14325349d8f85",
+      "fingerprint": "5a2c93752cee5395367ad2e6b9649d5c055a48ebe7c3724d487cfae92adb4882",
       "snapshot": {
-        "libs/oxlint-typed-rules/upstream/react-testkit.ts": "ac22706aeb94506ebf6c2f653bbbb16472f35226e4ee8f66605a0e1b65880cbd"
+        "libs/oxlint-typed-rules/upstream/react-testkit.ts": "df98b12eb940dc7d56659c3a059e02563f360d4a2abb109ea0408d64af140377"
       },
-      "head": "968f7d31f42851427a332aace7926b404371dc4a",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の react 移植と TS7 化、vite-plus-core のパッチ更新で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/upstream/react-testkit.ts at 968f7d31f42851427a332aace7926b404371dc4a"
+        "Changed: libs/oxlint-typed-rules/upstream/react-testkit.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/react/LICENSE": {
@@ -2332,51 +2332,51 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/tanstack-query.ts": {
-      "fingerprint": "dee0979b1f2da6eb3b23d0eedb3e12cca2524b76045dd33b6fa9da3960b79d21",
+      "fingerprint": "bc92253881df70ea525e462de3bc51073f90b9760defeef0e85bcf4a8564dd52",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/tanstack-query.ts": "9f985b768b20a5d0a541b77bfc8e19554f6fb5c6f1aa9968e318ab2faa930db3"
+        "libs/oxlint-typed-rules/src/tanstack-query.ts": "bf004bb19ddc1e430578b137934a4824de67154ff4ca298a36939d1be360d3f1"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/tanstack-query.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/src/tanstack-query.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/src/tanstack-router.ts": {
-      "fingerprint": "9cb91dc4004d43b6f80da415a393ae29d0f31afa5086a57d0058b85e3e0436a1",
+      "fingerprint": "16dee186b3e60e80570eafff8416cf281aee1401168ff7c0167f568a0e6a82fb",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/tanstack-router.ts": "2e6ad2387bb131419fd70a944c720bfed53ca42e0cd39c5b47d87fd527fa01e2"
+        "libs/oxlint-typed-rules/src/tanstack-router.ts": "3a98d746c9becad6aeeb135b04c9ff0d0b09ff7ae87918f1ccc5747ce5c05f70"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/tanstack-router.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/src/tanstack-router.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/src/upstream-plugin.test.ts": {
-      "fingerprint": "077335ace825dde5810b6d4166ba25327ee966646ddbd37a31fdcbd99787b4c5",
+      "fingerprint": "073428c26319ebc5aff5d5ff37f835a8c5efc3d8a5934781f4c4c0da0a54cfd0",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/upstream-plugin.test.ts": "af977a1873150351f53aa0d69ab700a1c60b857fd5a11225d79b85043d3066e9"
+        "libs/oxlint-typed-rules/src/upstream-plugin.test.ts": "121d04792c4609603ac13d08083c0193d9a04fc18b4a9454f89d3ba65e7fca70"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.test.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.test.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/src/upstream-plugin.ts": {
-      "fingerprint": "e65be949e80a5cd967529ac7a76d366b07f31d34e02e8336f8e6d6df5cd2e150",
+      "fingerprint": "7810cac13257f20dbff74ff40bc32be2a474df9256ca80fb4b6ad91c5f6242ac",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/upstream-plugin.ts": "e57a6a363bba7fd29dbc0ff996229c12f92dca553ee38ab3b2afb0d04cffe7f0"
+        "libs/oxlint-typed-rules/src/upstream-plugin.ts": "7e63f14428690d23d2fa86bdd74060fb88a7ecb0f50f96028abe9a1064e94fa3"
       },
-      "head": "51869101d7b680038ea2986580bae903fa7738e4",
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/tanstack-query/LICENSE": {
@@ -2653,6 +2653,78 @@
       "reason": "oxlint-typed-rules の TanStack Query と Router のエントリーの追加で、write-decision-rules スキルの内容に影響しない",
       "evidence": [
         "Changed: libs/oxlint-typed-rules/upstream/tanstack-router/src/__tests__/test-utils.ts at 51869101d7b680038ea2986580bae903fa7738e4"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/drizzle.ts": {
+      "fingerprint": "54c9f612a4f84ffbc108d274da0898818042ee395a0587f5fad89c5ec0bed33a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/drizzle.ts": "8d52d762c84feb7e07ed92bf8b831dc3032ebd206b0caa12a4b7b925c7ab81cc"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/drizzle.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/drizzle/LICENSE": {
+      "fingerprint": "3de9bb9bf328edb6093714c905200540eebcd72f25dfd615f992c76b93687ad3",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/drizzle/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/drizzle/LICENSE at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/drizzle/tests/delete.test.ts": {
+      "fingerprint": "b6512368eadf69b11e665d57364a2a53831579299e61a2c2bbb9501049765f72",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/drizzle/tests/delete.test.ts": "90d3ac02cfcda533c7c46262ee34dd006f0caa04d2b4ae074d2e2267b7c39338"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/drizzle/tests/delete.test.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/drizzle/tests/update.test.ts": {
+      "fingerprint": "5eb161e0f23ab4c19820355d3082977080836e79146c6ac500c6743fc850ff5a",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/drizzle/tests/update.test.ts": "6c7d483b26b2c35c2d13335e48ae24a35cec093613b27a4bdf392275262c43c3"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/drizzle/tests/update.test.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/test-cases.ts": {
+      "fingerprint": "9c1e8d079422884ec53bb2fa97b6b55b46d8340e55d9da1f72add669558ec4e1",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/test-cases.ts": "ce9a8ca7dd33033ef7f7aed4fe6ac50a4c42b66a4cebcd09727d51f3af3f79ee"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/test-cases.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:patches/eslint-plugin-drizzle@0.2.3.patch": {
+      "fingerprint": "8f1cadc12e86b967d9da78d6a8f84d8627b1e21e40748b3687f44e41768cf3ac",
+      "snapshot": {
+        "patches/eslint-plugin-drizzle@0.2.3.patch": "970a4ab095ef16d6b77ccac81c31e17b85e1423d06ec977be44ac76a52a6251a"
+      },
+      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "evidence": [
+        "Changed: patches/eslint-plugin-drizzle@0.2.3.patch at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
       ]
     }
   }

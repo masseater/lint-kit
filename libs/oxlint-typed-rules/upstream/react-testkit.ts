@@ -3,6 +3,8 @@ import { JsxEmit } from "typescript/sync";
 import type { Rule } from "vite-plus/lint/plugins";
 import { RuleTester as OxlintRuleTester } from "vite-plus/lint/plugins-dev";
 
+import { distinct } from "./test-cases.ts";
+
 type ValidCase = OxlintRuleTester.ValidTestCase;
 
 type InvalidCase = OxlintRuleTester.InvalidTestCase;
@@ -63,12 +65,6 @@ const firstPass = (testCase: InvalidCase): InvalidCase => {
     Option.getOrElse(() => testCase),
   );
 };
-
-const identity = ({ code, filename, options, settings, languageOptions }: ValidCase): string =>
-  JSON.stringify({ code, filename, options, settings, languageOptions });
-
-const distinct = <Case extends ValidCase>(cases: readonly Case[]): Case[] =>
-  Arr.dedupeWith(cases, (left, right) => identity(left) === identity(right));
 
 class RuleTester {
   readonly #directory: string;

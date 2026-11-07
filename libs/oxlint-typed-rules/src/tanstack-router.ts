@@ -1,8 +1,15 @@
 import tanstackRouter from "@tanstack/eslint-plugin-router";
 
-import { upstreamPlugin } from "./upstream-plugin.ts";
+import { plainRules, upstreamPlugin } from "./upstream-plugin.ts";
 import type { UpstreamPlugin } from "./upstream-plugin.ts";
 
-const plugin: UpstreamPlugin = upstreamPlugin("tanstack-router", tanstackRouter);
+type ConfigName = "recommended" | "flat/recommended";
 
+const plugin: UpstreamPlugin<ConfigName> = upstreamPlugin(
+  "tanstack-router",
+  tanstackRouter,
+  plainRules,
+);
+
+export type { ConfigName };
 export default plugin;

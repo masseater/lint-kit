@@ -2,6 +2,8 @@ import { layer } from "@effect/vitest";
 import { deepStrictEqual } from "@effect/vitest/utils";
 import { Array as Arr, Effect, Layer, Option, Record, String as Str, pipe } from "effect";
 
+import drizzle from "./drizzle.ts";
+import eslintReact from "./react.ts";
 import tanstackQuery from "./tanstack-query.ts";
 import tanstackRouter from "./tanstack-router.ts";
 import type { Config } from "./upstream-plugin.ts";
@@ -46,6 +48,28 @@ const namesConfiguredRulesAfterThePlugin = Effect.sync(() => {
   );
 });
 
+const keepsDrizzleConfigs = Effect.sync(() => {
+  deepStrictEqual(drizzle.configs.recommended, {
+    rules: {
+      "drizzle/enforce-delete-with-where": "error",
+      "drizzle/enforce-update-with-where": "error",
+    },
+  });
+});
+
+const indexesKnownConfigsWithoutUndefined = Effect.sync(() => {
+  const reactRules: Readonly<Record<string, unknown>> | undefined =
+    eslintReact.configs["strict-typescript"].rules;
+  const queryRules: Config["rules"] = tanstackQuery.configs["flat/recommended"].rules;
+  deepStrictEqual(
+    [
+      Option.isSome(Option.fromNullishOr(reactRules)),
+      Option.isSome(Option.fromNullishOr(queryRules)),
+    ],
+    [true, true],
+  );
+});
+
 const configuresOnlyExistingRules = Effect.sync(() => {
   deepStrictEqual(
     [
@@ -59,15 +83,21 @@ const configuresOnlyExistingRules = Effect.sync(() => {
         tanstackRouter.configs,
         Record.keys(tanstackRouter.rules),
       ),
+      ...missingRules(drizzle.meta.name, drizzle.configs, Record.keys(drizzle.rules)),
     ],
     [],
   );
 });
 
-layer(Layer.empty)("upstream TanStack plugins", (it) => {
+layer(Layer.empty)("upstream plugins", (it) => {
   it.effect(
     "names the configured rules after the plugin",
     () => namesConfiguredRulesAfterThePlugin,
   );
   it.effect("configures only rules the plugin has", () => configuresOnlyExistingRules);
+  it.effect("keeps the drizzle configs", () => keepsDrizzleConfigs);
+  it.effect(
+    "indexes the known configs without undefined",
+    () => indexesKnownConfigsWithoutUndefined,
+  );
 });

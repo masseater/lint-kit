@@ -212,6 +212,9 @@ catalogs:
     '@types/react':
       specifier: 19.3.0
       version: 19.3.0
+    '@typescript-eslint/parser':
+      specifier: 8.72.1
+      version: 8.72.1
     '@typescript-eslint/types':
       specifier: 8.72.1
       version: 8.72.1
@@ -227,6 +230,9 @@ catalogs:
     dedent:
       specifier: 1.7.2
       version: 1.7.2
+    eslint-plugin-drizzle:
+      specifier: 0.2.3
+      version: 0.2.3
     eslint-plugin-no-comments:
       specifier: 1.2.1
       version: 1.2.1
@@ -278,6 +284,7 @@ packageExtensionsChecksum: sha256-xc6SadO0m266kwjCvsuReyZrkw7D1O0Nek/ut7Oywio=
 patchedDependencies:
   '@tanstack/eslint-plugin-start@0.1.0': 364cc40b73326fe59c5d685ac247690de2302e3e731b7b7d37583701f9370644
   '@voidzero-dev/vite-plus-core@1.5.0': 82cfaaf2112615214dd0a454eea2b16eeb87f596b6812498cb400c6df4ba6322
+  eslint-plugin-drizzle@0.2.3: 970a4ab095ef16d6b77ccac81c31e17b85e1423d06ec977be44ac76a52a6251a
   eslint-plugin-react-jsx@5.28.8: 8c682d713b84607e9fe4c62288d9aa0a763608f913cc326e1e1f3ac6a5738df8
 
 importers:
@@ -424,6 +431,9 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.3.0
+      '@typescript-eslint/parser':
+        specifier: 'catalog:'
+        version: 8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
       '@typescript-eslint/types':
         specifier: 'catalog:'
         version: 8.72.1
@@ -439,6 +449,9 @@ importers:
       dedent:
         specifier: 'catalog:'
         version: 1.7.2
+      eslint-plugin-drizzle:
+        specifier: 'catalog:'
+        version: 0.2.3(patch_hash=970a4ab095ef16d6b77ccac81c31e17b85e1423d06ec977be44ac76a52a6251a)(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))
       publint:
         specifier: 'catalog:'
         version: 0.3.25
@@ -1704,6 +1717,13 @@ packages:
   '@types/ws@8.18.2':
     resolution: {integrity: sha512-67MQl+fpWKVTT1NYdnmo3U4sc/xPo/zQBncVnI74qmQa0z/b+1g6iYqNmGCPbxO+zz2aklb08a0oHfegiVd0/w==}
 
+  '@typescript-eslint/parser@8.72.1':
+    resolution: {integrity: sha512-ZGwZP4OCfyA0AQTpEAMWz+rtX01DRhQWW5hB0ucKDEIX5U7jdmPSaMx94rQfaPAQzIYz2BimOgKOJtjfpRFQ9g==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+      typescript: '>=4.8.4 <6.1.0'
+
   '@typescript-eslint/project-service@8.72.1':
     resolution: {integrity: sha512-fAuVMkwdO/huI8nyo/WKnNKf6Gag93S56Rh3Ts5mGcavwSdaN8tRg1gCeIGX8PF+nzp1BjGfO4gHhGzW1J6jTg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2480,6 +2500,11 @@ packages:
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+
+  eslint-plugin-drizzle@0.2.3:
+    resolution: {integrity: sha512-BO+ymHo33IUNoJlC0rbd7HP9EwwpW4VIp49R/tWQF/d2E1K2kgTf0tCXT0v9MSiBr6gGR1LtPwMLapTKEWSg9A==}
+    peerDependencies:
+      eslint: '>=8.0.0'
 
   eslint-plugin-no-comments@1.2.1:
     resolution: {integrity: sha512-LsUTMY20oLw+fiu23c3ssBHqKXe7pWMHzaXNx2DM+anpmBwzKHclA3XLrY/YsYNqTipuDA0u28/Wxc2pxke6bA==}
@@ -4715,6 +4740,18 @@ snapshots:
     dependencies:
       '@types/node': 26.6.6
 
+  '@typescript-eslint/parser@8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)':
+    dependencies:
+      '@typescript-eslint/scope-manager': 8.72.1
+      '@typescript-eslint/types': 8.72.1
+      '@typescript-eslint/typescript-estree': 8.72.1(supports-color@7.2.0)(typescript@7.1.0-beta)
+      '@typescript-eslint/visitor-keys': 8.72.1
+      debug: 4.4.3(supports-color@7.2.0)
+      eslint: 9.39.5(jiti@2.6.1)(supports-color@7.2.0)
+      typescript: 7.1.0-beta
+    transitivePeerDependencies:
+      - supports-color
+
   '@typescript-eslint/project-service@8.72.1(supports-color@7.2.0)(typescript@7.1.0-beta)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.72.1(typescript@7.1.0-beta)
@@ -5327,6 +5364,10 @@ snapshots:
   escalade@3.2.0: {}
 
   escape-string-regexp@4.0.0: {}
+
+  eslint-plugin-drizzle@0.2.3(patch_hash=970a4ab095ef16d6b77ccac81c31e17b85e1423d06ec977be44ac76a52a6251a)(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0)):
+    dependencies:
+      eslint: 9.39.5(jiti@2.6.1)(supports-color@7.2.0)
 
   eslint-plugin-no-comments@1.2.1(eslint@10.12.0(jiti@2.6.1)(supports-color@7.2.0)):
     dependencies:

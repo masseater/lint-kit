@@ -1,8 +1,7 @@
-import { Array as Arr, Option, Record, Schema, String as Str, pipe } from "effect";
-import type { Plugin } from "vite-plus/lint/plugins";
+import { Array as Arr, Option, Predicate, Record, Schema, String as Str, pipe } from "effect";
+import type { CreateRule, Plugin } from "vite-plus/lint/plugins";
 
 import { rulesOf } from "./config-rules.ts";
-import { optionallyTypedRules } from "./typed-rule.ts";
 
 const Severities: Schema.Literals<readonly ["error", "warn", "off"]> = Schema.Literals([
   "error",
@@ -16,15 +15,22 @@ interface Config {
   readonly rules?: Readonly<Record<string, Severity>> | undefined;
 }
 
-type UpstreamPlugin = Plugin & {
+type UpstreamPlugin<ConfigName extends string> = Plugin & {
   readonly meta: { readonly name: string };
-  readonly configs: Readonly<Record<string, Config>>;
+  readonly configs: Readonly<Record<ConfigName, Config>>;
 };
 
-interface Upstream {
+interface Upstream<ConfigName extends string> {
   readonly rules: Readonly<Record<string, unknown>>;
-  readonly configs: Readonly<Record<string, unknown>>;
+  readonly configs: Readonly<Record<ConfigName, unknown>>;
 }
+
+type RulesOf = (rules: Readonly<Record<string, unknown>>) => Readonly<Record<string, CreateRule>>;
+
+const isRule = (rule: unknown): rule is CreateRule =>
+  Predicate.hasProperty(rule, "create") && Predicate.isFunction(rule.create);
+
+const plainRules: RulesOf = Record.filter(isRule);
 
 const ruleIdOf = (key: string): string => Arr.lastNonEmpty(Str.split(key, "/"));
 
@@ -41,11 +47,15 @@ const configOf =
     ),
   });
 
-const upstreamPlugin = (name: string, upstream: Upstream): UpstreamPlugin => ({
+const upstreamPlugin = <ConfigName extends string>(
+  name: string,
+  upstream: Upstream<ConfigName>,
+  rulesOfUpstream: RulesOf,
+): UpstreamPlugin<ConfigName> => ({
   meta: { name },
   configs: pipe(upstream.configs, Record.map(configOf(name))),
-  rules: optionallyTypedRules(upstream.rules),
+  rules: rulesOfUpstream(upstream.rules),
 });
 
-export type { Config, Severity, Upstream, UpstreamPlugin };
-export { upstreamPlugin };
+export type { Config, RulesOf, Severity, Upstream, UpstreamPlugin };
+export { plainRules, upstreamPlugin };

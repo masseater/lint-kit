@@ -2,6 +2,8 @@ import { Array, Boolean as Bool, Option, Predicate, pipe } from "effect";
 import type { Rule } from "vite-plus/lint/plugins";
 import { RuleTester as OxlintRuleTester } from "vite-plus/lint/plugins-dev";
 
+import { distinct } from "./test-cases.ts";
+
 type TestCase = OxlintRuleTester.ValidTestCase;
 
 type TestCases = OxlintRuleTester.TestCases;
@@ -107,8 +109,8 @@ class RuleTester {
   public run(name: string, rule: Rule, tests: TestCases): void {
     const locate = located(this.#config);
     this.#tester.run(name, rule, {
-      valid: pipe(tests.valid, Array.map(asTestCase), Array.map(locate)),
-      invalid: pipe(tests.invalid, Array.map(locate)),
+      valid: pipe(tests.valid, Array.map(asTestCase), Array.map(locate), distinct),
+      invalid: pipe(tests.invalid, Array.map(locate), distinct),
     });
   }
 }

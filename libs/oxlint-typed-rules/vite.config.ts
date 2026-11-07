@@ -1,4 +1,4 @@
-import { Option } from "effect";
+import { Option, Record } from "effect";
 import { defineConfig } from "vite-plus";
 
 const local = (path: string): string => new URL(path, import.meta.url).pathname;
@@ -81,17 +81,17 @@ const VIRTUAL_PARSER = "\0upstream-typescript-eslint-parser";
 const upstreamSource = (plugin: string, path: string): string =>
   local(`node_modules/@tanstack/eslint-plugin-${plugin}/src/${path}.ts`);
 
-const tanstackPluginOf = (importer: string): Option.Option<string> =>
-  Option.fromNullishOr(UPSTREAM_TANSTACK_TEST.exec(importer)).pipe(
+const groupOf = (pattern: Readonly<RegExp>, name: string, text: string): Option.Option<string> =>
+  Option.fromNullishOr(pattern.exec(text)).pipe(
     Option.flatMap(({ groups }) => Option.fromNullishOr(groups)),
-    Option.flatMap(({ plugin }) => Option.fromNullishOr(plugin)),
+    Option.flatMap((groups) => Record.get(groups, name)),
   );
 
+const tanstackPluginOf = (importer: string): Option.Option<string> =>
+  groupOf(UPSTREAM_TANSTACK_TEST, "plugin", importer);
+
 const tanstackRuleOf = (id: string): Option.Option<string> =>
-  Option.fromNullishOr(UPSTREAM_TANSTACK_RULE.exec(id)).pipe(
-    Option.flatMap(({ groups }) => Option.fromNullishOr(groups)),
-    Option.flatMap(({ rule }) => Option.fromNullishOr(rule)),
-  );
+  groupOf(UPSTREAM_TANSTACK_RULE, "rule", id);
 
 const tanstackModuleOf = (plugin: string, id: string): Option.Option<string> =>
   Option.liftPredicate(id, (candidate) => candidate.startsWith("../")).pipe(
@@ -135,8 +135,41 @@ const upstreamTanstackModules = {
   load: (id: string): string | undefined => Option.getOrUndefined(tanstackRuleModule(id)),
 } as const;
 
+const UPSTREAM_DRIZZLE_TEST = /\/upstream\/drizzle\/tests\/[^/]+\.ts$/u;
+
+const UPSTREAM_DRIZZLE_RULE = /^\.\.\/src\/(?<rule>[a-z-]+)$/u;
+
+const VIRTUAL_DRIZZLE_RULE = "\0upstream-drizzle-rule:";
+
+const drizzleRuleOf = (id: string, importer: string): Option.Option<string> =>
+  Option.liftPredicate(importer, (candidate) => UPSTREAM_DRIZZLE_TEST.test(candidate)).pipe(
+    Option.flatMap(() => groupOf(UPSTREAM_DRIZZLE_RULE, "rule", id)),
+    Option.map((rule) => `${VIRTUAL_DRIZZLE_RULE}${rule}`),
+  );
+
+const drizzleRuleModule = (id: string): Option.Option<string> =>
+  Option.liftPredicate(id, (candidate) => candidate.startsWith(VIRTUAL_DRIZZLE_RULE)).pipe(
+    Option.map((virtual) =>
+      [
+        `import plugin from ${JSON.stringify(local("src/drizzle.ts"))};`,
+        `export default plugin.rules[${JSON.stringify(virtual.slice(VIRTUAL_DRIZZLE_RULE.length))}];`,
+      ].join("\n"),
+    ),
+  );
+
+const upstreamDrizzleRules = {
+  name: "upstream-drizzle-rules",
+  enforce: "pre",
+  resolveId: (id: string, importer: string | undefined): string | undefined =>
+    Option.fromNullishOr(importer).pipe(
+      Option.flatMap((spec) => drizzleRuleOf(id, spec)),
+      Option.getOrUndefined,
+    ),
+  load: (id: string): string | undefined => Option.getOrUndefined(drizzleRuleModule(id)),
+} as const;
+
 export default defineConfig({
-  plugins: [upstreamReactRules, upstreamTanstackModules],
+  plugins: [upstreamReactRules, upstreamTanstackModules, upstreamDrizzleRules],
   run: {
     tasks: {
       build: { command: "vp pack", cache: false },
@@ -150,6 +183,7 @@ export default defineConfig({
       "src/tanstack-start.ts",
       "src/tanstack-query.ts",
       "src/tanstack-router.ts",
+      "src/drizzle.ts",
       "src/react.ts",
     ],
     platform: "node",
@@ -194,7 +228,12 @@ export default defineConfig({
     },
     server: {
       deps: {
-        inline: [/@tanstack\/eslint-plugin-/u, /@eslint-react\//u, /eslint-plugin-react-/u],
+        inline: [
+          /@tanstack\/eslint-plugin-/u,
+          "eslint-plugin-drizzle",
+          /@eslint-react\//u,
+          /eslint-plugin-react-/u,
+        ],
       },
     },
     include: [
@@ -202,6 +241,7 @@ export default defineConfig({
       "upstream/src/__tests__/*.test.ts",
       "upstream/tanstack-query/src/__tests__/*.test.ts",
       "upstream/tanstack-router/src/__tests__/*.test.ts",
+      "upstream/drizzle/tests/*.test.ts",
       "upstream/react/plugins/**/*.spec.ts",
     ],
   },

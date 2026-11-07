@@ -17,22 +17,29 @@ ESLint を入れずに、型情報を使うルールを oxlint だけで回せ�
   - [@tanstack/eslint-plugin-query][tanstack-query] 5.105.3 の全ルールと configs
 - `@r_masseater/oxlint-typed-rules/tanstack-router`
   - [@tanstack/eslint-plugin-router][tanstack-router] 1.162.0 の全ルールと configs
+- `@r_masseater/oxlint-typed-rules/drizzle`
+  - [eslint-plugin-drizzle][drizzle] 0.2.3 の全ルールと configs
 - `@r_masseater/oxlint-typed-rules/react`
   - [@eslint-react/eslint-plugin][eslint-react] 5.28.8 の全ルールと configs
 
 [tanstack]: https://github.com/TanStack/router/tree/main/packages/eslint-plugin-start
 [tanstack-query]: https://github.com/TanStack/query/tree/main/packages/eslint-plugin-query
 [tanstack-router]: https://github.com/TanStack/router/tree/main/packages/eslint-plugin-router
+[drizzle]: https://github.com/drizzle-team/drizzle-orm/tree/main/eslint-plugin-drizzle
 [eslint-react]: https://github.com/Rel1cx/eslint-react
 
 元のリポのテストを手を入れずに移植し、すべて同じ結果になることを確かめている。
 TanStack Start の 2 ルールは、ファイルをまたぐと違反を取りこぼす点を直してある。
 @eslint-react はルールの ID と configs を元のプラグインと同じにしてあるので、
 jsPlugins の `specifier` を差し替えるだけで乗り換えられる。
-TanStack Query と Router は、プラグインの名前を `tanstack-query`・`tanstack-router` にしてある。
+TanStack Query・Router・Drizzle は、プラグインの名前を `tanstack-query`・`tanstack-router`・`drizzle` にしてある。
 configs の `rules` も同じ名前で始まるので、そのまま `rules` に広げられる。
+configs は元のプラグインの名前で引けば `undefined` にならない型にしてある。
 Query の `no-void-query-fn` と `no-rest-destructuring` は型情報を読み、
 ほかのルールは型を作らずに動く。
+Router と Drizzle のエントリーは tsgo を起動しない。
+eslint-plugin-drizzle は依存に書いていない `@typescript-eslint/utils` を読むので、
+元のままではそれが巻き上げられた環境でしか読み込めない。このパッケージは同梱して読ませる。
 oxc の構文木は JSX の属性の文字参照を復号しないので（[oxc#9667][oxc-9667]）、
 `jsx-no-children-prop` は属性の元の文字列から復号するよう直してある。
 
@@ -61,7 +68,7 @@ export default defineConfig({
       },
     ],
     rules: {
-      ...tanstackQuery.configs["flat/recommended"]?.rules,
+      ...tanstackQuery.configs["flat/recommended"].rules,
       "tanstack-start/no-client-code-in-server-component": "error",
       "tanstack-start/no-async-client-component": "error",
     },

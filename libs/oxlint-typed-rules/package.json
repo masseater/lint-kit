@@ -1,8 +1,9 @@
 {
   "name": "@r_masseater/oxlint-typed-rules",
   "version": "0.1.1",
-  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules, TanStack Query, TanStack Router and ESLint React.",
+  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules, TanStack Query, TanStack Router, Drizzle and ESLint React.",
   "keywords": [
+    "drizzle",
     "eslint",
     "eslint-react",
     "oxlint",
@@ -30,6 +31,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./drizzle": "./src/drizzle.ts",
     "./react": "./src/react.ts",
     "./tanstack-query": "./src/tanstack-query.ts",
     "./tanstack-router": "./src/tanstack-router.ts",
@@ -41,6 +43,10 @@
       ".": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
+      },
+      "./drizzle": {
+        "types": "./dist/drizzle.d.mts",
+        "default": "./dist/drizzle.mjs"
       },
       "./react": {
         "types": "./dist/react.d.mts",
@@ -81,11 +87,13 @@
     "@tsconfig/strictest": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
     "@typescript-eslint/types": "catalog:",
     "@typescript-eslint/typescript-estree": "catalog:",
     "@typescript-eslint/utils": "catalog:",
     "combinate": "catalog:",
     "dedent": "catalog:",
+    "eslint-plugin-drizzle": "catalog:",
     "publint": "catalog:",
     "size-limit": "catalog:",
     "typescript": "catalog:stack",
@@ -98,17 +106,22 @@
     {
       "name": "react",
       "path": "dist/react.mjs",
-      "limit": "169117 B"
+      "limit": "169062 B"
     },
     {
       "name": "tanstack-query",
       "path": "dist/tanstack-query.mjs",
-      "limit": "11778 B"
+      "limit": "11828 B"
     },
     {
       "name": "tanstack-router",
       "path": "dist/tanstack-router.mjs",
-      "limit": "3398 B"
+      "limit": "3448 B"
+    },
+    {
+      "name": "drizzle",
+      "path": "dist/drizzle.mjs",
+      "limit": "2172 B"
     },
     {
       "name": "core",
@@ -116,9 +129,10 @@
         "dist/*.mjs",
         "!dist/react.mjs",
         "!dist/tanstack-query.mjs",
-        "!dist/tanstack-router.mjs"
+        "!dist/tanstack-router.mjs",
+        "!dist/drizzle.mjs"
       ],
-      "limit": "29798 B"
+      "limit": "30078 B"
     }
   ],
   "engines": {
