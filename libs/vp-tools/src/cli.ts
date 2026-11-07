@@ -21,7 +21,7 @@ const USAGE = pipe(
   [
     "Usage: vp-tools <command> [args]",
     "  betterleaks <betterleaks command...>",
-    "  commitlint <message-file>",
+    "  commitlint <message-file> | --range <revision-range>",
     "  dependencies",
     "  steiger <dir...>",
     "  textlint [--print-files] <pathspec...>",

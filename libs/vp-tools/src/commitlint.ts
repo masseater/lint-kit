@@ -2,7 +2,7 @@ import format from "@commitlint/format";
 import lint from "@commitlint/lint";
 import load from "@commitlint/load";
 import type { LintOptions, QualifiedConfig } from "@commitlint/types";
-import { Effect, FileSystem, Option, Predicate, pipe } from "effect";
+import { Array as Arr, Effect, FileSystem, Option, Predicate, pipe } from "effect";
 import type { PlatformError } from "effect";
 
 import { attempt } from "./attempt.ts";
@@ -29,20 +29,27 @@ const lintOptionsOf = (loaded: QualifiedConfig): LintOptions => ({
   defaultIgnores: loaded.defaultIgnores ?? true,
 });
 
-const lintCommitMessage = (
+const lintCommitMessages = (
   config: CommitlintConfig,
   root: string,
-  message: string,
+  messages: readonly string[],
 ): Effect.Effect<Report, VpToolsError> =>
-  attempt("commitlint")(() => load(config, { cwd: root })).pipe(
-    Effect.flatMap((loaded) =>
-      attempt("commitlint")(() => lint(message, loaded.rules, lintOptionsOf(loaded))),
-    ),
-    Effect.map((result) => ({
-      valid: result.valid,
-      output: format({ results: [result] }, { color: false }),
-    })),
-  );
+  Effect.gen(function* lintMessages() {
+    const loaded = yield* attempt("commitlint")(() => load(config, { cwd: root }));
+    const results = yield* pipe(
+      messages,
+      Effect.forEach((message) =>
+        attempt("commitlint")(() => lint(message, loaded.rules, lintOptionsOf(loaded))),
+      ),
+    );
+    return {
+      valid: pipe(
+        results,
+        Arr.every((result) => result.valid),
+      ),
+      output: format({ results }, { color: false }),
+    };
+  });
 
 const lintCommitMessageFile = (
   config: CommitlintConfig,
@@ -52,7 +59,7 @@ const lintCommitMessageFile = (
   Effect.gen(function* read() {
     const fs = yield* FileSystem.FileSystem;
     const message = yield* fs.readFileString(messageFile);
-    return yield* lintCommitMessage(config, root, message);
+    return yield* lintCommitMessages(config, root, [message]);
   });
 
-export { lintCommitMessageFile };
+export { lintCommitMessageFile, lintCommitMessages };
