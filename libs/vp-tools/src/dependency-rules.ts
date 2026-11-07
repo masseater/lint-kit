@@ -1,6 +1,6 @@
 import { Array as Arr, Option, Predicate, Record as Rec, String as Str, pipe } from "effect";
 import { minimatch } from "minimatch";
-import { intersects, validRange } from "semver";
+import { intersects, valid, validRange } from "semver";
 
 import type { DependencyRules } from "./types.ts";
 import type { Dependency } from "./workspace.ts";
@@ -30,6 +30,39 @@ const bannedProblems = (
   dependencies: readonly Dependency[],
 ): readonly string[] =>
   pipe(Rec.toEntries(rules.banned ?? {}), Arr.flatMap(bannedBy(dependencies)));
+
+const MANIFEST = "package.json";
+
+const inWorkspaces =
+  (globs: readonly string[]) =>
+  (dependency: Dependency): boolean =>
+    dependency.field === "dependencies" &&
+    pipe(
+      globs,
+      Arr.some((glob) => minimatch(dependency.manifest, `${glob}/${MANIFEST}`)),
+    );
+
+const exactGlobs = (rules: DependencyRules): readonly string[] =>
+  pipe(Rec.values(rules.exactDependencies ?? {}), Arr.flatten);
+
+const notExactBy =
+  (dependencies: readonly Dependency[]) =>
+  ([reason, globs]: readonly [string, readonly string[]]): readonly string[] =>
+    pipe(
+      dependencies,
+      Arr.filter(inWorkspaces(globs)),
+      Arr.filter((dependency) => valid(dependency.specifier) === null),
+      Arr.map(
+        (dependency) =>
+          `${dependency.manifest} dependencies.${dependency.name} must be an exact version: ${reason}`,
+      ),
+    );
+
+const exactProblems = (
+  rules: DependencyRules,
+  dependencies: readonly Dependency[],
+): readonly string[] =>
+  pipe(Rec.toEntries(rules.exactDependencies ?? {}), Arr.flatMap(notExactBy(dependencies)));
 
 const groupByName = (dependencies: readonly Dependency[]): readonly (readonly Dependency[])[] =>
   Rec.values(Arr.groupBy(dependencies, ({ name }) => name));
@@ -100,18 +133,25 @@ const versionProblems = (
   return [...mismatchProblems(others), ...disjointRangeProblems(peers)];
 };
 
+const comparedDependencies = (
+  rules: DependencyRules,
+  dependencies: readonly Dependency[],
+): readonly Dependency[] => {
+  const isExact = inWorkspaces(exactGlobs(rules));
+  return pipe(
+    dependencies,
+    Arr.filter(({ specifier }) => !Str.startsWith("workspace:")(specifier)),
+    Arr.filter(Predicate.not(isExact)),
+  );
+};
+
 const checkDependencies = (
   rules: DependencyRules,
   dependencies: readonly Dependency[],
 ): readonly string[] => [
   ...bannedProblems(rules, dependencies),
-  ...versionProblems(
-    rules,
-    pipe(
-      dependencies,
-      Arr.filter(({ specifier }) => !Str.startsWith("workspace:")(specifier)),
-    ),
-  ),
+  ...exactProblems(rules, dependencies),
+  ...versionProblems(rules, comparedDependencies(rules, dependencies)),
 ];
 
 export { checkDependencies };

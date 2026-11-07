@@ -62,7 +62,41 @@ const reportsDisjointPeers = Effect.sync(() => {
   );
 });
 
+const EXACT = { "read as a git dependency": ["libs/ui"] };
+
+const requiresExactVersionsInStandaloneWorkspaces = Effect.sync(() => {
+  deepStrictEqual(
+    checkDependencies({ exactDependencies: EXACT }, [
+      used("libs/ui/package.json", "effect", "^4.1.2"),
+      used("libs/ui/package.json", "clsx", "2.1.1"),
+      used("apps/web/package.json", "clsx", "catalog:"),
+      used("apps/web/package.json", "effect", "catalog:"),
+    ]),
+    ["libs/ui/package.json dependencies.effect must be an exact version: read as a git dependency"],
+  );
+});
+
+const checksOtherFieldsOfStandaloneWorkspaces = Effect.sync(() => {
+  deepStrictEqual(
+    checkDependencies({ exactDependencies: EXACT }, [
+      { ...used("libs/ui/package.json", "effect", "catalog:"), field: "devDependencies" },
+      used("apps/web/package.json", "effect", "4.1.2"),
+    ]),
+    [
+      "different specifiers for effect: libs/ui/package.json devDependencies catalog:, apps/web/package.json dependencies 4.1.2",
+    ],
+  );
+});
+
 layer(Layer.empty)("dependency rules", (it) => {
+  it.effect(
+    "requires exact versions in the dependencies of standalone workspaces and leaves them out of the comparison",
+    () => requiresExactVersionsInStandaloneWorkspaces,
+  );
+  it.effect(
+    "still compares the other dependency fields of standalone workspaces",
+    () => checksOtherFieldsOfStandaloneWorkspaces,
+  );
   it.effect(
     "reports a dependency that matches a banned glob with its reason",
     () => reportsBannedDependencies,
