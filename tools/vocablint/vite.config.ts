@@ -13,7 +13,11 @@ export default defineConfig({
     sourcemap: true,
     dts: {
       generator: "tsgo",
+      tsgo: { path: new URL("node_modules/.bin/tsc", import.meta.url).pathname },
     },
+  },
+  resolve: {
+    dedupe: ["vitest"],
   },
   test: {
     coverage: {
@@ -25,5 +29,10 @@ export default defineConfig({
     },
     reporters: ["default", "blob"],
     outputFile: { blob: new URL("../../.vitest-reports/vocablint.json", import.meta.url).pathname },
+    server: {
+      deps: {
+        inline: ["@effect/vitest"],
+      },
+    },
   },
 });

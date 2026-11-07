@@ -23,7 +23,6 @@ catalog:
   publint: 0.3.25
   size-limit: 14.3.0
   synckit: 0.12.3
-  typescript-6: npm:typescript@6.0.3
   vitest: 5.0.5
 catalogs:
   typescript-api:
@@ -36,6 +35,8 @@ catalogs:
     fallow: 3.38.1
     typescript: 7.0.2
     vite-plus: 1.4.0
+  typescript-7:
+    typescript: 7.1.0-beta
 overrides:
   effect: "catalog:stack"
   "@effect/platform-node-shared": 4.1.2

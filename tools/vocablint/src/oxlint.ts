@@ -10,7 +10,6 @@ import { vocablintPlugin } from "./oxlint-rule.ts";
 
 const CLI_PATH = fileURLToPath(new URL("cli.mjs", import.meta.url));
 const decodeProblems = Schema.decodeUnknownSync(Schema.fromJsonString(ProblemList));
-const loaded = new Map<string, readonly Problem[]>();
 
 const runCli = (cwd: string): readonly Problem[] =>
   decodeProblems(
@@ -20,6 +19,8 @@ const runCli = (cwd: string): readonly Problem[] =>
       maxBuffer: Number.MAX_SAFE_INTEGER,
     }),
   );
+
+const loaded = new Map<string, readonly Problem[]>([[process.cwd(), runCli(process.cwd())]]);
 
 const runCliOnce = (cwd: string): readonly Problem[] =>
   Option.fromUndefinedOr(loaded.get(cwd)).pipe(

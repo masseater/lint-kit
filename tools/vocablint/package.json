@@ -42,16 +42,18 @@
   },
   "dependencies": {
     "@effect/platform-node": "catalog:",
-    "effect": "catalog:stack",
-    "typescript-6": "catalog:"
+    "effect": "catalog:stack"
   },
   "devDependencies": {
     "@effect/vitest": "catalog:",
     "@types/node": "catalog:",
     "@vocablint/core": "workspace:*",
-    "typescript": "catalog:stack",
+    "typescript": "catalog:typescript-7",
     "vite-plus": "catalog:stack",
     "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": ">=7.1.0-0"
   },
   "engines": {
     "node": ">=26"

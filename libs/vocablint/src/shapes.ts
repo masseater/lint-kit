@@ -1,11 +1,27 @@
 import { Array as Arr, Option, Order, pipe } from "effect";
-import ts from "typescript-6";
 
+import {
+  isCallExpression,
+  isInterfaceDeclaration,
+  isObjectLiteralExpression,
+  isTypeAliasDeclaration,
+  isTypeLiteralNode,
+} from "./compiler.ts";
+import type {
+  Checker,
+  InterfaceDeclaration,
+  Node,
+  SourceFile,
+  TypeSymbol,
+  Type,
+  TypeAliasDeclaration,
+} from "./compiler.ts";
 import { describeLibraryType, isObjectType } from "./library.ts";
 import type { LibraryShape } from "./library.ts";
 import { CANDIDATE_LIMIT, problemAt } from "./problem.ts";
 import type { Problem } from "./problem.ts";
 import {
+  declarationsOf,
   descendantsOf,
   isGenericDeclaration,
   propertyNamesOf,
@@ -14,13 +30,13 @@ import {
 import { schemaTypeOf } from "./values.ts";
 
 interface ShapeContext {
-  readonly checker: ts.TypeChecker;
+  readonly checker: Checker;
   readonly shapes: readonly LibraryShape[];
 }
 
 interface ShapeSite {
-  readonly node: ts.Node;
-  readonly type: ts.Type;
+  readonly node: Node;
+  readonly type: Type;
 }
 
 interface ShapeMatch {
@@ -31,35 +47,33 @@ interface ShapeMatch {
 const MINIMUM_SHAPE_PROPERTIES = 3;
 const EXACT = 0;
 
-const isPlainInterface = (node: ts.Node): node is ts.InterfaceDeclaration =>
-  ts.isInterfaceDeclaration(node) && !isGenericDeclaration(node);
+const isPlainInterface = (node: Node): node is InterfaceDeclaration =>
+  isInterfaceDeclaration(node) && !isGenericDeclaration(node);
 
-const isPlainTypeLiteral = (node: ts.Node): node is ts.TypeAliasDeclaration =>
-  ts.isTypeAliasDeclaration(node) && !isGenericDeclaration(node) && ts.isTypeLiteralNode(node.type);
+const isPlainTypeLiteral = (node: Node): node is TypeAliasDeclaration =>
+  isTypeAliasDeclaration(node) && !isGenericDeclaration(node) && isTypeLiteralNode(node.type);
 
-const isDeclaredShape = (
-  node: ts.Node,
-): node is ts.InterfaceDeclaration | ts.TypeAliasDeclaration =>
+const isDeclaredShape = (node: Node): node is InterfaceDeclaration | TypeAliasDeclaration =>
   isPlainInterface(node) || isPlainTypeLiteral(node);
 
 const declaredShapeOf =
-  (checker: ts.TypeChecker) =>
-  (node: ts.Node): Option.Option<ts.Type> =>
+  (checker: Checker) =>
+  (node: Node): Option.Option<Type> =>
     Option.liftPredicate(node, isDeclaredShape).pipe(
       Option.map((declaration) => checker.getTypeAtLocation(declaration.name)),
     );
 
 const schemaShapeOf =
-  (checker: ts.TypeChecker) =>
-  (node: ts.Node): Option.Option<ts.Type> => {
-    if (!ts.isCallExpression(node)) {
+  (checker: Checker) =>
+  (node: Node): Option.Option<Type> => {
+    if (!isCallExpression(node)) {
       return Option.none();
     }
     const { arguments: callArguments } = node;
     if (
       !pipe(
         callArguments,
-        Arr.some((argument) => ts.isObjectLiteralExpression(argument)),
+        Arr.some((argument) => isObjectLiteralExpression(argument)),
       )
     ) {
       return Option.none();
@@ -70,8 +84,8 @@ const schemaShapeOf =
   };
 
 const shapeSitesIn =
-  (checker: ts.TypeChecker) =>
-  (sourceFile: ts.SourceFile): readonly ShapeSite[] =>
+  (checker: Checker) =>
+  (sourceFile: SourceFile): readonly ShapeSite[] =>
     Arr.getSomes(
       pipe(
         descendantsOf(sourceFile),
@@ -85,13 +99,13 @@ const shapeSitesIn =
     );
 
 const sameProperty =
-  (checker: ts.TypeChecker) =>
-  (local: ts.Symbol, library: ts.Symbol): boolean => {
+  (checker: Checker) =>
+  (local: TypeSymbol, library: TypeSymbol): boolean => {
     const localType = checker.getTypeOfSymbol(local);
     const libraryType = checker.getTypeOfSymbol(library);
     return (
-      libraryType !== checker.getAnyType() &&
-      libraryType !== checker.getUnknownType() &&
+      libraryType.id !== checker.getAnyType().id &&
+      libraryType.id !== checker.getUnknownType().id &&
       checker.isTypeAssignableTo(localType, libraryType) &&
       checker.isTypeAssignableTo(libraryType, localType)
     );
@@ -105,7 +119,7 @@ const matchOf =
     const matches = pipe(
       locals,
       Arr.every((local) =>
-        Option.fromUndefinedOr(checker.getPropertyOfType(shape.type, local.getName())).pipe(
+        Option.fromUndefinedOr(checker.getPropertyOfType(shape.type, local.name)).pipe(
           Option.exists((library) => sameProperty(checker)(local, library)),
         ),
       ),
@@ -124,7 +138,7 @@ const isDerivedFrom =
   (site: ShapeSite, shape: LibraryShape): boolean =>
     pipe(
       referencedSymbols(context.checker)(site.node),
-      Arr.some((symbol) => (symbol.getDeclarations() ?? []).includes(shape.declaration)),
+      Arr.some((symbol) => declarationsOf(symbol).includes(shape.declaration)),
     );
 
 const matchOrder = Order.mapInput(Order.Number, (match: ShapeMatch) => match.extra);
@@ -169,7 +183,7 @@ const shapeProblemOf =
 
 const shapeProblemsIn =
   (context: ShapeContext) =>
-  (sourceFile: ts.SourceFile): readonly Problem[] =>
+  (sourceFile: SourceFile): readonly Problem[] =>
     Arr.getSomes(
       pipe(
         shapeSitesIn(context.checker)(sourceFile),
