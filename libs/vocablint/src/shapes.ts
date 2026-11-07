@@ -9,6 +9,7 @@ import {
 } from "./compiler.ts";
 import type {
   Checker,
+  Declaration,
   InterfaceDeclaration,
   Node,
   SourceFile,
@@ -98,29 +99,42 @@ const shapeSitesIn =
       ),
     );
 
+interface LocalProperty {
+  readonly name: string;
+  readonly type: Type;
+}
+
+interface OpenTypeIds {
+  readonly any: number;
+  readonly unknown: number;
+}
+
+const openTypeIdsOf = (checker: Checker): OpenTypeIds => ({
+  any: checker.getAnyType().id,
+  unknown: checker.getUnknownType().id,
+});
+
 const sameProperty =
-  (checker: Checker) =>
-  (local: TypeSymbol, library: TypeSymbol): boolean => {
-    const localType = checker.getTypeOfSymbol(local);
+  (checker: Checker, open: OpenTypeIds) =>
+  (localType: Type, library: TypeSymbol): boolean => {
     const libraryType = checker.getTypeOfSymbol(library);
     return (
-      libraryType.id !== checker.getAnyType().id &&
-      libraryType.id !== checker.getUnknownType().id &&
+      libraryType.id !== open.any &&
+      libraryType.id !== open.unknown &&
       checker.isTypeAssignableTo(localType, libraryType) &&
       checker.isTypeAssignableTo(libraryType, localType)
     );
   };
 
 const matchOf =
-  (context: ShapeContext) =>
-  (site: ShapeSite, shape: LibraryShape): Option.Option<ShapeMatch> => {
+  (context: ShapeContext, open: OpenTypeIds) =>
+  (locals: readonly LocalProperty[], shape: LibraryShape): Option.Option<ShapeMatch> => {
     const { checker } = context;
-    const locals = checker.getPropertiesOfType(site.type);
     const matches = pipe(
       locals,
       Arr.every((local) =>
         Option.fromUndefinedOr(checker.getPropertyOfType(shape.type, local.name)).pipe(
-          Option.exists((library) => sameProperty(checker)(local, library)),
+          Option.exists((library) => sameProperty(checker, open)(local.type, library)),
         ),
       ),
     );
@@ -133,12 +147,22 @@ const matchOf =
     });
   };
 
-const isDerivedFrom =
-  (context: ShapeContext) =>
-  (site: ShapeSite, shape: LibraryShape): boolean =>
+const localPropertiesOf =
+  (checker: Checker) =>
+  (symbols: readonly TypeSymbol[]): readonly LocalProperty[] =>
     pipe(
-      referencedSymbols(context.checker)(site.node),
-      Arr.some((symbol) => declarationsOf(symbol).includes(shape.declaration)),
+      Arr.zip(symbols, checker.getTypeOfSymbol(symbols)),
+      Arr.map(([symbol, type]) => ({ name: symbol.name, type })),
+    );
+
+const derivedDeclarationsOf =
+  (checker: Checker) =>
+  (node: Node): ReadonlySet<Declaration> =>
+    new Set(
+      pipe(
+        referencedSymbols(checker)(node),
+        Arr.flatMap((symbol) => declarationsOf(symbol)),
+      ),
     );
 
 const matchOrder = Order.mapInput(Order.Number, (match: ShapeMatch) => match.extra);
@@ -163,16 +187,18 @@ const shapeProblem = (site: ShapeSite, matches: readonly ShapeMatch[]): Problem 
 };
 
 const shapeProblemOf =
-  (context: ShapeContext) =>
+  (context: ShapeContext, open: OpenTypeIds) =>
   (site: ShapeSite): Option.Option<Problem> => {
-    const names = propertyNamesOf(context.checker)(site.type);
-    if (names.length < MINIMUM_SHAPE_PROPERTIES) {
+    const symbols = context.checker.getPropertiesOfType(site.type);
+    if (symbols.length < MINIMUM_SHAPE_PROPERTIES) {
       return Option.none();
     }
+    const locals = localPropertiesOf(context.checker)(symbols);
+    const derived = derivedDeclarationsOf(context.checker)(site.node);
     const candidates = pipe(
       context.shapes,
-      Arr.filter((shape) => !isDerivedFrom(context)(site, shape)),
-      Arr.map((shape) => matchOf(context)(site, shape)),
+      Arr.filter((shape) => !derived.has(shape.declaration)),
+      Arr.map((shape) => matchOf(context, open)(locals, shape)),
       Arr.getSomes,
     );
     const matches = Arr.sort(candidates, matchOrder);
@@ -183,13 +209,19 @@ const shapeProblemOf =
 
 const shapeProblemsIn =
   (context: ShapeContext) =>
-  (sourceFile: SourceFile): readonly Problem[] =>
-    Arr.getSomes(
+  (sourceFile: SourceFile): readonly Problem[] => {
+    const sites = shapeSitesIn(context.checker)(sourceFile);
+    if (!Arr.isReadonlyArrayNonEmpty(sites)) {
+      return [];
+    }
+    const open = openTypeIdsOf(context.checker);
+    return Arr.getSomes(
       pipe(
-        shapeSitesIn(context.checker)(sourceFile),
-        Arr.map((site) => shapeProblemOf(context)(site)),
+        sites,
+        Arr.map((site) => shapeProblemOf(context, open)(site)),
       ),
     );
+  };
 
 export { shapeProblemsIn };
 export type { ShapeContext };

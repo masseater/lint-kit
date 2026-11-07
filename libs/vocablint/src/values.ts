@@ -67,18 +67,16 @@ const finiteValuesOf =
       Option.orElse(() => schemaTypeOf(checker)(type).pipe(Option.flatMap(literalUnionOf))),
     );
 
-const isOptionalMember = (checker: Checker, member: Type): boolean =>
-  member.id === checker.getUndefinedType().id || member.id === checker.getNullType().id;
-
 const vocabularyOf =
   (checker: Checker) =>
   (type: Type): Option.Option<Vocabulary> => {
     if (!type.isUnionType()) {
       return Option.none();
     }
+    const optionalIds = new Set([checker.getUndefinedType().id, checker.getNullType().id]);
     const members = pipe(
       type.getTypes(),
-      Arr.filter((member) => !isOptionalMember(checker, member)),
+      Arr.filter((member) => !optionalIds.has(member.id)),
     );
     const values = Arr.getSomes(
       pipe(

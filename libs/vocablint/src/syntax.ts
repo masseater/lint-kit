@@ -99,10 +99,11 @@ const referencedSymbols =
       Arr.filter((candidate) => isIdentifier(candidate)),
     );
     const symbols = pipe(
-      identifiers,
-      Arr.map((identifier) => symbolAt(checker)(identifier)),
+      checker.getSymbolAtLocation(identifiers),
+      Arr.flatMap((symbol) => Option.toArray(Option.fromUndefinedOr(symbol))),
+      Arr.map(resolvedSymbol(checker)),
     );
-    return uniqueByReference(Arr.getSomes(symbols));
+    return uniqueByReference(symbols);
   };
 
 const lineOf = (node: Node): number => {
