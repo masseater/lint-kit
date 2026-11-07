@@ -31,4 +31,22 @@ const listGitFiles = (
     return pipe(Str.split(output, "\0"), Arr.filter(Str.isNonEmpty));
   });
 
-export { listGitFiles };
+const listCommitMessages = (
+  root: string,
+  range: string,
+): Effect.Effect<
+  readonly string[],
+  PlatformError.PlatformError,
+  ChildProcessSpawner.ChildProcessSpawner
+> =>
+  Effect.gen(function* messages() {
+    const spawner = yield* ChildProcessSpawner.ChildProcessSpawner;
+    const output = yield* spawner.string(
+      ChildProcess.make("git", ["log", "-z", "--first-parent", "--format=%B", range, "--"], {
+        cwd: root,
+      }),
+    );
+    return pipe(Str.split(output, "\0"), Arr.filter(Str.isNonEmpty));
+  });
+
+export { listCommitMessages, listGitFiles };

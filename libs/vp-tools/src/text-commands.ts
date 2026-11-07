@@ -1,16 +1,20 @@
-import { Array as Arr, Effect, pipe } from "effect";
+import { Array as Arr, Effect, Option, pipe } from "effect";
 
 import type { Command } from "./command.ts";
-import { lintCommitMessageFile } from "./commitlint.ts";
+import { lintCommitMessageFile, lintCommitMessages } from "./commitlint.ts";
 import { loadSection } from "./config.ts";
 import { checksFailed } from "./errors.ts";
-import { listGitFiles } from "./git.ts";
+import { listCommitMessages, listGitFiles } from "./git.ts";
 import { finish, writeTo } from "./output.ts";
 import { checkSlices } from "./steiger.ts";
 import { lintTexts } from "./textlint.ts";
 
 const PRINT_FILES = "--print-files";
-const COMMITLINT_USAGE = "Usage: vp-tools commitlint <commit message file>";
+const RANGE = "--range";
+const RANGE_ARGS = 2;
+const FILE_ARGS = 1;
+const COMMITLINT_USAGE =
+  "Usage: vp-tools commitlint <commit message file> | vp-tools commitlint --range <revision range>";
 
 const runTextlint: Command = (root, args) =>
   Effect.gen(function* textlint() {
@@ -37,13 +41,31 @@ const runTextlint: Command = (root, args) =>
     return yield* finish(yield* lintTexts(config, root, files));
   });
 
+const startsWithRange = (args: readonly string[]): boolean =>
+  pipe(
+    Arr.head(args),
+    Option.exists((arg) => arg === RANGE),
+  );
+
+const isRangeArgs = (args: readonly string[]): args is readonly [typeof RANGE, string] =>
+  args.length === RANGE_ARGS && startsWithRange(args);
+
+const isFileArgs = (args: readonly string[]): args is readonly [string] =>
+  args.length === FILE_ARGS && !startsWithRange(args);
+
 const runCommitlint: Command = (root, args) =>
   Effect.gen(function* commitlint() {
     const config = yield* loadSection(root, "commitlint");
-    if (!Arr.isReadonlyArrayNonEmpty(args)) {
-      return yield* Effect.fail(checksFailed(COMMITLINT_USAGE));
+    if (isRangeArgs(args)) {
+      const [, range] = args;
+      const messages = yield* listCommitMessages(root, range);
+      return yield* finish(yield* lintCommitMessages(config, root, messages));
     }
-    return yield* finish(yield* lintCommitMessageFile(config, root, Arr.headNonEmpty(args)));
+    if (isFileArgs(args)) {
+      const [messageFile] = args;
+      return yield* finish(yield* lintCommitMessageFile(config, root, messageFile));
+    }
+    return yield* Effect.fail(checksFailed(COMMITLINT_USAGE));
   });
 
 const runSteiger: Command = (root, targets) =>
