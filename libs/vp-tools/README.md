@@ -27,7 +27,7 @@ export default defineConfig({
   },
   betterleaks: {
     extend: { useDefault: true },
-    filter: String.raw`matchesAny(finding.line, [\`\bCF_BEACON_TOKEN = "[0-9a-f]{32}"\`])`,
+    filter: 'matchesAny(finding.line, [`\\bCF_BEACON_TOKEN = "[0-9a-f]{32}"`])',
     ignoredSecrets: ["<秘密の SHA-256>"],
   },
   steiger: [...fsd.configs.recommended],
