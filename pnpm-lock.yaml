@@ -191,6 +191,12 @@ catalogs:
     '@size-limit/file':
       specifier: 14.3.0
       version: 14.3.0
+    '@tanstack/eslint-plugin-query':
+      specifier: 5.105.3
+      version: 5.105.3
+    '@tanstack/eslint-plugin-router':
+      specifier: 1.162.0
+      version: 1.162.0
     '@tanstack/eslint-plugin-start':
       specifier: 0.1.0
       version: 0.1.0
@@ -215,6 +221,9 @@ catalogs:
     '@typescript-eslint/utils':
       specifier: ^8.72.1
       version: 8.72.1
+    combinate:
+      specifier: 1.1.11
+      version: 1.1.11
     dedent:
       specifier: 1.7.2
       version: 1.7.2
@@ -397,6 +406,12 @@ importers:
       '@size-limit/file':
         specifier: 'catalog:'
         version: 14.3.0(size-limit@14.3.0)
+      '@tanstack/eslint-plugin-query':
+        specifier: 'catalog:'
+        version: 5.105.3(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
+      '@tanstack/eslint-plugin-router':
+        specifier: 'catalog:'
+        version: 1.162.0(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
       '@tanstack/eslint-plugin-start':
         specifier: 'catalog:'
         version: 0.1.0(patch_hash=364cc40b73326fe59c5d685ac247690de2302e3e731b7b7d37583701f9370644)(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
@@ -418,6 +433,9 @@ importers:
       '@typescript-eslint/utils':
         specifier: 'catalog:'
         version: 8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
+      combinate:
+        specifier: 'catalog:'
+        version: 1.1.11
       dedent:
         specifier: 'catalog:'
         version: 1.7.2
@@ -1556,6 +1574,20 @@ packages:
     peerDependencies:
       size-limit: 14.3.0
 
+  '@tanstack/eslint-plugin-query@5.105.3':
+    resolution: {integrity: sha512-Q6WxKsiiS8RvtZYyUfWhdijXbomPxerWpNZNsWx439/Y3JkcXRBtRNIoeVC5i4jmD5SgNdvIL7emHLUkqN4YqA==}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+      typescript: ^5.6.0 || ^6.0.0 || ^7.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@tanstack/eslint-plugin-router@1.162.0':
+    resolution: {integrity: sha512-0mv+5fOnWXeorh6zd3VyHVfpejIzc7+z68Ts0CQMDzMiwjM5rvea46fyl2m50zx5JFennsu7RO/QJAfnqkKJXw==}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+
   '@tanstack/eslint-plugin-start@0.1.0':
     resolution: {integrity: sha512-7Dz5NAO9h9fSw+W5cl2wTd452Owq5J6OHhfmz4hsp+tYM8kMteKX1sZPRL+9ASvGQYgOAQuMub3oBLp8yi2fag==}
     peerDependencies:
@@ -2326,6 +2358,9 @@ packages:
 
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+
+  combinate@1.1.11:
+    resolution: {integrity: sha512-+2MNAQ29HtNejOxkgaTQPC2Bm+pQvFuqf7o18uObl/Bx3daX06kjLUNY/qa9f+YSqzqm/ic3SdrlfN0fvTlw2g==}
 
   compare-versions@6.1.1:
     resolution: {integrity: sha512-4hm4VPpIecmlg59CHXnRDnqGplJFrbLG4aFEl5vl6cK1u76ws3LLvX7ikFnTDl5vo39sjWD6AaDPYodJp/NNHg==}
@@ -4477,6 +4512,23 @@ snapshots:
     dependencies:
       size-limit: 14.3.0
 
+  '@tanstack/eslint-plugin-query@5.105.3(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)':
+    dependencies:
+      '@typescript-eslint/utils': 8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
+      eslint: 9.39.5(jiti@2.6.1)(supports-color@7.2.0)
+    optionalDependencies:
+      typescript: 7.1.0-beta
+    transitivePeerDependencies:
+      - supports-color
+
+  '@tanstack/eslint-plugin-router@1.162.0(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)':
+    dependencies:
+      '@typescript-eslint/utils': 8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
+      eslint: 9.39.5(jiti@2.6.1)(supports-color@7.2.0)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
   '@tanstack/eslint-plugin-start@0.1.0(patch_hash=364cc40b73326fe59c5d685ac247690de2302e3e731b7b7d37583701f9370644)(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)':
     dependencies:
       '@typescript-eslint/utils': 8.72.1(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
@@ -5188,6 +5240,8 @@ snapshots:
       color-name: 1.1.4
 
   color-name@1.1.4: {}
+
+  combinate@1.1.11: {}
 
   compare-versions@6.1.1: {}
 

@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "include": ["src", "upstream", "vite.config.ts"],
-  "exclude": ["upstream/src/__tests__"],
+  "exclude": [
+    "upstream/src/__tests__",
+    "upstream/tanstack-query/src/__tests__",
+    "upstream/tanstack-router/src/__tests__"
+  ],
   "compilerOptions": {
     "plugins": [
       {

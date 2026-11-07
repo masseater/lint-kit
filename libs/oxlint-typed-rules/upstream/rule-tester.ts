@@ -1,4 +1,4 @@
-import { Array, Option, Predicate, pipe } from "effect";
+import { Array, Boolean as Bool, Option, Predicate, pipe } from "effect";
 import type { Rule } from "vite-plus/lint/plugins";
 import { RuleTester as OxlintRuleTester } from "vite-plus/lint/plugins-dev";
 
@@ -8,20 +8,55 @@ type TestCases = OxlintRuleTester.TestCases;
 
 type Hook = (fn: () => void) => void;
 
-interface UpstreamConfig {
-  readonly languageOptions: Readonly<{
-    parserOptions: Readonly<{ tsconfigRootDir: string }>;
-  }>;
+interface UpstreamParserOptions {
+  readonly ecmaFeatures?: Readonly<{ jsx?: boolean | undefined }> | undefined;
+  readonly tsconfigRootDir?: string | undefined;
 }
 
-const DEFAULT_FILENAME = "react.tsx";
+interface UpstreamConfig {
+  readonly languageOptions?:
+    | Readonly<{ parserOptions?: UpstreamParserOptions | undefined }>
+    | undefined;
+}
+
+const JSX_FILENAME = "react.tsx";
+
+const TS_FILENAME = "file.ts";
+
+const parserOptionsOf = (config: UpstreamConfig | TestCase): Option.Option<UpstreamParserOptions> =>
+  Option.fromNullishOr(config.languageOptions).pipe(
+    Option.flatMap(({ parserOptions }) => Option.fromNullishOr(parserOptions)),
+  );
+
+const isJsx = (parserOptions: Option.Option<UpstreamParserOptions>): boolean =>
+  parserOptions.pipe(
+    Option.flatMap(({ ecmaFeatures }) => Option.fromNullishOr(ecmaFeatures)),
+    Option.exists(({ jsx }) => jsx === true),
+  );
+
+const defaultFilename = (config: UpstreamConfig, testCase: TestCase): string =>
+  Bool.match(isJsx(parserOptionsOf(testCase)) || isJsx(parserOptionsOf(config)), {
+    onTrue: () => JSX_FILENAME,
+    onFalse: () => TS_FILENAME,
+  });
 
 const located =
-  (rootDirectory: string) =>
-  <Case extends TestCase>(testCase: Case): Case => ({
-    ...testCase,
-    filename: `${rootDirectory}/${Option.getOrElse(Option.fromNullishOr(testCase.filename), () => DEFAULT_FILENAME)}`,
-  });
+  (config: UpstreamConfig) =>
+  <Case extends TestCase>(testCase: Case): Case => {
+    const filename = Option.getOrElse(Option.fromNullishOr(testCase.filename), () =>
+      defaultFilename(config, testCase),
+    );
+    return {
+      ...testCase,
+      filename: parserOptionsOf(config).pipe(
+        Option.flatMap(({ tsconfigRootDir }) => Option.fromNullishOr(tsconfigRootDir)),
+        Option.match({
+          onNone: () => filename,
+          onSome: (rootDirectory) => `${rootDirectory}/${filename}`,
+        }),
+      ),
+    };
+  };
 
 const isTestCase = (testCase: TestCase | string): testCase is TestCase =>
   !Predicate.isString(testCase);
@@ -59,18 +94,18 @@ class RuleTester {
 
   public static afterAll?: Hook;
 
-  readonly #rootDirectory: string;
+  readonly #config: UpstreamConfig;
 
   readonly #tester = new OxlintRuleTester({
     languageOptions: { parserOptions: { lang: "tsx" } },
   });
 
-  public constructor(config: UpstreamConfig) {
-    this.#rootDirectory = config.languageOptions.parserOptions.tsconfigRootDir;
+  public constructor(config: UpstreamConfig = {}) {
+    this.#config = config;
   }
 
   public run(name: string, rule: Rule, tests: TestCases): void {
-    const locate = located(this.#rootDirectory);
+    const locate = located(this.#config);
     this.#tester.run(name, rule, {
       valid: pipe(tests.valid, Array.map(asTestCase), Array.map(locate)),
       invalid: pipe(tests.invalid, Array.map(locate)),
@@ -78,5 +113,5 @@ class RuleTester {
   }
 }
 
-export type { Hook, TestCases, UpstreamConfig };
+export type { Hook, TestCases, UpstreamConfig, UpstreamParserOptions };
 export { RuleTester };

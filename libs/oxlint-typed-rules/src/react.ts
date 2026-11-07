@@ -1,7 +1,8 @@
 import eslintReact from "@eslint-react/eslint-plugin";
-import { Array as Arr, Option, Predicate, Record, String as Str, pipe } from "effect";
+import { Array as Arr, Option, Record, String as Str, pipe } from "effect";
 import type { CreateRule, Plugin } from "vite-plus/lint/plugins";
 
+import { rulesOf } from "./config-rules.ts";
 import { isTypedRule, withOptionalTypeInformation, withTypeInformation } from "./typed-rule.ts";
 import type { TypedRule } from "./typed-rule.ts";
 
@@ -15,11 +16,6 @@ type ReactPlugin = Plugin & {
 };
 
 const PREFIX = "@eslint-react/";
-
-const rulesOf = (config: unknown): Option.Option<Readonly<Record<string, unknown>>> =>
-  Option.liftPredicate(config, Predicate.hasProperty("rules")).pipe(
-    Option.flatMap(({ rules }) => Option.liftPredicate(rules, Predicate.isReadonlyObject)),
-  );
 
 const configs: Readonly<Record<string, Config>> = pipe(
   eslintReact.configs,

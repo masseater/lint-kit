@@ -12,7 +12,9 @@ interface CompatChecker {
   readonly getTypeAtLocation: (node: Node) => CompatType;
   readonly getTypeOfSymbol: (symbol: CompatSymbol) => CompatType;
   readonly getBaseConstraintOfType: (type: CompatType) => CompatType | undefined;
+  readonly getAwaitedType: (type: CompatType) => CompatType | undefined;
   readonly getFullyQualifiedName: (symbol: CompatSymbol) => string;
+  readonly typeToString: (type: CompatType) => string;
 }
 
 interface CompatProgram {
@@ -29,11 +31,10 @@ const compatChecker = (project: Project, checker: Checker): CompatChecker => ({
   getTypeAtLocation: (node) => CompatType.intern(project, checker.getTypeAtLocation(node)),
   getTypeOfSymbol: (symbol) => CompatType.intern(project, checker.getTypeOfSymbol(symbol.native)),
   getBaseConstraintOfType: (type) =>
-    Option.fromNullishOr(checker.getBaseConstraintOfType(type.native)).pipe(
-      Option.map((constraint) => CompatType.intern(project, constraint)),
-      Option.getOrUndefined,
-    ),
+    CompatType.optional(project, checker.getBaseConstraintOfType(type.native)),
+  getAwaitedType: (type) => CompatType.optional(project, checker.getAwaitedType(type.native)),
   getFullyQualifiedName: (symbol) => checker.getFullyQualifiedName(symbol.native),
+  typeToString: (type) => checker.typeToString(type.native),
 });
 
 const isOwnSourceFile = (fileName: string): boolean =>

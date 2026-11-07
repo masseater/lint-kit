@@ -25,6 +25,7 @@
     "@types/react",
     "@typescript-eslint/types",
     "dedent",
+    "combinate",
     "@feature-sliced/filesystem",
     "fastest-levenshtein",
     "pluralize",
@@ -35,6 +36,8 @@
     ".claude/**",
     "libs/*/example/**",
     "libs/oxlint-typed-rules/upstream/react/**",
+    "libs/oxlint-typed-rules/upstream/tanstack-query/**",
+    "libs/oxlint-typed-rules/upstream/tanstack-router/**",
     "libs/vp-tools/upstream/**",
   ],
   "dynamicallyLoaded": [
@@ -48,7 +51,15 @@
     { "implements": "LegacySymbol", "members": ["getName", "getDeclarations"] },
     {
       "implements": "LegacyType",
-      "members": ["symbol", "aliasSymbol", "types", "getProperty", "getProperties"],
+      "members": [
+        "symbol",
+        "aliasSymbol",
+        "types",
+        "getSymbol",
+        "getProperty",
+        "getProperties",
+        "getCallSignatures",
+      ],
     },
   ],
   "audit": { "gate": "all" },
