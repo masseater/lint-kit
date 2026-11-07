@@ -44,25 +44,23 @@ const effectRules: Rules = Object.fromEntries(
   ),
 );
 
+const upstreamCopies: readonly string[] = [
+  "libs/oxlint-typed-rules/upstream/src/__tests__/**",
+  "libs/oxlint-typed-rules/upstream/react/**",
+  "libs/vp-tools/upstream/**",
+];
+
 export default defineConfig({
   staged: {
     "*": "vp check --fix",
   },
   fmt: {
-    ignorePatterns: [
-      "CHANGELOG.md",
-      "libs/oxlint-typed-rules/upstream/src/__tests__/**",
-      "libs/oxlint-typed-rules/upstream/react/**",
-    ],
+    ignorePatterns: ["CHANGELOG.md", ...upstreamCopies],
     sortImports: true,
     sortPackageJson: true,
   },
   lint: {
-    ignorePatterns: [
-      "libs/*/example/**",
-      "libs/oxlint-typed-rules/upstream/src/__tests__/**",
-      "libs/oxlint-typed-rules/upstream/react/**",
-    ],
+    ignorePatterns: ["libs/*/example/**", ...upstreamCopies],
     plugins: [
       "eslint",
       "typescript",
@@ -131,11 +129,15 @@ export default defineConfig({
               from: "package",
               package: "typescript",
               name: [
+                "API",
                 "Checker",
                 "CompilerHost",
                 "CompilerOptions",
+                "ConfigFileResponse",
                 "Declaration",
+                "DeclarationBase",
                 "Expression",
+                "ExpressionBase",
                 "Node",
                 "NodeHandle",
                 "NumericLiteral",
@@ -150,6 +152,7 @@ export default defineConfig({
                 "Type",
                 "TypeChecker",
                 "TypeNode",
+                "TypeNodeBase",
                 "UnionTypeNode",
                 "VariableDeclaration",
                 "VariableDeclarationList",
@@ -201,6 +204,8 @@ export default defineConfig({
           "libs/oxlint-typed-rules/src/react.ts",
           "libs/oxlint-typed-rules/src/tanstack-start.ts",
           "libs/oxlint-typed-rules/src/ts-compat.ts",
+          "libs/vp-tools/src/fsd.ts",
+          "libs/vp-tools/src/fsd-typescript.ts",
         ],
         rules: { "import/no-default-export": "off" },
       },

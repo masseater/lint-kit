@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "@effect/platform-node": "catalog:",
-    "effect": "catalog:stack",
-    "typescript-6": "catalog:"
+    "effect": "catalog:stack"
   },
   "devDependencies": {
     "@effect/vitest": "catalog:",
@@ -17,5 +16,8 @@
     "typescript": "catalog:stack",
     "vite-plus": "catalog:stack",
     "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": ">=7.1.0-beta"
   }
 }

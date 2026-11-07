@@ -25,7 +25,8 @@ Use intent maintainer setup to initialize missing records, maintainer add to reg
 - `@eslint-react` のルールは `upstream/react/` に元のリポの spec を手を入れずに置き、`upstream/react-testkit.ts` が oxlint の RuleTester に合わせる。oxlint の RuleTester との差（意味解析のエラー、重複したケース、配列の `output`）はこの testkit で吸収し、spec は書き換えない。
 - tsdown は TypeScript 7.0 でしか tsgo で型定義を出さないので、`patches/` の vite-plus-core の patch で 7 系全体を受け入れる。
 - `libs/oxlint-typed-rules/upstream/src/__tests__` は元のリポのテストを手を入れずに置いたもので、パッケージの `vite.config.ts` の alias が oxlint の RuleTester と移植したルールへ向ける。ルールを足すときも元のテストをそのまま持ち込み、すべて通るまで出さない。`@tanstack/eslint-plugin-start` の `globals` は元のリポの lockfile と同じ版に固定する。
-- vocablint の検査の本体は `libs/vocablint`（`@vocablint/core`）にあり、`tools/vocablint`（`@r_masseater/vocablint`）は CLI と oxlint プラグインだけを持つ。npm にはまだ出していない。`checkRepository` は tsconfig.json ごとにプログラムを作り、全プロジェクトから `@vocablint` の持ち主を集めてから各プロジェクトを解析し、最後に持ち主の無い値の集合の重複を突き合わせる。
+- `libs/vp-tools` の `./fsd` は `@feature-sliced/steiger-plugin` と `@feature-sliced/filesystem` を同梱し、filesystem の `typescript` の import を `src/fsd-typescript.ts` に向けて import の解決を TypeScript 7.1 の `createModuleResolver` で行う。`upstream/filesystem/specs` は元のリポの spec を手を入れずに置いたものである。
+- vocablint の検査の本体は `libs/vocablint`（`@vocablint/core`）にあり、`tools/vocablint`（`@r_masseater/vocablint`）は CLI と oxlint プラグインだけを持つ。npm にはまだ出していない。`checkRepository` は TypeScript 7.1 の `typescript/sync` で tsgo を 1 つ立てて tsconfig.json ごとにプログラムを作り、全プロジェクトから `@vocablint` の持ち主を集めてから各プロジェクトを解析し、最後に持ち主の無い値の集合の重複を突き合わせる。`typescript` は peer に置く。oxlint プラグインは読み込みの時点で CLI を子プロセスで動かして結果を持つ。oxlint が領域を確保した後の fork は ENOMEM で落ちる。
 
 ## 計測
 

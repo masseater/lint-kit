@@ -1,10 +1,11 @@
 {
   "name": "@r_masseater/vp-tools",
   "version": "0.1.1",
-  "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts.",
+  "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin for TypeScript 7.",
   "keywords": [
     "betterleaks",
     "commitlint",
+    "feature-sliced",
     "steiger",
     "textlint",
     "vite-plus"
@@ -23,13 +24,18 @@
     "vp-tools": "./dist/cli.mjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "THIRD-PARTY-NOTICES"
   ],
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
+    },
+    "./fsd": {
+      "types": "./dist/fsd.d.mts",
+      "default": "./dist/fsd.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -49,15 +55,21 @@
     "@textlint/config-loader": "15.8.0",
     "@textlint/kernel": "15.8.0",
     "effect": "catalog:stack",
+    "fastest-levenshtein": "1.0.16",
     "minimatch": "11.0.3",
+    "pluralize": "8.0.0",
     "semver": "7.8.6",
     "smol-toml": "1.9.1",
     "steiger": "0.9.0",
     "textlint": "15.8.0",
+    "tsconfck": "3.1.6",
+    "web-tree-sitter": "0.26.13",
     "yaml": "2.9.1"
   },
   "devDependencies": {
     "@effect/vitest": "catalog:",
+    "@feature-sliced/filesystem": "3.1.1",
+    "@feature-sliced/steiger-plugin": "0.8.2",
     "@size-limit/file": "catalog:",
     "@types/node": "catalog:",
     "@types/semver": "7.8.0",
@@ -68,13 +80,28 @@
     "vite-plus": "catalog:stack"
   },
   "peerDependencies": {
+    "typescript": ">=7.1.0-beta",
     "vite": "*",
     "vite-plus": ">=1.5.0"
   },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
   "size-limit": [
     {
-      "path": "dist/*.mjs",
+      "name": "tools",
+      "path": [
+        "dist/*.mjs",
+        "!dist/fsd.mjs"
+      ],
       "limit": "4635 B"
+    },
+    {
+      "name": "fsd",
+      "path": "dist/fsd.mjs",
+      "limit": "9364 B"
     }
   ],
   "engines": {
