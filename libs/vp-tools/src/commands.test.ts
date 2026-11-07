@@ -17,7 +17,7 @@ import {
 
 import type { CommandError, CommandServices } from "./command.ts";
 import { COMMANDS } from "./commands.ts";
-import { directoryWith, lines } from "./fixture.test.support.ts";
+import { commitEmpty, directoryWith, lines } from "./fixture.test.support.ts";
 
 interface Captured {
   readonly exit: Exit.Exit<void, CommandError>;
@@ -130,6 +130,23 @@ const lintsTheCommitMessageFile = Effect.gen(function* lintsTheCommitMessageFile
   assertTrue(Exit.isFailure(missing.exit));
 });
 
+const lintsACommitRange = Effect.gen(function* lintsACommitRange() {
+  const root = yield* directoryWith(REPOSITORY);
+  yield* commitEmpty(root, "feat: first");
+  yield* commitEmpty(root, "feat: second");
+  yield* commitEmpty(root, "no type");
+  const passed = yield* run("commitlint", root, ["--range", "HEAD~2..HEAD~1"]);
+  const failed = yield* run("commitlint", root, ["--range", "HEAD~1..HEAD"]);
+  const extra = yield* run("commitlint", root, ["--range", "HEAD~1..HEAD", "more"]);
+  deepStrictEqual(
+    pipe(
+      [passed, failed, extra],
+      Arr.map(({ exit }) => Exit.isSuccess(exit)),
+    ),
+    [true, false, false],
+  );
+});
+
 const checksSlices = Effect.gen(function* checksSlices() {
   const root = yield* directoryWith({ ...REPOSITORY, "src/shared/index.ts": "export {};\n" });
   const { exit, output } = yield* run("steiger", root, ["src"]);
@@ -147,5 +164,6 @@ layer(fixtureLayer)("vp-tools commands", (it) => {
     () => passesTheConfigToBetterleaks,
   );
   it.effect("lints the commit message file and needs one", () => lintsTheCommitMessageFile);
+  it.effect("lints the first-parent commits of a revision range", () => lintsACommitRange);
   it.effect("checks slices with the steiger section", () => checksSlices);
 });

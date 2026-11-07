@@ -41,7 +41,34 @@ const directoryWith = (
     return root;
   });
 
+const commitEmpty = (
+  root: string,
+  message: string,
+): Effect.Effect<void, never, ChildProcessSpawner.ChildProcessSpawner> =>
+  Effect.gen(function* commit() {
+    const spawner = yield* ChildProcessSpawner.ChildProcessSpawner;
+    yield* spawner
+      .exitCode(
+        ChildProcess.make(
+          "git",
+          [
+            "-c",
+            "user.name=vp-tools",
+            "-c",
+            "user.email=vp-tools@example.com",
+            "commit",
+            "-q",
+            "--allow-empty",
+            "-m",
+            message,
+          ],
+          { cwd: root },
+        ),
+      )
+      .pipe(Effect.orDie);
+  });
+
 const lines = (...rows: readonly string[]): string => `${Arr.join(rows, "\n")}\n`;
 
-export { directoryWith, lines };
+export { commitEmpty, directoryWith, lines };
 export type { FixtureServices };
