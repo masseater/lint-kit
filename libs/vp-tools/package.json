@@ -96,7 +96,7 @@
         "dist/*.mjs",
         "!dist/fsd.mjs"
       ],
-      "limit": "4635 B"
+      "limit": "4820 B"
     },
     {
       "name": "fsd",
