@@ -17,12 +17,15 @@ catalog:
   "@effect/vitest": 4.1.2
   "@openrouter/sdk": 1.5.33
   "@size-limit/file": 14.3.0
+  "@tanstack/eslint-plugin-query": 5.105.3
+  "@tanstack/eslint-plugin-router": 1.162.0
   "@tanstack/eslint-plugin-start": 0.1.0
   "@tanstack/intent": 0.5.6
   "@tsconfig/strictest": 2.0.8
   "@typescript-eslint/types": 8.72.1
   "@typescript-eslint/typescript-estree": 8.72.1
   "@typescript-eslint/utils": ^8.72.1
+  combinate: 1.1.11
   dedent: 1.7.2
   eslint-plugin-no-comments: 1.2.1
   oxlint: 1.90.0

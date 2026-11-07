@@ -1,13 +1,15 @@
 {
   "name": "@r_masseater/oxlint-typed-rules",
   "version": "0.1.1",
-  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules and ESLint React.",
+  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules, TanStack Query, TanStack Router and ESLint React.",
   "keywords": [
     "eslint",
     "eslint-react",
     "oxlint",
     "oxlint-plugin",
     "react",
+    "tanstack-query",
+    "tanstack-router",
     "tanstack-start",
     "typescript"
   ],
@@ -29,6 +31,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./react": "./src/react.ts",
+    "./tanstack-query": "./src/tanstack-query.ts",
+    "./tanstack-router": "./src/tanstack-router.ts",
     "./tanstack-start": "./src/tanstack-start.ts",
     "./package.json": "./package.json"
   },
@@ -41,6 +45,14 @@
       "./react": {
         "types": "./dist/react.d.mts",
         "default": "./dist/react.mjs"
+      },
+      "./tanstack-query": {
+        "types": "./dist/tanstack-query.d.mts",
+        "default": "./dist/tanstack-query.mjs"
+      },
+      "./tanstack-router": {
+        "types": "./dist/tanstack-router.d.mts",
+        "default": "./dist/tanstack-router.mjs"
       },
       "./tanstack-start": {
         "types": "./dist/tanstack-start.d.mts",
@@ -63,6 +75,8 @@
     "@effect/vitest": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
     "@size-limit/file": "catalog:",
+    "@tanstack/eslint-plugin-query": "catalog:",
+    "@tanstack/eslint-plugin-router": "catalog:",
     "@tanstack/eslint-plugin-start": "catalog:",
     "@tsconfig/strictest": "catalog:",
     "@types/node": "catalog:",
@@ -70,6 +84,7 @@
     "@typescript-eslint/types": "catalog:",
     "@typescript-eslint/typescript-estree": "catalog:",
     "@typescript-eslint/utils": "catalog:",
+    "combinate": "catalog:",
     "dedent": "catalog:",
     "publint": "catalog:",
     "size-limit": "catalog:",
@@ -83,15 +98,27 @@
     {
       "name": "react",
       "path": "dist/react.mjs",
-      "limit": "170642 B"
+      "limit": "169117 B"
+    },
+    {
+      "name": "tanstack-query",
+      "path": "dist/tanstack-query.mjs",
+      "limit": "11778 B"
+    },
+    {
+      "name": "tanstack-router",
+      "path": "dist/tanstack-router.mjs",
+      "limit": "3398 B"
     },
     {
       "name": "core",
       "path": [
         "dist/*.mjs",
-        "!dist/react.mjs"
+        "!dist/react.mjs",
+        "!dist/tanstack-query.mjs",
+        "!dist/tanstack-router.mjs"
       ],
-      "limit": "26452 B"
+      "limit": "29798 B"
     }
   ],
   "engines": {

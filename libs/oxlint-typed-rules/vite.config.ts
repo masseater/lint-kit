@@ -38,10 +38,17 @@ const upstreamRuleOf = (id: string, importer: string): Option.Option<string> =>
     Option.map(({ plugin, rule }) => `${VIRTUAL_RULE}${plugin}/${rule}`),
   );
 
-const upstreamRuleModule = (id: string): Option.Option<string> =>
-  Option.liftPredicate(id, (candidate) => candidate.startsWith(VIRTUAL_RULE)).pipe(
-    Option.map((virtual) => virtual.slice(VIRTUAL_RULE.length).split("/")),
+const virtualRuleOf = (
+  prefix: string,
+  id: string,
+): Option.Option<{ readonly plugin: string; readonly rule: string }> =>
+  Option.liftPredicate(id, (candidate) => candidate.startsWith(prefix)).pipe(
+    Option.map((virtual) => virtual.slice(prefix.length).split("/")),
     Option.flatMap(([plugin, rule]) => ruleParts({ plugin, rule })),
+  );
+
+const upstreamRuleModule = (id: string): Option.Option<string> =>
+  virtualRuleOf(VIRTUAL_RULE, id).pipe(
     Option.map(({ plugin, rule }) =>
       [
         `import plugin from ${JSON.stringify(local("src/react.ts"))};`,
@@ -62,8 +69,74 @@ const upstreamReactRules = {
   load: (id: string): string | undefined => Option.getOrUndefined(upstreamRuleModule(id)),
 } as const;
 
+const UPSTREAM_TANSTACK_TEST =
+  /\/upstream\/tanstack-(?<plugin>query|router)\/src\/__tests__\/[^/]+\.ts$/u;
+
+const UPSTREAM_TANSTACK_RULE = /^\.\.\/rules\/(?<rule>[^/]+)\/\k<rule>\.rule$/u;
+
+const VIRTUAL_TANSTACK_RULE = "\0upstream-tanstack-rule:";
+
+const VIRTUAL_PARSER = "\0upstream-typescript-eslint-parser";
+
+const upstreamSource = (plugin: string, path: string): string =>
+  local(`node_modules/@tanstack/eslint-plugin-${plugin}/src/${path}.ts`);
+
+const tanstackPluginOf = (importer: string): Option.Option<string> =>
+  Option.fromNullishOr(UPSTREAM_TANSTACK_TEST.exec(importer)).pipe(
+    Option.flatMap(({ groups }) => Option.fromNullishOr(groups)),
+    Option.flatMap(({ plugin }) => Option.fromNullishOr(plugin)),
+  );
+
+const tanstackRuleOf = (id: string): Option.Option<string> =>
+  Option.fromNullishOr(UPSTREAM_TANSTACK_RULE.exec(id)).pipe(
+    Option.flatMap(({ groups }) => Option.fromNullishOr(groups)),
+    Option.flatMap(({ rule }) => Option.fromNullishOr(rule)),
+  );
+
+const tanstackModuleOf = (plugin: string, id: string): Option.Option<string> =>
+  Option.liftPredicate(id, (candidate) => candidate.startsWith("../")).pipe(
+    Option.map((relative) =>
+      tanstackRuleOf(relative).pipe(
+        Option.match({
+          onSome: (rule) => `${VIRTUAL_TANSTACK_RULE}${plugin}/${rule}`,
+          onNone: () => upstreamSource(plugin, relative.slice("../".length)),
+        }),
+      ),
+    ),
+    Option.orElse(() =>
+      Option.liftPredicate(VIRTUAL_PARSER, () => id === "@typescript-eslint/parser"),
+    ),
+  );
+
+const tanstackRuleModule = (id: string): Option.Option<string> =>
+  virtualRuleOf(VIRTUAL_TANSTACK_RULE, id).pipe(
+    Option.map(({ plugin, rule }) =>
+      [
+        `import plugin from ${JSON.stringify(local(`src/tanstack-${plugin}.ts`))};`,
+        `export * from ${JSON.stringify(upstreamSource(plugin, `rules/${rule}/${rule}.rule`))};`,
+        `export const name = ${JSON.stringify(rule)};`,
+        `export const rule = plugin.rules[${JSON.stringify(rule)}];`,
+      ].join("\n"),
+    ),
+    Option.orElse(() =>
+      Option.liftPredicate('export const meta = { name: "oxc" };', () => id === VIRTUAL_PARSER),
+    ),
+  );
+
+const upstreamTanstackModules = {
+  name: "upstream-tanstack-modules",
+  enforce: "pre",
+  resolveId: (id: string, importer: string | undefined): string | undefined =>
+    Option.fromNullishOr(importer).pipe(
+      Option.flatMap(tanstackPluginOf),
+      Option.flatMap((plugin) => tanstackModuleOf(plugin, id)),
+      Option.getOrUndefined,
+    ),
+  load: (id: string): string | undefined => Option.getOrUndefined(tanstackRuleModule(id)),
+} as const;
+
 export default defineConfig({
-  plugins: [upstreamReactRules],
+  plugins: [upstreamReactRules, upstreamTanstackModules],
   run: {
     tasks: {
       build: { command: "vp pack", cache: false },
@@ -72,7 +145,13 @@ export default defineConfig({
     },
   },
   pack: {
-    entry: ["src/index.ts", "src/tanstack-start.ts", "src/react.ts"],
+    entry: [
+      "src/index.ts",
+      "src/tanstack-start.ts",
+      "src/tanstack-query.ts",
+      "src/tanstack-router.ts",
+      "src/react.ts",
+    ],
     platform: "node",
     sourcemap: true,
     alias: shims,
@@ -115,12 +194,14 @@ export default defineConfig({
     },
     server: {
       deps: {
-        inline: ["@tanstack/eslint-plugin-start", /@eslint-react\//u, /eslint-plugin-react-/u],
+        inline: [/@tanstack\/eslint-plugin-/u, /@eslint-react\//u, /eslint-plugin-react-/u],
       },
     },
     include: [
       "src/**/*.test.ts",
       "upstream/src/__tests__/*.test.ts",
+      "upstream/tanstack-query/src/__tests__/*.test.ts",
+      "upstream/tanstack-router/src/__tests__/*.test.ts",
       "upstream/react/plugins/**/*.spec.ts",
     ],
   },
