@@ -54,4 +54,5 @@ const plugin: ReactPlugin = {
   rules: pipe(upstreamRules, Record.filter(isTypedRule), Record.map(withTypes)),
 };
 
+export type { Config, ReactPlugin };
 export default plugin;

@@ -70,7 +70,6 @@
     "@typescript-eslint/types": "catalog:",
     "@typescript-eslint/typescript-estree": "catalog:",
     "@typescript-eslint/utils": "catalog:",
-    "@typescript-eslint/visitor-keys": "catalog:",
     "dedent": "catalog:",
     "publint": "catalog:",
     "size-limit": "catalog:",

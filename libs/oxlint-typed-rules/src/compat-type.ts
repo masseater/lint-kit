@@ -41,7 +41,15 @@ const constituentsOf = (native: NativeType): readonly NativeType[] =>
     Option.getOrElse((): readonly NativeType[] => []),
   );
 
-class CompatType {
+interface LegacyType {
+  readonly symbol: CompatSymbol | undefined;
+  readonly aliasSymbol: CompatSymbol | undefined;
+  readonly types: readonly CompatType[];
+  readonly getProperty: (name: string) => CompatSymbol | undefined;
+  readonly getProperties: () => readonly CompatSymbol[];
+}
+
+class CompatType implements LegacyType {
   static readonly #interned = new WeakMap<NativeType, CompatType>();
 
   public readonly native: NativeType;
@@ -133,4 +141,5 @@ class CompatType {
   }
 }
 
+export type { LegacyType, LiteralValue, PseudoBigInt };
 export { CompatType };

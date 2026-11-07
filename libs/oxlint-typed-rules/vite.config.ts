@@ -12,14 +12,10 @@ const shims: Readonly<Record<string, string>> = {
   ),
 };
 
-const typescriptShims = {
-  name: "typescript-shims",
-  enforce: "pre",
-  resolveId: {
-    order: "pre",
-    handler: (id: string): string | undefined => shims[id],
-  },
-} as const;
+const shimAliases = Object.entries(shims).map(([name, replacement]) => ({
+  find: new RegExp(`^${name}$`, "u"),
+  replacement,
+}));
 
 const UPSTREAM_REACT_SPEC =
   /\/upstream\/react\/plugins\/eslint-plugin-react-(?<plugin>[a-z-]+)\/src\/rules\/(?<rule>[^/]+)\/[^/]+\.spec\.ts$/u;
@@ -67,7 +63,7 @@ const upstreamReactRules = {
 } as const;
 
 export default defineConfig({
-  plugins: [typescriptShims, upstreamReactRules],
+  plugins: [upstreamReactRules],
   run: {
     tasks: {
       build: { command: "vp pack", cache: false },
@@ -79,7 +75,7 @@ export default defineConfig({
     entry: ["src/index.ts", "src/tanstack-start.ts", "src/react.ts"],
     platform: "node",
     sourcemap: true,
-    plugins: [typescriptShims],
+    alias: shims,
     deps: {
       alwaysBundle: [/^(?!effect(?:\/|$)|typescript\/)/u],
       neverBundle: [/^(?:effect(?:\/|$)|typescript\/)/u],
@@ -90,6 +86,7 @@ export default defineConfig({
   },
   resolve: {
     alias: [
+      ...shimAliases,
       { find: "@typescript-eslint/rule-tester", replacement: local("upstream/rule-tester.ts") },
       { find: "@local/testkit", replacement: local("upstream/react-testkit.ts") },
       {

@@ -106,4 +106,5 @@ const createRuleTesterForJSXEmit = (jsxEmit: number): RuleTester =>
     }),
   );
 
+export type { InvalidCase, RuleTester, UpstreamCases, ValidCase };
 export { createRuleTesterForJSXEmit, ruleTester, ruleTesterWithTypes };

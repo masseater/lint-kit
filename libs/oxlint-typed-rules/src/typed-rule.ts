@@ -80,5 +80,5 @@ const typedRules = (
 ): Record.ReadonlyRecord<string, CreateRule> =>
   pipe(rules, Record.filter(isTypedRule), Record.map(withTypeInformation));
 
-export type { TypedContext, TypedRule };
+export type { TypedContext, TypedRule, TypedSourceCode };
 export { isTypedRule, typedRules, withOptionalTypeInformation, withTypeInformation };
