@@ -6,25 +6,36 @@ interface CommitlintConfig extends Readonly<CommitlintUserConfig> {}
 
 type SteigerConfig = readonly ReturnType<typeof defineSteigerConfig>[number][];
 
-interface GitleaksAllowlist {
+interface BetterleaksRule {
+  readonly id: string;
   readonly description?: string;
-  readonly condition?: "AND" | "OR";
-  readonly commits?: readonly string[];
-  readonly paths?: readonly string[];
-  readonly regexTarget?: "match" | "line" | "secret";
-  readonly regexes?: readonly string[];
-  readonly stopwords?: readonly string[];
-  readonly targetRules?: readonly string[];
+  readonly keywords?: readonly string[];
+  readonly regex?: string;
+  readonly path?: string;
+  readonly valueGroup?: number;
+  readonly specificity?: number;
+  readonly tags?: readonly string[];
+  readonly skipReport?: boolean;
+  readonly filter?: string;
+  readonly confidence?: "low" | "medium" | "high";
+  readonly validate?: string;
+  readonly analyze?: string;
+  readonly revoke?: string;
 }
 
-interface GitleaksConfig {
+interface BetterleaksConfig {
+  readonly title?: string;
+  readonly description?: string;
+  readonly minVersion?: string;
+  readonly prefilter?: string;
+  readonly filter?: string;
   readonly extend?: Readonly<{
     useDefault?: boolean;
     path?: string;
     disabledRules?: readonly string[];
   }>;
-  readonly allowlists?: readonly GitleaksAllowlist[];
-  readonly ignoredFindings?: readonly string[];
+  readonly rules?: readonly BetterleaksRule[];
+  readonly ignoredSecrets?: readonly string[];
 }
 
 interface TextlintConfig extends TextlintRcConfig {
@@ -37,9 +48,9 @@ interface DependencyRules {
 }
 
 interface ToolSections {
+  readonly betterleaks?: BetterleaksConfig;
   readonly commitlint?: CommitlintConfig;
   readonly dependencyRules?: DependencyRules;
-  readonly gitleaks?: GitleaksConfig;
   readonly steiger?: SteigerConfig;
   readonly textlint?: TextlintConfig;
 }
@@ -51,10 +62,10 @@ declare module "vite" {
 type ToolSection = keyof ToolSections;
 
 export type {
+  BetterleaksConfig,
+  BetterleaksRule,
   CommitlintConfig,
   DependencyRules,
-  GitleaksAllowlist,
-  GitleaksConfig,
   SteigerConfig,
   TextlintConfig,
   ToolSection,
