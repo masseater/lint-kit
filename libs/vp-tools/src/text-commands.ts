@@ -1,8 +1,10 @@
-import { Array as Arr, Effect, pipe } from "effect";
+import { Array as Arr, Effect, Option, pipe } from "effect";
 
 import type { Command } from "./command.ts";
 import { lintCommitMessageFile } from "./commitlint.ts";
 import { loadSection } from "./config.ts";
+import { toolFailed } from "./errors.ts";
+import type { VpToolsError } from "./errors.ts";
 import { listGitFiles } from "./git.ts";
 import { finish, writeTo } from "./output.ts";
 import { checkSlices } from "./steiger.ts";
@@ -35,8 +37,17 @@ const runTextlint: Command = (root, args) =>
     return yield* finish(yield* lintTexts(config, root, files));
   });
 
-const runCommitlint: Command = (root, [messageFile = ""]) =>
+const messageFileOf = (args: readonly string[]): Effect.Effect<string, VpToolsError> =>
+  Arr.head(args).pipe(
+    Option.match({
+      onSome: Effect.succeed,
+      onNone: () => Effect.fail(toolFailed("commitlint")("no commit message file was given")),
+    }),
+  );
+
+const runCommitlint: Command = (root, args) =>
   Effect.gen(function* commitlint() {
+    const messageFile = yield* messageFileOf(args);
     const config = yield* loadSection(root, "commitlint");
     return yield* finish(yield* lintCommitMessageFile(config, root, messageFile));
   });
