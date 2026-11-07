@@ -20,8 +20,10 @@ Use intent maintainer setup to initialize missing records, maintainer add to reg
 - presets は質問の一覧を `createDecisionPlugin` に渡すだけで、ワークスペースのプラグインを参照する。判定の振る舞いはプラグイン側で直す。
 - `libs/oxlint-plugin-decision/skills/write-decision-rules` は npm に同梱する Intent のスキルである。`vp run skills:check` で検査し、これは verify に含まれない。
 - 1 つのテストファイルは、パッケージのディレクトリで `vp test --project=mock tests/<name>.test.ts` として動かす。
-- `libs/oxlint-typed-rules` は型情報を要る ESLint のルールに、tsconfig ごとに TypeScript 6 の Program を作って `parserServices` を渡し、oxlint の JS プラグインとして動かす。移植したルールは元のプラグインを `devDependencies` に入れて `dist/` に同梱し、直す点はルートの `patches/` に置く。`@typescript-eslint/utils` は `eslint-utils` だけに差し替えて ESLint を同梱しない。
-- TypeScript 6 は `typescript-6` の別名で依存に入れ、同梱したルールの `typescript` の import も `typescript-6` に書き換える。`typescript` の名前で入れると、使う側の pnpm が vite-plus などの peer をこの版に解決し、vitest が別の実体を読んでテストが落ちる。
+- `libs/oxlint-typed-rules` は型情報を要る ESLint のルールに、tsconfig ごとに TypeScript 7（tsgo）の Program を作って `parserServices` を渡し、oxlint の JS プラグインとして動かす。移植したルールは元のプラグインを `devDependencies` に入れて `dist/` に同梱し、直す点はルートの `patches/` に置く。`@typescript-eslint/utils` は `eslint-utils` だけに差し替えて ESLint を同梱しない。
+- TypeScript は 7 以降だけを使う。同梱したルールの `typescript` の import は、ビルドで `src/ts-compat.ts` に向け、TypeScript 7.1 の `typescript/sync`・`typescript/ast` で組んだ層を読ませる。ルールが新しい API を使ったら、この層に足す。
+- `@eslint-react` のルールは `upstream/react/` に元のリポの spec を手を入れずに置き、`upstream/react-testkit.ts` が oxlint の RuleTester に合わせる。oxlint の RuleTester との差（意味解析のエラー、重複したケース、配列の `output`）はこの testkit で吸収し、spec は書き換えない。
+- tsdown は TypeScript 7.0 でしか tsgo で型定義を出さないので、`patches/` の vite-plus-core の patch で 7 系全体を受け入れる。
 - `libs/oxlint-typed-rules/upstream/src/__tests__` は元のリポのテストを手を入れずに置いたもので、パッケージの `vite.config.ts` の alias が oxlint の RuleTester と移植したルールへ向ける。ルールを足すときも元のテストをそのまま持ち込み、すべて通るまで出さない。`@tanstack/eslint-plugin-start` の `globals` は元のリポの lockfile と同じ版に固定する。
 - vocablint の検査の本体は `libs/vocablint`（`@vocablint/core`）にあり、`tools/vocablint`（`@r_masseater/vocablint`）は CLI と oxlint プラグインだけを持つ。npm にはまだ出していない。`checkRepository` は tsconfig.json ごとにプログラムを作り、全プロジェクトから `@vocablint` の持ち主を集めてから各プロジェクトを解析し、最後に持ち主の無い値の集合の重複を突き合わせる。
 

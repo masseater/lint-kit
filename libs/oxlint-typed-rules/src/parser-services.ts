@@ -1,10 +1,12 @@
-import { Option } from "effect";
-import { SyntaxKind } from "typescript-7/ast";
-import type { Node, SourceFile } from "typescript-7/ast";
+import { Array as Arr, Option, Predicate, pipe } from "effect";
+import { SyntaxKind } from "typescript/ast";
+import type { Node, SourceFile } from "typescript/ast";
 import type { Context, Location, Range } from "vite-plus/lint/plugins";
 
-import { memoizeByKey } from "./memo.ts";
-import type { CompatProgram } from "./program.ts";
+import type { CompatSymbol } from "./compat-symbol.ts";
+import type { CompatType } from "./compat-type.ts";
+import type { CompatProgram } from "./compat.ts";
+import { lazily, memoizeByKey } from "./memo.ts";
 
 interface RangedNode {
   readonly range: Readonly<Range>;
@@ -22,6 +24,8 @@ interface ParserServices {
   readonly tsNodeToESTreeNodeMap: {
     readonly get: (node: Node) => MappedNode | undefined;
   };
+  readonly getTypeAtLocation: (node: RangedNode) => CompatType;
+  readonly getSymbolAtLocation: (node: RangedNode) => CompatSymbol | undefined;
 }
 
 interface FileProgram {
@@ -67,22 +71,66 @@ const toMappedNode = ({ context }: FileProgram, node: Node): MappedNode => {
   };
 };
 
-const createParserServices = (file: FileProgram): ParserServices => ({
-  program: file.program,
-  esTreeNodeToTSNodeMap: {
-    get: memoizeByKey((node: RangedNode) => innermostSpanning(file.sourceFile, node.range)),
-  },
-  tsNodeToESTreeNodeMap: {
-    get: (node) =>
-      Option.liftPredicate(
-        node,
-        (candidate) => candidate.getSourceFile().fileName === file.sourceFile.fileName,
-      ).pipe(
-        Option.map((candidate) => toMappedNode(file, candidate)),
-        Option.getOrUndefined,
-      ),
-  },
-});
+const rangeKey = ([start, end]: Readonly<Range>): string => `${String(start)}:${String(end)}`;
+
+const isRangedNode = (value: unknown): value is MappedNode =>
+  Predicate.hasProperty(value, "type") &&
+  Predicate.isString(value.type) &&
+  Predicate.hasProperty(value, "range") &&
+  Array.isArray(value.range);
+
+const childNodesOf = (node: MappedNode, keys: readonly string[]): readonly MappedNode[] =>
+  pipe(
+    keys,
+    Arr.flatMap((key) => {
+      const child: unknown = Reflect.get(node, key);
+      return Arr.ensure(child);
+    }),
+    Arr.filter(isRangedNode),
+  );
+
+const esTreeIndex = ({ context }: FileProgram): ReadonlyMap<string, MappedNode> => {
+  const index = new Map<string, MappedNode>();
+  const { visitorKeys } = context.sourceCode;
+  const visit = (node: MappedNode): void => {
+    const key = rangeKey(node.range);
+    if (!index.has(key)) {
+      index.set(key, node);
+    }
+    for (const child of childNodesOf(node, visitorKeys[node.type] ?? [])) {
+      visit(child);
+    }
+  };
+  visit(context.sourceCode.ast);
+  return index;
+};
+
+const createParserServices = (file: FileProgram): ParserServices => {
+  const esTreeNodes = lazily(() => esTreeIndex(file));
+  const toTSNode = memoizeByKey((node: RangedNode) =>
+    innermostSpanning(file.sourceFile, node.range),
+  );
+  const checker = file.program.getTypeChecker();
+  const toESTreeNode = (node: Node): MappedNode => {
+    const key = rangeKey([node.getStart(), node.end]);
+    return Option.fromNullishOr(esTreeNodes().get(key)).pipe(
+      Option.getOrElse(() => toMappedNode(file, node)),
+    );
+  };
+  return {
+    program: file.program,
+    esTreeNodeToTSNodeMap: { get: toTSNode },
+    getTypeAtLocation: (node) => checker.getTypeAtLocation(toTSNode(node)),
+    getSymbolAtLocation: (node) => checker.getSymbolAtLocation(toTSNode(node)),
+    tsNodeToESTreeNodeMap: {
+      get: (node) =>
+        Option.liftPredicate(
+          node,
+          (candidate) => candidate.getSourceFile().fileName === file.sourceFile.fileName,
+        ).pipe(Option.map(toESTreeNode), Option.getOrUndefined),
+    },
+  };
+};
 
 export { createParserServices };
 export type { FileProgram, MappedNode, ParserServices, RangedNode };
