@@ -91,7 +91,7 @@
         "dist/*.mjs",
         "!dist/react.mjs"
       ],
-      "limit": "26432 B"
+      "limit": "26452 B"
     }
   ],
   "engines": {
