@@ -3,12 +3,14 @@ import { Array as Arr, Effect, pipe } from "effect";
 import type { Command } from "./command.ts";
 import { lintCommitMessageFile } from "./commitlint.ts";
 import { loadSection } from "./config.ts";
+import { checksFailed } from "./errors.ts";
 import { listGitFiles } from "./git.ts";
 import { finish, writeTo } from "./output.ts";
 import { checkSlices } from "./steiger.ts";
 import { lintTexts } from "./textlint.ts";
 
 const PRINT_FILES = "--print-files";
+const COMMITLINT_USAGE = "Usage: vp-tools commitlint <commit message file>";
 
 const runTextlint: Command = (root, args) =>
   Effect.gen(function* textlint() {
@@ -35,10 +37,13 @@ const runTextlint: Command = (root, args) =>
     return yield* finish(yield* lintTexts(config, root, files));
   });
 
-const runCommitlint: Command = (root, [messageFile = ""]) =>
+const runCommitlint: Command = (root, args) =>
   Effect.gen(function* commitlint() {
     const config = yield* loadSection(root, "commitlint");
-    return yield* finish(yield* lintCommitMessageFile(config, root, messageFile));
+    if (!Arr.isReadonlyArrayNonEmpty(args)) {
+      return yield* Effect.fail(checksFailed(COMMITLINT_USAGE));
+    }
+    return yield* finish(yield* lintCommitMessageFile(config, root, Arr.headNonEmpty(args)));
   });
 
 const runSteiger: Command = (root, targets) =>
