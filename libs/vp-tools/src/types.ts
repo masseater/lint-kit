@@ -42,7 +42,20 @@ interface TextlintConfig extends TextlintRcConfig {
   readonly ignores?: readonly string[];
 }
 
+type ManifestField =
+  | "dependencies"
+  | "devDependencies"
+  | "optionalDependencies"
+  | "peerDependencies";
+
+interface AllowedDependencies {
+  readonly workspaces: readonly string[];
+  readonly dependencies: readonly string[];
+  readonly fields?: readonly ManifestField[];
+}
+
 interface DependencyRules {
+  readonly allowed?: Readonly<Record<string, AllowedDependencies>>;
   readonly banned?: Readonly<Record<string, readonly string[]>>;
   readonly exactDependencies?: Readonly<Record<string, readonly string[]>>;
   readonly peerRanges?: "identical" | "intersect";
@@ -63,6 +76,8 @@ declare module "vite" {
 type ToolSection = keyof ToolSections;
 
 export type {
+  AllowedDependencies,
+  ManifestField,
   BetterleaksConfig,
   BetterleaksRule,
   CommitlintConfig,
