@@ -53,7 +53,7 @@ export default defineConfig({
 `@r_masseater/vp-tools/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
 元のプラグインが使う [@feature-sliced/filesystem][fsd-filesystem] は、import の解決に TypeScript 5 の `ts.resolveModuleName` を使い、TypeScript 7 だけの環境では読み込めない。
 同梱した版では、その解決を TypeScript 7.1 の `typescript/sync` の `createModuleResolver` で行う。
-そのため `typescript` 7.1 以降を peer dependency に持つ。
+そのため `typescript` 7.1 を依存に持つ。使う側のほかの依存が TypeScript 5 を引き込んでいても、こちらは 7.1 を読む。
 
 steiger 本体も `@feature-sliced/steiger-plugin` に依存し、それが TypeScript 5 を引き込む。
 vp-tools は steiger の CLI を使わないので、`pnpm-workspace.yaml` の `overrides` で外せる。
