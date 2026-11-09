@@ -1,4 +1,4 @@
-# vp-adopt
+# vite-plus-adopt
 
 Betterleaks・actionlint・zizmor・commitlint・textlint・Steiger を Vite+ に取り込み、設定と依存の規則を `vite.config.ts` に書いて、そこから読んで動かす CLI `vpa` である。
 TypeScript 7 だけで動く Feature-Sliced Design の Steiger プラグインと @arethetypeswrong/core も同梱する。
@@ -8,24 +8,24 @@ Betterleaks・actionlint・zizmor のバイナリは、postinstall が固定し�
 
 ## 公開先
 
-- npm: [@r_masseater/vp-adopt](https://www.npmjs.com/package/@r_masseater/vp-adopt)
+- npm: [@r_masseater/vite-plus-adopt](https://www.npmjs.com/package/@r_masseater/vite-plus-adopt)
 
 ## 使い方
 
 ```sh
-vp add -D @r_masseater/vp-adopt
+vp add -D @r_masseater/vite-plus-adopt
 ```
 
 postinstall を許すため、`pnpm-workspace.yaml` の `allowBuilds` に足す。
 
 ```yaml
 allowBuilds:
-  "@r_masseater/vp-adopt": true
+  "@r_masseater/vite-plus-adopt": true
 ```
 
 ```ts
-import type {} from "@r_masseater/vp-adopt";
-import fsd from "@r_masseater/vp-adopt/fsd";
+import type {} from "@r_masseater/vite-plus-adopt";
+import fsd from "@r_masseater/vite-plus-adopt/fsd";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
@@ -56,11 +56,11 @@ export default defineConfig({
 });
 ```
 
-`import type {} from "@r_masseater/vp-adopt"` で、`defineConfig` に上の 5 つのキーの型が付く。
+`import type {} from "@r_masseater/vite-plus-adopt"` で、`defineConfig` に上の 5 つのキーの型が付く。
 
 ## Feature-Sliced Design のプラグイン
 
-`@r_masseater/vp-adopt/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
+`@r_masseater/vite-plus-adopt/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
 元のプラグインが使う [@feature-sliced/filesystem][fsd-filesystem] は、import の解決に TypeScript 5 の `ts.resolveModuleName` を使い、TypeScript 7 だけの環境では読み込めない。
 同梱した版では、その解決を TypeScript 7.1 の `typescript/sync` の `createModuleResolver` で行う。
 そのため `typescript` 7.1 を依存に持つ。使う側のほかの依存が TypeScript 5 を引き込んでいても、こちらは 7.1 を読む。
@@ -78,12 +78,12 @@ overrides:
 
 ## @arethetypeswrong/core の置き換え
 
-`@r_masseater/vp-adopt/attw` は [@arethetypeswrong/core][attw] 0.18.5 と同じ API を、TypeScript 7.1 だけで出す。
+`@r_masseater/vite-plus-adopt/attw` は [@arethetypeswrong/core][attw] 0.18.5 と同じ API を、TypeScript 7.1 だけで出す。
 元のパッケージは TypeScript 5.6.1-rc を依存に持つので、Vite+ の `pack.attw` をそのまま使うと TypeScript 5 が入る。
 `pack.attw.module` にこれを渡せば、`@arethetypeswrong/core` を入れずに同じ検査が動く。
 
 ```ts
-import * as attw from "@r_masseater/vp-adopt/attw";
+import * as attw from "@r_masseater/vite-plus-adopt/attw";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
@@ -130,7 +130,7 @@ export default defineConfig({
 | `vpa dependencies`                           | `pnpm-workspace.yaml` の各パッケージの `package.json` を読み、禁止した依存と、同じ依存の指定の食い違いを報告する                                                                                   |
 
 postinstall が動いていないと、Betterleaks・actionlint・zizmor のコマンドは `allowBuilds` に足すよう告げて失敗する。
-バイナリの版は `src/binaries.ts` で固定し、vp-adopt の版を上げて変える。
+バイナリの版は `src/binaries.ts` で固定し、vite-plus-adopt の版を上げて変える。
 
 ## 設定
 

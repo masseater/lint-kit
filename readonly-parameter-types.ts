@@ -91,7 +91,7 @@ const readonlyParameterTypes: (FileTypes | LibTypes | PackageTypes)[] = [
     path: "upstream/attw-core/lib/checkPackage.d.ts",
     name: ["CheckPackageOptions"],
   },
-  { from: "file", path: "../vp-adopt/dist/attw.d.mts", name: ["CheckPackageOptions"] },
+  { from: "file", path: "../vite-plus-adopt/dist/attw.d.mts", name: ["CheckPackageOptions"] },
   {
     from: "package",
     package: "@textlint/config-loader",

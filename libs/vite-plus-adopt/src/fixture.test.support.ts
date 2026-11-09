@@ -35,7 +35,9 @@ const directoryWith = (
   Effect.gen(function* directory() {
     const fs = yield* FileSystem.FileSystem;
     const spawner = yield* ChildProcessSpawner.ChildProcessSpawner;
-    const root = yield* fs.makeTempDirectoryScoped({ prefix: "vp-adopt-" }).pipe(Effect.orDie);
+    const root = yield* fs
+      .makeTempDirectoryScoped({ prefix: "vite-plus-adopt-" })
+      .pipe(Effect.orDie);
     yield* writeFiles(root, files);
     yield* spawner
       .exitCode(ChildProcess.make("git", ["init", "-q"], { cwd: root }))
@@ -55,9 +57,9 @@ const commitEmpty = (
           "git",
           [
             "-c",
-            "user.name=vp-adopt",
+            "user.name=vite-plus-adopt",
             "-c",
-            "user.email=vp-adopt@example.com",
+            "user.email=vite-plus-adopt@example.com",
             "commit",
             "-q",
             "--allow-empty",

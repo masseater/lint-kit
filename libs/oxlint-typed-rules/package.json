@@ -85,7 +85,7 @@
     "@effect/platform-node": "catalog:",
     "@effect/vitest": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
-    "@r_masseater/vp-adopt": "workspace:*",
+    "@r_masseater/vite-plus-adopt": "workspace:*",
     "@remotion/eslint-plugin": "catalog:",
     "@size-limit/file": "catalog:",
     "@tanstack/eslint-plugin-query": "catalog:",

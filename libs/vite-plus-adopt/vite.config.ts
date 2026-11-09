@@ -151,7 +151,7 @@ export default defineConfig({
     ],
     reporters: ["default", "blob"],
     outputFile: {
-      blob: new URL("../../.vitest-reports/vp-adopt.json", import.meta.url).pathname,
+      blob: new URL("../../.vitest-reports/vite-plus-adopt.json", import.meta.url).pathname,
     },
     server: {
       deps: {
