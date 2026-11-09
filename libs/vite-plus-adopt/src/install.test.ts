@@ -89,7 +89,7 @@ const inVendorDirectory = <Value, Failure>(
 ): Effect.Effect<Value, Failure | PlatformError.PlatformError, FixtureServices> =>
   Effect.gen(function* run() {
     const fs = yield* FileSystem.FileSystem;
-    const vendor = yield* fs.makeTempDirectoryScoped({ prefix: "vp-adopt-vendor-" });
+    const vendor = yield* fs.makeTempDirectoryScoped({ prefix: "vite-plus-adopt-vendor-" });
     return yield* test.pipe(Effect.provideService(VendorDirectory, vendor));
   }).pipe(Effect.scoped);
 

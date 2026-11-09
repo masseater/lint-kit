@@ -1,5 +1,5 @@
 {
-  "name": "@r_masseater/vp-adopt",
+  "name": "@r_masseater/vite-plus-adopt",
   "version": "0.1.6",
   "description": "Adopt Betterleaks, actionlint, zizmor, commitlint, textlint, Steiger and dependency checks into Vite+ through the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin and @arethetypeswrong/core for TypeScript 7.",
   "keywords": [
@@ -14,7 +14,7 @@
     "vite-plus",
     "zizmor"
   ],
-  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/vp-adopt#readme",
+  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/vite-plus-adopt#readme",
   "bugs": {
     "url": "https://github.com/masseater/lint-kit/issues"
   },
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/masseater/lint-kit.git",
-    "directory": "libs/vp-adopt"
+    "directory": "libs/vite-plus-adopt"
   },
   "bin": {
     "vpa": "./dist/cli.mjs"
@@ -109,7 +109,7 @@
         "!dist/fsd.mjs",
         "!dist/attw.mjs"
       ],
-      "limit": "8174 B"
+      "limit": "8178 B"
     },
     {
       "name": "fsd",

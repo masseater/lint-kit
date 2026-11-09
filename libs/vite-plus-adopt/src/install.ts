@@ -27,7 +27,7 @@ type InstallError = VpToolsError | PlatformError.PlatformError;
 const EXECUTABLE = 0o755;
 
 const NOT_INSTALLED =
-  "was not installed. Allow the postinstall of @r_masseater/vp-adopt in allowBuilds of pnpm-workspace.yaml and run vp install.";
+  "was not installed. Allow the postinstall of @r_masseater/vite-plus-adopt in allowBuilds of pnpm-workspace.yaml and run vp install.";
 
 const currentPlatform = (): Option.Option<Platform> =>
   Arr.findFirst(PLATFORMS, (platform) => platform === `${process.platform}-${process.arch}`);

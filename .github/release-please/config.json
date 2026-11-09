@@ -34,7 +34,7 @@
         },
         {
           "type": "json",
-          "path": "libs/vp-adopt/package.json",
+          "path": "libs/vite-plus-adopt/package.json",
           "jsonpath": "$.version"
         }
       ]
