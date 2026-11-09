@@ -19,6 +19,8 @@ ESLint を入れずに、型情報を使うルールを oxlint だけで回せ�
   - [@tanstack/eslint-plugin-router][tanstack-router] 1.162.0 の全ルールと configs
 - `@r_masseater/oxlint-typed-rules/drizzle`
   - [eslint-plugin-drizzle][drizzle] 0.2.3 の全ルールと configs
+- `@r_masseater/oxlint-typed-rules/remotion`
+  - [@remotion/eslint-plugin][remotion] 4.0.541 の全ルールと configs
 - `@r_masseater/oxlint-typed-rules/react`
   - [@eslint-react/eslint-plugin][eslint-react] 5.28.8 の全ルールと configs
 
@@ -26,11 +28,12 @@ ESLint を入れずに、型情報を使うルールを oxlint だけで回せ�
 [tanstack-query]: https://github.com/TanStack/query/tree/main/packages/eslint-plugin-query
 [tanstack-router]: https://github.com/TanStack/router/tree/main/packages/eslint-plugin-router
 [drizzle]: https://github.com/drizzle-team/drizzle-orm/tree/main/eslint-plugin-drizzle
+[remotion]: https://github.com/remotion-dev/remotion/tree/main/packages/eslint-plugin
 [eslint-react]: https://github.com/Rel1cx/eslint-react
 
 元のリポのテストを手を入れずに移植し、すべて同じ結果になることを確かめている。
 TanStack Start の 2 ルールは、ファイルをまたぐと違反を取りこぼす点を直してある。
-@eslint-react はルールの ID と configs を元のプラグインと同じにしてあるので、
+@eslint-react と Remotion はルールの ID と configs を元のプラグインと同じにしてあるので、
 jsPlugins の `specifier` を差し替えるだけで乗り換えられる。
 TanStack Query・Router・Drizzle は、プラグインの名前を `tanstack-query`・`tanstack-router`・`drizzle` にしてある。
 configs の `rules` も同じ名前で始まるので、そのまま `rules` に広げられる。
@@ -40,6 +43,8 @@ Query の `no-void-query-fn` と `no-rest-destructuring` は型情報を読み�
 Router と Drizzle のエントリーは tsgo を起動しない。
 eslint-plugin-drizzle は依存に書いていない `@typescript-eslint/utils` を読むので、
 元のままではそれが巻き上げられた環境でしか読み込めない。このパッケージは同梱して読ませる。
+@remotion/eslint-plugin は型情報を使わないが、`@typescript-eslint/utils` 5 を経て TypeScript 5 を引き込む。
+Remotion のエントリーはその `ESLintUtils` を 8 系の `eslint-utils` に差し替えて同梱し、tsgo も起動しない。
 oxc の構文木は JSX の属性の文字参照を復号しないので（[oxc#9667][oxc-9667]）、
 `jsx-no-children-prop` は属性の元の文字列から復号するよう直してある。
 

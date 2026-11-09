@@ -1,7 +1,7 @@
 {
   "name": "@r_masseater/oxlint-typed-rules",
-  "version": "0.1.3",
-  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules, TanStack Query, TanStack Router, Drizzle and ESLint React.",
+  "version": "0.1.5",
+  "description": "Run ESLint rules that need type information as oxlint JS plugins on TypeScript 7, including TanStack Start's React Server Component rules, TanStack Query, TanStack Router, Drizzle, Remotion and ESLint React.",
   "keywords": [
     "drizzle",
     "eslint",
@@ -9,6 +9,7 @@
     "oxlint",
     "oxlint-plugin",
     "react",
+    "remotion",
     "tanstack-query",
     "tanstack-router",
     "tanstack-start",
@@ -33,6 +34,7 @@
     ".": "./src/index.ts",
     "./drizzle": "./src/drizzle.ts",
     "./react": "./src/react.ts",
+    "./remotion": "./src/remotion.ts",
     "./tanstack-query": "./src/tanstack-query.ts",
     "./tanstack-router": "./src/tanstack-router.ts",
     "./tanstack-start": "./src/tanstack-start.ts",
@@ -51,6 +53,10 @@
       "./react": {
         "types": "./dist/react.d.mts",
         "default": "./dist/react.mjs"
+      },
+      "./remotion": {
+        "types": "./dist/remotion.d.mts",
+        "default": "./dist/remotion.mjs"
       },
       "./tanstack-query": {
         "types": "./dist/tanstack-query.d.mts",
@@ -76,10 +82,11 @@
     "effect": "catalog:stack"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "catalog:",
     "@effect/platform-node": "catalog:",
     "@effect/vitest": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
+    "@r_masseater/vp-tools": "workspace:*",
+    "@remotion/eslint-plugin": "catalog:",
     "@size-limit/file": "catalog:",
     "@tanstack/eslint-plugin-query": "catalog:",
     "@tanstack/eslint-plugin-router": "catalog:",
@@ -124,13 +131,19 @@
       "limit": "2172 B"
     },
     {
+      "name": "remotion",
+      "path": "dist/remotion.mjs",
+      "limit": "5263 B"
+    },
+    {
       "name": "core",
       "path": [
         "dist/*.mjs",
         "!dist/react.mjs",
         "!dist/tanstack-query.mjs",
         "!dist/tanstack-router.mjs",
-        "!dist/drizzle.mjs"
+        "!dist/drizzle.mjs",
+        "!dist/remotion.mjs"
       ],
       "limit": "30078 B"
     }

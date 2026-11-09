@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.5](https://github.com/masseater/lint-kit/compare/v0.1.4...v0.1.5) (2026-11-09)
+
+
+### Features
+
+* **attw-core:** @arethetypeswrong/core を TypeScript 7 だけで動かす置き換えを足す ([#104](https://github.com/masseater/lint-kit/issues/104)) ([42db97d](https://github.com/masseater/lint-kit/commit/42db97df2515412bb9caafadd7573e57f2b24263))
+
+## [0.1.4](https://github.com/masseater/lint-kit/compare/v0.1.3...v0.1.4) (2026-11-09)
+
+
+### Features
+
+* **oxlint-typed-rules:** @remotion/eslint-plugin を TypeScript 7 だけの環境で動かす ([#103](https://github.com/masseater/lint-kit/issues/103)) ([cd05946](https://github.com/masseater/lint-kit/commit/cd05946231f9489d3b3a31b1e74a46186d8c9a11))
+* **vp-tools:** allow banned dependencies in chosen workspaces and fields ([#102](https://github.com/masseater/lint-kit/issues/102)) ([da9bac5](https://github.com/masseater/lint-kit/commit/da9bac5a196c7e5f62023da6b6331a916e26abc2))
+
+
+### Bug Fixes
+
+* **vp-tools:** depend on TypeScript 7.1 instead of an optional peer ([#100](https://github.com/masseater/lint-kit/issues/100)) ([08d7452](https://github.com/masseater/lint-kit/commit/08d745288c5614edf28c30339d8f537d20ed0b8e))
+
 ## [0.1.3](https://github.com/masseater/lint-kit/compare/v0.1.2...v0.1.3) (2026-11-09)
 
 

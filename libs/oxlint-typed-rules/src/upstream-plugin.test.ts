@@ -1,9 +1,11 @@
 import { layer } from "@effect/vitest";
 import { deepStrictEqual } from "@effect/vitest/utils";
+import upstreamRemotion from "@remotion/eslint-plugin";
 import { Array as Arr, Effect, Layer, Option, Record, String as Str, pipe } from "effect";
 
 import drizzle from "./drizzle.ts";
 import eslintReact from "./react.ts";
+import remotion from "./remotion.ts";
 import tanstackQuery from "./tanstack-query.ts";
 import tanstackRouter from "./tanstack-router.ts";
 import type { Config } from "./upstream-plugin.ts";
@@ -57,6 +59,13 @@ const keepsDrizzleConfigs = Effect.sync(() => {
   });
 });
 
+const keepsRemotionRuleIdsAndConfigs = Effect.sync(() => {
+  deepStrictEqual(
+    [remotion.meta.name, remotion.configs.recommended.rules, Record.keys(remotion.rules)],
+    ["@remotion", upstreamRemotion.configs.recommended.rules, Record.keys(upstreamRemotion.rules)],
+  );
+});
+
 const indexesKnownConfigsWithoutUndefined = Effect.sync(() => {
   const reactRules: Readonly<Record<string, unknown>> | undefined =
     eslintReact.configs["strict-typescript"].rules;
@@ -84,6 +93,7 @@ const configuresOnlyExistingRules = Effect.sync(() => {
         Record.keys(tanstackRouter.rules),
       ),
       ...missingRules(drizzle.meta.name, drizzle.configs, Record.keys(drizzle.rules)),
+      ...missingRules(remotion.meta.name, remotion.configs, Record.keys(remotion.rules)),
     ],
     [],
   );
@@ -96,6 +106,7 @@ layer(Layer.empty)("upstream plugins", (it) => {
   );
   it.effect("configures only rules the plugin has", () => configuresOnlyExistingRules);
   it.effect("keeps the drizzle configs", () => keepsDrizzleConfigs);
+  it.effect("keeps the remotion rule ids and configs", () => keepsRemotionRuleIdsAndConfigs);
   it.effect(
     "indexes the known configs without undefined",
     () => indexesKnownConfigsWithoutUndefined,

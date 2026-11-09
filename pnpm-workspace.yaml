@@ -5,7 +5,6 @@ packages:
 catalogMode: prefer
 
 catalog:
-  "@arethetypeswrong/core": 0.18.5
   "@ast-grep/cli": 0.51.0
   "@commitlint/cli": 21.2.4
   "@commitlint/config-conventional": 21.2.4
@@ -16,6 +15,7 @@ catalog:
   "@effect/platform-node": 4.1.2
   "@effect/vitest": 4.1.2
   "@openrouter/sdk": 1.5.33
+  "@remotion/eslint-plugin": 4.0.541
   "@size-limit/file": 14.3.0
   "@tanstack/eslint-plugin-query": 5.105.3
   "@tanstack/eslint-plugin-router": 1.162.0
@@ -47,6 +47,8 @@ catalogs:
 overrides:
   "@feature-sliced/filesystem>typescript": "catalog:stack"
   "steiger>@feature-sliced/steiger-plugin": "-"
+  "@remotion/eslint-plugin>@typescript-eslint/utils": "-"
+  "@remotion/eslint-plugin>typescript": "-"
   effect: "catalog:stack"
   "@effect/platform-node-shared": 4.1.2
   "@effect/vitest": "catalog:"

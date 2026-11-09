@@ -1,7 +1,26 @@
-import { Option, Record } from "effect";
+import type { CheckPackageOptions, CheckResult } from "@r_masseater/vp-tools/attw";
+import { Effect, Function, Option, Record } from "effect";
 import { defineConfig } from "vite-plus";
 
+import { upstreamRemotionRules } from "./upstream/remotion-modules.ts";
+
 const local = (path: string): string => new URL(path, import.meta.url).pathname;
+
+const checkWithVpTools = (
+  tarball: Uint8Array,
+  options: CheckPackageOptions,
+): Effect.Effect<CheckResult> =>
+  Effect.promise(() => import("@r_masseater/vp-tools/attw")).pipe(
+    Effect.flatMap((attw) =>
+      Effect.promise(() => attw.checkPackage(attw.createPackageFromTarballData(tarball), options)),
+    ),
+  );
+
+const attwModule = {
+  createPackageFromTarballData: Function.identity,
+  checkPackage: (tarball: Uint8Array, options: CheckPackageOptions): Promise<CheckResult> =>
+    Effect.runPromise(checkWithVpTools(tarball, options)),
+};
 
 const shims: Readonly<Record<string, string>> = {
   typescript: local("src/ts-compat.ts"),
@@ -169,10 +188,15 @@ const upstreamDrizzleRules = {
 } as const;
 
 export default defineConfig({
-  plugins: [upstreamReactRules, upstreamTanstackModules, upstreamDrizzleRules],
+  plugins: [
+    upstreamReactRules,
+    upstreamTanstackModules,
+    upstreamDrizzleRules,
+    upstreamRemotionRules,
+  ],
   run: {
     tasks: {
-      build: { command: "vp pack", cache: false },
+      build: { command: "vp pack", dependsOn: ["@r_masseater/vp-tools#build"], cache: false },
       test: "vp test run --coverage",
       size: { command: "size-limit", dependsOn: ["build"], cache: false },
     },
@@ -184,6 +208,7 @@ export default defineConfig({
       "src/tanstack-query.ts",
       "src/tanstack-router.ts",
       "src/drizzle.ts",
+      "src/remotion.ts",
       "src/react.ts",
     ],
     platform: "node",
@@ -195,13 +220,14 @@ export default defineConfig({
     },
     dts: { generator: "oxc" },
     publint: { strict: true },
-    attw: { profile: "esm-only", level: "error" },
+    attw: { module: attwModule, profile: "esm-only", level: "error" },
   },
   resolve: {
     alias: [
       ...shimAliases,
       { find: "@typescript-eslint/rule-tester", replacement: local("upstream/rule-tester.ts") },
       { find: "@local/testkit", replacement: local("upstream/react-testkit.ts") },
+      { find: "./create-rule-tester", replacement: local("upstream/remotion-testkit.ts") },
       {
         find: "../rules/no-async-client-component/no-async-client-component.rule",
         replacement: local("upstream/rules/no-async-client-component.ts"),
@@ -231,6 +257,7 @@ export default defineConfig({
         inline: [
           /@tanstack\/eslint-plugin-/u,
           "eslint-plugin-drizzle",
+          "@remotion/eslint-plugin",
           /@eslint-react\//u,
           /eslint-plugin-react-/u,
         ],
@@ -242,6 +269,7 @@ export default defineConfig({
       "upstream/tanstack-query/src/__tests__/*.test.ts",
       "upstream/tanstack-router/src/__tests__/*.test.ts",
       "upstream/drizzle/tests/*.test.ts",
+      "upstream/remotion/src/tests/*.test.ts",
       "upstream/react/plugins/**/*.spec.ts",
     ],
   },
