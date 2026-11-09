@@ -352,15 +352,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/vite.config.ts": {
-      "fingerprint": "a9e1ee61dd747a832cbdd181cc78e87706f368c49bedfc680b6cdfed52737838",
+      "fingerprint": "acb77ef2b1f5acbe6f06d3facf395fbf2c348bd56b6db0c6707d64396efb5592",
       "snapshot": {
-        "libs/oxlint-typed-rules/vite.config.ts": "e301f07bb9095a494f61e70ae9a5fadbc9c6f286575e1e63b5ff6cec8ce6ade4"
+        "libs/oxlint-typed-rules/vite.config.ts": "45b31fa9d1295ea79bcd71fbe0b816f387295624c06de7dd682d691d8eec7374"
       },
-      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "head": "634a7ac17b2225025e5e923c2108dc0b9721e688",
       "outcome": "no-change",
       "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/vite.config.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at 634a7ac17b2225025e5e923c2108dc0b9721e688"
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
@@ -2740,15 +2740,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/remotion-modules.ts": {
-      "fingerprint": "4d8625ff835fac42d6fd76bdc6bc85c9ef038f12799e5637e12b59d1c611c2e6",
+      "fingerprint": "f32c9c995732897072d4dd53debaed76f1560835be41c2ee5e8cacd7fa04aeeb",
       "snapshot": {
-        "libs/oxlint-typed-rules/upstream/remotion-modules.ts": "cce3f2d158d78d6f08074844938496d6ce9d45cb7e6a982778c9162b9b40c7d0"
+        "libs/oxlint-typed-rules/upstream/remotion-modules.ts": "051855c049eb31e89258a5db342df692a81efee90678f37b06f4c1608e3a2dc4"
       },
-      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "head": "634a7ac17b2225025e5e923c2108dc0b9721e688",
       "outcome": "no-change",
       "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/upstream/remotion-modules.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+        "Changed: libs/oxlint-typed-rules/upstream/remotion-modules.ts at 634a7ac17b2225025e5e923c2108dc0b9721e688"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/remotion-testkit.ts": {
