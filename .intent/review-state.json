@@ -136,27 +136,27 @@
       ]
     },
     "source:libs/oxlint-typed-rules/LICENSE": {
-      "fingerprint": "8c471222944497d7263aff43278f10c5994424f704d3643fde338bae48e756fc",
+      "fingerprint": "962580ae64a61ff03faa3e127831144dacb9eab4543b33ff73f64bed412398a9",
       "snapshot": {
-        "libs/oxlint-typed-rules/LICENSE": "5c69fa786cdd132e9d7610420f399d48518a92b4cefc5e7d5d2e14ece9442dfe"
+        "libs/oxlint-typed-rules/LICENSE": "d633e0f09e6c13036ef2e0c27b5ac8ce85812f0e98ba86eb045bdb6ca59a1e4c"
       },
-      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/LICENSE at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+        "Changed: libs/oxlint-typed-rules/LICENSE at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     },
     "source:libs/oxlint-typed-rules/README.md": {
-      "fingerprint": "7ecb88ce529efa2000d377a3badd4fcbbcad3b8ecbe95fae1c04ccd45ef45f18",
+      "fingerprint": "d6486d5d243589115ee73296be0d4af55ecb9269f71dbac88a87490637c2f645",
       "snapshot": {
-        "libs/oxlint-typed-rules/README.md": "2192ed0e2f5431f7cc94d5d5d906e8610174c3a940c41c8879d89ebd270a2947"
+        "libs/oxlint-typed-rules/README.md": "1ea221a222004d49fd24085f61315c53053aa445497bdaef273f8917fbae5b4f"
       },
-      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/README.md at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+        "Changed: libs/oxlint-typed-rules/README.md at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     },
     "source:libs/oxlint-typed-rules/src/index.ts": {
@@ -268,15 +268,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/tsconfig.json": {
-      "fingerprint": "b9af9ec50738a6b7be7ea8bfd4753ce6b2655bf4e9b62412bc454531e59bfced",
+      "fingerprint": "41ab6d7df75de3b4fb39ab3e623d6fc21907548e76ef0bce14f4b0d644708787",
       "snapshot": {
-        "libs/oxlint-typed-rules/tsconfig.json": "320f38ca847c439907855d17440eea3fae68e33467113a51359fb7df0badd209"
+        "libs/oxlint-typed-rules/tsconfig.json": "ffbab62a6ad05490b9ea13f62f0925dbdde0de2c8d7105c01aeaa5228befdc8c"
       },
-      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/tsconfig.json at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+        "Changed: libs/oxlint-typed-rules/tsconfig.json at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     },
     "source:libs/oxlint-typed-rules/upstream/rule-tester.ts": {
@@ -352,15 +352,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/vite.config.ts": {
-      "fingerprint": "2968d31b32d07c3ac8165d0d12ac40dfcd176333ec76dc6e29275e9ffa189086",
+      "fingerprint": "a9e1ee61dd747a832cbdd181cc78e87706f368c49bedfc680b6cdfed52737838",
       "snapshot": {
-        "libs/oxlint-typed-rules/vite.config.ts": "347e6f5bb3c9510993c6ae65122c004ebfd365c3bda6ddebc73a059ab1ea2c7b"
+        "libs/oxlint-typed-rules/vite.config.ts": "e301f07bb9095a494f61e70ae9a5fadbc9c6f286575e1e63b5ff6cec8ce6ade4"
       },
-      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/vite.config.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
@@ -2356,15 +2356,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/src/upstream-plugin.test.ts": {
-      "fingerprint": "073428c26319ebc5aff5d5ff37f835a8c5efc3d8a5934781f4c4c0da0a54cfd0",
+      "fingerprint": "a6c8ad44fc50e624ab6555f7e518c4cd14811b8b46513f629bf8e8c48348c491",
       "snapshot": {
-        "libs/oxlint-typed-rules/src/upstream-plugin.test.ts": "121d04792c4609603ac13d08083c0193d9a04fc18b4a9454f89d3ba65e7fca70"
+        "libs/oxlint-typed-rules/src/upstream-plugin.test.ts": "8616910176c3243a701adee36b4b5eddf34871472f30beca2e2910dc01c159ae"
       },
-      "head": "74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b",
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.test.ts at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+        "Changed: libs/oxlint-typed-rules/src/upstream-plugin.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     },
     "source:libs/oxlint-typed-rules/src/upstream-plugin.ts": {
@@ -2725,6 +2725,246 @@
       "reason": "oxlint-typed-rules に eslint-plugin-drizzle を同梱する drizzle エントリーと上流のテストを足し、configs を元のプラグインの名前で引ける型にしただけで、write-decision-rules スキルが扱う oxlint-plugin-decision の判定ルールの書き方や API には影響しない",
       "evidence": [
         "Changed: patches/eslint-plugin-drizzle@0.2.3.patch at 74ca4ed0bf3d3cbf58b25227d954cd8e74c39f5b"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/src/remotion.ts": {
+      "fingerprint": "53ac43a98f5e63f5ff947ad66d79498ad4e2671e5c0d597e830d18a293da7021",
+      "snapshot": {
+        "libs/oxlint-typed-rules/src/remotion.ts": "4f34cbbec2c5d994e8d638d5c2744e16e73a7985a070028b6834daf177025123"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/src/remotion.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion-modules.ts": {
+      "fingerprint": "4d8625ff835fac42d6fd76bdc6bc85c9ef038f12799e5637e12b59d1c611c2e6",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion-modules.ts": "cce3f2d158d78d6f08074844938496d6ce9d45cb7e6a982778c9162b9b40c7d0"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion-modules.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion-testkit.ts": {
+      "fingerprint": "8421ec16480701543cbae1d39bca6f5b7ce54f37d763eca79c9a77e5e574049f",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion-testkit.ts": "647c1d95c3adf6dc2603f5153f78890fd6e14140baf9fdbc64bc1538c1c0a6e4"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion-testkit.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/LICENSE": {
+      "fingerprint": "1e48743babe3cf9c13f6f7921dd10c28d2d7232f012a15ab31b4a8a53df836a9",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/LICENSE": "4beb9f1273e526583cb4c4d372b4ad2da4d6eb3c1cc7ebf3a7f82d10679e7761"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/LICENSE at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/even-dimensions.test.ts": {
+      "fingerprint": "b8615fc65b0c637b9a9c555850c82ecd9b3c047c668012deeb1ee007de226ee4",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/even-dimensions.test.ts": "2213bccb2e87b653a0158161150b0f13329a0afa6d34301a37a26c802f8a2784"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/even-dimensions.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-background-image.test.ts": {
+      "fingerprint": "c63d46cf1e11d3f1b9212ad585f3a44f6cad44b607e7e23c766aa6272ac5b361",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-background-image.test.ts": "56cbbe1efbb94add62a071f74ac4310f871cc5575610688487b769651fedb279"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-background-image.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-duration-frames-infinity.test.ts": {
+      "fingerprint": "b3a97af7c19c3d2eeea54082221889408b661a348794c6de432f593aea4b670d",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-duration-frames-infinity.test.ts": "874188480830531b136e459959cc1954cb0cffd6c392faf55b2989d4f79ae786"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-duration-frames-infinity.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-from-0.test.ts": {
+      "fingerprint": "d6b76e6857e351578db3f095432b4195d2e38dacfda4f560dae7d51aff494468",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-from-0.test.ts": "21fe05de3be1f2c5062706dc9de75d1e4aad0a73e6bf4b343ea84d7eed2b0d91"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-from-0.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-math-random.test.ts": {
+      "fingerprint": "76ad37b6103dad4fc0c1668730c06eb68831151f250aded016499ccbbf47f9a0",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-math-random.test.ts": "90274d276fcc46601dd4f8ceb074bad116acf314eca8794ab71eeee6eeb37e7f"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-math-random.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-object-fit-on-media-video.test.ts": {
+      "fingerprint": "9b8fa87c025ee58cffcd0277dde5c4c47a403f8e03d46d499bb8d764e284b5b7",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-object-fit-on-media-video.test.ts": "88b970de615a3609e847fd7d05e0013d67681c3431bd996a43f570278a03ff45"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-object-fit-on-media-video.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/no-string-assets.test.ts": {
+      "fingerprint": "194291cc8ec2ea073e706cc05d901768cb643decff2d32a98648afbd32fcb39e",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/no-string-assets.test.ts": "1e4d3d586c46bb43dbe4b8533adbad1eb7a3a07ebc2157b408fd54ad30f5fa35"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/no-string-assets.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/non-pure-animation.test.ts": {
+      "fingerprint": "8fa6d9477c989df2949e37dca2577d289b15d835d7d3624bfb0705213f99fc65",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/non-pure-animation.test.ts": "9819220258a3bdd8c9e592ff52daf8aed2600e68f672b52648d805931136df63"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/non-pure-animation.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/slow-css-property.test.ts": {
+      "fingerprint": "06be10f0d00cecfee8b9285e00a904fb5bada7599d311f4bc1cc482b9978d6c8",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/slow-css-property.test.ts": "1927bb5b6fe46f44a3d450e35822495737af161f9116b3a910c8428860f5bd3b"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/slow-css-property.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-relative.test.ts": {
+      "fingerprint": "2839cdedc133b9a23daac074d25f012ab9927f2b81e7789bc6c3dd64ba7f83dc",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-relative.test.ts": "3261a8fed76e054f2c3fa2dd26b48336ebe8248787627b1002283f62cdffb738"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-relative.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-remote.test.ts": {
+      "fingerprint": "e738ddd2b065c079809eacd96868556b980ebe2510af760ff8514b9de939a45b",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-remote.test.ts": "69259966d902bf331c7e0df8e0e855680ec7adaa53e3d1c001be346d3bc0aa8c"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/staticfile-no-remote.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/use-gif-component.test.ts": {
+      "fingerprint": "b441c691109d8a8955fd1f404185c76fe3d67fc750d1f5396fe61eadca7f5bc1",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/use-gif-component.test.ts": "4ca7f71fcd156dda37c888e6f76b9046d497b2d1cdd5d28ca63c3b4ee9104d60"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/use-gif-component.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/v4-import.test.ts": {
+      "fingerprint": "bf89c23256fc76280090824f67235dfca2643d2631186f447daa3d2ce219191c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/v4-import.test.ts": "064e61291ff14e3d9d265d1ff385f319edc62b807d33264d040454fc75346296"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/v4-import.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/valid-composition-and-folder-name.test.ts": {
+      "fingerprint": "dca91000945e63d159c25490123aa6aa8a8a210e676c6ab0c31973bd3aec142c",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/valid-composition-and-folder-name.test.ts": "c8c68f6f01fbf5cbdac646c71ef390604fd9ed9df5b9dfb4c6b5d063ca829675"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/valid-composition-and-folder-name.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/volume-callback.test.ts": {
+      "fingerprint": "d48accb52924081e6c4aad76805acb2f0500ed55bff8159be467a2904ff3590d",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/volume-callback.test.ts": "78639179da4b1a3a20dccbaf0590765b694e2e055dc4634dd96d125dda88cbc2"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/volume-callback.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/oxlint-typed-rules/upstream/remotion/src/tests/warn-native-image-tag.test.ts": {
+      "fingerprint": "d98e6e96e9cf80386b515ead46abbb2c8994f640d08ddbc340369af69272af70",
+      "snapshot": {
+        "libs/oxlint-typed-rules/upstream/remotion/src/tests/warn-native-image-tag.test.ts": "ee054a5d3d7aa77fbf07459caad81ffa7ede15661a11487d179f0a60e9fb6443"
+      },
+      "head": "009488892ee2a4fdff9188a6fd3f7618801507ec",
+      "outcome": "no-change",
+      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/warn-native-image-tag.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
       ]
     }
   }
