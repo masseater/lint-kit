@@ -4,7 +4,7 @@ Lint tools for TypeScript repositories, kept in one workspace.
 
 - [oxlint-plugin-decision](#oxlint-plugin-decision): Oxlint rules written as questions that decision models answer
 - [oxlint-typed-rules](libs/oxlint-typed-rules/README.md): ESLint rules that need type information, run as Oxlint JS plugins
-- [vite-plus-adopt](libs/vite-plus-adopt/README.md): the `vpa` CLI that adopts Betterleaks, actionlint, zizmor, commitlint, textlint, Steiger and dependency checks into Vite+ and runs them from the settings in `vite.config.ts`, and ships @arethetypeswrong/core for TypeScript 7
+- [vite-plus-adopt](libs/vite-plus-adopt/README.md): the `vpa` CLI that adopts Betterleaks, actionlint, zizmor, commitlint, textlint, markdownlint, Steiger, fallow and dependency checks into Vite+ and runs every configured one at once from the settings in `vite.config.ts`, and ships @arethetypeswrong/core for TypeScript 7
 
 ## Published packages
 

@@ -1,5 +1,9 @@
 import type { UserConfig as CommitlintUserConfig } from "@commitlint/types";
 import type { TextlintRcConfig } from "@textlint/config-loader";
+import type {
+  Configuration as MarkdownlintConfiguration,
+  Rule as MarkdownlintRule,
+} from "markdownlint";
 import type { defineConfig as defineSteigerConfig } from "steiger";
 
 interface CommitlintConfig extends Readonly<CommitlintUserConfig> {}
@@ -42,6 +46,19 @@ interface TextlintConfig extends TextlintRcConfig {
   readonly ignores?: readonly string[];
 }
 
+interface MarkdownlintConfig {
+  readonly config?: MarkdownlintConfiguration;
+  readonly customRules?: readonly MarkdownlintRule[];
+  readonly ignores?: readonly string[];
+}
+
+interface SteigerSection {
+  readonly paths: readonly string[];
+  readonly rules: SteigerConfig;
+}
+
+type FallowConfig = Readonly<Record<string, unknown>>;
+
 type ManifestField =
   | "dependencies"
   | "devDependencies"
@@ -65,7 +82,9 @@ interface ToolSections {
   readonly betterleaks?: BetterleaksConfig;
   readonly commitlint?: CommitlintConfig;
   readonly dependencyRules?: DependencyRules;
-  readonly steiger?: SteigerConfig;
+  readonly fallow?: FallowConfig;
+  readonly markdownlint?: MarkdownlintConfig;
+  readonly steiger?: SteigerSection;
   readonly textlint?: TextlintConfig;
 }
 
@@ -82,7 +101,10 @@ export type {
   BetterleaksRule,
   CommitlintConfig,
   DependencyRules,
+  FallowConfig,
+  MarkdownlintConfig,
   SteigerConfig,
+  SteigerSection,
   TextlintConfig,
   ToolSection,
   ToolSections,

@@ -13,6 +13,4 @@ type CommandServices =
 
 type CommandEffect = Effect.Effect<void, CommandError, CommandServices>;
 
-type Command = (root: string, args: readonly string[]) => CommandEffect;
-
-export type { Command, CommandEffect, CommandError, CommandServices };
+export type { CommandEffect, CommandError, CommandServices };

@@ -34,6 +34,7 @@ catalog:
   publint: 0.3.25
   size-limit: 14.3.0
   synckit: 0.12.3
+  markdownlint: 0.42.1
 catalogs:
   stack:
     "@effect/tsgo": 0.67.4
@@ -55,6 +56,7 @@ overrides:
   "@tanstack/eslint-plugin-start>globals": 16.4.0
   minimatch@<11.0.1: ^11.0.1
   glob@>=9.0.0 <=14.0.1: ^14.0.2
+  katex@>=0.11.0 <0.18.2: ^0.18.2
 peerDependencyRules:
   allowAny:
     - vite
