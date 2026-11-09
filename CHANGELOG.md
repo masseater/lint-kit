@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://github.com/masseater/lint-kit/compare/v0.1.6...v0.2.0) (2026-11-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* vp-adopt を vite-plus-adopt に改名する ([#113](https://github.com/masseater/lint-kit/issues/113))
+* vp-tools を vp-adopt に改名し、バイナリを postinstall で入れる ([#112](https://github.com/masseater/lint-kit/issues/112))
+
+### Features
+
+* **ci:** verify のツールを mise.toml で宣言する ([#108](https://github.com/masseater/lint-kit/issues/108)) ([2af236e](https://github.com/masseater/lint-kit/commit/2af236eda696c1ac5d4402dc8f5c7ac5049f3157))
+* vp-adopt を vite-plus-adopt に改名する ([#113](https://github.com/masseater/lint-kit/issues/113)) ([1fa1457](https://github.com/masseater/lint-kit/commit/1fa1457aea97b146faf82a9c8c115ae7574e28f4))
+* vp-tools を vp-adopt に改名し、バイナリを postinstall で入れる ([#112](https://github.com/masseater/lint-kit/issues/112)) ([7f93b0b](https://github.com/masseater/lint-kit/commit/7f93b0b97e669a42f4d6bda44747235d3cab8042))
+
 ## [0.1.6](https://github.com/masseater/lint-kit/compare/v0.1.5...v0.1.6) (2026-11-09)
 
 
