@@ -46,7 +46,6 @@ const effectRules: Rules = Object.fromEntries(
 );
 
 const upstreamCopies: readonly string[] = [
-  "libs/attw-core/upstream/core/**",
   "libs/oxlint-typed-rules/upstream/src/__tests__/**",
   "libs/oxlint-typed-rules/upstream/react/**",
   "libs/oxlint-typed-rules/upstream/{tanstack-*,drizzle,remotion}/**",
@@ -130,7 +129,7 @@ export default defineConfig({
           "libs/oxlint-plugin-decision/src/index.ts",
           "libs/oxlint-plugin-decision-presets/src/*.ts",
           "libs/oxlint-typed-rules/src/{drizzle,react,remotion,tanstack-query,tanstack-router,tanstack-start}.ts",
-          "libs/attw-core/src/typescript.ts",
+          "libs/vp-tools/src/attw/typescript.ts",
           "libs/oxlint-typed-rules/src/ts-compat.ts",
           "libs/vp-tools/src/fsd.ts",
           "libs/vp-tools/src/fsd-typescript.ts",

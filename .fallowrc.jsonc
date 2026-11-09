@@ -40,7 +40,6 @@
   "ignorePatterns": [
     ".claude/**",
     "libs/*/example/**",
-    "libs/attw-core/upstream/core/**",
     "libs/oxlint-typed-rules/upstream/react/**",
     "libs/oxlint-typed-rules/upstream/tanstack-query/**",
     "libs/oxlint-typed-rules/upstream/tanstack-router/**",
@@ -49,12 +48,12 @@
     "libs/vp-tools/upstream/**",
   ],
   "dynamicallyLoaded": [
-    "libs/attw-core/src/compiler-hosts.ts",
-    "libs/attw-core/src/typescript.ts",
     "libs/oxlint-plugin-decision/src/openrouter-worker.ts",
     "libs/oxlint-typed-rules/src/ts-api-utils.ts",
     "libs/oxlint-typed-rules/src/ts-compat.ts",
     "libs/oxlint-typed-rules/src/typescript-eslint-utils.ts",
+    "libs/vp-tools/src/attw/compiler-hosts.ts",
+    "libs/vp-tools/src/attw/typescript.ts",
     "libs/vp-tools/src/fsd-typescript.ts",
   ],
   "usedClassMembers": [

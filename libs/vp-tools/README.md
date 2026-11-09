@@ -1,6 +1,7 @@
 # vp-tools
 
 Betterleaks・commitlint・textlint・Steiger の設定と依存の規則を `vite.config.ts` に書き、そこから読んで動かす CLI である。
+TypeScript 7 だけで動く Feature-Sliced Design の Steiger プラグインと @arethetypeswrong/core も同梱する。
 各ツールのために `.betterleaks.toml`・`.betterleaksignore`・`.textlintrc`・`.textlintignore`・`steiger.config.ts`・syncpack の設定・`package.json` の `commitlint` を置かずに済む。
 設定は Vite+ の `resolveConfigFromFile` で読み、型は `vite` の `UserConfig` を拡張して付ける。
 
@@ -66,6 +67,46 @@ overrides:
 [fsd-plugin]: https://github.com/feature-sliced/steiger/tree/master/packages/steiger-plugin-fsd
 [fsd-filesystem]: https://github.com/feature-sliced/filesystem
 
+## @arethetypeswrong/core の置き換え
+
+`@r_masseater/vp-tools/attw` は [@arethetypeswrong/core][attw] 0.18.5 と同じ API を、TypeScript 7.1 だけで出す。
+元のパッケージは TypeScript 5.6.1-rc を依存に持つので、Vite+ の `pack.attw` をそのまま使うと TypeScript 5 が入る。
+`pack.attw.module` にこれを渡せば、`@arethetypeswrong/core` を入れずに同じ検査が動く。
+
+```ts
+import * as attw from "@r_masseater/vp-tools/attw";
+import { defineConfig } from "vite-plus";
+
+export default defineConfig({
+  pack: {
+    attw: { module: attw, profile: "esm-only", level: "error" },
+  },
+});
+```
+
+- 元のパッケージの `dist/` を `upstream/attw-core/lib` に置いて同梱し、その中の `typescript` の import を `src/attw/typescript.ts` に向ける。
+- `src/attw/typescript.ts` は、元のパッケージが呼ぶ `ts.*` だけを持つ。
+  モジュールの解決、プログラムの組み立て、シンボルの束縛は、TypeScript 5.6.1-rc の処理を TypeScript 7.1 の構文木の上で書き直してある。
+- 型の問い合わせは、パッケージのファイルを仮想のファイルシステムとして TypeScript 7.1 の型検査器に見せて答える。
+- 元のパッケージの `internal/multiCompilerHost.js` は、`src/attw/compiler-hosts.ts` に差し替える。
+- `upstream/attw-core/lib` には `upstream/attw-core/lib.patch` を当ててある。
+  TypeScript 7 の構文木に無い `escapedText` を `text` に読み替え、型定義の `typescript` の import を `typescript/sync` に向ける。
+- `typesVersions` は TypeScript 5.6.1-rc として照合し、`ts.version` も `5.6.1-rc` を返す。結果を元のパッケージと揃えるためである。
+
+### テスト
+
+- `upstream/attw-core/test` は元のリポのテストを手を入れずに置いたものである。
+  テストが読む `fixtures` と `snapshots` は `upstream/attw-core/` の直下に、元のパッケージの `src/` は `upstream/attw-core/src` に置く。
+- `tests/attw` は、本物の @arethetypeswrong/core 0.18.5 と TypeScript 5.6.1-rc の結果と突き合わせる。
+  入力は `tests/attw/fixtures.json`、期待する結果は `tests/attw/expected.json` にある。
+- `tests/attw/expected.json` は、このリポの外の空のディレクトリに `@arethetypeswrong/core@0.18.5` を入れて作る。
+  `fixtures.json` の `fixtures` を `checkPackage` に、`hostLookups` を `internal/multiCompilerHost.js` の `CompilerHostWrapper` の `resolveModuleName` に渡す。
+  `paths` は TypeScript 5.6.1-rc の `getRootLength`・`normalizePath`・`getNormalizedAbsolutePath`・`getDirectoryPath`・`combinePaths`・`getPathComponents` に、`packageNames` は `mangleScopedPackageName`・`unmangleScopedPackageName`・`getTypesPackageName` に渡す。
+  返った値を `JSON.stringify` して書き出す。
+  TypeScript 5 をこのリポの依存に入れないため、作る仕組みはリポに置かない。
+
+[attw]: https://github.com/arethetypeswrong/arethetypeswrong.github.io/tree/main/packages/core
+
 ## コマンド
 
 | コマンド                                          | 動き                                                                                                                                                                                                                                                                                 |
@@ -88,4 +129,4 @@ overrides:
 
 ## ライセンス
 
-MIT。`dist/fsd.mjs` と `dist/parsers` に同梱した元のパッケージのライセンスは `THIRD-PARTY-NOTICES` にある。
+MIT。`dist/fsd.mjs`・`dist/parsers`・`dist/attw.mjs` に同梱した元のパッケージのライセンスは `THIRD-PARTY-NOTICES` にある。
