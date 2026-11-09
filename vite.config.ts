@@ -3,6 +3,7 @@ import { defineConfig } from "vite-plus";
 
 import aiSlopPlugin from "./libs/oxlint-plugin-decision-presets/dist/ai-slop.mjs";
 import strictPlugin from "./libs/oxlint-plugin-decision-presets/dist/strict.mjs";
+import { readonlyParameterTypes } from "./readonly-parameter-types.ts";
 
 type Rules = Readonly<Record<string, "error" | readonly ["error", { readonly model: string }]>>;
 
@@ -45,6 +46,7 @@ const effectRules: Rules = Object.fromEntries(
 );
 
 const upstreamCopies: readonly string[] = [
+  "libs/attw-core/upstream/core/**",
   "libs/oxlint-typed-rules/upstream/src/__tests__/**",
   "libs/oxlint-typed-rules/upstream/react/**",
   "libs/oxlint-typed-rules/upstream/{tanstack-*,drizzle,remotion}/**",
@@ -106,82 +108,7 @@ export default defineConfig({
         "error",
         {
           ignoreInferredTypes: true,
-          allow: [
-            {
-              from: "package",
-              package: "@oxlint/plugins",
-              name: [
-                "Context",
-                "Location",
-                "Node",
-                "Range",
-                "Rule",
-                "RuleMeta",
-                "SourceCode",
-                "VisitorWithHooks",
-              ],
-            },
-            {
-              from: "package",
-              package: "oxlint",
-              name: ["InvalidTestCase", "Rule", "TestCases", "ValidTestCase"],
-            },
-            {
-              from: "package",
-              package: "typescript",
-              name: [
-                "API",
-                "Checker",
-                "CompilerHost",
-                "CompilerOptions",
-                "ConfigFileResponse",
-                "Declaration",
-                "DeclarationBase",
-                "Expression",
-                "ExpressionBase",
-                "Node",
-                "NodeHandle",
-                "NumericLiteral",
-                "ParsedCommandLine",
-                "Program",
-                "Project",
-                "Signature",
-                "Snapshot",
-                "SourceFile",
-                "StringLiteral",
-                "Symbol",
-                "Type",
-                "TypeChecker",
-                "TypeNode",
-                "TypeNodeBase",
-                "UnionTypeNode",
-                "VariableDeclaration",
-                "VariableDeclarationList",
-              ],
-            },
-            {
-              from: "package",
-              package: "effect",
-              name: ["Cause", "Context", "Effect", "Exit", "Layer", "Option", "Ref", "Stream"],
-            },
-            { from: "package", package: "@commitlint/types", name: ["QualifiedConfig"] },
-            {
-              from: "package",
-              package: "@textlint/config-loader",
-              name: ["TextlintLoadPackagesFromRawConfigResult"],
-            },
-            {
-              from: "file",
-              path: "src/types.ts",
-              name: ["CommitlintConfig", "TextlintConfig", "ToolSections"],
-            },
-            {
-              from: "package",
-              package: "steiger",
-              name: ["ConfigObject", "GlobalIgnore", "Plugin"],
-            },
-            { from: "file", name: ["CompatSymbol", "CompatType", "TypedContext"] },
-          ],
+          allow: readonlyParameterTypes,
         },
       ],
       "eslint/no-duplicate-imports": ["error", { allowSeparateTypeImports: true }],
@@ -203,6 +130,7 @@ export default defineConfig({
           "libs/oxlint-plugin-decision/src/index.ts",
           "libs/oxlint-plugin-decision-presets/src/*.ts",
           "libs/oxlint-typed-rules/src/{drizzle,react,remotion,tanstack-query,tanstack-router,tanstack-start}.ts",
+          "libs/attw-core/src/typescript.ts",
           "libs/oxlint-typed-rules/src/ts-compat.ts",
           "libs/vp-tools/src/fsd.ts",
           "libs/vp-tools/src/fsd-typescript.ts",

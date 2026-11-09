@@ -82,7 +82,6 @@
     "effect": "catalog:stack"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "catalog:",
     "@effect/platform-node": "catalog:",
     "@effect/vitest": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
