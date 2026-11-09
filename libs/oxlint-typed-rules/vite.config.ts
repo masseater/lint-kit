@@ -210,6 +210,7 @@ export default defineConfig({
       ...shimAliases,
       { find: "@typescript-eslint/rule-tester", replacement: local("upstream/rule-tester.ts") },
       { find: "@local/testkit", replacement: local("upstream/react-testkit.ts") },
+      { find: "./create-rule-tester", replacement: local("upstream/remotion-testkit.ts") },
       {
         find: "../rules/no-async-client-component/no-async-client-component.rule",
         replacement: local("upstream/rules/no-async-client-component.ts"),

@@ -25,13 +25,8 @@ const ruleFileOf = (id: string): Option.Option<string> =>
 
 const remotionModuleOf = (id: string, importer: string): Option.Option<string> =>
   Option.liftPredicate(importer, (candidate) => UPSTREAM_REMOTION_TEST.test(candidate)).pipe(
-    Option.flatMap(() =>
-      Option.liftPredicate(local("remotion-testkit.ts"), () => id === "./create-rule-tester").pipe(
-        Option.orElse(() =>
-          ruleFileOf(id).pipe(Option.map((file) => `${VIRTUAL_REMOTION_RULE}${ruleIdOf(file)}`)),
-        ),
-      ),
-    ),
+    Option.flatMap(() => ruleFileOf(id)),
+    Option.map((file) => `${VIRTUAL_REMOTION_RULE}${ruleIdOf(file)}`),
   );
 
 const remotionRuleModule = (id: string): Option.Option<string> =>
