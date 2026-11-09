@@ -1,6 +1,7 @@
 {
   "name": "@r_masseater/attw-core",
   "version": "0.1.5",
+  "private": true,
   "description": "Run @arethetypeswrong/core on TypeScript 7 alone, as a drop-in replacement that tsdown and Vite+ load through a package manager override.",
   "keywords": [
     "arethetypeswrong",
