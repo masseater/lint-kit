@@ -1,4 +1,4 @@
-import { Effect, FileSystem, Schema, Array as Arr, pipe } from "effect";
+import { Effect, FileSystem, Path, Schema, Array as Arr, pipe } from "effect";
 
 import type { CheckError, CheckServices } from "./check.ts";
 import { runCaptured } from "./process.ts";
@@ -15,10 +15,12 @@ const RUNS: readonly (readonly string[])[] = [
   ["security", "--fail-on-issues", "--quiet"],
 ];
 
+const SMELLS = Schema.Array(Schema.Unknown).pipe(Schema.withDecodingDefaultKey(Effect.succeed([])));
+
 const COMPONENT_SMELLS = Schema.Struct({
-  prop_drilling_chains: Schema.Array(Schema.Unknown),
-  thin_wrappers: Schema.Array(Schema.Unknown),
-  duplicate_prop_shapes: Schema.Array(Schema.Unknown),
+  prop_drilling_chains: SMELLS,
+  thin_wrappers: SMELLS,
+  duplicate_prop_shapes: SMELLS,
 });
 
 const decodeSmells = Schema.decodeUnknownEffect(Schema.fromJsonString(COMPONENT_SMELLS));
@@ -53,8 +55,9 @@ const runFallow = (
 ): Effect.Effect<Report, CheckError, CheckServices> =>
   Effect.gen(function* fallow() {
     const fs = yield* FileSystem.FileSystem;
+    const path = yield* Path.Path;
     const directory = yield* fs.makeTempDirectoryScoped({ prefix: "vpa-fallow-" });
-    const configFile = `${directory}/.fallowrc.json`;
+    const configFile = path.join(directory, ".fallowrc.json");
     yield* fs.writeFileString(configFile, JSON.stringify(config));
     const reports = yield* pipe(
       RUNS,

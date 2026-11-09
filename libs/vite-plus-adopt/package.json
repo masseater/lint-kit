@@ -110,7 +110,7 @@
         "!dist/fsd.mjs",
         "!dist/attw.mjs"
       ],
-      "limit": "9861 B"
+      "limit": "9887 B"
     },
     {
       "name": "fsd",
