@@ -1,8 +1,10 @@
 {
   "name": "@r_masseater/vp-tools",
   "version": "0.1.5",
-  "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin for TypeScript 7.",
+  "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin and @arethetypeswrong/core for TypeScript 7.",
   "keywords": [
+    "arethetypeswrong",
+    "attw",
     "betterleaks",
     "commitlint",
     "feature-sliced",
@@ -28,6 +30,10 @@
     "THIRD-PARTY-NOTICES"
   ],
   "type": "module",
+  "imports": {
+    "#attw-upstream/*": "./upstream/attw-core/lib/*",
+    "#src/*": "./src/*"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
@@ -36,6 +42,10 @@
     "./fsd": {
       "types": "./dist/fsd.d.mts",
       "default": "./dist/fsd.mjs"
+    },
+    "./attw": {
+      "types": "./dist/attw.d.mts",
+      "default": "./dist/attw.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -47,15 +57,19 @@
     "prepublishOnly": "vp run build"
   },
   "dependencies": {
+    "@andrewbranch/untar.js": "1.0.4",
     "@commitlint/format": "21.2.3",
     "@commitlint/lint": "21.2.4",
     "@commitlint/load": "21.2.4",
     "@commitlint/types": "21.2.3",
     "@effect/platform-node": "catalog:",
+    "@loaderkit/resolve": "1.0.6",
     "@textlint/config-loader": "15.8.0",
     "@textlint/kernel": "15.8.0",
+    "cjs-module-lexer": "1.4.3",
     "effect": "catalog:stack",
     "fastest-levenshtein": "1.0.16",
+    "fflate": "0.8.3",
     "minimatch": "11.0.3",
     "pluralize": "8.0.0",
     "semver": "7.8.6",
@@ -64,6 +78,7 @@
     "textlint": "15.8.0",
     "tsconfck": "3.1.6",
     "typescript": "catalog:stack",
+    "validate-npm-package-name": "5.0.1",
     "web-tree-sitter": "0.26.13",
     "yaml": "2.9.1"
   },
@@ -88,7 +103,8 @@
       "name": "tools",
       "path": [
         "dist/*.mjs",
-        "!dist/fsd.mjs"
+        "!dist/fsd.mjs",
+        "!dist/attw.mjs"
       ],
       "limit": "4977 B"
     },
@@ -96,6 +112,11 @@
       "name": "fsd",
       "path": "dist/fsd.mjs",
       "limit": "9364 B"
+    },
+    {
+      "name": "attw",
+      "path": "dist/attw.mjs",
+      "limit": "45798 B"
     }
   ],
   "engines": {

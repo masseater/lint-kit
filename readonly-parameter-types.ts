@@ -4,13 +4,19 @@ interface PackageTypes {
   readonly name: string[];
 }
 
+interface LibTypes {
+  readonly from: "lib";
+  readonly name: string[];
+}
+
 interface FileTypes {
   readonly from: "file";
   readonly path?: string;
   readonly name: string[];
 }
 
-const readonlyParameterTypes: (FileTypes | PackageTypes)[] = [
+const readonlyParameterTypes: (FileTypes | LibTypes | PackageTypes)[] = [
+  { from: "lib", name: ["Uint8Array"] },
   {
     from: "package",
     package: "@oxlint/plugins",
@@ -81,6 +87,12 @@ const readonlyParameterTypes: (FileTypes | PackageTypes)[] = [
   },
   { from: "package", package: "@commitlint/types", name: ["QualifiedConfig"] },
   {
+    from: "file",
+    path: "upstream/attw-core/lib/checkPackage.d.ts",
+    name: ["CheckPackageOptions"],
+  },
+  { from: "file", path: "../vp-tools/dist/attw.d.mts", name: ["CheckPackageOptions"] },
+  {
     from: "package",
     package: "@textlint/config-loader",
     name: ["TextlintLoadPackagesFromRawConfigResult"],
@@ -109,4 +121,4 @@ const readonlyParameterTypes: (FileTypes | PackageTypes)[] = [
 ];
 
 export { readonlyParameterTypes };
-export type { FileTypes, PackageTypes };
+export type { FileTypes, LibTypes, PackageTypes };
