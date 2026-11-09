@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.6](https://github.com/masseater/lint-kit/compare/v0.1.5...v0.1.6) (2026-11-09)
+
+
+### Features
+
+* **vp-tools:** attw-core を [@r](https://github.com/r)_masseater/vp-tools/attw に取り込む ([#107](https://github.com/masseater/lint-kit/issues/107)) ([2c1aa38](https://github.com/masseater/lint-kit/commit/2c1aa38d62570a32a35d89a533f11bdd8d0ea8cb))
+
+
+### Bug Fixes
+
+* **attw-core:** npm に出さない ([#106](https://github.com/masseater/lint-kit/issues/106)) ([3a89ea5](https://github.com/masseater/lint-kit/commit/3a89ea59c43967358d30f32b92146f1c2e86197f))
+
 ## [0.1.5](https://github.com/masseater/lint-kit/compare/v0.1.4...v0.1.5) (2026-11-09)
 
 
