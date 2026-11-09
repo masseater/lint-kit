@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://github.com/masseater/lint-kit/compare/v0.2.0...v0.3.0) (2026-11-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **vite-plus-adopt:** vpa を引数なしの 1 回で全部の検査を動かす形にする ([#115](https://github.com/masseater/lint-kit/issues/115))
+
+### Features
+
+* **vite-plus-adopt:** vpa を引数なしの 1 回で全部の検査を動かす形にする ([#115](https://github.com/masseater/lint-kit/issues/115)) ([da99ad0](https://github.com/masseater/lint-kit/commit/da99ad082dfd41eb61816821a3537bca36cd36ea))
+
 ## [0.2.0](https://github.com/masseater/lint-kit/compare/v0.1.6...v0.2.0) (2026-11-09)
 
 
