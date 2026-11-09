@@ -188,6 +188,9 @@ catalogs:
     '@oxlint/plugins':
       specifier: 1.90.0
       version: 1.90.0
+    '@remotion/eslint-plugin':
+      specifier: 4.0.541
+      version: 4.0.541
     '@size-limit/file':
       specifier: 14.3.0
       version: 14.3.0
@@ -271,6 +274,8 @@ catalogs:
 overrides:
   '@feature-sliced/filesystem>typescript': 7.1.0-beta
   steiger>@feature-sliced/steiger-plugin: '-'
+  '@remotion/eslint-plugin>@typescript-eslint/utils': '-'
+  '@remotion/eslint-plugin>typescript': '-'
   effect: 4.1.2
   '@effect/platform-node-shared': 4.1.2
   '@effect/vitest': 4.1.2
@@ -410,6 +415,9 @@ importers:
       '@eslint-react/eslint-plugin':
         specifier: 'catalog:'
         version: 5.28.8(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
+      '@remotion/eslint-plugin':
+        specifier: 'catalog:'
+        version: 4.0.541(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))
       '@size-limit/file':
         specifier: 'catalog:'
         version: 14.3.0(size-limit@14.3.0)
@@ -1568,6 +1576,11 @@ packages:
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       '@redis/client': ^6.3.0
+
+  '@remotion/eslint-plugin@4.0.541':
+    resolution: {integrity: sha512-foxZTw8T99c7n5dIsJSGdr5GfySmyLCeHHe7J7gOVRWGZUfcaxVPOME80G3Dzr3ydiq869IECglTvCI8SNrEDQ==}
+    peerDependencies:
+      eslint: '>=7.0.0'
 
   '@simple-libs/child-process-utils@2.0.0':
     resolution: {integrity: sha512-dvNoRKLijXnD0XoJAz94pbNuB5GQgDr55UhpSPhffDkTT0Cmcqh9jSCOtwfT2d4H6MI9E7c4SgtMuJXZ6F3c6A==}
@@ -4524,6 +4537,10 @@ snapshots:
   '@redis/time-series@6.3.0(@redis/client@6.3.0)':
     dependencies:
       '@redis/client': 6.3.0
+
+  '@remotion/eslint-plugin@4.0.541(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))':
+    dependencies:
+      eslint: 9.39.5(jiti@2.6.1)(supports-color@7.2.0)
 
   '@simple-libs/child-process-utils@2.0.0':
     dependencies:

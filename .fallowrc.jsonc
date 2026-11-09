@@ -40,6 +40,7 @@
     "libs/oxlint-typed-rules/upstream/tanstack-query/**",
     "libs/oxlint-typed-rules/upstream/tanstack-router/**",
     "libs/oxlint-typed-rules/upstream/drizzle/**",
+    "libs/oxlint-typed-rules/upstream/remotion/**",
     "libs/vp-tools/upstream/**",
   ],
   "dynamicallyLoaded": [

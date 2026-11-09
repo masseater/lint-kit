@@ -1,6 +1,8 @@
 import { Option, Record } from "effect";
 import { defineConfig } from "vite-plus";
 
+import { upstreamRemotionRules } from "./upstream/remotion-modules.ts";
+
 const local = (path: string): string => new URL(path, import.meta.url).pathname;
 
 const shims: Readonly<Record<string, string>> = {
@@ -169,7 +171,12 @@ const upstreamDrizzleRules = {
 } as const;
 
 export default defineConfig({
-  plugins: [upstreamReactRules, upstreamTanstackModules, upstreamDrizzleRules],
+  plugins: [
+    upstreamReactRules,
+    upstreamTanstackModules,
+    upstreamDrizzleRules,
+    upstreamRemotionRules,
+  ],
   run: {
     tasks: {
       build: { command: "vp pack", cache: false },
@@ -184,6 +191,7 @@ export default defineConfig({
       "src/tanstack-query.ts",
       "src/tanstack-router.ts",
       "src/drizzle.ts",
+      "src/remotion.ts",
       "src/react.ts",
     ],
     platform: "node",
@@ -202,6 +210,7 @@ export default defineConfig({
       ...shimAliases,
       { find: "@typescript-eslint/rule-tester", replacement: local("upstream/rule-tester.ts") },
       { find: "@local/testkit", replacement: local("upstream/react-testkit.ts") },
+      { find: "./create-rule-tester", replacement: local("upstream/remotion-testkit.ts") },
       {
         find: "../rules/no-async-client-component/no-async-client-component.rule",
         replacement: local("upstream/rules/no-async-client-component.ts"),
@@ -231,6 +240,7 @@ export default defineConfig({
         inline: [
           /@tanstack\/eslint-plugin-/u,
           "eslint-plugin-drizzle",
+          "@remotion/eslint-plugin",
           /@eslint-react\//u,
           /eslint-plugin-react-/u,
         ],
@@ -242,6 +252,7 @@ export default defineConfig({
       "upstream/tanstack-query/src/__tests__/*.test.ts",
       "upstream/tanstack-router/src/__tests__/*.test.ts",
       "upstream/drizzle/tests/*.test.ts",
+      "upstream/remotion/src/tests/*.test.ts",
       "upstream/react/plugins/**/*.spec.ts",
     ],
   },

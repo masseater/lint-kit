@@ -29,6 +29,7 @@ Use intent maintainer setup to initialize missing records, maintainer add to reg
 - vocablint の検査の本体は `libs/vocablint`（`@vocablint/core`）にあり、`tools/vocablint`（`@r_masseater/vocablint`）は CLI と oxlint プラグインだけを持つ。npm にはまだ出していない。`checkRepository` は TypeScript 7.1 の `typescript/sync` で tsgo を 1 つ立てて tsconfig.json ごとにプログラムを作り、全プロジェクトから `@vocablint` の持ち主を集めてから各プロジェクトを解析し、最後に持ち主の無い値の集合の重複を突き合わせる。`typescript` は peer に置く。oxlint プラグインは読み込みの時点で CLI を子プロセスで動かして結果を持つ。oxlint が領域を確保した後の fork は ENOMEM で落ちる。
 - TanStack Query と Router の元のテストは `upstream/tanstack-query/`・`upstream/tanstack-router/` に置く。パッケージの `vite.config.ts` のプラグインが、テストの `../rules/<名前>/<名前>.rule` を移植したルールに、ほかの相対 import を元のパッケージの `src/` に向ける。
 - eslint-plugin-drizzle の元のテストは `upstream/drizzle/` に置き、`../src/<名前>` を移植したルールに向ける。テストが `require.resolve` で探す `@typescript-eslint/parser` は、読み込まずに解決させるためだけに devDependencies に入れている。
+- @remotion/eslint-plugin の元のテストは `upstream/remotion/` に置く。パッケージの `vite.config.ts` のプラグインが、テストの `../rules/<ファイル名>` を移植したルールに、`./create-rule-tester` を `upstream/remotion-testkit.ts` に向ける。元のプラグインの `@typescript-eslint/utils` と `typescript` の依存は、ルートの overrides で外している。
 
 ## 計測
 
