@@ -92,14 +92,14 @@
       ]
     },
     "source:CHANGELOG.md": {
-      "fingerprint": "d632783999cf2c95c3dd5806bb8d53c99dc2913aef181a9e5fcbe5de5342e176",
+      "fingerprint": "869c6ca7b6573409342e86543453c072b48803c36146a49bd08117e766bd6993",
       "snapshot": {
-        "CHANGELOG.md": "b3dbf10fc109a6bb39f0abebcd975222b28c7a8a89881a7a05f3ce73d6242074"
+        "CHANGELOG.md": "0b4d2f186bc2adb4cc6db7397da827212bf5ebe520c34da8313afdcfa9e9812e"
       },
-      "head": "44d98cebf7d4f0f32230950a80e85f6423e2eaa9",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "公開する型を狭めただけで、skill の内容に影響しない",
-      "evidence": ["Changed: CHANGELOG.md at 44d98cebf7d4f0f32230950a80e85f6423e2eaa9"]
+      "reason": "リリースで版と CHANGELOG を更新しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": ["Changed: CHANGELOG.md at 0abe7b963827726a393e2b38955a4dcfb5efba3c"]
     },
     "source:NOTICE": {
       "fingerprint": "f5de80f2de62efe1295527803aa77a72bb63fa84e175c23cad57ac63ef26a4ef",
@@ -364,303 +364,303 @@
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
-      "fingerprint": "c150530e021b9fac48524796e7d89265813721819c2f8c17888f44499f8b59c0",
+      "fingerprint": "1902031fd81b80e32a9f2f3a5d6ed6bbce5c77371b3e3c60a50be80ff2a5ec60",
       "snapshot": {
-        "libs/vocablint/src/analysis.ts": "464429af14bace8ce430d47699532fcdfbc2b55b99f0d69f374bc80fbc09a993"
+        "libs/vocablint/src/analysis.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/analysis.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/analysis.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/check.ts": {
-      "fingerprint": "94c9c8f68e700b7cdc42ca52f770b42d43b15bb44edda23565e0746c40eb4592",
+      "fingerprint": "9457241e23af1970b8b81db9e0a2832b447d5e0af14dfe553f030cff1bf7cdd1",
       "snapshot": {
-        "libs/vocablint/src/check.ts": "95a51ecb89e1d39a319138cbe0ba1d5951dd7d4862e70bfbd3af801cbcb7bd9b"
+        "libs/vocablint/src/check.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/check.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/check.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/dependencies.test.ts": {
-      "fingerprint": "75161b522b9aaa6e1e7a4a1c01ded1e73b0e2647780df37bd06a8a8fe84a01f3",
+      "fingerprint": "7f6f3cc818849d846eafd9892419ed786f7a03aadee45a26869362e034d4cd0a",
       "snapshot": {
-        "libs/vocablint/src/dependencies.test.ts": "5a096dc8da8ba825343049b8b846250530c9de511b0628a99a1109b9d0d80846"
+        "libs/vocablint/src/dependencies.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/dependencies.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/dependencies.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/dependencies.ts": {
-      "fingerprint": "bc7e7e6da3bd8b55e05dcd9d792efc69bb3b8e2436b3761a87bdc461f0bd361e",
+      "fingerprint": "610513f57834d7bdee3bd60144e150d41bbe7cc7aa8b8cce73eee9360284fbdc",
       "snapshot": {
-        "libs/vocablint/src/dependencies.ts": "9235d1d1e911a9689baab1f2a33695f076f681c77ce532aa84004419300a1cc4"
+        "libs/vocablint/src/dependencies.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/dependencies.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/dependencies.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/duplicates.ts": {
-      "fingerprint": "f78145406effe281b276386e4d3f632e134b5b38e1e165a5962eb35e7d482389",
+      "fingerprint": "173749d5593d5935bf60edfc4cda3b52cfde22f527c5865e5b266adf937ee908",
       "snapshot": {
-        "libs/vocablint/src/duplicates.ts": "142aedc4a909558081dabdd01910f8c716aa3ade0365536c6b8eea5312de67f2"
+        "libs/vocablint/src/duplicates.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/duplicates.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/duplicates.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/effect-schema.test.ts": {
-      "fingerprint": "944e5c09673772b2dd88ffd8fa691af2cca91a04d5b4fc8b9fe907a5d4a7664b",
+      "fingerprint": "13e405dee15f2a7b7586f0596bb93b22f15e7b8c97b3528cd8e497f67521ba9a",
       "snapshot": {
-        "libs/vocablint/src/effect-schema.test.ts": "a32b559f4885f111d2db2928249b6e79299c3c06b12037915c94b3b41194d395"
+        "libs/vocablint/src/effect-schema.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/effect-schema.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/effect-schema.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/flows.ts": {
-      "fingerprint": "78d6ed4b4d473557f6e7115bd698c9810e81cc29aa633af3ab27cdcbd7316554",
+      "fingerprint": "8390812ad8d3d99afc9d23a537fb113e9c47b9ad5680bfa4467ee5cae14afebc",
       "snapshot": {
-        "libs/vocablint/src/flows.ts": "990691c3949d1438a1ecbdef8bbd7bd856fc09699352a224a8b8665fcc15e857"
+        "libs/vocablint/src/flows.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/flows.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/flows.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/index.ts": {
-      "fingerprint": "3e2a6952759c5d19c16ef564bf95b8b4e6ba488c38f14b03e9ef8177c0d55f65",
+      "fingerprint": "20f3ad99ea4b77d44e29a04a77a231a9626e2f56851fd8c89e4ac2c954594aca",
       "snapshot": {
-        "libs/vocablint/src/index.ts": "af8b949a1bae2c0a7a0d5cbccd792b9df27b1544324aabef5248d92986e69bb9"
+        "libs/vocablint/src/index.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/index.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/index.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/library.test.ts": {
-      "fingerprint": "f121a05a64d52f23b7c6eff3da09761d6f1a2296add8a4da7f20904d8cb824cb",
+      "fingerprint": "18ed5ac4d39397126f579227218190dcde801e301a745a0765c1f96a1cbda0cd",
       "snapshot": {
-        "libs/vocablint/src/library.test.ts": "04a1d7b1b8f4a1adf5b76e0871ac0e2cdf77a19b6816812a8454900811009e46"
+        "libs/vocablint/src/library.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/library.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/library.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/library.ts": {
-      "fingerprint": "986f774c4cc286e02ff2a5318cceb8f7eed169b2e98155e340b3b8f6ae9a83b6",
+      "fingerprint": "13cc8c355708130fe1dda2fb082f6ed727d7893eb8c02e9e5976cd9fc7fa6e2a",
       "snapshot": {
-        "libs/vocablint/src/library.ts": "0032d82e2b7f4cddee102f1501ffe469d4a4fb03e26ebe8478a89756a04f3b41"
+        "libs/vocablint/src/library.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/library.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/library.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/owners.test.ts": {
-      "fingerprint": "6f9840feba9bc79ff1e16e281a89c7d2940dfe108b3b26d7bc41eef48f8e85e9",
+      "fingerprint": "0255256dd2f4bac3c39544ec1b049f64c03ad49c0cbb1f8cf7f4bc942c3e5c3e",
       "snapshot": {
-        "libs/vocablint/src/owners.test.ts": "669379e501fdbbd508d3b4cf1284a70c049975a949f5864fbb6c59efa27b8345"
+        "libs/vocablint/src/owners.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/owners.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/owners.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/owners.ts": {
-      "fingerprint": "e77103e23e336db962a9dfe7a5f297565fc371ac39c2a778a9f2dbe3354bf8df",
+      "fingerprint": "b914547c8379532c8412d07efb41c0ceaae434daeb5a212d279be6488d2eb611",
       "snapshot": {
-        "libs/vocablint/src/owners.ts": "116389fa29224a7f8a703586bf153f2c1cd248e730e2ad4a1a258d5c2a9dd91e"
+        "libs/vocablint/src/owners.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/owners.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/owners.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/problem.ts": {
-      "fingerprint": "2f50abd9e5944bc11f4bb2cb09b7e8ab835f19e3d5df2994b1bd740ac3c47625",
+      "fingerprint": "28a6816695ba3ad1139aa796e9da374307ae112eb2156a92f6393481f860859c",
       "snapshot": {
-        "libs/vocablint/src/problem.ts": "9d69cfc75331d44e6cdc1a48ed7e3b906c72b7c0d230743d4430ac2667c87b86"
+        "libs/vocablint/src/problem.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/problem.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/problem.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/project.ts": {
-      "fingerprint": "3d9af20dfd24e49a679706acc3ba12e1dc7fe05148acd3c151690446372d3c21",
+      "fingerprint": "568ac0066b3c0444c9195acbaa7c18a1afedbc6f1dc11aa5b871e9d25d99e30f",
       "snapshot": {
-        "libs/vocablint/src/project.ts": "b79a93698fb9904063d9440da7f00ef9faddc1077db407e6bb049bf621e3b395"
+        "libs/vocablint/src/project.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/project.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/project.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/repository-files.ts": {
-      "fingerprint": "919a9d5790402ea990d03325d99b8cf6125d1c45be1551a2240eff21911474f8",
+      "fingerprint": "a8ef2e8bedd88b9aeb7a780791ff9564006ec3de7bed68e955a016b58dee6c37",
       "snapshot": {
-        "libs/vocablint/src/repository-files.ts": "b0215f49f7424ead147b4f2b32df88fed0cbaa02a4336be7452b5ce6ad64e009"
+        "libs/vocablint/src/repository-files.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/repository-files.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/repository-files.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/repository.test.support.ts": {
-      "fingerprint": "a82d5bb61d6fceff094748c3c665ae46787c0690cbd40d427486e31a787bb4f8",
+      "fingerprint": "c20b8d04735d738d7b192a025aaf67b078fe2ab5ad5e24dec5f73ddb4b286753",
       "snapshot": {
-        "libs/vocablint/src/repository.test.support.ts": "6a5984f3395c6f00ff34bfde4015a51596647ae8dcf8abe0358246102b8f29f9"
+        "libs/vocablint/src/repository.test.support.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/repository.test.support.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/repository.test.support.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/shapes.ts": {
-      "fingerprint": "2fca1b4bd903b4d9a74293fdaf5ee741c8c3d5211297cfce85a87fa7953a06a1",
+      "fingerprint": "ab78bc11b393c66b37b40d9d442ebecafc0740c8abdcf7fc087a15949a1df231",
       "snapshot": {
-        "libs/vocablint/src/shapes.ts": "6417163537a81e6bdfd4eeaf8c2bdc438ec08035f21e3b97b13f8dd0d6b53d91"
+        "libs/vocablint/src/shapes.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/shapes.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/shapes.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/sites.ts": {
-      "fingerprint": "edd7355f2a57576777f3657da7abfd95d5ba233b008b387f7edcf941bc12e7ac",
+      "fingerprint": "36049a1d3d3dd78bddc75b660ec943f0e69c8588c22185f7271245580cde65be",
       "snapshot": {
-        "libs/vocablint/src/sites.ts": "04e2b776218695c2b6ab71766907dc8fb95dccc50530c291471ce9b61d87422c"
+        "libs/vocablint/src/sites.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/sites.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/sites.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/slots.ts": {
-      "fingerprint": "ec2e0970158feabf7bde1d535df5e65e9baed9cf24a00d468dac35faf462ed6b",
+      "fingerprint": "c0a496fee454eb93e19c0ac8e7f0c09870e9ebeecdd703fb4290c3d1e83b970e",
       "snapshot": {
-        "libs/vocablint/src/slots.ts": "69922020288576b4b90e711eb0805bc28363d1a647dd7493d16b89cdbbee5aee"
+        "libs/vocablint/src/slots.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/slots.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/slots.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/syntax.ts": {
-      "fingerprint": "b0b450c043cec6d344d4f4d7d23088ca62af5e455c4abad9a58a4897b7d48560",
+      "fingerprint": "9b8b446b3b8dec1517ce44499adae198b7b38ab208b89553a7768989c4e4df50",
       "snapshot": {
-        "libs/vocablint/src/syntax.ts": "2b9cec90f2c0fbf84efd0b1f0f59a2d83eb31d7dcf7617bdf911e3addac1213b"
+        "libs/vocablint/src/syntax.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/syntax.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/syntax.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/types-packages.test.ts": {
-      "fingerprint": "a63acdd4c9e7c706a7a0aaf3caccd3a6fe7080ac5f1f26405ac7fba3c4ef7869",
+      "fingerprint": "b59ea34eb6f84478163741b96014a31de9847d950c65f273d2eaebce949f1ba0",
       "snapshot": {
-        "libs/vocablint/src/types-packages.test.ts": "87066200a572344ed24cc05308c0d7fd77d50d9f23fbca0ee5a05214afc3c85f"
+        "libs/vocablint/src/types-packages.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/types-packages.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/src/types-packages.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/value-checks.ts": {
-      "fingerprint": "eeb37ba69252ec3b28f371b4d9e5f9f1d7019d60cfbc9ed6a5919b0693925079",
+      "fingerprint": "a6c7c8c8c39c8f94a26599c75e542113cd89a3b2d4c41f0c128a50a1902a6763",
       "snapshot": {
-        "libs/vocablint/src/value-checks.ts": "266f50eeb7e2a60f7e35793740f5ff01b4415e3e679a3a4324326b8c02859a54"
+        "libs/vocablint/src/value-checks.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/value-checks.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/value-checks.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/src/values.ts": {
-      "fingerprint": "f1b127a2101db8fe2e73424d7638684058af22af305209f65528a51fd8ccd914",
+      "fingerprint": "af2edface3e96ab57cab56d31fa96ca79611209145366045d39f7d194fff60ff",
       "snapshot": {
-        "libs/vocablint/src/values.ts": "31e3a3eeb9cae08dd6dc47351dc511343e5313c8865bb88a5b3c01ccaf7bada7"
+        "libs/vocablint/src/values.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/values.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/values.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/tsconfig.json": {
-      "fingerprint": "fec09db03260adb1e9a2303f1999bcc84f412674c29b532637aaceff2ada9ca3",
+      "fingerprint": "af5c1591fb1b89435b37a00fe1d03a86b9386494fd8017fb35bcdae3266db3e6",
       "snapshot": {
-        "libs/vocablint/tsconfig.json": "846d26e3118051fe7a5c3fc38ca5d6ccb1502400777cafbd0253f817d73c837c"
+        "libs/vocablint/tsconfig.json": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/tsconfig.json at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:libs/vocablint/vite.config.ts": {
-      "fingerprint": "43c78466077bbb77c1ed8dc6f0176f59fc1d015cfe8605324928c7b0201ebe3d",
+      "fingerprint": "ed427b40ae094dd168cb7c387c61336a462ace16057257cabdd9a2408ed78fb8",
       "snapshot": {
-        "libs/vocablint/vite.config.ts": "55cd8ac1d1674c5668c5aa1e97db56bc3bd9f5ec7875a0c0786312103d5644df"
+        "libs/vocablint/vite.config.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: libs/vocablint/vite.config.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:patches/@tanstack__eslint-plugin-start@0.1.0.patch": {
@@ -676,109 +676,109 @@
       ]
     },
     "source:tools/vocablint/README.md": {
-      "fingerprint": "2d73bdb1b4618a6d87c716b940ab7cbc8c6f69bde96c566049051ad03daf221e",
+      "fingerprint": "c879e0b547f6225dd773362ddc070c29b147bcc31e7fb69899f28f98c29d8d46",
       "snapshot": {
-        "tools/vocablint/README.md": "c21142ef8d2e6f1fd5dc75b7389f588f1773850abfb5d6ceb2cd495d866fc950"
+        "tools/vocablint/README.md": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
-      "evidence": ["Changed: tools/vocablint/README.md at 58dfb6cb5eb674399c36bebaf10a99299275f621"]
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": ["Changed: tools/vocablint/README.md at 0abe7b963827726a393e2b38955a4dcfb5efba3c"]
     },
     "source:tools/vocablint/src/cli-contract.ts": {
-      "fingerprint": "b0ce9a57460797e0b52eb321d6fe0931866494217cdc4161597f756eb9668461",
+      "fingerprint": "c2885f0ed579c62cb49915ac40ba804b8f5178031941028fd410e84540cf579b",
       "snapshot": {
-        "tools/vocablint/src/cli-contract.ts": "c2d8d2ad1ea847d35a619f40d0203227ad3362db1ec49e8dbbcd7ad909ddf9c1"
+        "tools/vocablint/src/cli-contract.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/cli-contract.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/cli-contract.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/src/cli.test.ts": {
-      "fingerprint": "7de6e49209f2df3a800525062c4a03b9000df9b074d32f5b86390bee0784ac53",
+      "fingerprint": "e5969a929c283b0ba669da7642d54c67784aa3499cff92d661b45b7955dd88bc",
       "snapshot": {
-        "tools/vocablint/src/cli.test.ts": "4946504ab8f43533244b6f85dae724114ae63ec46484087c9ca8fbbbd54d2db9"
+        "tools/vocablint/src/cli.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/cli.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/cli.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/src/cli.ts": {
-      "fingerprint": "c29bf96bac4df2ff312400d1a528f26a852455e6d66560da20a349c53b3cf4b2",
+      "fingerprint": "b8b15cf239d5bf7c452b0c092993ed390657632da100daef19fa9bcbe56404e3",
       "snapshot": {
-        "tools/vocablint/src/cli.ts": "5dadf3ef9c2f550198fe49effc42c5d47a81aa6b6ada3b53c6771eb49657c19b"
+        "tools/vocablint/src/cli.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/cli.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/cli.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/src/oxlint-rule.test.ts": {
-      "fingerprint": "0c1494fbf74813eb2c5e92cd68184a97a0bcb25ef5f956550ab17faf4cc260bf",
+      "fingerprint": "c683c1ff12983ae6cc720d84eb680f36d12759a66a0a71b37ec77f8c6c3998fc",
       "snapshot": {
-        "tools/vocablint/src/oxlint-rule.test.ts": "8eb20bba89d67cbf7d35f870ebf4e84f5b7941d6f3e46ba487f15fb9ae2b13c8"
+        "tools/vocablint/src/oxlint-rule.test.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/oxlint-rule.test.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/oxlint-rule.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/src/oxlint-rule.ts": {
-      "fingerprint": "e8110a0e1a5310c0d6435b32ab20cf2f21d05ba52721d8c4e14e80730e0c398e",
+      "fingerprint": "325f394ae7d5d178368b544a9bcc07726550ee24633fdfc4633cc3b353ee2d16",
       "snapshot": {
-        "tools/vocablint/src/oxlint-rule.ts": "4ba364ce904665a3e94b4e0d699b0f711a5fb44c891e521cb5449b5fa1024e72"
+        "tools/vocablint/src/oxlint-rule.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/oxlint-rule.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/src/oxlint-rule.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/src/oxlint.ts": {
-      "fingerprint": "f440d099aa22a6802fce617992a9a6db97ae00519a2770125312245096f84a7b",
+      "fingerprint": "8cba6f4cd55d4d8e849fce8d618036a1f8c68cdf9125f87b1654d179bdcec9de",
       "snapshot": {
-        "tools/vocablint/src/oxlint.ts": "4fe3d29af72201af53767b1e064d99d9881aa8a429b7ee31974a5c392c53af0f"
+        "tools/vocablint/src/oxlint.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/src/oxlint.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: tools/vocablint/src/oxlint.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/tsconfig.json": {
-      "fingerprint": "5209c78f49baa08c844a261894d03506e4ee3e35e626db80efbafe4221cd4d3f",
+      "fingerprint": "98cc3e907fe1cb0bfd7e23b01b2c9dfb441afe3a223ce16c71e09e0d6928ad93",
       "snapshot": {
-        "tools/vocablint/tsconfig.json": "aa772a4f8d81dddd2dccf284ede1bbc6825ba0bb8a2cbb18cddd1958a281d589"
+        "tools/vocablint/tsconfig.json": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/tsconfig.json at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/tsconfig.json at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:tools/vocablint/vite.config.ts": {
-      "fingerprint": "c3261455e9a4970543e335e49801a5589f83a6fa2414be4e6c846816def1426d",
+      "fingerprint": "911050ad1487b19e7c11fc505528e8c7ee0c8bd303840864adab7b30ea1b9252",
       "snapshot": {
-        "tools/vocablint/vite.config.ts": "6fecc53ad0b29c5b8c6fe8b0eef4dc21f9a75243ad6e1806aa1fe60e4cd9d060"
+        "tools/vocablint/vite.config.ts": null
       },
-      "head": "58dfb6cb5eb674399c36bebaf10a99299275f621",
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
       "outcome": "no-change",
-      "reason": "取り込んだ oxlint-typed-rules と vocablint は別パッケージで、oxlint-plugin-decision の skill が案内する API と使い方は変わらない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: tools/vocablint/vite.config.ts at 58dfb6cb5eb674399c36bebaf10a99299275f621"
+        "Changed: tools/vocablint/vite.config.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     },
     "source:renovate.json": {
@@ -8467,6 +8467,110 @@
       "reason": "vp-tools への attw の取り込みと attw-core の削除で、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方に関わらない",
       "evidence": [
         "Changed: libs/vp-tools/upstream/attw-core/test/utils.ts at 4120426b3cfa3b593343b9596ee090ad9a45b5c0"
+      ]
+    },
+    "source:libs/vp-tools/src/cli.ts": {
+      "fingerprint": "d63d121f7b12766c746cf5c5d6b16b6135ae064ae6d561509ccc7ec038972e44",
+      "snapshot": {
+        "libs/vp-tools/src/cli.ts": "1597b1a6dfb7b9d2e5380a4b53c708595fe8ded7a36a3c082236fb841db2918d"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": ["Changed: libs/vp-tools/src/cli.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"]
+    },
+    "source:libs/vp-tools/src/commands.test.ts": {
+      "fingerprint": "222c1dbc3830601531830abd049a540f0e0cfe0acc16bac4bd9b39e343b4bd2e",
+      "snapshot": {
+        "libs/vp-tools/src/commands.test.ts": "1f9e5d84b9da5a0da44614c78a542469eee350983b55ad4d23ff5588a2af1646"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/commands.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/commitlint.ts": {
+      "fingerprint": "bc4b6ab4404a60c3025c64c6a03120d7ad3c81a4bd9ddce77a88b92a32dc3868",
+      "snapshot": {
+        "libs/vp-tools/src/commitlint.ts": "0143c131c799dba89f2838032bedf1de60b7f18d5ee6acc3d99aac51faa0fea0"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/commitlint.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/dependency-rules.test.ts": {
+      "fingerprint": "17a67029813ad3357046d17db739b1614ea5dd1576eb795339753163c0cb4b32",
+      "snapshot": {
+        "libs/vp-tools/src/dependency-rules.test.ts": "59a7d3ebe894836717e03d63dd3a678d2ec4b92cf9d5e8a7325a9d12499050ee"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/dependency-rules.test.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/dependency-rules.ts": {
+      "fingerprint": "f5af62631e25b19995d05e87d0a91ed95905ea225bec7a105a8b0f62458e5aef",
+      "snapshot": {
+        "libs/vp-tools/src/dependency-rules.ts": "5cdc429cee95b947948094cc562c9b87c6304ec3acf92af7ec37f8d6486cf4d4"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/dependency-rules.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/fixture.test.support.ts": {
+      "fingerprint": "9a1df02a6c16163cacd5c1993366878b0c3d8f7dc7014d6b13dd7b29a8067d5c",
+      "snapshot": {
+        "libs/vp-tools/src/fixture.test.support.ts": "14b2937c0a2203f09ed0dfdcbfd81627c3f7df71118de7e5157a1c887f219d0a"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/fixture.test.support.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/git.ts": {
+      "fingerprint": "b71e0df8000ea2e837dda276dfe8abac29392efc40f76527a3168457684a6823",
+      "snapshot": {
+        "libs/vp-tools/src/git.ts": "b06636962579a597aa96d7eca4d6373c2fbbca93232e74e82fc55a897732726d"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": ["Changed: libs/vp-tools/src/git.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"]
+    },
+    "source:libs/vp-tools/src/text-commands.ts": {
+      "fingerprint": "c6edfef12bd2d626b7a403ca0244161c3c5030988485611f11a768655f977f5c",
+      "snapshot": {
+        "libs/vp-tools/src/text-commands.ts": "c8debfe78f9a78ca464b7e06ad72bf0f87c976caa3b2a4b5ebd1c9e3d7f8299d"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/text-commands.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
+      ]
+    },
+    "source:libs/vp-tools/src/types.ts": {
+      "fingerprint": "017f60737c338657ddc54ad9c9a8cda55c80db3fa4bf43e755830c23145b8bbc",
+      "snapshot": {
+        "libs/vp-tools/src/types.ts": "0b92e0b21cdcf393cdb108b12f3611251af26cc04ff9c1bde2685e436eb1f73a"
+      },
+      "head": "0abe7b963827726a393e2b38955a4dcfb5efba3c",
+      "outcome": "no-change",
+      "reason": "vp-tools の CLI と依存の検査の変更で、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "evidence": [
+        "Changed: libs/vp-tools/src/types.ts at 0abe7b963827726a393e2b38955a4dcfb5efba3c"
       ]
     }
   }
