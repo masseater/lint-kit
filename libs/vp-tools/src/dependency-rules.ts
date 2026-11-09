@@ -2,7 +2,7 @@ import { Array as Arr, Option, Predicate, Record as Rec, String as Str, pipe } f
 import { minimatch } from "minimatch";
 import { intersects, valid, validRange } from "semver";
 
-import type { DependencyRules } from "./types.ts";
+import type { AllowedDependencies, DependencyRules } from "./types.ts";
 import type { Dependency } from "./workspace.ts";
 
 const SINGLE = 1;
@@ -25,22 +25,60 @@ const bannedBy =
     );
   };
 
-const bannedProblems = (
-  rules: DependencyRules,
-  dependencies: readonly Dependency[],
-): readonly string[] =>
-  pipe(Rec.toEntries(rules.banned ?? {}), Arr.flatMap(bannedBy(dependencies)));
-
 const MANIFEST = "package.json";
 
-const inWorkspaces =
+const matchesAny =
+  (globs: readonly string[]) =>
+  (value: string): boolean =>
+    pipe(
+      globs,
+      Arr.some((glob) => minimatch(value, glob)),
+    );
+
+const inWorkspace =
   (globs: readonly string[]) =>
   (dependency: Dependency): boolean =>
-    dependency.field === "dependencies" &&
     pipe(
       globs,
       Arr.some((glob) => minimatch(dependency.manifest, `${glob}/${MANIFEST}`)),
     );
+
+const inFields =
+  (fields: AllowedDependencies["fields"]) =>
+  (dependency: Dependency): boolean =>
+    pipe(
+      Option.fromNullishOr(fields),
+      Option.match({
+        onNone: () => true,
+        onSome: (names) => Arr.contains(names, dependency.field),
+      }),
+    );
+
+const allowedBy =
+  (dependency: Dependency) =>
+  ({ workspaces, dependencies, fields }: AllowedDependencies): boolean =>
+    inWorkspace(workspaces)(dependency) &&
+    matchesAny(dependencies)(dependency.name) &&
+    inFields(fields)(dependency);
+
+const isAllowed =
+  (rules: DependencyRules) =>
+  (dependency: Dependency): boolean =>
+    pipe(Rec.values(rules.allowed ?? {}), Arr.some(allowedBy(dependency)));
+
+const bannedProblems = (
+  rules: DependencyRules,
+  dependencies: readonly Dependency[],
+): readonly string[] => {
+  const allowed = isAllowed(rules);
+  const checked = pipe(dependencies, Arr.filter(Predicate.not(allowed)));
+  return pipe(Rec.toEntries(rules.banned ?? {}), Arr.flatMap(bannedBy(checked)));
+};
+
+const inWorkspaces =
+  (globs: readonly string[]) =>
+  (dependency: Dependency): boolean =>
+    dependency.field === "dependencies" && inWorkspace(globs)(dependency);
 
 const exactGlobs = (rules: DependencyRules): readonly string[] =>
   pipe(Rec.values(rules.exactDependencies ?? {}), Arr.flatten);

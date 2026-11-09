@@ -88,7 +88,38 @@ const checksOtherFieldsOfStandaloneWorkspaces = Effect.sync(() => {
   );
 });
 
+const allowsBannedDependenciesInChosenWorkspaces = Effect.sync(() => {
+  const rules = {
+    banned: { "instrument with OpenTelemetry auto-instrumentation": ["@opentelemetry/sdk-*"] },
+    allowed: {
+      "the OTLP receiver is tested with the SDK": {
+        workspaces: ["libs/vitest-otlp"],
+        dependencies: ["@opentelemetry/sdk-*"],
+        fields: ["devDependencies" as const],
+      },
+    },
+  };
+  deepStrictEqual(
+    checkDependencies(rules, [
+      {
+        ...used("libs/vitest-otlp/package.json", "@opentelemetry/sdk-node", "0.301.0"),
+        field: "devDependencies",
+      },
+      used("libs/vitest-otlp/package.json", "@opentelemetry/sdk-trace-base", "2.0.0"),
+      used("apps/web/package.json", "@opentelemetry/sdk-node", "0.301.0"),
+    ]),
+    [
+      "libs/vitest-otlp/package.json dependencies.@opentelemetry/sdk-trace-base is banned: instrument with OpenTelemetry auto-instrumentation",
+      "apps/web/package.json dependencies.@opentelemetry/sdk-node is banned: instrument with OpenTelemetry auto-instrumentation",
+    ],
+  );
+});
+
 layer(Layer.empty)("dependency rules", (it) => {
+  it.effect(
+    "allows a banned dependency in the workspaces and fields an exception names",
+    () => allowsBannedDependenciesInChosenWorkspaces,
+  );
   it.effect(
     "requires exact versions in the dependencies of standalone workspaces and leaves them out of the comparison",
     () => requiresExactVersionsInStandaloneWorkspaces,
