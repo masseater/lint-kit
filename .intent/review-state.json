@@ -2204,15 +2204,15 @@
       "evidence": ["Changed: .betterleaksignore at 85da14043d1a33beca33ef4463ad7e5268957979"]
     },
     "source:libs/vocablint/src/compiler.ts": {
-      "fingerprint": "fba742836e881fde514bdff60082a534b074065d31e881eedcd50b4fe9cc2ad1",
+      "fingerprint": "b07fd9251025b910b34bc6a9ae8de642b493642f441e4df63bb11f3e4e12eb9d",
       "snapshot": {
-        "libs/vocablint/src/compiler.ts": "666d6307631d82425b5c2bb8017efb5cb1690be0117d663e962af6430065470d"
+        "libs/vocablint/src/compiler.ts": null
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "bbeaba14091ac96dfec5bd658609f20e77c5028b",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "vocablint を masseater.dev の msch に移したので lint-kit から消しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
-        "Changed: libs/vocablint/src/compiler.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vocablint/src/compiler.ts at bbeaba14091ac96dfec5bd658609f20e77c5028b"
       ]
     },
     "source:libs/vp-tools/README.md": {
