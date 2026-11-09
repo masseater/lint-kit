@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/masseater/lint-kit/compare/v0.1.2...v0.1.3) (2026-11-09)
+
+
+### Features
+
+* **oxlint-typed-rules:** TanStack Query・Router と drizzle のルールを TypeScript 7 だけの環境で動かす ([#97](https://github.com/masseater/lint-kit/issues/97)) ([bf4992e](https://github.com/masseater/lint-kit/commit/bf4992ed054d8d364734b46ea66dc1e0a4966659))
+* **vp-tools:** require exact versions in the dependencies of chosen workspaces ([#98](https://github.com/masseater/lint-kit/issues/98)) ([11c9dba](https://github.com/masseater/lint-kit/commit/11c9dbaa57fd2ddc8118f7be7adf6872e7c56f10))
+
 ## [0.1.2](https://github.com/masseater/lint-kit/compare/v0.1.1...v0.1.2) (2026-11-07)
 
 
