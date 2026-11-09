@@ -134,7 +134,12 @@ jobs:
               echo "$name@$version is already published, skipping"
               continue
             fi
-            npm publish "$RUNNER_TEMP/packages/$(basename "$dir").tgz" --provenance --access public
+            tarball="$RUNNER_TEMP/packages/$(basename "$dir").tgz"
+            if NODE_AUTH_TOKEN="" npm publish "$tarball" --provenance --access public --loglevel=verbose; then
+              continue
+            fi
+            echo "::warning::$name has no working Trusted Publisher, falling back to the broker token"
+            npm publish "$tarball" --provenance --access public
           done
 
   tag:
