@@ -1,8 +1,9 @@
 # vite-plus-adopt
 
-Betterleaks・actionlint・zizmor・commitlint・textlint・Steiger を Vite+ に取り込み、設定と依存の規則を `vite.config.ts` に書いて、そこから読んで動かす CLI `vpa` である。
+Betterleaks・actionlint・zizmor・commitlint・textlint・markdownlint・Steiger・fallow を Vite+ に取り込み、設定と依存の規則を `vite.config.ts` に書いて、そこから読んで動かす CLI `vpa` である。
+引数なしの `vpa` を 1 回実行すると、設定のある検査をすべて並行して動かし、結果をまとめて出す。
 TypeScript 7 だけで動く Feature-Sliced Design の Steiger プラグインと @arethetypeswrong/core も同梱する。
-各ツールのために `.betterleaks.toml`・`.betterleaksignore`・`.textlintrc`・`.textlintignore`・`steiger.config.ts`・syncpack の設定・`package.json` の `commitlint` を置かずに済む。
+各ツールのために `.betterleaks.toml`・`.betterleaksignore`・`.textlintrc`・`.textlintignore`・`.markdownlint-cli2.jsonc`・`.fallowrc.jsonc`・`steiger.config.ts`・syncpack の設定・`package.json` の `commitlint` を置かずに済む。
 Betterleaks・actionlint・zizmor のバイナリは、postinstall が固定した版を GitHub のリリースから取り、SHA-256 を照合してパッケージの `vendor/` に置く。実行時には取りに行かない。
 設定は Vite+ の `resolveConfigFromFile` で読み、型は `vite` の `UserConfig` を拡張して付ける。
 
@@ -39,24 +40,27 @@ export default defineConfig({
     filter: 'matchesAny(finding.line, [`\\bCF_BEACON_TOKEN = "[0-9a-f]{32}"`])',
     ignoredSecrets: ["<秘密の SHA-256>"],
   },
-  steiger: [...fsd.configs.recommended],
+  steiger: { paths: ["apps/*/src"], rules: [...fsd.configs.recommended] },
   textlint: {
     ignores: ["CHANGELOG.md"],
     rules: { "preset-ja-technical-writing": true },
   },
-  run: {
-    tasks: {
-      actions: "vpa actionlint && vpa zizmor .github",
-      betterleaks: "vpa betterleaks git . --redact --no-banner",
-      dependencies: "vpa dependencies",
-      steiger: "vpa steiger apps/*/src",
-      textlint: "vpa textlint '*.md'",
-    },
-  },
+  markdownlint: { ignores: ["CHANGELOG.md"] },
+  fallow: { production: true, rules: { "unused-files": "error" } },
+  run: { tasks: { vpa: { command: "vpa", cache: false } } },
 });
 ```
 
-`import type {} from "@r_masseater/vite-plus-adopt"` で、`defineConfig` に上の 5 つのキーの型が付く。
+`import type {} from "@r_masseater/vite-plus-adopt"` で、`defineConfig` に上の 8 つのキーの型が付く。
+
+Git のフックは次のように書く。
+
+```sh
+# .vite-hooks/pre-commit
+vpa --staged
+# .vite-hooks/commit-msg
+vpa --commit-msg "$1"
+```
 
 ## Feature-Sliced Design のプラグイン
 
@@ -116,20 +120,23 @@ export default defineConfig({
 
 [attw]: https://github.com/arethetypeswrong/arethetypeswrong.github.io/tree/main/packages/core
 
-## コマンド
+## 検査
 
-| コマンド                                     | 動き                                                                                                                                                                                               |
-| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vpa betterleaks <引数...>`                  | `betterleaks` セクションを TOML にして `BETTERLEAKS_CONFIG_TOML` に入れ、`ignoredSecrets` があれば一時ファイルに書いて `--ignore-file` を足し、postinstall が置いた Betterleaks を引数のまま動かす |
-| `vpa actionlint [引数...]`                   | postinstall が置いた actionlint を引数のまま動かす                                                                                                                                                 |
-| `vpa zizmor [引数...]`                       | postinstall が置いた zizmor を引数のまま動かす                                                                                                                                                     |
-| `vpa commitlint <メッセージのファイル>`      | `commitlint` セクションでコミットメッセージを検査する。`#` で始まる行は読まない。commit-msg フックで `vpa commitlint "$1"` と書く                                                                  |
-| `vpa commitlint --range <範囲>`              | `git log --first-parent` で範囲のコミットを並べ、各メッセージを検査する。CI で push された範囲を `vpa commitlint --range "$BEFORE..$HEAD"` と検査する                                              |
-| `vpa textlint [--print-files] <pathspec...>` | git が追跡するファイルと未追跡で無視されていないファイルのうち、pathspec に合い `ignores` に合わないものを textlint で検査する。`--print-files` は検査せず、そのファイルを NUL 区切りで出す        |
-| `vpa steiger <ディレクトリ...>`              | `steiger` セクションで各ディレクトリを検査し、error の指摘があれば失敗する                                                                                                                         |
-| `vpa dependencies`                           | `pnpm-workspace.yaml` の各パッケージの `package.json` を読み、禁止した依存と、同じ依存の指定の食い違いを報告する                                                                                   |
+| 検査         | 動く条件                     | 動き                                                                                                                                                                                       |
+| ------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| betterleaks  | `betterleaks` セクション     | 基準のコミットから `HEAD` までの履歴を、postinstall が置いた Betterleaks で検査する。セクションを TOML にして `BETTERLEAKS_CONFIG_TOML` に入れ、`ignoredSecrets` を `--ignore-file` で渡す |
+| commitlint   | `commitlint` セクション      | 基準のコミットから `HEAD` までを `git log --first-parent` で並べ、各メッセージを検査する                                                                                                   |
+| actionlint   | `.github/workflows` がある   | postinstall が置いた actionlint を動かす                                                                                                                                                   |
+| zizmor       | `.github/workflows` がある   | postinstall が置いた zizmor で `.github` を検査する。`CLAUDE_CODE_REMOTE` があると `--no-online-audits` を付ける                                                                           |
+| dependencies | `dependencyRules` セクション | `pnpm-workspace.yaml` の各パッケージの `package.json` を読み、禁止した依存と、同じ依存の指定の食い違いを報告する                                                                           |
+| steiger      | `steiger` セクション         | git が扱うファイルを含むディレクトリのうち `paths` の glob に合うものを、`rules` で検査する                                                                                                |
+| textlint     | `textlint` セクション        | git が扱う `*.md` のうち `ignores` に合わないものを検査する                                                                                                                                |
+| markdownlint | `markdownlint` セクション    | git が扱う `*.md` のうち `ignores` に合わないものを、`config` と `customRules` で検査する                                                                                                  |
+| fallow       | `fallow` セクション          | セクションを一時ファイルに書いて `-c` で渡し、使う側の `fallow` で全体・`dead-code --no-production`・`dupes`・`security` を検査し、コンポーネントの props の受け渡しの指摘も失敗にする     |
 
-postinstall が動いていないと、Betterleaks・actionlint・zizmor のコマンドは `allowBuilds` に足すよう告げて失敗する。
+基準のコミットは環境変数 `VPA_BASE` で渡す。無いときや解決できないときは `origin/main` を使う。
+`vpa --staged` は `git diff --cached` を Betterleaks に渡し、`vpa --commit-msg <ファイル>` はそのコミットメッセージを `commitlint` セクションで検査する。`#` で始まる行は読まない。
+postinstall が動いていないと、Betterleaks・actionlint・zizmor の検査は `allowBuilds` に足すよう告げて失敗する。
 バイナリの版は `src/binaries.ts` で固定し、vite-plus-adopt の版を上げて変える。
 
 ## 設定
@@ -140,6 +147,9 @@ postinstall が動いていないと、Betterleaks・actionlint・zizmor のコ�
 - `dependencyRules.exactDependencies` は、理由ごとにワークスペースのディレクトリの glob を並べる。合うワークスペースの `dependencies` は正確な版でなければならず、ほかのワークスペースとの指定の一致は求めない。git の依存として読まれるパッケージのように、カタログを使えないものに使う。
 - `dependencyRules.peerRanges` を `"intersect"` にすると、`peerDependencies` の範囲は重なれば通る。省くと、ほかの依存と同じく指定の一致を求める。`workspace:` の指定は比べない。
 - `textlint.ignores` は git の glob で、それ以外のキーは `.textlintrc` と同じである。規則のパッケージは、リポのルートの `node_modules` から読む。
+- `markdownlint.config` は markdownlint の規則の設定で、省くと既定の規則で検査する。`ignores` は git の glob である。
+- `steiger.paths` は検査するディレクトリの glob、`steiger.rules` は `steiger.config.ts` の中身と同じである。
+- `fallow` は `.fallowrc.json` と同じキーを書く。fallow は使う側の依存に入れる。
 
 ## ライセンス
 

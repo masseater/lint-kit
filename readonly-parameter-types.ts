@@ -100,8 +100,9 @@ const readonlyParameterTypes: (FileTypes | LibTypes | PackageTypes)[] = [
   {
     from: "file",
     path: "src/types.ts",
-    name: ["CommitlintConfig", "TextlintConfig", "ToolSections"],
+    name: ["CommitlintConfig", "MarkdownlintConfig", "TextlintConfig", "ToolSections"],
   },
+  { from: "package", package: "markdownlint", name: ["LintError"] },
   {
     from: "package",
     package: "steiger",

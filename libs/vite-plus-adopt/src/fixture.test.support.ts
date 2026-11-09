@@ -72,6 +72,15 @@ const commitEmpty = (
       .pipe(Effect.orDie);
   });
 
+const runGit = (
+  root: string,
+  args: readonly string[],
+): Effect.Effect<void, never, ChildProcessSpawner.ChildProcessSpawner> =>
+  Effect.gen(function* git() {
+    const spawner = yield* ChildProcessSpawner.ChildProcessSpawner;
+    yield* spawner.exitCode(ChildProcess.make("git", args, { cwd: root })).pipe(Effect.orDie);
+  });
+
 const lines = (...rows: readonly string[]): string => `${Arr.join(rows, "\n")}\n`;
 
 const zipArchive = (files: Readonly<Record<string, string>>): Effect.Effect<Uint8Array> =>
@@ -93,5 +102,5 @@ const sha256Hex = (data: Uint8Array): Effect.Effect<string> => {
   );
 };
 
-export { commitEmpty, directoryWith, lines, sha256Hex, zipArchive };
+export { commitEmpty, directoryWith, lines, runGit, sha256Hex, zipArchive };
 export type { FixtureServices };

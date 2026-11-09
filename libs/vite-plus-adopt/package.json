@@ -73,6 +73,7 @@
     "effect": "catalog:stack",
     "fastest-levenshtein": "1.0.16",
     "fflate": "0.8.3",
+    "markdownlint": "catalog:",
     "minimatch": "11.0.3",
     "pluralize": "8.0.0",
     "semver": "7.8.6",
@@ -109,7 +110,7 @@
         "!dist/fsd.mjs",
         "!dist/attw.mjs"
       ],
-      "limit": "8178 B"
+      "limit": "9861 B"
     },
     {
       "name": "fsd",
@@ -119,7 +120,7 @@
     {
       "name": "attw",
       "path": "dist/attw.mjs",
-      "limit": "45798 B"
+      "limit": "45833 B"
     }
   ],
   "engines": {
