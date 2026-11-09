@@ -1,9 +1,26 @@
-import { Option, Record } from "effect";
+import type { CheckPackageOptions, CheckResult } from "@r_masseater/vp-tools/attw";
+import { Effect, Function, Option, Record } from "effect";
 import { defineConfig } from "vite-plus";
 
 import { upstreamRemotionRules } from "./upstream/remotion-modules.ts";
 
 const local = (path: string): string => new URL(path, import.meta.url).pathname;
+
+const checkWithVpTools = (
+  tarball: Uint8Array,
+  options: CheckPackageOptions,
+): Effect.Effect<CheckResult> =>
+  Effect.promise(() => import("@r_masseater/vp-tools/attw")).pipe(
+    Effect.flatMap((attw) =>
+      Effect.promise(() => attw.checkPackage(attw.createPackageFromTarballData(tarball), options)),
+    ),
+  );
+
+const attwModule = {
+  createPackageFromTarballData: Function.identity,
+  checkPackage: (tarball: Uint8Array, options: CheckPackageOptions): Promise<CheckResult> =>
+    Effect.runPromise(checkWithVpTools(tarball, options)),
+};
 
 const shims: Readonly<Record<string, string>> = {
   typescript: local("src/ts-compat.ts"),
@@ -179,7 +196,7 @@ export default defineConfig({
   ],
   run: {
     tasks: {
-      build: { command: "vp pack", dependsOn: ["@r_masseater/attw-core#build"], cache: false },
+      build: { command: "vp pack", dependsOn: ["@r_masseater/vp-tools#build"], cache: false },
       test: "vp test run --coverage",
       size: { command: "size-limit", dependsOn: ["build"], cache: false },
     },
@@ -203,7 +220,7 @@ export default defineConfig({
     },
     dts: { generator: "oxc" },
     publint: { strict: true },
-    attw: { profile: "esm-only", level: "error" },
+    attw: { module: attwModule, profile: "esm-only", level: "error" },
   },
   resolve: {
     alias: [

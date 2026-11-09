@@ -45,8 +45,6 @@ catalogs:
     vite: npm:@voidzero-dev/vite-plus-core@1.5.0
     vite-plus: 1.5.0
 overrides:
-  "@arethetypeswrong/core": link:libs/attw-core
-  "@arethetypeswrong/core>typescript": "catalog:stack"
   "@feature-sliced/filesystem>typescript": "catalog:stack"
   "steiger>@feature-sliced/steiger-plugin": "-"
   "@remotion/eslint-plugin>@typescript-eslint/utils": "-"
@@ -71,7 +69,6 @@ packageExtensions:
     dependencies:
       entities: 9.0.0
 patchedDependencies:
-  "@arethetypeswrong/core@0.18.5": patches/@arethetypeswrong__core@0.18.5.patch
   "@tanstack/eslint-plugin-start@0.1.0": patches/@tanstack__eslint-plugin-start@0.1.0.patch
   "@voidzero-dev/vite-plus-core@1.5.0": patches/@voidzero-dev__vite-plus-core@1.5.0.patch
   eslint-plugin-drizzle@0.2.3: patches/eslint-plugin-drizzle@0.2.3.patch

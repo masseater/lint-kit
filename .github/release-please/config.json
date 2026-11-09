@@ -19,11 +19,6 @@
       "extra-files": [
         {
           "type": "json",
-          "path": "libs/attw-core/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
           "path": "libs/oxlint-plugin-decision/package.json",
           "jsonpath": "$.version"
         },
