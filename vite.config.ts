@@ -137,16 +137,6 @@ export default defineConfig({
         rules: { "import/no-default-export": "off" },
       },
       {
-        files: ["tools/vocablint/src/oxlint.ts"],
-        rules: {
-          "import/no-default-export": "off",
-          "import/no-nodejs-modules": "off",
-          "node/no-sync": "off",
-          "effecttsgo/node-builtin-import": "off",
-          "effecttsgo/schema-sync": "off",
-        },
-      },
-      {
         files: ["libs/*/tests/**", "**/*.test.ts"],
         rules: Object.fromEntries(Object.keys(decisionPresetRules).map((name) => [name, "off"])),
       },

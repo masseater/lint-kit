@@ -34,7 +34,6 @@ catalog:
   publint: 0.3.25
   size-limit: 14.3.0
   synckit: 0.12.3
-  vitest: 5.1.0
 catalogs:
   stack:
     "@effect/tsgo": 0.67.4

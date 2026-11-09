@@ -2,7 +2,7 @@
 
 The workspace is TypeScript and [Effect](https://effect.website), built with [Vite+](https://viteplus.dev) (`vp`) on Node 26. Use `vp` for installs, builds and tests rather than calling pnpm or npm directly. ESM only.
 
-The decision plugin lives in [`libs/oxlint-plugin-decision`](libs/oxlint-plugin-decision), its presets in [`libs/oxlint-plugin-decision-presets`](libs/oxlint-plugin-decision-presets), the typed-rules plugin in [`libs/oxlint-typed-rules`](libs/oxlint-typed-rules) and vocablint in [`libs/vocablint`](libs/vocablint) and [`tools/vocablint`](tools/vocablint).
+The decision plugin lives in [`libs/oxlint-plugin-decision`](libs/oxlint-plugin-decision), its presets in [`libs/oxlint-plugin-decision-presets`](libs/oxlint-plugin-decision-presets) and the typed-rules plugin in [`libs/oxlint-typed-rules`](libs/oxlint-typed-rules).
 
 ## Setup
 
