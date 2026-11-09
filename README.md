@@ -2,6 +2,7 @@
 
 Lint tools for TypeScript repositories, kept in one workspace.
 
+- [attw-core](libs/attw-core/README.md): runs @arethetypeswrong/core on TypeScript 7 alone, swapped in through a package manager override
 - [oxlint-plugin-decision](#oxlint-plugin-decision): Oxlint rules written as questions that decision models answer
 - [oxlint-typed-rules](libs/oxlint-typed-rules/README.md): ESLint rules that need type information, run as Oxlint JS plugins
 - [vocablint](tools/vocablint/README.md): finds value sets and object shapes that restate one already owned elsewhere

@@ -179,7 +179,7 @@ export default defineConfig({
   ],
   run: {
     tasks: {
-      build: { command: "vp pack", cache: false },
+      build: { command: "vp pack", dependsOn: ["@r_masseater/attw-core#build"], cache: false },
       test: "vp test run --coverage",
       size: { command: "size-limit", dependsOn: ["build"], cache: false },
     },

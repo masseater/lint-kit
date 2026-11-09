@@ -352,15 +352,15 @@
       ]
     },
     "source:libs/oxlint-typed-rules/vite.config.ts": {
-      "fingerprint": "acb77ef2b1f5acbe6f06d3facf395fbf2c348bd56b6db0c6707d64396efb5592",
+      "fingerprint": "d62d42ccdbc0d2d7a6146c450ba1c85e1f37567de64d44150edd1eae6b8e37fb",
       "snapshot": {
-        "libs/oxlint-typed-rules/vite.config.ts": "45b31fa9d1295ea79bcd71fbe0b816f387295624c06de7dd682d691d8eec7374"
+        "libs/oxlint-typed-rules/vite.config.ts": "24627feada89c4241f251303c56702e59743c88cbef49cc8ffcdadac38d25969"
       },
-      "head": "634a7ac17b2225025e5e923c2108dc0b9721e688",
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
       "outcome": "no-change",
-      "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
       "evidence": [
-        "Changed: libs/oxlint-typed-rules/vite.config.ts at 634a7ac17b2225025e5e923c2108dc0b9721e688"
+        "Changed: libs/oxlint-typed-rules/vite.config.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
       ]
     },
     "source:libs/vocablint/src/analysis.ts": {
@@ -2308,15 +2308,15 @@
       ]
     },
     "source:libs/vp-tools/vite.config.ts": {
-      "fingerprint": "4f131a0f175ba092fd81935a4f4c70253366d88bc6fe9914eaa634ad4e5bbb61",
+      "fingerprint": "5faec9dea2d6c80ec3e130482561b463ada1027d1aa252cb1828608701cb822e",
       "snapshot": {
-        "libs/vp-tools/vite.config.ts": "c8d9123aebe33df25748b9089434deda06d7b21b45d7a73ab29b8a634795c85f"
+        "libs/vp-tools/vite.config.ts": "1f4df2640d9091db573ce9014b0eaf738ce5173288860b48b3918a13616fa9cc"
       },
-      "head": "49fbdece6256c698eb7fda473b1d081a88759730",
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
       "outcome": "no-change",
-      "reason": "vocablint と vp-tools の FSD プラグインの TypeScript 7 化と検査の設定で、write-decision-rules スキルの内容に影響しない",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
       "evidence": [
-        "Changed: libs/vp-tools/vite.config.ts at 49fbdece6256c698eb7fda473b1d081a88759730"
+        "Changed: libs/vp-tools/vite.config.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
       ]
     },
     "source:libs/oxlint-typed-rules/src/config-rules.ts": {
@@ -2965,6 +2965,2054 @@
       "reason": "oxlint-typed-rules に @remotion/eslint-plugin のエントリーを足しただけで、Intent のスキルが扱う decision プラグインの書き方は変わらない",
       "evidence": [
         "Changed: libs/oxlint-typed-rules/upstream/remotion/src/tests/warn-native-image-tag.test.ts at 009488892ee2a4fdff9188a6fd3f7618801507ec"
+      ]
+    },
+    "source:libs/attw-core/LICENSE": {
+      "fingerprint": "0a6c258e26db100b4bf7748191c1fe85190fd8b82daa3fd700fdc28342ee6ea3",
+      "snapshot": {
+        "libs/attw-core/LICENSE": "776298aad78e3fb2429ce79dfa624a310b48f3ed551028964714323c1fcf5a8f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": ["Changed: libs/attw-core/LICENSE at cd05946231f9489d3b3a31b1e74a46186d8c9a11"]
+    },
+    "source:libs/attw-core/README.md": {
+      "fingerprint": "bef3dbeb5a209a219674dc397385e6fc592f910413edea78a774e76d7943f650",
+      "snapshot": {
+        "libs/attw-core/README.md": "3f516812d1530ebdde43880d5f52ff0d5332fa840099f992dbc9bf8e4668963d"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": ["Changed: libs/attw-core/README.md at cd05946231f9489d3b3a31b1e74a46186d8c9a11"]
+    },
+    "source:libs/attw-core/src/binder-assignment.ts": {
+      "fingerprint": "09108d8d7295ad2037323d8472d148e5ff5bdad647ab477580d229a8dab3efea",
+      "snapshot": {
+        "libs/attw-core/src/binder-assignment.ts": "0b7506fded00ac988fee378d8c12c301735f37277803059d7eac5dccbd5f9af2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-assignment.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-cjs.ts": {
+      "fingerprint": "52b7ff560fa79018b997e95653b1c1221baff43ed82c270a2dd3a07b0c44facb",
+      "snapshot": {
+        "libs/attw-core/src/binder-cjs.ts": "e90c3848dcdaeb102b1f396dd1ac663fb45554f34fffcdd8b5fec69fe571224e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-cjs.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-declarations.ts": {
+      "fingerprint": "1164c1dca208a75efa44480885f9d63d6f9f9af6bfb12c9d9520a8abad851267",
+      "snapshot": {
+        "libs/attw-core/src/binder-declarations.ts": "45b2c584f6946f9333dcf2e8786c92d3be5aaf3a932700e1944214410e916d9e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-declarations.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-expando-symbol.ts": {
+      "fingerprint": "5a5efbb6388937a85b1baef3b17b9065562b5059a364607bd5d54e8f7f1748d0",
+      "snapshot": {
+        "libs/attw-core/src/binder-expando-symbol.ts": "67aab0de2fca4ffe7cc347b9b433c0f9bd29c249a12a0f2e5ea6e597b4fe1957"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-expando-symbol.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-expando.ts": {
+      "fingerprint": "64031c77042fae177a36a55a44ff8de7396ab89228400bee3b3253511aeaca05",
+      "snapshot": {
+        "libs/attw-core/src/binder-expando.ts": "7e0a5891ab915f91ee1652b4fb0e64de5e4a602e2297563911525f94f1723215"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-expando.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-expressions.ts": {
+      "fingerprint": "d1751df8c1d5138c73f50c3149945250eae7e179e9057f6f31679625dab79e28",
+      "snapshot": {
+        "libs/attw-core/src/binder-expressions.ts": "815ad4ad6d422de68632e504fd787eccf36aefc867d9c3175631def87ec7acbe"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-expressions.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-jsdoc.ts": {
+      "fingerprint": "ed2811487754ce4b8de4b5cfd8ae79b9bb3aef6f51ff908233f73a800415a421",
+      "snapshot": {
+        "libs/attw-core/src/binder-jsdoc.ts": "2f65879d631588b061f1a4866330df7d830ddcd9fa6c3f28efdccbca632cc67e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-jsdoc.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-module-exports.ts": {
+      "fingerprint": "e35dd2f1a1b94fcbacef3b3c4180d4c6b905b63543ee14e730d913ac3564dfbb",
+      "snapshot": {
+        "libs/attw-core/src/binder-module-exports.ts": "6965e9beadec2c9616fa57cc432fc5c2837a764f1d61b940bdc2b7450a500d1c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-module-exports.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-module-state.ts": {
+      "fingerprint": "f968f880fb608f6b02b8cf0ad5a02cf51d1b8784ebc70fdc92dbae8698456552",
+      "snapshot": {
+        "libs/attw-core/src/binder-module-state.ts": "6557cebc508a90428c907b63fce09d9d4b21478b79e900fee38042e1f2593cfc"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-module-state.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-names.ts": {
+      "fingerprint": "c59865693aa8c74fc7fec8f67178bab8a5a2b77ae90318bc30c77b9e56da0891",
+      "snapshot": {
+        "libs/attw-core/src/binder-names.ts": "2b33a718a549c1730b0a951c849461e587ed7fff255d766b69e28cc985212d4b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-names.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-nodes.ts": {
+      "fingerprint": "445ce2a82be78dee138f828dbf330c766e169136cb660952656edb238409a4b9",
+      "snapshot": {
+        "libs/attw-core/src/binder-nodes.ts": "f7633f13d8336ba0bea25f831095653465c052c434cfc6ee95834fce0c244710"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-nodes.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-scopes.ts": {
+      "fingerprint": "4033ae5d1f63c23bc83fc2c942c50182314744c9ec36b6514936ddea8265cdc5",
+      "snapshot": {
+        "libs/attw-core/src/binder-scopes.ts": "fd49acc53474f3b856c4776ecc6767ad924a95bfed67022fae21c897a5c2f9a8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-scopes.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-symbols.ts": {
+      "fingerprint": "87140169a20072c684f7e5ea82494be4b32a38b752119464310dab3563134eae",
+      "snapshot": {
+        "libs/attw-core/src/binder-symbols.ts": "76394542f898e373ca41f3d3621d8121438379bdbb335da87a766bef079a8930"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-symbols.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-syntax.ts": {
+      "fingerprint": "9ca04d4a510005cfff1b861ca8688a0797de9d094f1c88b0cc322bb00ecfc063",
+      "snapshot": {
+        "libs/attw-core/src/binder-syntax.ts": "28d3984cdcc18d17fe27f8e846b5ef29f9df83d64bae07155491672d94b317a8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-syntax.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-this.ts": {
+      "fingerprint": "b6916270cad5ae2fd8aa07b44596160a5b01c5a1ede6b24a12efe70e28555b47",
+      "snapshot": {
+        "libs/attw-core/src/binder-this.ts": "a7cbe3e1ed495ba9ca7ab40d04fd337bf25a75495b04ad30f2cf3a4a58f1aad5"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-this.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-variables.ts": {
+      "fingerprint": "724c967c4ea65649cbc52eec1eaa18fcba0bc8476867808525b2647aa0449cbb",
+      "snapshot": {
+        "libs/attw-core/src/binder-variables.ts": "f6ca19339e66a04b932fe5aca7f3dffc84e9f742ca0b584f345d5a171ff369dd"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-variables.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder-walk.ts": {
+      "fingerprint": "3071bb6eaf6b1073a290e87e27ea17e8139b066aaed60d865709cabbde44039d",
+      "snapshot": {
+        "libs/attw-core/src/binder-walk.ts": "7d3471db6f6bdde317b35f027fa9fdadb8c5cf386c39aaf1b02a30b5b27947a4"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder-walk.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/binder.ts": {
+      "fingerprint": "1d60aa924609ee9e8764cd24d17060ce61a99f9e0f560404b9996f4dcafa2bac",
+      "snapshot": {
+        "libs/attw-core/src/binder.ts": "db8453cc5754e9a1d6215b1871b6a812e58b12d248e6f866909349920ec71203"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/binder.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/checker-session.ts": {
+      "fingerprint": "662d58d1f6c9fc4697718438c552eed5ce9e5d9976e7b77bc52cd69042ddc36b",
+      "snapshot": {
+        "libs/attw-core/src/checker-session.ts": "9daca376397fc9c5066cf0e9999f5fbadb8b8ddcf7bb5d4199da9c7394e26469"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/checker-session.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/checker-symbols.ts": {
+      "fingerprint": "fc47a48d48e3ec342a6dd4c254637b0a12a9c6e9357eecda0647b5ea78e2aac1",
+      "snapshot": {
+        "libs/attw-core/src/checker-symbols.ts": "0cf3e6718b847547c3a1808708969ab8503ece70079ee55e24cf4c2833efec8a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/checker-symbols.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/checker.ts": {
+      "fingerprint": "e8b9fb8e89ec2b805363e9e28293195d53278273e1333fa8b41fbfdc22f02fa1",
+      "snapshot": {
+        "libs/attw-core/src/checker.ts": "7988894bad7b2d46d0488825860d7731246229e07bc09b9833b846f39184b181"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/checker.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/compiler-checker.ts": {
+      "fingerprint": "3ba02c420ad8b172baf37eea38e8c245f0d1fb6de06c8ac31ed377d3e6e01148",
+      "snapshot": {
+        "libs/attw-core/src/compiler-checker.ts": "1c74c77a969cf58aa0f4900012a16710bdd2b32cad46b15b3c27d460b8a6f406"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/compiler-checker.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/compiler-host-wrapper.ts": {
+      "fingerprint": "5f74cf64970d33934e91cd3babe43885cfde8b90883351373a35b63b4d9a23d2",
+      "snapshot": {
+        "libs/attw-core/src/compiler-host-wrapper.ts": "2cc84a15bfe9098651f9a92c9b09453c210049d289a6c8dcc67c56506e9057de"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/compiler-host-wrapper.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/compiler-hosts.ts": {
+      "fingerprint": "bb1fa459631ca44f04bccece69cd1dd02e55379d168d0863b5286301fd02dd7f",
+      "snapshot": {
+        "libs/attw-core/src/compiler-hosts.ts": "a8594799d6e3f98312ca01ab2ed7218a9bb89daa0f79c7b1b924bafca3c7c96e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/compiler-hosts.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/compiler-program.ts": {
+      "fingerprint": "894648c97d79b3a9acc80f8579c9f52915e344aef62799faa04b9ec6babdc049",
+      "snapshot": {
+        "libs/attw-core/src/compiler-program.ts": "f285604b2c8edf2b1997fd4498b14a0575d5c7c951c8a2db10eede9cb9b7d90a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/compiler-program.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/extensions.ts": {
+      "fingerprint": "e3c5edc09827cd9f291841e72254a3edbe6d5a94dd901eb2d9eccd760789e2d2",
+      "snapshot": {
+        "libs/attw-core/src/extensions.ts": "a8c6b2e6b5fb27035391588ccdee5b9cc19fddbdeca0e45672e7e57c4f97833a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/extensions.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/flags.ts": {
+      "fingerprint": "4bb5a3e673381d23b959f629acd10cab5c7606b62b2741edafa77820da7a3620",
+      "snapshot": {
+        "libs/attw-core/src/flags.ts": "7e7997d0a94baff2ec08be055e6819242f76641a1d9a59c1c5f9159d48a3c1b5"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/flags.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/host-files.ts": {
+      "fingerprint": "4b3885a6dce5e8d4f80ad3b475aad49e37c8763a168cd59f3e4bce4ddb77c91d",
+      "snapshot": {
+        "libs/attw-core/src/host-files.ts": "006363fdcc02afd98eedb1a3640b640b11c8ed1ea719e7152a12d5755916a96e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/host-files.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/host-resolutions.ts": {
+      "fingerprint": "61014b3c1b293602e852e641496b38eba8e2c3507d235eb4a428910aae269378",
+      "snapshot": {
+        "libs/attw-core/src/host-resolutions.ts": "d4a89b9b43f7157bb4c4010f9b653d196d41220844ec149af4dab167f360c9fa"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/host-resolutions.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/host-sources.ts": {
+      "fingerprint": "5504208dd7cb8f9d2290238642bbf2742841bbf75b64c216e040806b283904a8",
+      "snapshot": {
+        "libs/attw-core/src/host-sources.ts": "62c5647383529418f7cd7be15399fc54d8632b5439b2b5b6ebaf48217f9b7304"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/host-sources.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/host-types.ts": {
+      "fingerprint": "18f1376b2d27cfe64000450a72f3cc18719574c52a22be3796436cfda0176b5d",
+      "snapshot": {
+        "libs/attw-core/src/host-types.ts": "0e90d166b4b93fa87edf10a4eccd0019ece617553819c56aeb24f13fa2d990cf"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/host-types.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/host-wrapper.ts": {
+      "fingerprint": "26b3f586e52022569b02f32558b2ab574d371e506448dffc44988fd3ac0aaa6f",
+      "snapshot": {
+        "libs/attw-core/src/host-wrapper.ts": "2ada49ac475301afb957a3f9a499177cce9a08ee67b335cb00c97ff867d2eda7"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/host-wrapper.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/index.ts": {
+      "fingerprint": "ff787eddf94c88062cf528845a0ba75ecd72053cc0b094ac3d744069cecedc24",
+      "snapshot": {
+        "libs/attw-core/src/index.ts": "68e4b38685b0bfd51fe8cbfc92469338d836c6d2530880af832a7502ef1d9c1e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/index.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/messages.ts": {
+      "fingerprint": "90845383e9b14c9bdce2fecdde29340dfea83765c37fba878968986e07287e66",
+      "snapshot": {
+        "libs/attw-core/src/messages.ts": "716600c2578f580537bd545b8600590e94593dd7cf028c179b2fe1021ec6145f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/messages.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/module-mode.ts": {
+      "fingerprint": "9979c6fedeee407f31ba0435b2549884a102567989bc03e2796ad0114aa40999",
+      "snapshot": {
+        "libs/attw-core/src/module-mode.ts": "86864a136499c584aefb43af169834280e74d1cca98280c25e41eac4fb1ca699"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/module-mode.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/node-modules-paths.ts": {
+      "fingerprint": "44202002c0863acd7f5c462946a44ede3622e6c35aa5e5624683ace0671003f5",
+      "snapshot": {
+        "libs/attw-core/src/node-modules-paths.ts": "4742b73de676f09bd099f3eb9901690b0a46c252c54e849011096d0f4da1fa47"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/node-modules-paths.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/package-json-fields.ts": {
+      "fingerprint": "e8d52b51f555d8a7f4d9eca33776e798092df38f2ba34efaf540b164f0eedead",
+      "snapshot": {
+        "libs/attw-core/src/package-json-fields.ts": "ec499ca5a348ff6cd5cb5d90691a69209e001098a80d0513d12f390496e4cac3"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/package-json-fields.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/package-json.ts": {
+      "fingerprint": "505027a4b33050c0013a5e2c1b57981efb04e19af9136de4087732f5d14fc30e",
+      "snapshot": {
+        "libs/attw-core/src/package-json.ts": "ca508c1d23477132da363ce4d20c495fcb3753018f5b3af11dc1fe04d4b5aa11"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/package-json.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/package-names.ts": {
+      "fingerprint": "6e7b61a166e6fb11757e720ab23df4040c293ecad66161c11cab924fa220e6f7",
+      "snapshot": {
+        "libs/attw-core/src/package-names.ts": "2f56b1da8514a625f309f4581df42be5fb708c5b03d327b9e6815a79be5b1f14"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/package-names.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/path-roots.ts": {
+      "fingerprint": "1df22af1130e731ec2a7cc7923391b5ca0bcd77e2c75053dd4d4677737e75e23",
+      "snapshot": {
+        "libs/attw-core/src/path-roots.ts": "306337f4b4e23f1feb97a3e7edaf5fd7dd81a6205223a388e080ad5a6c0f52b2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/path-roots.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/paths-mapping.ts": {
+      "fingerprint": "ef60ed0cb0aa33436ce553bd1c38642d988ea78383ae36cc58f8a6238682cf90",
+      "snapshot": {
+        "libs/attw-core/src/paths-mapping.ts": "0a7a71060a162db68314f73d0534b4ed7aedc7335d6b53142385655b092be92f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/paths-mapping.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/paths.ts": {
+      "fingerprint": "d6db071ee8f255859f104b676c443a05387abe8577c5c6c42d9212a1258e1bf2",
+      "snapshot": {
+        "libs/attw-core/src/paths.ts": "e8baf524c3cf281ca5174cf4efac5539e2986d83aa5d287748dc90803947e09b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/paths.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/problems.ts": {
+      "fingerprint": "bd909f98a4acd9aac56bab4eb648e029eb8e3b3372a383bcc5435eeffd72da24",
+      "snapshot": {
+        "libs/attw-core/src/problems.ts": "9c569bedd1fb93808af91424194b8bb5847e3d4abe5a4b7942f3f51ccf26261b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/problems.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/program-build.ts": {
+      "fingerprint": "c4ea002878391292af025d7f461eb719970829a42597468b695554a017e79447",
+      "snapshot": {
+        "libs/attw-core/src/program-build.ts": "af7ef1b163fde9af077927c3e193ac3d43e3b3fae12b7c669bc37d815c10a0d2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/program-build.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/program-imports.ts": {
+      "fingerprint": "ad125989f489e934c0b1e1464bab991ebacf6b78c85054072eb3a0eade71dff0",
+      "snapshot": {
+        "libs/attw-core/src/program-imports.ts": "5a286eb7b851de4029efb27d6d38648301c103be1ce5d7ea4af8b065337007e3"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/program-imports.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/program.ts": {
+      "fingerprint": "19c8092a07aae789d0ddc9f397776d8e727b9a768467e7ef798d98f4811ec30c",
+      "snapshot": {
+        "libs/attw-core/src/program.ts": "88456c2936850cb7bfb999a960dba07ea361e38b2c7f199e34ed523c441ea696"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/program.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolution-cache.ts": {
+      "fingerprint": "f2088b1963e51121ace7164a63626d5f98e8753cd3fbd436c5eee6c263a1a4c9",
+      "snapshot": {
+        "libs/attw-core/src/resolution-cache.ts": "7b4dbfb5282bc245a92bf7c227441a6fd9adea2353e63fce3b204d60d2e4ea7e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolution-cache.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolution-mode-numbers.ts": {
+      "fingerprint": "eecd25803d85d3fde1b1089bc62007795ce108768e0a6778c2e5d20506976118",
+      "snapshot": {
+        "libs/attw-core/src/resolution-mode-numbers.ts": "f6916b1637dd136c481ecec4819999b5239c87881d0061acad5a1e2f1d7b4601"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolution-mode-numbers.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolution-types.ts": {
+      "fingerprint": "8c8f2fb746152e3f445353c869e9cb3647099dd3ae2e9511e2b8896211007e36",
+      "snapshot": {
+        "libs/attw-core/src/resolution-types.ts": "3d4cdf3e38c94545d0ced15b7dc522e4e33eadb774e5ffc831689a6370bd57a2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolution-types.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-attempt.ts": {
+      "fingerprint": "d555e866d256a3054d23cccbb2cbed55861a8ba453e2237c1173419c0de78afc",
+      "snapshot": {
+        "libs/attw-core/src/resolver-attempt.ts": "f71699daf54b35a6fe3c63157b0c148332a7644f259d1d7c1fa869c931f376e4"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-attempt.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-directory.ts": {
+      "fingerprint": "eb2cfde35d826917b7e5c565343373c49c9852bcc22b85a32d549b5abe79ab23",
+      "snapshot": {
+        "libs/attw-core/src/resolver-directory.ts": "f85fd024447cb0c957156c0c001f7cd447bfc89114ecd57640e03afa597b3a46"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-directory.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-exports.ts": {
+      "fingerprint": "f033eb311b33b2b40271cc1f8a2169e72448aea38cb3c0c8424233667d744bbf",
+      "snapshot": {
+        "libs/attw-core/src/resolver-exports.ts": "e7ee529d35dfa7e76590eb1b8d96e4c8acd55eeeb4cb41a56f8b14524019dbcc"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-exports.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-files.ts": {
+      "fingerprint": "a57e4abaab410901cc28084eb3937e5784988575b4ac9119ea9a9adeaead2ab5",
+      "snapshot": {
+        "libs/attw-core/src/resolver-files.ts": "3bdf53d40519051a40768ab019f91973fef07d9c15431573802da68d381ddad5"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-files.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-node-modules.ts": {
+      "fingerprint": "f9b86457f4ebc0cc306815f1daa16f2d9a4ec51afc9fd259d477c94c35039dd3",
+      "snapshot": {
+        "libs/attw-core/src/resolver-node-modules.ts": "c767e978451fbb5ea10aa60e74dae0bd89afd4472b14d224a3b358efab38926b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-node-modules.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-package-loader.ts": {
+      "fingerprint": "4d47d6b8a016d8fb036dc30c22cb0abd910110d93dd00699f6acd7160371d97c",
+      "snapshot": {
+        "libs/attw-core/src/resolver-package-loader.ts": "674c903932f84001f7d43308c108d310c4fd11415c3f7dfad442c9523be938c8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-package-loader.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-package.ts": {
+      "fingerprint": "cb20205a20bf1b88701b27de263d6fe7ddf58ef665eaeeacf2445234eb34d7b2",
+      "snapshot": {
+        "libs/attw-core/src/resolver-package.ts": "66e8abb7f2f95023d323aa9ecd94092b47ab6266cc894ecb51ca1b4499069bb2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-package.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-patterns.ts": {
+      "fingerprint": "c7b16aeea775a9f8087dbcb972c2abfeb644e21966b0379ea1bb30067039f25a",
+      "snapshot": {
+        "libs/attw-core/src/resolver-patterns.ts": "fd42e3e68cf0c15c40c8875a0114b26c1cb2d92aac66658698b5cb2b71a9aec5"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-patterns.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-relative.ts": {
+      "fingerprint": "6ab13e73a78ab3b73e3a6e04cefce3b6040917741e6d3f9d1e1e3ada2ebea171",
+      "snapshot": {
+        "libs/attw-core/src/resolver-relative.ts": "87c59d7735825da754a74c9fd16d49c9a99b4f4ab6f75f65750af26134f4c8a4"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-relative.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-state.ts": {
+      "fingerprint": "a3b2199bb311a6a08345ed82876a2b16f30c87f0972c3875113067f77e6cb7a7",
+      "snapshot": {
+        "libs/attw-core/src/resolver-state.ts": "6ec4c8c22e30c1e59ecafcb418817e352971af4f11f4a584e9ec8d05bd1ee0e2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-state.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver-target.ts": {
+      "fingerprint": "d70e7b112c02445d4d309ffb043a85b8998ce0b4f57b66da48eda47754e664a6",
+      "snapshot": {
+        "libs/attw-core/src/resolver-target.ts": "7793daed3eee8087da1238452cbd473e74340e0bd4e6c808cafbb4fe44911a5d"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver-target.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/resolver.ts": {
+      "fingerprint": "a93a96a7b0e849696e232c29118367da4242cf1aacad1d4effaa03cf5f043c79",
+      "snapshot": {
+        "libs/attw-core/src/resolver.ts": "680a73fb98b212eb761429aeefcd1365763df3c866ede24670ffaf8164bb50c7"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/resolver.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/source-file.ts": {
+      "fingerprint": "65c0df985879abf634e922bb2899d1c65234450a2fafc31a7df99c41cdd2a4f9",
+      "snapshot": {
+        "libs/attw-core/src/source-file.ts": "be11a06629303363b9579f14b04ee58b93584812c86a93d48618cb21ae398698"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/source-file.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/ts-api.ts": {
+      "fingerprint": "740e960b94eac143c1fc836258f9e2ec5b370fd1377ce8af83bf3bec9a1e0513",
+      "snapshot": {
+        "libs/attw-core/src/ts-api.ts": "93b126c89062b20f3255cb84b539005548be40a17641f465cdaed04dbe1c8310"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/ts-api.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/type-only.ts": {
+      "fingerprint": "84804e95a47361a5340aa67962cca891b9edcb109d5bb007427382bf38310ac3",
+      "snapshot": {
+        "libs/attw-core/src/type-only.ts": "2ed4c57d4d01b8ee9b9a6196c4a8a7348971cf90f5ddd87926253daafc818517"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/type-only.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/type-reference-state.ts": {
+      "fingerprint": "4674b014d7c7b16d67a3b39a3a6686220d0e952b63ea53759f64cb5700414837",
+      "snapshot": {
+        "libs/attw-core/src/type-reference-state.ts": "27cbf0221d08cd61e00dfdbda3d986fecb5ba5da9e1216d8d2fec92b5d2ff6b6"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/type-reference-state.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/type-reference.ts": {
+      "fingerprint": "89d9ce2f8079663f1b5481ebe866f7a591234a36aa1b044a567e2b9bf185b631",
+      "snapshot": {
+        "libs/attw-core/src/type-reference.ts": "e6cb6d36745535c2731e35788c45f595a7663816a07437191d881905fe8e719c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/type-reference.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/types-versions.ts": {
+      "fingerprint": "bce2ee27116bc503840fb62c7aeee09e5d11169f78f10d9b2f107fbbe855fd96",
+      "snapshot": {
+        "libs/attw-core/src/types-versions.ts": "4ca7a1a0b7510654e0e8a93910280881dfa953a9a76f589c5c4aa4bbad4f818f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/types-versions.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/types.ts": {
+      "fingerprint": "75d975aeed4e44a2e86d982a1d84c0d49d3d2ba8464733d4ebc0ef86f5edb1fc",
+      "snapshot": {
+        "libs/attw-core/src/types.ts": "46b475c1f7a29d60e8e4a64fcffa504796014f71962504312064f89115f41f56"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/types.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/typescript-files.ts": {
+      "fingerprint": "4ce2986afd438dd5d65f94d9427bd330dd38828a16a6a82601df6e848c41faed",
+      "snapshot": {
+        "libs/attw-core/src/typescript-files.ts": "f0e1bec77873400465abe043f2951fa1fbf76a92e1cbe22760e3114bee1597b1"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/typescript-files.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/typescript-guards.ts": {
+      "fingerprint": "611974f67a482e0546a57181be9f642507015347fda36b604fdf83fe3845db96",
+      "snapshot": {
+        "libs/attw-core/src/typescript-guards.ts": "ed40b80a7d421439d8775efce353831e42e68d00ca5b40cf5d20ed0ee7c9109b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/typescript-guards.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/typescript-paths.ts": {
+      "fingerprint": "1767bcc908319a13b00d9c0cce09b17d2e29d62518146ffe45ddf6f4e55d581e",
+      "snapshot": {
+        "libs/attw-core/src/typescript-paths.ts": "90842a0e5e78d6922f07b98b640fa0c5f18757332a246b250fc9182be8e0200c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/typescript-paths.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/typescript.ts": {
+      "fingerprint": "99dd96326f35ad1689bef2605d28b41c11b7311a2ee02a57bcb0aa28cac38e97",
+      "snapshot": {
+        "libs/attw-core/src/typescript.ts": "4ea7f36f4ea6f817b706485d8762ce241a3b15fa78ef5da2cb68af3ec6d80735"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/typescript.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/utils.ts": {
+      "fingerprint": "74529408a84e09fa7dd6b9955d103608c69b6057e26d9d52bf608b5626b21e3c",
+      "snapshot": {
+        "libs/attw-core/src/utils.ts": "f205f687296335fef50697b360d3ba33c297bea15b36a5f37e853024b2e77efd"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/utils.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/src/versions.ts": {
+      "fingerprint": "7bdc46e33dc022f710063d355fb5a6f039a676fd5facd433bdc1b446f1f5108f",
+      "snapshot": {
+        "libs/attw-core/src/versions.ts": "a82a3f41e2700b37923c74ab62c940c14bf967d5d9cd768f4a07082c9a8d9539"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/src/versions.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/checker-symbols.test.ts": {
+      "fingerprint": "b14aacbc1bb083e5eeee38c341605480b96ab6b3ff2cf59313d5d6d56f7734b4",
+      "snapshot": {
+        "libs/attw-core/tests/checker-symbols.test.ts": "c1abd96c05a4dc9146511358ab5d0f9fadc1bd9c5e0b44884d17914829a21fe0"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/checker-symbols.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/differential-data.ts": {
+      "fingerprint": "1f710e37fd45b18cc304a704945f7b4173f75cfabacda3cbbd64bd4a60ca604e",
+      "snapshot": {
+        "libs/attw-core/tests/differential-data.ts": "f403ced4ce5158b48a9e1bcaab3527146430d65f2f8c7d925204b29f2455ef5f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/differential-data.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/differential.test.ts": {
+      "fingerprint": "e857fc521c5a8d87f2f2cf201484fcc0d037ecb65ea096e69257e49b1587c937",
+      "snapshot": {
+        "libs/attw-core/tests/differential.test.ts": "68fb809be0775cf0a90457319db94e4e581733e1b0321501c2431a618014faf5"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/differential.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/expected.json": {
+      "fingerprint": "8e83fa3338deb67541cbff359f059f0e60e93d892a555426b938135108581cd2",
+      "snapshot": {
+        "libs/attw-core/tests/expected.json": "6867e7ae242917cf4f3b981eaf0eababd4380f216cc632ef17d5adc47f61f2d7"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/expected.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/fixtures.json": {
+      "fingerprint": "573bbd6fbd50a28050c3d1cdd307b5ed7caa3157bcc2fa3c1574aa45294e4045",
+      "snapshot": {
+        "libs/attw-core/tests/fixtures.json": "04257f92e189faf9b677fc5e2875738fcd9ca0056486378e45466b45ec7558d8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/fixtures.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tests/path-helpers.test.ts": {
+      "fingerprint": "31fa2534378e29c06f72ebf40da2bfdc7db0cf23dad9ce951360f943e3fb8114",
+      "snapshot": {
+        "libs/attw-core/tests/path-helpers.test.ts": "31b9bf36ed557a4568c5f2c3dffaaef30554fe335837fed91874f091ac0ed2e2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tests/path-helpers.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/tsconfig.json": {
+      "fingerprint": "3ce99064fc856a66256c093f2431236cf457edad1cf9e03e19f511c6d6c60825",
+      "snapshot": {
+        "libs/attw-core/tsconfig.json": "18a2d48d8ecb99832f3567c6421249184cfe217275ec63b36208549474bbb541"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/tsconfig.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/LICENSE": {
+      "fingerprint": "2342d59b7b9274193dee5bcb4088494903291e0ed823df8be0816aa6db9ed417",
+      "snapshot": {
+        "libs/attw-core/upstream/core/LICENSE": "4c430bf315121c661bb68f5be994d1aab2c52962e6e914a4e5d31495cf1aa175"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/LICENSE at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@apollo__client-3.7.16.tgz": {
+      "fingerprint": "cfce64b72f50cda74dc502fe0b726e6f1cc8eb50948b62d76a5998a8f0a1e600",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@apollo__client-3.7.16.tgz": "a19adbf9a707393a4db649672ab30abacc69ac9852d27811d8a66e0c5142ddd4"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@apollo__client-3.7.16.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@cerbos__core@0.18.1.tgz": {
+      "fingerprint": "054f8fe820b38df1e4fafbaeb6670dbc8468ce89d52e9c67f2b4faf218ee9d00",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@cerbos__core@0.18.1.tgz": "7e4e055b3ab2ba3a8cb9f2b470d097ffe79bfbc478bc824b2d62bf240192d161"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@cerbos__core@0.18.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@fluid-experimental__presence@2.3.0.tgz": {
+      "fingerprint": "3c1efea254b046cac7a15e1f065b2b97f75cefae9db28a07b511326e562e7ce3",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@fluid-experimental__presence@2.3.0.tgz": "25100c50ffa75517b801d0199b3afdb05fbddb91c5d3fdb181c090db62939820"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@fluid-experimental__presence@2.3.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@fullcalendar__react@5.11.2.tgz": {
+      "fingerprint": "118df43c50ac62ce175d692383fa351326df2d08e4c851738cb75bdf738c7ab7",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@fullcalendar__react@5.11.2.tgz": "eafe0a333f7d82f5bef1e641510a134f702923a92f969cc8bc4e6eb9159e6e50"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@fullcalendar__react@5.11.2.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@ice__app@3.2.6.tgz": {
+      "fingerprint": "0d044a4f6f9536445040b20688f9ec58f23b9937a02634109b221445b32855a6",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@ice__app@3.2.6.tgz": "fe8bec6347ab513dbef20c0bff870842234eeee67c10e70e2c8671fcdcc1bdfb"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@ice__app@3.2.6.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@reduxjs__toolkit@2.0.0-beta.0.tgz": {
+      "fingerprint": "5c69b63a14eee428353634501e072092f0d6aa3851ab5e89926548d96a6323fe",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@reduxjs__toolkit@2.0.0-beta.0.tgz": "2162edd4ff21b6a6d5f148146206be569bcd7c607aef2d6aaabdbe9f071d042b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@reduxjs__toolkit@2.0.0-beta.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@rollup__plugin-eslint@8.0.1.tgz": {
+      "fingerprint": "239b6243e9d74a1d7b359b1cf247148e90fbca123c2b0423ae96abe5fa3dd7bd",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@rollup__plugin-eslint@8.0.1.tgz": "fd7994df0db261aa7c8c3f9555283e69550e709fd4d07f186d0b614c8cfca26e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@rollup__plugin-eslint@8.0.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@tgwf-co2-0.14.2.tgz": {
+      "fingerprint": "3391570b70d808304b2f2f92ad47a1d3f66f82b8448c342fcb9d4e7c204f97e1",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@tgwf-co2-0.14.2.tgz": "a923f6c1a5ef221be076418adbb31eedd28a55522df0e94487ae91ee7c31f109"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@tgwf-co2-0.14.2.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@types__big.js@6.2.0.tgz": {
+      "fingerprint": "d3310624f1ed6917ce36406cbaf1129b4478119488dd575ece78392dd17227f2",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@types__big.js@6.2.0.tgz": "bd467c113389e87141e648b2aeec9b620c3f9cc8eb76b8db9f0c8a0f4fcb399d"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@types__big.js@6.2.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@types__react@18.2.21.tgz": {
+      "fingerprint": "1bfb67a8ea9de03aa84c9d406db905f4ba2672e62de0d64d795198ae04ac3c2d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@types__react@18.2.21.tgz": "00c30a294c1bbf6f5e8ac47e8d196fc1f580b241c757710e5c7e6dc01ef606ed"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@types__react@18.2.21.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@types__semver@7.5.8.tgz": {
+      "fingerprint": "1fdc7fd5417e5e62fd86453a632bbf4f29ed2ab698880833bc03625c1b41811c",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@types__semver@7.5.8.tgz": "3fb846be27d07ec56291fe3b0a2bc9f0aebe75a98778b4987f9afc9eb0bf5508"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@types__semver@7.5.8.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/@vitejs__plugin-react@3.1.0.tgz": {
+      "fingerprint": "14cab2fa2168c9ddc1da7b1f9b3a1b60231209bf9512c554683fe4fe89ddc31d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/@vitejs__plugin-react@3.1.0.tgz": "9595a13542674dc15d78105542d927729e127fa9f810b438b87df71b1dbff621"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/@vitejs__plugin-react@3.1.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/Babel@0.0.1.tgz": {
+      "fingerprint": "8efbcf47d9227c17b904499b5ab460c06a33e39a385ea85385e627ff9c7dace8",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/Babel@0.0.1.tgz": "f5cd3feaf922830335cdd8729b98f61fb2c2e22f129c22c0aeeacb31d841a8da"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/Babel@0.0.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/ajv@8.12.0.tgz": {
+      "fingerprint": "a14d7c7a1f3c6607857d64ecffa26fd36e27e17eaf315ecb9f61dde4196019d7",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/ajv@8.12.0.tgz": "00c7dc15d8db03adf835bdf045442ef3f39d6eb3b088112196290afcfed86a28"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/ajv@8.12.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/anymatch@3.1.3.tgz": {
+      "fingerprint": "93860afa14e103f6c796184725c637f1d109f85b5b83122ec59e7a88c34511df",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/anymatch@3.1.3.tgz": "bb629d6c832b73a127f1623867a2bf2f161fa0bb185dbecb632a878621b8f78f"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/anymatch@3.1.3.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/astring@1.8.6.tgz": {
+      "fingerprint": "11c32de5c6613474f00136114c37e5c2a16635628588afef72a4d3e498cc3715",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/astring@1.8.6.tgz": "06e4195c0c19da7812a42f8b3777bc8478f93e6a90b407ce270c50bd1135ad4b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/astring@1.8.6.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/available-regexp-flags@1.0.4.tgz": {
+      "fingerprint": "687ba44dc518e9439133f75a57efced05edc4f0bb3f05d9e86a041925f907d29",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/available-regexp-flags@1.0.4.tgz": "9c82b300ce87d200ce604a54c267526b7788c839884af4d1ce2c22d5a533f010"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/available-regexp-flags@1.0.4.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/axios@1.4.0.tgz": {
+      "fingerprint": "a666e42a05887ce54871a3e75e525c06c03235b3c196dcbbb3647c2ea0cae064",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/axios@1.4.0.tgz": "f884c7b778554af3708339f2b1c7ed60941c7ee36420c1f80c66ef56b6508238"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/axios@1.4.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/big.js@6.2.1.tgz": {
+      "fingerprint": "7d0a825c40dc5afc95658796153fb981c37f55ec685f19dadeb38721ddc8a9a4",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/big.js@6.2.1.tgz": "6529fcdcdcc0caaf707a6d665358b79d97df3294f1f9b5fb6c0b732ecc81ea88"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/big.js@6.2.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/commander@10.0.1.tgz": {
+      "fingerprint": "2ca68b17a9785cf0752b97c192a1046be64c7535ac77d3a3928d88aa3ebad6ac",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/commander@10.0.1.tgz": "ea1f4642cf8b38ab798a87915022d00f81bc1d108811a4b635b3926f5a1ff7d2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/commander@10.0.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/docxtemplater@3.53.0.tgz": {
+      "fingerprint": "4e6427981e4974ad7d6a951295d2c029493670b155204388ab426b5fd0acee13",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/docxtemplater@3.53.0.tgz": "4af09d2bc7a46f0b3d4651d23792412c9b63d76ff3d575403dbeeb05b5528d84"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/docxtemplater@3.53.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/ejs@3.1.9.tgz": {
+      "fingerprint": "7312daa37ec9fe7467f96e76b0957650f44c23e860cfd8a2a2554a3854f3ac9d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/ejs@3.1.9.tgz": "26f2a9f5302bf3025841176ce9a3e27ac87b3975a011bd837ad0b5b36f7ab381"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/ejs@3.1.9.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/emoji-regex@10.0.0.tgz": {
+      "fingerprint": "12d2c6f9e7fc2ebf7d17256a3e70b30f1d81aa8c58f51940c19f6e7e40b63515",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/emoji-regex@10.0.0.tgz": "89ecde7c30c8a1cccc5aa0bb11189e068488bea9c0c61b337c576558749943a8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/emoji-regex@10.0.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/eslint-module-utils@2.8.1.tgz": {
+      "fingerprint": "a9f4ff0183e54b851786cc3faa8f13cb4be9ea6f4e2ef220cb200bb63e1035cc",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/eslint-module-utils@2.8.1.tgz": "950184f9bfd85ee7622c12e66e3c1e0da98d0a5c9750b462bdc66b8a2b34b1c8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/eslint-module-utils@2.8.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/eslint-plugin-jsdoc@48.9.1.tgz": {
+      "fingerprint": "6f406a9e95fd0c69618659b9efbb7599f7e5d83a95f9983e65ca524b637a42b8",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/eslint-plugin-jsdoc@48.9.1.tgz": "71e1217e4d08f623778e26c0619b73ff913b6c7abe75db21d7b7f79f8bff23ce"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/eslint-plugin-jsdoc@48.9.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/esm-seedrandom@3.0.5.tgz": {
+      "fingerprint": "9c61b074d8e5c038d237c401ada44884790a1197060eba0ee12f1227f597e855",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/esm-seedrandom@3.0.5.tgz": "4b7b5046030d7a088e956a54c2124953c618415e02521bc39e6c8cbabfa4b0c2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/esm-seedrandom@3.0.5.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/fails-2.0.1-alpha.0.tgz": {
+      "fingerprint": "7780a89de89818bc047acfd9a89f4d054314ce9a80ec68961dab77af94efbff9",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/fails-2.0.1-alpha.0.tgz": "36e669ec7cd34d04186b36a7377dbfd457fdb7d3520f7734036ecc07b10dcd8e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/fails-2.0.1-alpha.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/hexoid@1.0.0.tgz": {
+      "fingerprint": "45d2058dd772bac43208e2c02dcbf9860c4f1d4aa74614e2ff98f5f880607109",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/hexoid@1.0.0.tgz": "7780c58c91f6faa29f8e6bdce0aaacd481370ca3b541763af5a4abaaf276cb00"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/hexoid@1.0.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/ignore@5.2.4.tgz": {
+      "fingerprint": "2ffbe932fd6a3a13ca73ca5e6cc442c23427b1cfe4e8f8e156d651af17aa2269",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/ignore@5.2.4.tgz": "8cddcbabeb147a8d5e3fda9ab02f250248708827c7a3ef8b948b2d458dd5e2f7"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/ignore@5.2.4.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/klona@2.0.6.tgz": {
+      "fingerprint": "8eac86c252fb90fcef2c2c3afc371860c4d06265e1090c901ef7409eb306a0a1",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/klona@2.0.6.tgz": "d88f1971bbe433d6601c014927a7c4fba4c24a806a60bb5eef0e0f44497d4c6b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/klona@2.0.6.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/moment@2.29.1.tgz": {
+      "fingerprint": "a57116a765290757dda3e63453b9e069f4c97c4ca655ec6227ca1a41c1fc9da3",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/moment@2.29.1.tgz": "42180f9a64027e9846d9aefc5fc65c9863985b3cbab41a56edde3892480c2c55"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/moment@2.29.1.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/next@14.0.3.tgz": {
+      "fingerprint": "0795aee792e82f72689da78c17619643e1c357c1528ec98a445c0803aa0758e7",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/next@14.0.3.tgz": "efdc41d0f6666f7e83a607f42709b02891964315ff002280eeafb899f046e134"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/next@14.0.3.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/node-html-parser@6.1.5.tgz": {
+      "fingerprint": "e622f510501876f81b3375e6a8cad58090787de027fba126e43551750c345296",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/node-html-parser@6.1.5.tgz": "58f36e6e902b0eacdc342cf351a9ecbfef70926fd166996c76c919a5b2dc781e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/node-html-parser@6.1.5.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/openurl@1.0.2.tgz": {
+      "fingerprint": "c0be2449fe753b2b4346f7499a297ac0449a95ce71e459d6426b882a17629959",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/openurl@1.0.2.tgz": "88bedadf9580b4629f005b2b931717241094176ce5a7f5d2854931e42ded8ae3"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/openurl@1.0.2.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/postcss@8.4.21.tgz": {
+      "fingerprint": "055031cf8a90c14161b9f72e2dc11cfa49545a8d309f82ce5534d7d175528cf7",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/postcss@8.4.21.tgz": "01491b4cccf0d42fe3da6911475f524ce60e65fe93b4910b0bfba2a3351d7cb0"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/postcss@8.4.21.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/react-chartjs-2@5.2.0.tgz": {
+      "fingerprint": "77dae99bb96c460d6bac6f2523e6065d356621b85d55812619047ecf6c4519c6",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/react-chartjs-2@5.2.0.tgz": "728afb4b3e3fb131c3805543404fdef5fa93828d35608408a4595c9bbad0826b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/react-chartjs-2@5.2.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/react@18.2.0.tgz": {
+      "fingerprint": "cf7e166a757ad8814585f60487e587d2f8ec4d1ff20b5fbb8ff095d4738607df",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/react@18.2.0.tgz": "a151f7caec911760e42b7a6f6f1dfcaba141fd11ff49e2af901a2eee0366297c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/react@18.2.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/rfdc@1.3.0.tgz": {
+      "fingerprint": "b0fec807aa849065fdb52452dcfba7aee2e075bbacfeb96b6026379586732f53",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/rfdc@1.3.0.tgz": "d2a8a0606c532cfc201dda15aee08f9790152dcd82e72f870ccee54feeb702ff"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/rfdc@1.3.0.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/semver@7.6.3.tgz": {
+      "fingerprint": "fe22bc00068e538d7efdae048959eab7c3d21c3138f0e3daa65c66a192eecb34",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/semver@7.6.3.tgz": "376d2ca2c941fc5a37e9ac3ec65302e5e421e2cc1ee3dee57a854d2bd9bee125"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/semver@7.6.3.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/fixtures/vue@3.3.4.tgz": {
+      "fingerprint": "c5a8518a408838df29bcab77131cf470667af7dc1e1f1652fcfc61c55506de79",
+      "snapshot": {
+        "libs/attw-core/upstream/core/fixtures/vue@3.3.4.tgz": "5d3ab0144d5b8eaf28ccfbf27500669a91463226c4767041c7293ce76065171a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/fixtures/vue@3.3.4.tgz at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@apollo__client-3.7.16.tgz.json": {
+      "fingerprint": "dd8593512c2c9a7fb358b42560c6064af06a918d2678d5b7527096c4728bbdce",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@apollo__client-3.7.16.tgz.json": "4a544b83a22c3347b177d6e0a07bf4da7fe87c6c4214f91bf40fd0d1e6d0d1aa"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@apollo__client-3.7.16.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@cerbos__core@0.18.1.tgz.json": {
+      "fingerprint": "c0868b6548c9162d37d8213a9f166df2d93e854411a3409d2c35ca89c912aa12",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@cerbos__core@0.18.1.tgz.json": "f7e35578555de7a4f35e34231b0251c080676fdb38729aec28d5ab28fd6d671a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@cerbos__core@0.18.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@fluid-experimental__presence@2.3.0.tgz.json": {
+      "fingerprint": "7233c745a3264e37ca92a4c9e01faf3fc1fc57a30c224dd9b0cded8694656784",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@fluid-experimental__presence@2.3.0.tgz.json": "3cc342e2189e909935c6a6c6b6780a8f5acfc980d74cf1182f5d7227b716c65d"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@fluid-experimental__presence@2.3.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@fullcalendar__react@5.11.2.tgz.json": {
+      "fingerprint": "45e95cb9aa08729bc9c5ee0d796d6bf4347995b71c28c02fba887c4f458ae0a3",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@fullcalendar__react@5.11.2.tgz.json": "0087c3311626d8cf83b5bcddfbefa235e90b2255c934b45ff7df5ae0db3469f0"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@fullcalendar__react@5.11.2.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@ice__app@3.2.6.tgz.json": {
+      "fingerprint": "a200775180a18271647e55e9eabe605c4597bf80132444a074f30cee736ca261",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@ice__app@3.2.6.tgz.json": "0cedd9076556ea4106f462e6ee3ce390eef4713cd68f83f31ec55b64c8179ba2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@ice__app@3.2.6.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@reduxjs__toolkit@2.0.0-beta.0.tgz.json": {
+      "fingerprint": "fe3e491d916339fd9e0d784b59e9ff5b5a0a6283601ebc10d58fea01b5c339ca",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@reduxjs__toolkit@2.0.0-beta.0.tgz.json": "362b063e1624aff3051593929371bef167d3368d828164079815f2661f1b910e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@reduxjs__toolkit@2.0.0-beta.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@rollup__plugin-eslint@8.0.1.tgz.json": {
+      "fingerprint": "25a82bfee80044e6e913849ef0b6788440fc6cd088aae4133705fafb79da24a3",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@rollup__plugin-eslint@8.0.1.tgz.json": "f539b1847e12ad232e4f9db4cb6fb5e51edcae00daf525a547066b948ec6494c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@rollup__plugin-eslint@8.0.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@tgwf-co2-0.14.2.tgz.json": {
+      "fingerprint": "e1ca45196577c179e1daf8b67c5d4337ed9ecd9d8bc7b3952edd9f184e6a03cd",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@tgwf-co2-0.14.2.tgz.json": "6fd354ad004c3fb8f0d830944b29259a0ba9c6392d9678dd352178fa24135204"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@tgwf-co2-0.14.2.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/@vitejs__plugin-react@3.1.0.tgz.json": {
+      "fingerprint": "cf542874576491ec6b52d40423f7f8f0a7ee185002ac1a2eae89b66d9e674757",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/@vitejs__plugin-react@3.1.0.tgz.json": "e8e934197ea1cf5b3a53a5ee4ced6e1369d5b550ceb099d4312f640b245edb3b"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/@vitejs__plugin-react@3.1.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/ajv@8.12.0.tgz.json": {
+      "fingerprint": "fac51e2ddfba47323f0fe2f0bd606cdb0048cd77c74dd0828e1e8ea962f7f1af",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/ajv@8.12.0.tgz.json": "c1f97f31fcbebd59a689521394831a2f975041a3c63791261f9a8daa78257d42"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/ajv@8.12.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/anymatch@3.1.3.tgz.json": {
+      "fingerprint": "0dfa75a2bdc3232055abf57f05c999e52777f4258946822c74784e998456f0a6",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/anymatch@3.1.3.tgz.json": "10e82c5ecf6605d9216aefcf000e8dd019731310719f9053592719c511a65c6e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/anymatch@3.1.3.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/astring@1.8.6.tgz.json": {
+      "fingerprint": "15bd2dc2603e4e1995cfbc6d38cca6dbbb2295480b9cc14535abf4d7a446d891",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/astring@1.8.6.tgz.json": "e4b7644e415a573c16917a3a11b71053e0b94e4f92b0bb2fb5b4dc1c5ddffc0c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/astring@1.8.6.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/available-regexp-flags@1.0.4.tgz.json": {
+      "fingerprint": "288b20bb0c89930b8174664623d6a1cbc616f836b1f16e95918605982e2aa590",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/available-regexp-flags@1.0.4.tgz.json": "45371fa1d5688cdb0ec2f71c6ac26467f456a11f4338e3d4ded8407085d971ec"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/available-regexp-flags@1.0.4.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/axios@1.4.0.tgz.json": {
+      "fingerprint": "e56154cf87870cfcc6f36f5166fe576597cd9003df902b46d0cc84686bbed9d5",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/axios@1.4.0.tgz.json": "4ab5d9a65db76b2e3582f96d07dad698169717c165353e1e9e3a040745c83f83"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/axios@1.4.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/big.js@6.2.1.tgz.json": {
+      "fingerprint": "ebc37ed3d2e8fec6062d4a36d2beed3668f4b9911629e2e0b41775f1bf473f56",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/big.js@6.2.1.tgz.json": "65325a384fe8887c473b484044e207735fd3e150b123342aaddbae1658cd9bc0"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/big.js@6.2.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/commander@10.0.1.tgz.json": {
+      "fingerprint": "42300b3a4f34616826a1cb4e2bfa0b99af5d72ae887aa467020ee5937ce04f7f",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/commander@10.0.1.tgz.json": "81aa6bbbaa3332615287fc6ce441e8b722efffe66eac7a0f6af7218323fcf60a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/commander@10.0.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/docxtemplater@3.53.0.tgz.json": {
+      "fingerprint": "52542605a101e48173a7559bc96051ba290b4db5af6a3239061e886e78f59d0d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/docxtemplater@3.53.0.tgz.json": "284562de8e5d889baa5197829b1143c5980792b681c24126e313e1673aae750c"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/docxtemplater@3.53.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/ejs@3.1.9.tgz.json": {
+      "fingerprint": "8ffc60dc58393dc168f7b51986296cc2994b558b8500e6ad5109e10c4cc3cd28",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/ejs@3.1.9.tgz.json": "bbdcd81a360f4c4a38afd1151b0615dc52c450c6e13636028526e475da5024df"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/ejs@3.1.9.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/emoji-regex@10.0.0.tgz.json": {
+      "fingerprint": "9f462a61ecd5b5df319755356f8e466fed8019effbf49bf519c713520f946ef5",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/emoji-regex@10.0.0.tgz.json": "10c8606ffd71552ca02beb11ea0c99a0346d2dd1bc69ce3c8c287b663e4cb350"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/emoji-regex@10.0.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/eslint-module-utils@2.8.1.tgz.json": {
+      "fingerprint": "81a6761465693411b70a3b1a18f59c5381aca1b171027ad0a2263e592a6c9807",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/eslint-module-utils@2.8.1.tgz.json": "09bf2e3aac76f932e3caeb2c57188965e9c2a61ee9a73229cbb1b56e6bde0872"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/eslint-module-utils@2.8.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/eslint-plugin-jsdoc@48.9.1.tgz.json": {
+      "fingerprint": "48d6ae33db91ab42eca300d1ee107457f8bf046e59109c5be64625acc986a73c",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/eslint-plugin-jsdoc@48.9.1.tgz.json": "067412c8ba189aac967ea86b5e0fd2712587cd7e28a50a3fdcdb9103fdd0da60"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/eslint-plugin-jsdoc@48.9.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/esm-seedrandom@3.0.5.tgz.json": {
+      "fingerprint": "05320d34a5de30d497a9168f0ec4f1c67a09a18eb3c8dfb7381154dd04c8b21d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/esm-seedrandom@3.0.5.tgz.json": "968771a35ff8a9efc5f708589ec91403a07723dc56f2701c792d5b7ac33a4b95"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/esm-seedrandom@3.0.5.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/fails-2.0.1-alpha.0.tgz.json": {
+      "fingerprint": "a0d5495b26f20334e425777fb316e4e94c68da308a778ee414e6c8520b4ee0cb",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/fails-2.0.1-alpha.0.tgz.json": "f96c5ebceabe25e5d672b70633dc12f67fb35e557390b8f73f7ed048334504fc"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/fails-2.0.1-alpha.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/hexoid@1.0.0.tgz.json": {
+      "fingerprint": "bbb46803c62773ebdd2409235f0ca1ff4dc079b56e80522ec65a4bd3b9ad71e0",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/hexoid@1.0.0.tgz.json": "0cdaa9a315f601a2e522b3e506af73f1408bd3e48b15b9e1d1424f93aae2f1e3"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/hexoid@1.0.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/ignore@5.2.4.tgz.json": {
+      "fingerprint": "8e399665de14ec2e15889240b20866f65cdf055f7ce7bd0f8dc281174e05dd46",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/ignore@5.2.4.tgz.json": "7d08a46a50de46f16bdfa086fc4f082b7fd5053fed1d40668d03cf31ac75a408"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/ignore@5.2.4.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/klona@2.0.6.tgz.json": {
+      "fingerprint": "74f69a61842eeb5933a0750163e4bd555871f9e2727d42f61484c4099a5c6af5",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/klona@2.0.6.tgz.json": "6292347936e65b4fa0b3a056c790be0597b07da5248657ddf6b3f3cf460c0b45"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/klona@2.0.6.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/moment@2.29.1.tgz.json": {
+      "fingerprint": "b45231901e0b45a5bf88a49d95d53dfd4f9906640ce4b96e64a548ed7575b827",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/moment@2.29.1.tgz.json": "3b466ab5b10f51d9617a75691c7db4fea3e2ad20162b5b78d37f0a97de1b7918"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/moment@2.29.1.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/next@14.0.3.tgz.json": {
+      "fingerprint": "b01b7f7c807847c4c9662f864733b600e84a65cada19934cdf120c22683c4cd8",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/next@14.0.3.tgz.json": "27056a4e91fc03efef7ef738ab584f88f9795bfed63d288e7785b56d50161192"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/next@14.0.3.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/node-html-parser@6.1.5.tgz.json": {
+      "fingerprint": "ca6fa6c545c89f1f97f56bf4ed667dab28cf505e4865688b20277ee39c96e277",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/node-html-parser@6.1.5.tgz.json": "a11329e2df36418ffd2b46858efa509bedd3064babb7892b825e9e105bd9127e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/node-html-parser@6.1.5.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/openurl@1.0.2.tgz.json": {
+      "fingerprint": "0149db80468d099a71ee6615000b63b4d030d0d1f124275b63b99e01c538bea0",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/openurl@1.0.2.tgz.json": "0ee32b6649ee3bf8df4d402483d9ff467a869a8c1596153b389e08a321ba7bd9"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/openurl@1.0.2.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/postcss@8.4.21.tgz.json": {
+      "fingerprint": "dd837510102ec7e0f243a59840b7b32b99f7d4ad6c146a225465128e4897698d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/postcss@8.4.21.tgz.json": "bd82761ef3628ccb194ef79c1b0ad53742ec7678b92ae9ef1d720efc3bd8a5db"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/postcss@8.4.21.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/react-chartjs-2@5.2.0.tgz.json": {
+      "fingerprint": "8c98ae145a646eb148357486aa3d2360f0fd9aae464194f1c19c760b66a62073",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/react-chartjs-2@5.2.0.tgz.json": "3e85c55dc3ddf013171228dd1cbd55b24a9462dd5ccdef9bac2844e3d2ed6ee2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/react-chartjs-2@5.2.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/react@18.2.0.tgz.json": {
+      "fingerprint": "755c97dab7f93265ab3599a6fb31e893c173e183e5bb90016345cf92b46b424d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/react@18.2.0.tgz.json": "641412f417fb1c9f75bdc88027ba5c3a722dfeb7e731bdc3a869cbfb5467bbf3"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/react@18.2.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/rfdc@1.3.0.tgz.json": {
+      "fingerprint": "a57a99bc11bfdef863e5dc9dea917325f95dd92b66a1d613131835d031a16360",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/rfdc@1.3.0.tgz.json": "7d80b16e8e43fa71281cab0eac417a134ea3ad3f5e95653256589baa78f8db8a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/rfdc@1.3.0.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/semver@7.6.3.tgz.json": {
+      "fingerprint": "66b1810f5831987f891f74229175f269af2f55887218141c0e1f4f30b9b27543",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/semver@7.6.3.tgz.json": "263457ec6c3fbf2af978c5dcd9861179da0973b1bf8711a26c4bea50a440cd3d"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/semver@7.6.3.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/snapshots/vue@3.3.4.tgz.json": {
+      "fingerprint": "41a339b5fea02f9cca6e1c8ebd896f7c963e04418ee600636dcc6dbf48c33d9d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/snapshots/vue@3.3.4.tgz.json": "89c788bcd134f51844db72265726f7c3d1fd2f65ba4d0b828c38cf09b755b69e"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/snapshots/vue@3.3.4.tgz.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/getEntrypointInfo.test.ts": {
+      "fingerprint": "d2f83bc138dd20e0552932c70e4b306b18147c829359cd4c9d3a1318deefb431",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/getEntrypointInfo.test.ts": "600c05bbbed80504cb2207c2640ee0e6f21dc0b365e29e8914b91049f10c7477"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/getEntrypointInfo.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/getEsmLocalExports.ts": {
+      "fingerprint": "638fd53a0b39a1d935ba805867b3bd1fd09aaa86edc305f0f0cda1f1f502a227",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/getEsmLocalExports.ts": "0e648adec3e64b56f0563723891bb456d73637566c2a725bf0c8c2d685efb845"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/getEsmLocalExports.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/getProbableExports.test.ts": {
+      "fingerprint": "b2529b3557c3ca6d3de59fe37fccec7daf74816ddc5eb1a8a46c9c2e4dcfa097",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/getProbableExports.test.ts": "8e3d31e8ab05fa756e4a914592d51410d26b3ad9917e66b2950b263e64ce2968"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/getProbableExports.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/problems/exportDefaultDisagreement.test.ts": {
+      "fingerprint": "9d2f893eec703d69f3c7a45666eca163ccf2208cf1b57fd23a78618077a0c77a",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/problems/exportDefaultDisagreement.test.ts": "49aa30f96d104b21fb0e51782b37efea526d8ad00a53b78fb3a65e5c593cc0b8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/problems/exportDefaultDisagreement.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/problems/resolvedThroughFallback.test.ts": {
+      "fingerprint": "d7d0fd76452b43b500dbcfb382dabe1ae134e7966913d9bff54b5b4479bb63eb",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/problems/resolvedThroughFallback.test.ts": "0530bd6aefe409f87c30d51b4d8cfd428a8811bfbab5a9102a0a9bd6a699dfa8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/problems/resolvedThroughFallback.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/snapshots.test.ts": {
+      "fingerprint": "2fe9241d546f4f66544ef7505c361859cf7a77f40b65da919b0085a9679c449c",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/snapshots.test.ts": "a481d248f9bb9ae1ce64238f1fc57eaf5d55759af77b9989c66bc978359aa9c8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/snapshots.test.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/tsconfig.json": {
+      "fingerprint": "fa43a018694ab7795d991bb0a9a78cef67ac63ff6341e2179e80e700ab5df019",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/tsconfig.json": "ba03a16556b509e8f4c3c3f2f08e5a7c84e7710bbcb8358224016f380c6532e8"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/tsconfig.json at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/upstream/core/test/utils.ts": {
+      "fingerprint": "590efac6f7a4417c1a2beffcd65b4d77ad110d74f4a2af4c3617ad6afed3b59d",
+      "snapshot": {
+        "libs/attw-core/upstream/core/test/utils.ts": "8195aa7ed2f02226738c7ac479a726d0b555338dff7a4c1ec384323e147b26c4"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/upstream/core/test/utils.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:libs/attw-core/vite.config.ts": {
+      "fingerprint": "9b7eabe35b044ebcfa376fae88edfde1af03fc7b2a8f3de34608e3cc6330acb9",
+      "snapshot": {
+        "libs/attw-core/vite.config.ts": "f639a2d921ea5d21cd15788566c4548a7a0618f1ed4e92336cbfdba8e5653c1a"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: libs/attw-core/vite.config.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:patches/@arethetypeswrong__core@0.18.5.patch": {
+      "fingerprint": "04b01822b75647ce5934ab7b83a01b07ebd3e7f2e2df8b625c997dc4d88b9d52",
+      "snapshot": {
+        "patches/@arethetypeswrong__core@0.18.5.patch": "7dbaf7caef72cc10481d336bd3cc49403c5e3d1f9c66c6b4189a912e6b9672be"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: patches/@arethetypeswrong__core@0.18.5.patch at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
+      ]
+    },
+    "source:readonly-parameter-types.ts": {
+      "fingerprint": "603494b7fde9f799e96c5ac00e3822599ac4fd75cd9033a0110b85fd07004df7",
+      "snapshot": {
+        "readonly-parameter-types.ts": "c7c8f9c8d1befb4646bc001e48da4a388b78164d528fcf69c8955448b34ab6c2"
+      },
+      "head": "cd05946231f9489d3b3a31b1e74a46186d8c9a11",
+      "outcome": "no-change",
+      "reason": "attw-core は Intent のスキルを持たず、同梱するスキル write-decision-rules が扱う oxlint-plugin-decision の書き方にも関わらない",
+      "evidence": [
+        "Changed: readonly-parameter-types.ts at cd05946231f9489d3b3a31b1e74a46186d8c9a11"
       ]
     }
   }
