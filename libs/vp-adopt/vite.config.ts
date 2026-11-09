@@ -104,7 +104,7 @@ export default defineConfig({
   tsconfig: "tsconfig.json",
   plugins: [attwUpstream, typescriptShim],
   pack: {
-    entry: ["src/index.ts", "src/cli.ts", "src/fsd.ts", "src/attw.ts"],
+    entry: ["src/index.ts", "src/cli.ts", "src/postinstall.ts", "src/fsd.ts", "src/attw.ts"],
     platform: "node",
     plugins: [attwUpstream, typescriptShim],
     deps: {
@@ -151,7 +151,7 @@ export default defineConfig({
     ],
     reporters: ["default", "blob"],
     outputFile: {
-      blob: new URL("../../.vitest-reports/vp-tools.json", import.meta.url).pathname,
+      blob: new URL("../../.vitest-reports/vp-adopt.json", import.meta.url).pathname,
     },
     server: {
       deps: {

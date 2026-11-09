@@ -1,8 +1,9 @@
 {
-  "name": "@r_masseater/vp-tools",
+  "name": "@r_masseater/vp-adopt",
   "version": "0.1.6",
-  "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin and @arethetypeswrong/core for TypeScript 7.",
+  "description": "Adopt Betterleaks, actionlint, zizmor, commitlint, textlint, Steiger and dependency checks into Vite+ through the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin and @arethetypeswrong/core for TypeScript 7.",
   "keywords": [
+    "actionlint",
     "arethetypeswrong",
     "attw",
     "betterleaks",
@@ -10,9 +11,10 @@
     "feature-sliced",
     "steiger",
     "textlint",
-    "vite-plus"
+    "vite-plus",
+    "zizmor"
   ],
-  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/vp-tools#readme",
+  "homepage": "https://github.com/masseater/lint-kit/tree/main/libs/vp-adopt#readme",
   "bugs": {
     "url": "https://github.com/masseater/lint-kit/issues"
   },
@@ -20,10 +22,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/masseater/lint-kit.git",
-    "directory": "libs/vp-tools"
+    "directory": "libs/vp-adopt"
   },
   "bin": {
-    "vp-tools": "./dist/cli.mjs"
+    "vpa": "./dist/cli.mjs"
   },
   "files": [
     "dist",
@@ -54,7 +56,8 @@
     "provenance": true
   },
   "scripts": {
-    "prepublishOnly": "vp run build"
+    "prepublishOnly": "vp run build",
+    "postinstall": "node -e \"require('fs').existsSync('dist/postinstall.mjs') && import('./dist/postinstall.mjs')\""
   },
   "dependencies": {
     "@andrewbranch/untar.js": "1.0.4",
@@ -106,7 +109,7 @@
         "!dist/fsd.mjs",
         "!dist/attw.mjs"
       ],
-      "limit": "4977 B"
+      "limit": "8174 B"
     },
     {
       "name": "fsd",

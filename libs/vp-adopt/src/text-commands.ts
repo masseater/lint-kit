@@ -14,7 +14,7 @@ const RANGE = "--range";
 const RANGE_ARGS = 2;
 const FILE_ARGS = 1;
 const COMMITLINT_USAGE =
-  "Usage: vp-tools commitlint <commit message file> | vp-tools commitlint --range <revision range>";
+  "Usage: vpa commitlint <commit message file> | vpa commitlint --range <revision range>";
 
 const runTextlint: Command = (root, args) =>
   Effect.gen(function* textlint() {
