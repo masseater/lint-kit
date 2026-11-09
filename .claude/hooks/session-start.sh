@@ -25,5 +25,12 @@ echo ". \"$HOME/.config/vite-plus/env\"" >>"$CLAUDE_ENV_FILE"
 echo "export NODE_USE_ENV_PROXY=1" >>"$CLAUDE_ENV_FILE"
 
 cd "$CLAUDE_PROJECT_DIR"
+if ! command -v mise >/dev/null 2>&1; then
+  curl -fsSL https://mise.run | sh >&2
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+mise trust --quiet mise.toml
+mise install --locked >&2
+echo "export PATH=\"$HOME/.local/bin:$HOME/.local/share/mise/shims:\$PATH\"" >>"$CLAUDE_ENV_FILE"
 vp env on >&2
 vp install --frozen-lockfile >&2
