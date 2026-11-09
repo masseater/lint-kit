@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/masseater/lint-kit/compare/v0.1.4...v0.1.5) (2026-11-09)
+
+
+### Features
+
+* **attw-core:** @arethetypeswrong/core を TypeScript 7 だけで動かす置き換えを足す ([#104](https://github.com/masseater/lint-kit/issues/104)) ([42db97d](https://github.com/masseater/lint-kit/commit/42db97df2515412bb9caafadd7573e57f2b24263))
+
 ## [0.1.4](https://github.com/masseater/lint-kit/compare/v0.1.3...v0.1.4) (2026-11-09)
 
 
