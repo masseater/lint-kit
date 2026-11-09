@@ -24,12 +24,14 @@ const ONE = 1;
 const TWO = 2;
 const THREE = 3;
 const SHORT_TIMEOUT_MS = 5000;
+const LONG_TIMEOUT_MS = 60_000;
 
 interface FailedRefinement {
   readonly ci: "fail" | "skip";
   readonly token: string;
   readonly reason: string;
   readonly reported: number;
+  readonly timeoutMs: number;
 }
 
 interface MissingOnce {
@@ -83,18 +85,42 @@ const keepsLaterFindings = Effect.scoped(
 );
 
 const failedRefinements: readonly FailedRefinement[] = [
-  { ci: "fail", token: "refinement-fails", reason: "401", reported: TWO },
-  { ci: "fail", token: "refinement-slow", reason: "timeout", reported: TWO },
-  { ci: "skip", token: "refinement-fails", reason: "401", reported: ONE },
-  { ci: "skip", token: "refinement-slow", reason: "timeout", reported: ONE },
+  {
+    ci: "fail",
+    token: "refinement-fails",
+    reason: "401",
+    reported: TWO,
+    timeoutMs: LONG_TIMEOUT_MS,
+  },
+  {
+    ci: "fail",
+    token: "refinement-slow",
+    reason: "timeout",
+    reported: TWO,
+    timeoutMs: SHORT_TIMEOUT_MS,
+  },
+  {
+    ci: "skip",
+    token: "refinement-fails",
+    reason: "401",
+    reported: ONE,
+    timeoutMs: LONG_TIMEOUT_MS,
+  },
+  {
+    ci: "skip",
+    token: "refinement-slow",
+    reason: "timeout",
+    reported: ONE,
+    timeoutMs: SHORT_TIMEOUT_MS,
+  },
 ];
 
-const preservesFinding = ({ ci, token, reason, reported }: FailedRefinement): MockTest =>
+const preservesFinding = ({ ci, token, reason, reported, timeoutMs }: FailedRefinement): MockTest =>
   Effect.scoped(
     Effect.gen(function* test() {
       const project = yield* locationProject({
         text: LARGE_SOURCE,
-        options: { ci, timeoutMs: SHORT_TIMEOUT_MS },
+        options: { ci, timeoutMs },
         token,
       });
       const { run, diagnostics } = yield* project.lint;
