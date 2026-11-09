@@ -406,9 +406,9 @@ importers:
       '@eslint-react/eslint-plugin':
         specifier: 'catalog:'
         version: 5.28.8(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@7.1.0-beta)
-      '@r_masseater/vp-tools':
+      '@r_masseater/vp-adopt':
         specifier: workspace:*
-        version: link:../vp-tools
+        version: link:../vp-adopt
       '@remotion/eslint-plugin':
         specifier: 'catalog:'
         version: 4.0.541(eslint@9.39.5(jiti@2.6.1)(supports-color@7.2.0))
@@ -467,7 +467,7 @@ importers:
         specifier: catalog:stack
         version: 1.5.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(jiti@2.6.1)(publint@0.3.25)(typescript@7.1.0-beta)(yaml@2.9.1)
 
-  libs/vp-tools:
+  libs/vp-adopt:
     dependencies:
       '@andrewbranch/untar.js':
         specifier: 1.0.4

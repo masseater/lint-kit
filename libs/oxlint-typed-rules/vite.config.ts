@@ -1,4 +1,4 @@
-import type { CheckPackageOptions, CheckResult } from "@r_masseater/vp-tools/attw";
+import type { CheckPackageOptions, CheckResult } from "@r_masseater/vp-adopt/attw";
 import { Effect, Function, Option, Record } from "effect";
 import { defineConfig } from "vite-plus";
 
@@ -10,7 +10,7 @@ const checkWithVpTools = (
   tarball: Uint8Array,
   options: CheckPackageOptions,
 ): Effect.Effect<CheckResult> =>
-  Effect.promise(() => import("@r_masseater/vp-tools/attw")).pipe(
+  Effect.promise(() => import("@r_masseater/vp-adopt/attw")).pipe(
     Effect.flatMap((attw) =>
       Effect.promise(() => attw.checkPackage(attw.createPackageFromTarballData(tarball), options)),
     ),
@@ -196,7 +196,7 @@ export default defineConfig({
   ],
   run: {
     tasks: {
-      build: { command: "vp pack", dependsOn: ["@r_masseater/vp-tools#build"], cache: false },
+      build: { command: "vp pack", dependsOn: ["@r_masseater/vp-adopt#build"], cache: false },
       test: "vp test run --coverage",
       size: { command: "size-limit", dependsOn: ["build"], cache: false },
     },

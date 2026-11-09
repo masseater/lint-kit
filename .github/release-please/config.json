@@ -34,7 +34,7 @@
         },
         {
           "type": "json",
-          "path": "libs/vp-tools/package.json",
+          "path": "libs/vp-adopt/package.json",
           "jsonpath": "$.version"
         }
       ]

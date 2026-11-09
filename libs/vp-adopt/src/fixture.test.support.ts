@@ -1,6 +1,8 @@
 import { Effect, FileSystem, Path, Array as Arr, Record as Rec, pipe } from "effect";
 import type { Scope } from "effect";
+import { encode as encodeHex } from "effect/encoding/Hex";
 import { ChildProcess, ChildProcessSpawner } from "effect/process";
+import { zip } from "fflate";
 
 type FixtureServices =
   | ChildProcessSpawner.ChildProcessSpawner
@@ -33,7 +35,7 @@ const directoryWith = (
   Effect.gen(function* directory() {
     const fs = yield* FileSystem.FileSystem;
     const spawner = yield* ChildProcessSpawner.ChildProcessSpawner;
-    const root = yield* fs.makeTempDirectoryScoped({ prefix: "vp-tools-" }).pipe(Effect.orDie);
+    const root = yield* fs.makeTempDirectoryScoped({ prefix: "vp-adopt-" }).pipe(Effect.orDie);
     yield* writeFiles(root, files);
     yield* spawner
       .exitCode(ChildProcess.make("git", ["init", "-q"], { cwd: root }))
@@ -53,9 +55,9 @@ const commitEmpty = (
           "git",
           [
             "-c",
-            "user.name=vp-tools",
+            "user.name=vp-adopt",
             "-c",
-            "user.email=vp-tools@example.com",
+            "user.email=vp-adopt@example.com",
             "commit",
             "-q",
             "--allow-empty",
@@ -70,5 +72,24 @@ const commitEmpty = (
 
 const lines = (...rows: readonly string[]): string => `${Arr.join(rows, "\n")}\n`;
 
-export { commitEmpty, directoryWith, lines };
+const zipArchive = (files: Readonly<Record<string, string>>): Effect.Effect<Uint8Array> =>
+  Effect.callback<Uint8Array>((resume) => {
+    const encoder = new TextEncoder();
+    const entries = pipe(
+      files,
+      Rec.map((source) => encoder.encode(source)),
+    );
+    zip(entries, (_failure, zipped) => {
+      resume(Effect.succeed(zipped));
+    });
+  });
+
+const sha256Hex = (data: Uint8Array): Effect.Effect<string> => {
+  const copy = new Uint8Array(data);
+  return Effect.promise(() => crypto.subtle.digest("SHA-256", copy)).pipe(
+    Effect.map((digest) => encodeHex(new Uint8Array(digest))),
+  );
+};
+
+export { commitEmpty, directoryWith, lines, sha256Hex, zipArchive };
 export type { FixtureServices };

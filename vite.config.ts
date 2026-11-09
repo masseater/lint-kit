@@ -49,7 +49,7 @@ const upstreamCopies: readonly string[] = [
   "libs/oxlint-typed-rules/upstream/src/__tests__/**",
   "libs/oxlint-typed-rules/upstream/react/**",
   "libs/oxlint-typed-rules/upstream/{tanstack-*,drizzle,remotion}/**",
-  "libs/vp-tools/upstream/**",
+  "libs/vp-adopt/upstream/**",
 ];
 
 export default defineConfig({
@@ -129,10 +129,10 @@ export default defineConfig({
           "libs/oxlint-plugin-decision/src/index.ts",
           "libs/oxlint-plugin-decision-presets/src/*.ts",
           "libs/oxlint-typed-rules/src/{drizzle,react,remotion,tanstack-query,tanstack-router,tanstack-start}.ts",
-          "libs/vp-tools/src/attw/typescript.ts",
+          "libs/vp-adopt/src/attw/typescript.ts",
           "libs/oxlint-typed-rules/src/ts-compat.ts",
-          "libs/vp-tools/src/fsd.ts",
-          "libs/vp-tools/src/fsd-typescript.ts",
+          "libs/vp-adopt/src/fsd.ts",
+          "libs/vp-adopt/src/fsd-typescript.ts",
         ],
         rules: { "import/no-default-export": "off" },
       },

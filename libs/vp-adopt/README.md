@@ -1,23 +1,31 @@
-# vp-tools
+# vp-adopt
 
-Betterleaks・commitlint・textlint・Steiger の設定と依存の規則を `vite.config.ts` に書き、そこから読んで動かす CLI である。
+Betterleaks・actionlint・zizmor・commitlint・textlint・Steiger を Vite+ に取り込み、設定と依存の規則を `vite.config.ts` に書いて、そこから読んで動かす CLI `vpa` である。
 TypeScript 7 だけで動く Feature-Sliced Design の Steiger プラグインと @arethetypeswrong/core も同梱する。
 各ツールのために `.betterleaks.toml`・`.betterleaksignore`・`.textlintrc`・`.textlintignore`・`steiger.config.ts`・syncpack の設定・`package.json` の `commitlint` を置かずに済む。
+Betterleaks・actionlint・zizmor のバイナリは、postinstall が固定した版を GitHub のリリースから取り、SHA-256 を照合してパッケージの `vendor/` に置く。実行時には取りに行かない。
 設定は Vite+ の `resolveConfigFromFile` で読み、型は `vite` の `UserConfig` を拡張して付ける。
 
 ## 公開先
 
-- npm: [@r_masseater/vp-tools](https://www.npmjs.com/package/@r_masseater/vp-tools)
+- npm: [@r_masseater/vp-adopt](https://www.npmjs.com/package/@r_masseater/vp-adopt)
 
 ## 使い方
 
 ```sh
-vp add -D @r_masseater/vp-tools
+vp add -D @r_masseater/vp-adopt
+```
+
+postinstall を許すため、`pnpm-workspace.yaml` の `allowBuilds` に足す。
+
+```yaml
+allowBuilds:
+  "@r_masseater/vp-adopt": true
 ```
 
 ```ts
-import type {} from "@r_masseater/vp-tools";
-import fsd from "@r_masseater/vp-tools/fsd";
+import type {} from "@r_masseater/vp-adopt";
+import fsd from "@r_masseater/vp-adopt/fsd";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
@@ -38,26 +46,27 @@ export default defineConfig({
   },
   run: {
     tasks: {
-      betterleaks: "vp-tools betterleaks betterleaks git . --redact --no-banner",
-      dependencies: "vp-tools dependencies",
-      steiger: "vp-tools steiger apps/*/src",
-      textlint: "vp-tools textlint '*.md'",
+      actions: "vpa actionlint && vpa zizmor .github",
+      betterleaks: "vpa betterleaks git . --redact --no-banner",
+      dependencies: "vpa dependencies",
+      steiger: "vpa steiger apps/*/src",
+      textlint: "vpa textlint '*.md'",
     },
   },
 });
 ```
 
-`import type {} from "@r_masseater/vp-tools"` で、`defineConfig` に上の 5 つのキーの型が付く。
+`import type {} from "@r_masseater/vp-adopt"` で、`defineConfig` に上の 5 つのキーの型が付く。
 
 ## Feature-Sliced Design のプラグイン
 
-`@r_masseater/vp-tools/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
+`@r_masseater/vp-adopt/fsd` は [@feature-sliced/steiger-plugin][fsd-plugin] 0.8.2 を同梱したもので、ルールと `configs.recommended` は元と同じである。
 元のプラグインが使う [@feature-sliced/filesystem][fsd-filesystem] は、import の解決に TypeScript 5 の `ts.resolveModuleName` を使い、TypeScript 7 だけの環境では読み込めない。
 同梱した版では、その解決を TypeScript 7.1 の `typescript/sync` の `createModuleResolver` で行う。
 そのため `typescript` 7.1 を依存に持つ。使う側のほかの依存が TypeScript 5 を引き込んでいても、こちらは 7.1 を読む。
 
 steiger 本体も `@feature-sliced/steiger-plugin` に依存し、それが TypeScript 5 を引き込む。
-vp-tools は steiger の CLI を使わないので、`pnpm-workspace.yaml` の `overrides` で外せる。
+vpa は steiger の CLI を使わないので、`pnpm-workspace.yaml` の `overrides` で外せる。
 
 ```yaml
 overrides:
@@ -69,12 +78,12 @@ overrides:
 
 ## @arethetypeswrong/core の置き換え
 
-`@r_masseater/vp-tools/attw` は [@arethetypeswrong/core][attw] 0.18.5 と同じ API を、TypeScript 7.1 だけで出す。
+`@r_masseater/vp-adopt/attw` は [@arethetypeswrong/core][attw] 0.18.5 と同じ API を、TypeScript 7.1 だけで出す。
 元のパッケージは TypeScript 5.6.1-rc を依存に持つので、Vite+ の `pack.attw` をそのまま使うと TypeScript 5 が入る。
 `pack.attw.module` にこれを渡せば、`@arethetypeswrong/core` を入れずに同じ検査が動く。
 
 ```ts
-import * as attw from "@r_masseater/vp-tools/attw";
+import * as attw from "@r_masseater/vp-adopt/attw";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
@@ -109,14 +118,19 @@ export default defineConfig({
 
 ## コマンド
 
-| コマンド                                          | 動き                                                                                                                                                                                                                                                                                 |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `vp-tools betterleaks <コマンド...>`              | `betterleaks` セクションを TOML にして `BETTERLEAKS_CONFIG_TOML` に入れ、`ignoredSecrets` があれば一時ファイルに書いて `--ignore-file` を足し、続くコマンドを動かす。`go run github.com/betterleaks/betterleaks/v2@v2.0.0-rc.7 git .` のように、Betterleaks の起動方法はそのまま書く |
-| `vp-tools commitlint <メッセージのファイル>`      | `commitlint` セクションでコミットメッセージを検査する。`#` で始まる行は読まない。commit-msg フックで `vp-tools commitlint "$1"` と書く                                                                                                                                               |
-| `vp-tools commitlint --range <範囲>`              | `git log --first-parent` で範囲のコミットを並べ、各メッセージを検査する。CI で push された範囲を `vp-tools commitlint --range "$BEFORE..$HEAD"` と検査する                                                                                                                           |
-| `vp-tools textlint [--print-files] <pathspec...>` | git が追跡するファイルと未追跡で無視されていないファイルのうち、pathspec に合い `ignores` に合わないものを textlint で検査する。`--print-files` は検査せず、そのファイルを NUL 区切りで出す                                                                                          |
-| `vp-tools steiger <ディレクトリ...>`              | `steiger` セクションで各ディレクトリを検査し、error の指摘があれば失敗する                                                                                                                                                                                                           |
-| `vp-tools dependencies`                           | `pnpm-workspace.yaml` の各パッケージの `package.json` を読み、禁止した依存と、同じ依存の指定の食い違いを報告する                                                                                                                                                                     |
+| コマンド                                     | 動き                                                                                                                                                                                               |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `vpa betterleaks <引数...>`                  | `betterleaks` セクションを TOML にして `BETTERLEAKS_CONFIG_TOML` に入れ、`ignoredSecrets` があれば一時ファイルに書いて `--ignore-file` を足し、postinstall が置いた Betterleaks を引数のまま動かす |
+| `vpa actionlint [引数...]`                   | postinstall が置いた actionlint を引数のまま動かす                                                                                                                                                 |
+| `vpa zizmor [引数...]`                       | postinstall が置いた zizmor を引数のまま動かす                                                                                                                                                     |
+| `vpa commitlint <メッセージのファイル>`      | `commitlint` セクションでコミットメッセージを検査する。`#` で始まる行は読まない。commit-msg フックで `vpa commitlint "$1"` と書く                                                                  |
+| `vpa commitlint --range <範囲>`              | `git log --first-parent` で範囲のコミットを並べ、各メッセージを検査する。CI で push された範囲を `vpa commitlint --range "$BEFORE..$HEAD"` と検査する                                              |
+| `vpa textlint [--print-files] <pathspec...>` | git が追跡するファイルと未追跡で無視されていないファイルのうち、pathspec に合い `ignores` に合わないものを textlint で検査する。`--print-files` は検査せず、そのファイルを NUL 区切りで出す        |
+| `vpa steiger <ディレクトリ...>`              | `steiger` セクションで各ディレクトリを検査し、error の指摘があれば失敗する                                                                                                                         |
+| `vpa dependencies`                           | `pnpm-workspace.yaml` の各パッケージの `package.json` を読み、禁止した依存と、同じ依存の指定の食い違いを報告する                                                                                   |
+
+postinstall が動いていないと、Betterleaks・actionlint・zizmor のコマンドは `allowBuilds` に足すよう告げて失敗する。
+バイナリの版は `src/binaries.ts` で固定し、vp-adopt の版を上げて変える。
 
 ## 設定
 

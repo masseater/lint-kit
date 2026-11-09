@@ -4,6 +4,7 @@ import { assertTrue, deepStrictEqual, strictEqual } from "@effect/vitest/utils";
 import {
   Effect,
   Exit,
+  FileSystem,
   Option,
   Predicate,
   Ref,
@@ -15,9 +16,11 @@ import {
   pipe,
 } from "effect";
 
+import { BETTERLEAKS } from "./binaries.ts";
 import type { CommandError, CommandServices } from "./command.ts";
 import { COMMANDS } from "./commands.ts";
 import { commitEmpty, directoryWith, lines } from "./fixture.test.support.ts";
+import { VendorDirectory } from "./vendor.ts";
 
 interface Captured {
   readonly exit: Exit.Exit<void, CommandError>;
@@ -107,12 +110,26 @@ const failsBannedDependencies = Effect.gen(function* failsBannedDependencies() {
 
 const IGNORE_FILE_CHECK = String.raw`test "$1" = --ignore-file && grep -qx "$(printf '0%.0s' $(seq 64))" "$2"`;
 
+const FAKE_BETTERLEAKS = lines(
+  "#!/bin/sh",
+  'test "$1" = pass || exit 1',
+  "shift",
+  `printf %s "$BETTERLEAKS_CONFIG_TOML" | grep -q "useDefault = true" && ${IGNORE_FILE_CHECK}`,
+);
+
+const EXECUTABLE_MODE = 0o755;
+
+const VENDORED_BETTERLEAKS = `vendor/betterleaks/${BETTERLEAKS.version}/betterleaks`;
+
 const passesTheConfigToBetterleaks = Effect.gen(function* passesTheConfigToBetterleaks() {
-  const root = yield* directoryWith(REPOSITORY);
-  const script = `printf %s "$BETTERLEAKS_CONFIG_TOML" | grep -q "useDefault = true" && ${IGNORE_FILE_CHECK}`;
-  const passed = yield* run("betterleaks", root, ["sh", "-c", script, "sh"]);
-  const failed = yield* run("betterleaks", root, ["sh", "-c", "exit 1"]);
-  const empty = yield* run("betterleaks", root, []);
+  const root = yield* directoryWith({ ...REPOSITORY, [VENDORED_BETTERLEAKS]: FAKE_BETTERLEAKS });
+  const fs = yield* FileSystem.FileSystem;
+  yield* fs.chmod(`${root}/${VENDORED_BETTERLEAKS}`, EXECUTABLE_MODE).pipe(Effect.orDie);
+  const vendored = (args: readonly string[]): Effect.Effect<Captured, never, CommandServices> =>
+    run("betterleaks", root, args).pipe(Effect.provideService(VendorDirectory, `${root}/vendor`));
+  const passed = yield* vendored(["pass"]);
+  const failed = yield* vendored(["fail"]);
+  const empty = yield* vendored([]);
   deepStrictEqual(
     pipe(
       [passed, failed, empty],
@@ -154,13 +171,13 @@ const checksSlices = Effect.gen(function* checksSlices() {
   strictEqual(Str.trim(output), "");
 });
 
-layer(fixtureLayer)("vp-tools commands", (it) => {
+layer(fixtureLayer)("vpa commands", (it) => {
   it.effect("prints the text files the textlint section selects", () => printsTextFiles);
   it.effect("lints the text files the textlint section selects", () => lintsTextFiles);
   it.effect("passes workspace manifests that agree", () => passesConsistentDependencies);
   it.effect("fails on a banned dependency in a workspace manifest", () => failsBannedDependencies);
   it.effect(
-    "hands the betterleaks section and ignore file to the command and reports its exit code",
+    "runs the vendored betterleaks with the betterleaks section and ignore file and reports its exit code",
     () => passesTheConfigToBetterleaks,
   );
   it.effect("lints the commit message file and needs one", () => lintsTheCommitMessageFile);
