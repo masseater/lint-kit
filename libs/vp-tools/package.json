@@ -1,6 +1,6 @@
 {
   "name": "@r_masseater/vp-tools",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Run Betterleaks, commitlint, textlint, Steiger and dependency checks from the settings in vite.config.ts, and ship the Feature-Sliced Design Steiger plugin and @arethetypeswrong/core for TypeScript 7.",
   "keywords": [
     "arethetypeswrong",
