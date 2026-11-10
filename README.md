@@ -1,5 +1,8 @@
 # lint-kit
 
+> [!IMPORTANT]
+> This repository moved into [masseater/masseater.dev](https://github.com/masseater/masseater.dev). The packages now live in [`libs/oxlint-plugin-decision`](https://github.com/masseater/masseater.dev/tree/main/libs/oxlint-plugin-decision), [`libs/oxlint-plugin-decision-presets`](https://github.com/masseater/masseater.dev/tree/main/libs/oxlint-plugin-decision-presets), [`libs/oxlint-typed-rules`](https://github.com/masseater/masseater.dev/tree/main/libs/oxlint-typed-rules) and [`libs/vite-plus-adopt`](https://github.com/masseater/masseater.dev/tree/main/libs/vite-plus-adopt), and npm releases come from there. This repository is archived.
+
 Lint tools for TypeScript repositories, kept in one workspace.
 
 - [oxlint-plugin-decision](#oxlint-plugin-decision): Oxlint rules written as questions that decision models answer
